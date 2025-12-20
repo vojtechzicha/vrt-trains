@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Line, Variant, Station } from '@/types';
 import { Card, CardHeader, CardBody, Button } from '@/components/ui';
 import { LineBadge } from '@/components/lines';
+import { BulkTimeAdjustModal } from '@/components/admin';
 
 export default function VariantsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -14,6 +15,7 @@ export default function VariantsPage({ params }: { params: Promise<{ id: string 
   const [variants, setVariants] = useState<Variant[]>([]);
   const [stations, setStations] = useState<Station[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showBulkAdjust, setShowBulkAdjust] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -99,9 +101,14 @@ export default function VariantsPage({ params }: { params: Promise<{ id: string 
             <p className="text-sm text-gray-500">Variants</p>
           </div>
         </div>
-        <Button onClick={() => router.push(`/admin/lines/${id}/variants/new`)}>
-          + New Variant
-        </Button>
+        <div className="flex gap-2">
+          <Button variant="secondary" onClick={() => setShowBulkAdjust(true)}>
+            Bulk Time Adjust
+          </Button>
+          <Button onClick={() => router.push(`/admin/lines/${id}/variants/new`)}>
+            + New Variant
+          </Button>
+        </div>
       </div>
 
       <div className="space-y-3">
@@ -170,6 +177,17 @@ export default function VariantsPage({ params }: { params: Promise<{ id: string 
           </Card>
         )}
       </div>
+
+      <BulkTimeAdjustModal
+        isOpen={showBulkAdjust}
+        onClose={() => setShowBulkAdjust(false)}
+        variants={variants}
+        stations={stations}
+        onApply={() => {
+          // Refresh data after bulk update
+          fetchData();
+        }}
+      />
     </div>
   );
 }

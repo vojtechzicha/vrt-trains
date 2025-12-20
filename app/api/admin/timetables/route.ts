@@ -1,14 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getTimetables, getTimetablesByVariant, createTimetable, isTrainNumberUnique } from '@/lib/data';
+import { getTimetables, getTimetablesByVariant, getTimetablesByVariants, createTimetable, isTrainNumberUnique } from '@/lib/data';
 
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const variantId = searchParams.get('variantId');
+    const variantIds = searchParams.get('variantIds');
 
-    const timetables = variantId
-      ? await getTimetablesByVariant(variantId)
-      : await getTimetables();
+    let timetables;
+    if (variantIds) {
+      // Multiple variant IDs (comma-separated)
+      const ids = variantIds.split(',').filter(Boolean);
+      timetables = await getTimetablesByVariants(ids);
+    } else if (variantId) {
+      // Single variant ID
+      timetables = await getTimetablesByVariant(variantId);
+    } else {
+      // All timetables
+      timetables = await getTimetables();
+    }
     return NextResponse.json(timetables);
   } catch (error) {
     return NextResponse.json({ error: 'Failed to fetch timetables' }, { status: 500 });

@@ -199,3 +199,40 @@ export async function generateTimetables(params: GenerateTimetablesParams): Prom
 
   return generatedTimetables;
 }
+
+/**
+ * Bulk offset all departure/arrival times for timetables of given variants
+ * @param variantIds - Array of variant IDs to update
+ * @param offsetMinutes - Minutes to offset (positive = forward, negative = back)
+ * @returns Number of timetables updated
+ */
+export async function bulkOffsetTimetables(
+  variantIds: string[],
+  offsetMinutes: number
+): Promise<number> {
+  const file = await readTimetablesFile();
+  const variantIdSet = new Set(variantIds);
+  let updatedCount = 0;
+
+  file.timetables = file.timetables.map((timetable) => {
+    if (!variantIdSet.has(timetable.variantId)) {
+      return timetable;
+    }
+
+    // Offset all departure/arrival times
+    const updatedDepartures = timetable.departures.map((dep) => ({
+      stationId: dep.stationId,
+      arrival: dep.arrival ? addMinutesToTime(dep.arrival, offsetMinutes) : null,
+      departure: dep.departure ? addMinutesToTime(dep.departure, offsetMinutes) : null,
+    }));
+
+    updatedCount++;
+    return {
+      ...timetable,
+      departures: updatedDepartures,
+    };
+  });
+
+  await writeTimetablesFile(file);
+  return updatedCount;
+}

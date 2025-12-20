@@ -34,8 +34,10 @@ export function calculateContrastColor(hexColor: string): string {
 
 export function addMinutesToTime(time: string, minutes: number): string {
   const [hours, mins] = time.split(':').map(Number);
-  const totalMinutes = hours * 60 + mins + minutes;
-  const newHours = Math.floor(totalMinutes / 60) % 24;
+  let totalMinutes = hours * 60 + mins + minutes;
+  // Normalize to [0, 1440) range for proper midnight handling (handles negative offsets)
+  totalMinutes = ((totalMinutes % 1440) + 1440) % 1440;
+  const newHours = Math.floor(totalMinutes / 60);
   const newMins = totalMinutes % 60;
   return `${String(newHours).padStart(2, '0')}:${String(newMins).padStart(2, '0')}`;
 }
