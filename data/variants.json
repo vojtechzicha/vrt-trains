@@ -1,0 +1,2455 @@
+{
+  "variants": [
+    {
+      "id": "e65df47e-91bc-4d4c-84db-2e92f4d4e454",
+      "lineId": "spr1",
+      "code": "Spr1",
+      "name": "RegioJet Sprinter",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 2,
+          "arrivalOffset": 60,
+          "departureOffset": 61,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 3,
+          "arrivalOffset": 106,
+          "departureOffset": 107,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 4,
+          "arrivalOffset": 113,
+          "departureOffset": 114,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343939",
+          "sequence": 5,
+          "arrivalOffset": 119,
+          "departureOffset": 120,
+          "platform": "3",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344143",
+          "sequence": 6,
+          "arrivalOffset": 129,
+          "departureOffset": 130,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "333443",
+          "sequence": 7,
+          "arrivalOffset": 145,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "0b28a00c-6eea-47ad-92fc-685503192a65",
+      "lineId": "spr1",
+      "code": "Spr1",
+      "name": "RegioJet Sprinter",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 2,
+          "arrivalOffset": 60,
+          "departureOffset": 61,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 3,
+          "arrivalOffset": 106,
+          "departureOffset": 107,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 4,
+          "arrivalOffset": 113,
+          "departureOffset": 114,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343939",
+          "sequence": 5,
+          "arrivalOffset": 119,
+          "departureOffset": null,
+          "platform": "3",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "b9919f1a-1fcd-4e84-9256-17e60d5915b2",
+      "lineId": "spr1",
+      "code": "Spr1",
+      "name": "RegioJet Sprinter",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "333443",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344143",
+          "sequence": 2,
+          "arrivalOffset": 15,
+          "departureOffset": 16,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343939",
+          "sequence": 3,
+          "arrivalOffset": 25,
+          "departureOffset": 26,
+          "platform": "3",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 4,
+          "arrivalOffset": 31,
+          "departureOffset": 32,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 5,
+          "arrivalOffset": 38,
+          "departureOffset": 39,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 6,
+          "arrivalOffset": 84,
+          "departureOffset": 85,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 7,
+          "arrivalOffset": 145,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "73ea1d93-8f87-4fd6-a6f0-a818e0fb0ad0",
+      "lineId": "spr1",
+      "code": "Spr1",
+      "name": "RegioJet Sprinter",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "343939",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "3",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 2,
+          "arrivalOffset": 5,
+          "departureOffset": 6,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 3,
+          "arrivalOffset": 12,
+          "departureOffset": 13,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 4,
+          "arrivalOffset": 58,
+          "departureOffset": 59,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 5,
+          "arrivalOffset": 119,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "17bc0c31-39c2-4896-8ed1-cac485dc365e",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr3",
+      "name": "LE Sprinter Berlin -> Praha -> Wien -> Budapest",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "85699259-4aec-4cd1-874e-4f55665f44a5",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "64f7a87f-7b0c-4a3b-8382-d5542b70ed59",
+          "sequence": 2,
+          "arrivalOffset": 9,
+          "departureOffset": 10,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0d58a15a-9e72-4482-a7cb-db0d3f888df1",
+          "sequence": 3,
+          "arrivalOffset": 95,
+          "departureOffset": 96,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "82c5ed84-cc36-4462-8772-bcc6bad24eab",
+          "sequence": 4,
+          "arrivalOffset": 103,
+          "departureOffset": 104,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d0352445-687d-42b5-aac2-13e6c6f6626d",
+          "sequence": 5,
+          "arrivalOffset": 122,
+          "departureOffset": 123,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 6,
+          "arrivalOffset": 186,
+          "departureOffset": 187,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 7,
+          "arrivalOffset": 247,
+          "departureOffset": 248,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "773825f6-0162-4d1c-b73b-7d87e18ae62d",
+          "sequence": 8,
+          "arrivalOffset": 324,
+          "departureOffset": 325,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1104677f-a85f-4309-94b8-9ab6bf00427f",
+          "sequence": 9,
+          "arrivalOffset": 370,
+          "departureOffset": 371,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1d4b74f8-f806-4ec4-90d7-f5f770ca7074",
+          "sequence": 10,
+          "arrivalOffset": 389,
+          "departureOffset": 390,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0f2af08b-38b5-4880-a197-60d358292995",
+          "sequence": 11,
+          "arrivalOffset": 458,
+          "departureOffset": 459,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "ec0f7222-bf9e-4925-82fb-01ca97e5a2db",
+          "sequence": 12,
+          "arrivalOffset": 466,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "271395b2-cc32-46ee-990b-f7be7ee94a7b",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr3",
+      "name": "LE Sprinter Budapest -> Wien -> Praha -> Berlin",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "ec0f7222-bf9e-4925-82fb-01ca97e5a2db",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0f2af08b-38b5-4880-a197-60d358292995",
+          "sequence": 2,
+          "arrivalOffset": 7,
+          "departureOffset": 8,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1d4b74f8-f806-4ec4-90d7-f5f770ca7074",
+          "sequence": 3,
+          "arrivalOffset": 76,
+          "departureOffset": 77,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1104677f-a85f-4309-94b8-9ab6bf00427f",
+          "sequence": 4,
+          "arrivalOffset": 95,
+          "departureOffset": 96,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "773825f6-0162-4d1c-b73b-7d87e18ae62d",
+          "sequence": 5,
+          "arrivalOffset": 141,
+          "departureOffset": 142,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 6,
+          "arrivalOffset": 218,
+          "departureOffset": 219,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 7,
+          "arrivalOffset": 279,
+          "departureOffset": 280,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d0352445-687d-42b5-aac2-13e6c6f6626d",
+          "sequence": 8,
+          "arrivalOffset": 343,
+          "departureOffset": 344,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "82c5ed84-cc36-4462-8772-bcc6bad24eab",
+          "sequence": 9,
+          "arrivalOffset": 362,
+          "departureOffset": 363,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0d58a15a-9e72-4482-a7cb-db0d3f888df1",
+          "sequence": 10,
+          "arrivalOffset": 370,
+          "departureOffset": 371,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "64f7a87f-7b0c-4a3b-8382-d5542b70ed59",
+          "sequence": 11,
+          "arrivalOffset": 456,
+          "departureOffset": 457,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "85699259-4aec-4cd1-874e-4f55665f44a5",
+          "sequence": 12,
+          "arrivalOffset": 466,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "c741b06f-d62f-4f59-84bf-13192557bc88",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr3",
+      "name": "LE Sprinter Praha -> Wien -> Budapest",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 2,
+          "arrivalOffset": 60,
+          "departureOffset": 61,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "773825f6-0162-4d1c-b73b-7d87e18ae62d",
+          "sequence": 3,
+          "arrivalOffset": 137,
+          "departureOffset": 138,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1104677f-a85f-4309-94b8-9ab6bf00427f",
+          "sequence": 4,
+          "arrivalOffset": 183,
+          "departureOffset": 184,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1d4b74f8-f806-4ec4-90d7-f5f770ca7074",
+          "sequence": 5,
+          "arrivalOffset": 202,
+          "departureOffset": 203,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0f2af08b-38b5-4880-a197-60d358292995",
+          "sequence": 6,
+          "arrivalOffset": 271,
+          "departureOffset": 272,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "ec0f7222-bf9e-4925-82fb-01ca97e5a2db",
+          "sequence": 7,
+          "arrivalOffset": 279,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "507828cf-3860-4e03-ba91-412269d5b34a",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr3",
+      "name": "LE Sprinter Berlin -> Praha -> Wien",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "85699259-4aec-4cd1-874e-4f55665f44a5",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "64f7a87f-7b0c-4a3b-8382-d5542b70ed59",
+          "sequence": 2,
+          "arrivalOffset": 9,
+          "departureOffset": 10,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0d58a15a-9e72-4482-a7cb-db0d3f888df1",
+          "sequence": 3,
+          "arrivalOffset": 95,
+          "departureOffset": 96,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "82c5ed84-cc36-4462-8772-bcc6bad24eab",
+          "sequence": 4,
+          "arrivalOffset": 103,
+          "departureOffset": 104,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d0352445-687d-42b5-aac2-13e6c6f6626d",
+          "sequence": 5,
+          "arrivalOffset": 122,
+          "departureOffset": 123,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 6,
+          "arrivalOffset": 186,
+          "departureOffset": 187,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 7,
+          "arrivalOffset": 247,
+          "departureOffset": 248,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "773825f6-0162-4d1c-b73b-7d87e18ae62d",
+          "sequence": 8,
+          "arrivalOffset": 324,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "3976ef53-e5e6-4bff-ad19-67db10578853",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr3",
+      "name": "LE Sprinter Wien -> Praha -> Berlin",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "773825f6-0162-4d1c-b73b-7d87e18ae62d",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 2,
+          "arrivalOffset": 76,
+          "departureOffset": 77,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 3,
+          "arrivalOffset": 137,
+          "departureOffset": 138,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d0352445-687d-42b5-aac2-13e6c6f6626d",
+          "sequence": 4,
+          "arrivalOffset": 201,
+          "departureOffset": 202,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "82c5ed84-cc36-4462-8772-bcc6bad24eab",
+          "sequence": 5,
+          "arrivalOffset": 220,
+          "departureOffset": 221,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0d58a15a-9e72-4482-a7cb-db0d3f888df1",
+          "sequence": 6,
+          "arrivalOffset": 228,
+          "departureOffset": 229,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "64f7a87f-7b0c-4a3b-8382-d5542b70ed59",
+          "sequence": 7,
+          "arrivalOffset": 314,
+          "departureOffset": 315,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "85699259-4aec-4cd1-874e-4f55665f44a5",
+          "sequence": 8,
+          "arrivalOffset": 324,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "f03b921d-921f-4c2c-b8b4-830856816455",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr3",
+      "name": "LE Sprinter Budapest -> Wien -> Praha",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "ec0f7222-bf9e-4925-82fb-01ca97e5a2db",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0f2af08b-38b5-4880-a197-60d358292995",
+          "sequence": 2,
+          "arrivalOffset": 7,
+          "departureOffset": 8,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1d4b74f8-f806-4ec4-90d7-f5f770ca7074",
+          "sequence": 3,
+          "arrivalOffset": 76,
+          "departureOffset": 77,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1104677f-a85f-4309-94b8-9ab6bf00427f",
+          "sequence": 4,
+          "arrivalOffset": 95,
+          "departureOffset": 96,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "773825f6-0162-4d1c-b73b-7d87e18ae62d",
+          "sequence": 5,
+          "arrivalOffset": 141,
+          "departureOffset": 142,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 6,
+          "arrivalOffset": 218,
+          "departureOffset": 219,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 7,
+          "arrivalOffset": 279,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "d5e9971e-b622-4a3a-8aec-ac14eb8dfa2d",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr5",
+      "name": "LE Sprinter Praha -> Bratislava -> Budapest",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 2,
+          "arrivalOffset": 60,
+          "departureOffset": 61,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "3cf958f8-ca91-4898-b805-002575b8f0db",
+          "sequence": 3,
+          "arrivalOffset": 145,
+          "departureOffset": 146,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "8fb33b98-ce5f-4784-b582-2a331c7b24da",
+          "sequence": 4,
+          "arrivalOffset": 198,
+          "departureOffset": 199,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "ac11bfa3-1cbf-452c-8187-16e7bd8424e8",
+          "sequence": 5,
+          "arrivalOffset": 224,
+          "departureOffset": 225,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "749937ad-8f59-4e59-82fd-fa1683673ad9",
+          "sequence": 6,
+          "arrivalOffset": 235,
+          "departureOffset": 236,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "419f2e35-a31e-4b5e-bfb4-f214d9d62a03",
+          "sequence": 7,
+          "arrivalOffset": 246,
+          "departureOffset": 247,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "061fffc8-7ab5-40f8-ae35-755724394006",
+          "sequence": 8,
+          "arrivalOffset": 260,
+          "departureOffset": 261,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6d5582a3-4bce-40c7-9206-f140d674ab3e",
+          "sequence": 9,
+          "arrivalOffset": 287,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "22100c25-aa7d-47b1-8702-5b62d947d26e",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr5",
+      "name": "LE Sprinter Budapest -> Bratislava -> Praha",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "6d5582a3-4bce-40c7-9206-f140d674ab3e",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "061fffc8-7ab5-40f8-ae35-755724394006",
+          "sequence": 2,
+          "arrivalOffset": 26,
+          "departureOffset": 27,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "419f2e35-a31e-4b5e-bfb4-f214d9d62a03",
+          "sequence": 3,
+          "arrivalOffset": 40,
+          "departureOffset": 41,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "749937ad-8f59-4e59-82fd-fa1683673ad9",
+          "sequence": 4,
+          "arrivalOffset": 51,
+          "departureOffset": 52,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "ac11bfa3-1cbf-452c-8187-16e7bd8424e8",
+          "sequence": 5,
+          "arrivalOffset": 62,
+          "departureOffset": 63,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "8fb33b98-ce5f-4784-b582-2a331c7b24da",
+          "sequence": 6,
+          "arrivalOffset": 88,
+          "departureOffset": 89,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "3cf958f8-ca91-4898-b805-002575b8f0db",
+          "sequence": 7,
+          "arrivalOffset": 141,
+          "departureOffset": 142,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 8,
+          "arrivalOffset": 226,
+          "departureOffset": 227,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 9,
+          "arrivalOffset": 287,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "7132aa5e-fe5e-4258-aaa2-3f64bf0bfc83",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr5",
+      "name": "LE Sprinter Praha -> Bratislava",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 2,
+          "arrivalOffset": 60,
+          "departureOffset": 61,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "3cf958f8-ca91-4898-b805-002575b8f0db",
+          "sequence": 3,
+          "arrivalOffset": 145,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "3903d9c8-7456-4ff9-ba57-febf5765682f",
+      "lineId": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "code": "Spr5",
+      "name": "LE Sprinter Bratislava -> Praha",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "3cf958f8-ca91-4898-b805-002575b8f0db",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01",
+          "sequence": 2,
+          "arrivalOffset": 84,
+          "departureOffset": 85,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 3,
+          "arrivalOffset": 145,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "4cb3c2cb-ad29-4798-b1cb-5cacc42f803b",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1-SK",
+      "name": "Košičan",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 2,
+          "arrivalOffset": 18,
+          "departureOffset": 19,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 3,
+          "arrivalOffset": 70,
+          "departureOffset": 71,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 4,
+          "arrivalOffset": 114,
+          "departureOffset": 115,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 5,
+          "arrivalOffset": 121,
+          "departureOffset": 122,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 6,
+          "arrivalOffset": 129,
+          "departureOffset": 130,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+          "sequence": 7,
+          "arrivalOffset": 139,
+          "departureOffset": 140,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+          "sequence": 8,
+          "arrivalOffset": 153,
+          "departureOffset": 154,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "29e30bf0-264b-4427-b0e8-6cf792655674",
+          "sequence": 9,
+          "arrivalOffset": 160,
+          "departureOffset": 161,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2b7bd42a-c26b-470c-9857-ada706cda926",
+          "sequence": 10,
+          "arrivalOffset": 169,
+          "departureOffset": 170,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "63583d19-02e9-403a-9fba-98073026b135",
+          "sequence": 11,
+          "arrivalOffset": 187,
+          "departureOffset": 188,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+          "sequence": 12,
+          "arrivalOffset": 212,
+          "departureOffset": 213,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01c4bfa2-ccac-4d63-8059-6fa0856c3ce2",
+          "sequence": 13,
+          "arrivalOffset": 229,
+          "departureOffset": 230,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e53f0769-9800-4c30-844e-793a3f11961a",
+          "sequence": 14,
+          "arrivalOffset": 242,
+          "departureOffset": 243,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e4adac8b-0ce7-48af-ba78-ed7f758c2e4f",
+          "sequence": 15,
+          "arrivalOffset": 258,
+          "departureOffset": 259,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4fea46c9-59a9-4d2a-b389-dfc07079c2e2",
+          "sequence": 16,
+          "arrivalOffset": 280,
+          "departureOffset": 281,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "abc7ee73-7d3f-4af2-a99b-a801c3ebe3d1",
+          "sequence": 17,
+          "arrivalOffset": 309,
+          "departureOffset": 310,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "fc5c279a-f392-4548-b04a-102df479387d",
+          "sequence": 18,
+          "arrivalOffset": 324,
+          "departureOffset": 325,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6a1660f0-f136-4386-a2fd-c07345ef3e97",
+          "sequence": 19,
+          "arrivalOffset": 353,
+          "departureOffset": 354,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2a0d30be-69c6-421a-b24b-668e66c2ddd4",
+          "sequence": 20,
+          "arrivalOffset": 392,
+          "departureOffset": 393,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "46032ccb-4260-4150-8b4c-ead2c7d7eb2a",
+          "sequence": 21,
+          "arrivalOffset": 410,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "1412a8d2-65be-4f9e-bbf4-346d5c6e45a9",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1-SK",
+      "name": "Košičan",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "46032ccb-4260-4150-8b4c-ead2c7d7eb2a",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2a0d30be-69c6-421a-b24b-668e66c2ddd4",
+          "sequence": 2,
+          "arrivalOffset": 17,
+          "departureOffset": 18,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6a1660f0-f136-4386-a2fd-c07345ef3e97",
+          "sequence": 3,
+          "arrivalOffset": 56,
+          "departureOffset": 57,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "fc5c279a-f392-4548-b04a-102df479387d",
+          "sequence": 4,
+          "arrivalOffset": 85,
+          "departureOffset": 86,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "abc7ee73-7d3f-4af2-a99b-a801c3ebe3d1",
+          "sequence": 5,
+          "arrivalOffset": 100,
+          "departureOffset": 101,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4fea46c9-59a9-4d2a-b389-dfc07079c2e2",
+          "sequence": 6,
+          "arrivalOffset": 129,
+          "departureOffset": 130,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e4adac8b-0ce7-48af-ba78-ed7f758c2e4f",
+          "sequence": 7,
+          "arrivalOffset": 151,
+          "departureOffset": 152,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e53f0769-9800-4c30-844e-793a3f11961a",
+          "sequence": 8,
+          "arrivalOffset": 167,
+          "departureOffset": 168,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01c4bfa2-ccac-4d63-8059-6fa0856c3ce2",
+          "sequence": 9,
+          "arrivalOffset": 180,
+          "departureOffset": 181,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+          "sequence": 10,
+          "arrivalOffset": 197,
+          "departureOffset": 198,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "63583d19-02e9-403a-9fba-98073026b135",
+          "sequence": 11,
+          "arrivalOffset": 222,
+          "departureOffset": 223,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2b7bd42a-c26b-470c-9857-ada706cda926",
+          "sequence": 12,
+          "arrivalOffset": 240,
+          "departureOffset": 241,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "29e30bf0-264b-4427-b0e8-6cf792655674",
+          "sequence": 13,
+          "arrivalOffset": 249,
+          "departureOffset": 250,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+          "sequence": 14,
+          "arrivalOffset": 256,
+          "departureOffset": 257,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+          "sequence": 15,
+          "arrivalOffset": 270,
+          "departureOffset": 271,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 16,
+          "arrivalOffset": 280,
+          "departureOffset": 281,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 17,
+          "arrivalOffset": 288,
+          "departureOffset": 289,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 18,
+          "arrivalOffset": 295,
+          "departureOffset": 296,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 19,
+          "arrivalOffset": 339,
+          "departureOffset": 340,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 20,
+          "arrivalOffset": 391,
+          "departureOffset": 392,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 21,
+          "arrivalOffset": 410,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "a050ed8a-3d5d-4d7f-bb5c-1e0399cba942",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1-SK",
+      "name": "Ostravan",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 2,
+          "arrivalOffset": 18,
+          "departureOffset": 19,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 3,
+          "arrivalOffset": 70,
+          "departureOffset": 71,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 4,
+          "arrivalOffset": 114,
+          "departureOffset": 115,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 5,
+          "arrivalOffset": 121,
+          "departureOffset": 122,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 6,
+          "arrivalOffset": 129,
+          "departureOffset": 130,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+          "sequence": 7,
+          "arrivalOffset": 139,
+          "departureOffset": 140,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+          "sequence": 8,
+          "arrivalOffset": 153,
+          "departureOffset": 154,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "29e30bf0-264b-4427-b0e8-6cf792655674",
+          "sequence": 9,
+          "arrivalOffset": 160,
+          "departureOffset": 161,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2b7bd42a-c26b-470c-9857-ada706cda926",
+          "sequence": 10,
+          "arrivalOffset": 169,
+          "departureOffset": 170,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "63583d19-02e9-403a-9fba-98073026b135",
+          "sequence": 11,
+          "arrivalOffset": 187,
+          "departureOffset": 188,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+          "sequence": 12,
+          "arrivalOffset": 212,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "808ac407-c719-42b0-9957-f77609668f09",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1",
+      "name": "Ostravan",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 2,
+          "arrivalOffset": 18,
+          "departureOffset": 19,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 3,
+          "arrivalOffset": 70,
+          "departureOffset": 71,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 4,
+          "arrivalOffset": 114,
+          "departureOffset": 115,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 5,
+          "arrivalOffset": 121,
+          "departureOffset": 122,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 6,
+          "arrivalOffset": 129,
+          "departureOffset": 130,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+          "sequence": 7,
+          "arrivalOffset": 139,
+          "departureOffset": 140,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+          "sequence": 8,
+          "arrivalOffset": 153,
+          "departureOffset": 154,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "29e30bf0-264b-4427-b0e8-6cf792655674",
+          "sequence": 9,
+          "arrivalOffset": 160,
+          "departureOffset": 161,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2b7bd42a-c26b-470c-9857-ada706cda926",
+          "sequence": 10,
+          "arrivalOffset": 169,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "edddac6f-be65-471a-8de7-fdaa5b4219f8",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1-SK",
+      "name": "Ostravan",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "63583d19-02e9-403a-9fba-98073026b135",
+          "sequence": 2,
+          "arrivalOffset": 24,
+          "departureOffset": 25,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2b7bd42a-c26b-470c-9857-ada706cda926",
+          "sequence": 3,
+          "arrivalOffset": 42,
+          "departureOffset": 43,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "29e30bf0-264b-4427-b0e8-6cf792655674",
+          "sequence": 4,
+          "arrivalOffset": 51,
+          "departureOffset": 52,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+          "sequence": 5,
+          "arrivalOffset": 58,
+          "departureOffset": 59,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+          "sequence": 6,
+          "arrivalOffset": 72,
+          "departureOffset": 73,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 7,
+          "arrivalOffset": 82,
+          "departureOffset": 83,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 8,
+          "arrivalOffset": 90,
+          "departureOffset": 91,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 9,
+          "arrivalOffset": 97,
+          "departureOffset": 98,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 10,
+          "arrivalOffset": 141,
+          "departureOffset": 142,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 11,
+          "arrivalOffset": 193,
+          "departureOffset": 194,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 12,
+          "arrivalOffset": 212,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "db07c5e7-0cd5-42a4-a4e5-07369ec7bc05",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1",
+      "name": "Ostravan",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "2b7bd42a-c26b-470c-9857-ada706cda926",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "29e30bf0-264b-4427-b0e8-6cf792655674",
+          "sequence": 2,
+          "arrivalOffset": 8,
+          "departureOffset": 9,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+          "sequence": 3,
+          "arrivalOffset": 15,
+          "departureOffset": 16,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+          "sequence": 4,
+          "arrivalOffset": 29,
+          "departureOffset": 30,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 5,
+          "arrivalOffset": 39,
+          "departureOffset": 40,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 6,
+          "arrivalOffset": 47,
+          "departureOffset": 48,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 7,
+          "arrivalOffset": 54,
+          "departureOffset": 55,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 8,
+          "arrivalOffset": 98,
+          "departureOffset": 99,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 9,
+          "arrivalOffset": 150,
+          "departureOffset": 151,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 10,
+          "arrivalOffset": 169,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "79d48cf8-3e7d-48f4-b806-a659f06c4a1d",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1-PL",
+      "name": "Silesia",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 2,
+          "arrivalOffset": 18,
+          "departureOffset": 19,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 3,
+          "arrivalOffset": 70,
+          "departureOffset": 71,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 4,
+          "arrivalOffset": 114,
+          "departureOffset": 115,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 5,
+          "arrivalOffset": 121,
+          "departureOffset": 122,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 6,
+          "arrivalOffset": 129,
+          "departureOffset": 130,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0f7d1240-94a0-406e-8a71-5cd39b889977",
+          "sequence": 7,
+          "arrivalOffset": 151,
+          "departureOffset": 152,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6c910788-748c-44eb-98d4-2f6179e4c3c7",
+          "sequence": 8,
+          "arrivalOffset": 191,
+          "departureOffset": 192,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e505e48-8c69-46f7-9b60-641b1f740e2c",
+          "sequence": 9,
+          "arrivalOffset": 210,
+          "departureOffset": 211,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b53d5b3e-5c33-4ad3-9a0a-9d604ac60687",
+          "sequence": 10,
+          "arrivalOffset": 229,
+          "departureOffset": 230,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0473463b-a48c-433a-a3de-a76ab759b897",
+          "sequence": 11,
+          "arrivalOffset": 245,
+          "departureOffset": 246,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "f52db3b0-fecd-4853-8fbb-4b95bd000d1b",
+          "sequence": 12,
+          "arrivalOffset": 256,
+          "departureOffset": 257,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "5d70dac4-10f9-4722-bca0-7f43dcbc81da",
+          "sequence": 13,
+          "arrivalOffset": 282,
+          "departureOffset": 283,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6872c64b-3375-45fc-a529-c94537953676",
+          "sequence": 14,
+          "arrivalOffset": 314,
+          "departureOffset": 315,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "cf9d8ef2-05b4-4131-8ff3-d58d49c110b1",
+          "sequence": 15,
+          "arrivalOffset": 341,
+          "departureOffset": 342,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1ca5fc18-8a74-4c0e-85ed-5366771fa399",
+          "sequence": 16,
+          "arrivalOffset": 394,
+          "departureOffset": 395,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "68327217-007c-4fbb-bfb9-1683f3924d31",
+          "sequence": 17,
+          "arrivalOffset": 399,
+          "departureOffset": 400,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "ae2e10cf-36db-4fdb-a205-e352589e2f26",
+          "sequence": 18,
+          "arrivalOffset": 406,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "31f89307-4386-4cc8-af14-c04172b91cf3",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1-PL",
+      "name": "Cracovia",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 2,
+          "arrivalOffset": 18,
+          "departureOffset": 19,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 3,
+          "arrivalOffset": 70,
+          "departureOffset": 71,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 4,
+          "arrivalOffset": 114,
+          "departureOffset": 115,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 5,
+          "arrivalOffset": 121,
+          "departureOffset": 122,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 6,
+          "arrivalOffset": 129,
+          "departureOffset": 130,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0f7d1240-94a0-406e-8a71-5cd39b889977",
+          "sequence": 7,
+          "arrivalOffset": 151,
+          "departureOffset": 152,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6c910788-748c-44eb-98d4-2f6179e4c3c7",
+          "sequence": 8,
+          "arrivalOffset": 191,
+          "departureOffset": 192,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e505e48-8c69-46f7-9b60-641b1f740e2c",
+          "sequence": 9,
+          "arrivalOffset": 210,
+          "departureOffset": 211,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b53d5b3e-5c33-4ad3-9a0a-9d604ac60687",
+          "sequence": 10,
+          "arrivalOffset": 229,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "af453930-80bb-44f8-a982-c6ec3572ec38",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1",
+      "name": "Ostravan",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 2,
+          "arrivalOffset": 18,
+          "departureOffset": 19,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 3,
+          "arrivalOffset": 70,
+          "departureOffset": 71,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 4,
+          "arrivalOffset": 114,
+          "departureOffset": 115,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 5,
+          "arrivalOffset": 121,
+          "departureOffset": 122,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 6,
+          "arrivalOffset": 129,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "29be858b-1a0a-4839-969c-f450ff86a54f",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1",
+      "name": "Ostravan",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 2,
+          "arrivalOffset": 7,
+          "departureOffset": 8,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 3,
+          "arrivalOffset": 14,
+          "departureOffset": 15,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 4,
+          "arrivalOffset": 58,
+          "departureOffset": 59,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 5,
+          "arrivalOffset": 110,
+          "departureOffset": 111,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 6,
+          "arrivalOffset": 129,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "b8b9fbee-714f-4c5d-8b43-ddf7594b1de6",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1-PL",
+      "name": "Cracovia",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "b53d5b3e-5c33-4ad3-9a0a-9d604ac60687",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e505e48-8c69-46f7-9b60-641b1f740e2c",
+          "sequence": 2,
+          "arrivalOffset": 18,
+          "departureOffset": 19,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6c910788-748c-44eb-98d4-2f6179e4c3c7",
+          "sequence": 3,
+          "arrivalOffset": 37,
+          "departureOffset": 38,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0f7d1240-94a0-406e-8a71-5cd39b889977",
+          "sequence": 4,
+          "arrivalOffset": 77,
+          "departureOffset": 78,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 5,
+          "arrivalOffset": 99,
+          "departureOffset": 100,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 6,
+          "arrivalOffset": 107,
+          "departureOffset": 108,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 7,
+          "arrivalOffset": 114,
+          "departureOffset": 115,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 8,
+          "arrivalOffset": 158,
+          "departureOffset": 159,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 9,
+          "arrivalOffset": 210,
+          "departureOffset": 211,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 10,
+          "arrivalOffset": 229,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "ba730792-d6eb-4409-8732-49544b29ad71",
+      "lineId": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "code": "Ex1-PL",
+      "name": "Silesia",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "ae2e10cf-36db-4fdb-a205-e352589e2f26",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "68327217-007c-4fbb-bfb9-1683f3924d31",
+          "sequence": 2,
+          "arrivalOffset": 6,
+          "departureOffset": 7,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1ca5fc18-8a74-4c0e-85ed-5366771fa399",
+          "sequence": 3,
+          "arrivalOffset": 11,
+          "departureOffset": 12,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "cf9d8ef2-05b4-4131-8ff3-d58d49c110b1",
+          "sequence": 4,
+          "arrivalOffset": 64,
+          "departureOffset": 65,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6872c64b-3375-45fc-a529-c94537953676",
+          "sequence": 5,
+          "arrivalOffset": 91,
+          "departureOffset": 92,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "5d70dac4-10f9-4722-bca0-7f43dcbc81da",
+          "sequence": 6,
+          "arrivalOffset": 123,
+          "departureOffset": 124,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "f52db3b0-fecd-4853-8fbb-4b95bd000d1b",
+          "sequence": 7,
+          "arrivalOffset": 149,
+          "departureOffset": 150,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0473463b-a48c-433a-a3de-a76ab759b897",
+          "sequence": 8,
+          "arrivalOffset": 160,
+          "departureOffset": 161,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b53d5b3e-5c33-4ad3-9a0a-9d604ac60687",
+          "sequence": 9,
+          "arrivalOffset": 176,
+          "departureOffset": 177,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e505e48-8c69-46f7-9b60-641b1f740e2c",
+          "sequence": 10,
+          "arrivalOffset": 195,
+          "departureOffset": 196,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6c910788-748c-44eb-98d4-2f6179e4c3c7",
+          "sequence": 11,
+          "arrivalOffset": 214,
+          "departureOffset": 215,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0f7d1240-94a0-406e-8a71-5cd39b889977",
+          "sequence": 12,
+          "arrivalOffset": 254,
+          "departureOffset": 255,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 13,
+          "arrivalOffset": 276,
+          "departureOffset": 277,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 14,
+          "arrivalOffset": 284,
+          "departureOffset": 285,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 15,
+          "arrivalOffset": 291,
+          "departureOffset": 292,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 16,
+          "arrivalOffset": 335,
+          "departureOffset": 336,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 17,
+          "arrivalOffset": 387,
+          "departureOffset": 388,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 18,
+          "arrivalOffset": 406,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "47070991-15e9-4797-867f-ffa4412bb79c",
+      "lineId": "87b15e44-e1e7-4987-9618-5fb31408d53d",
+      "code": "Ex2",
+      "name": "Valašský expres",
+      "direction": "outbound",
+      "stations": [
+        {
+          "stationId": "b9b445b9-cd9e-42b6-bf1a-9ee60adbb9df",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d5ad9917-989d-4da0-9a96-3bc9ad50ce6c",
+          "sequence": 2,
+          "arrivalOffset": 19,
+          "departureOffset": 20,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2a235fd4-8789-4b97-b646-cb0ca1907f6e",
+          "sequence": 3,
+          "arrivalOffset": 29,
+          "departureOffset": 30,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b339d2d3-28b3-42e4-8e8d-e6a2ada9bbeb",
+          "sequence": 4,
+          "arrivalOffset": 51,
+          "departureOffset": 52,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e721c7d4-36d8-4355-9f59-54e83c8c5da1",
+          "sequence": 5,
+          "arrivalOffset": 71,
+          "departureOffset": 72,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0824f2ae-9b6a-492e-9005-01c6d08b2cd7",
+          "sequence": 6,
+          "arrivalOffset": 75,
+          "departureOffset": 76,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4",
+          "sequence": 7,
+          "arrivalOffset": 147,
+          "departureOffset": 148,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 8,
+          "arrivalOffset": 159,
+          "departureOffset": 160,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 9,
+          "arrivalOffset": 178,
+          "departureOffset": 179,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d54f8791-39ee-4fb4-98e5-c29783870c67",
+          "sequence": 10,
+          "arrivalOffset": 201,
+          "departureOffset": 202,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "a3ecfe9f-de5d-43e6-afd6-3c87862624cc",
+          "sequence": 11,
+          "arrivalOffset": 229,
+          "departureOffset": 230,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "74bba77a-f8f8-427b-b3d9-6cc2d2c37e91",
+          "sequence": 12,
+          "arrivalOffset": 250,
+          "departureOffset": 251,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+          "sequence": 13,
+          "arrivalOffset": 274,
+          "departureOffset": 275,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+          "sequence": 14,
+          "arrivalOffset": 302,
+          "departureOffset": 303,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "cdafff75-6941-46c1-a517-b76675408b6f",
+          "sequence": 15,
+          "arrivalOffset": 323,
+          "departureOffset": 324,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "8441175e-3d4c-4a16-a1a8-84431b525f8b",
+          "sequence": 16,
+          "arrivalOffset": 339,
+          "departureOffset": 340,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6447755f-5608-45d4-b47f-15e73add84c2",
+          "sequence": 17,
+          "arrivalOffset": 362,
+          "departureOffset": 363,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1f16197d-d0ce-4750-bb43-9b353df885f7",
+          "sequence": 18,
+          "arrivalOffset": 386,
+          "departureOffset": 387,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "86fd4eda-4b4c-4ad2-a9e0-7e4ee0bea73d",
+          "sequence": 19,
+          "arrivalOffset": 394,
+          "departureOffset": 395,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+          "sequence": 20,
+          "arrivalOffset": 414,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,695 @@
+{
+  "stations": [
+    {
+      "id": "570762",
+      "code": "PHN",
+      "name": "Praha hlavní nádraží",
+      "type": "hub",
+      "platforms": 16,
+      "isTerminal": false
+    },
+    {
+      "id": "01",
+      "code": "BVV",
+      "name": "Brno Vídeňská VRT",
+      "type": "hub",
+      "platforms": 4,
+      "isTerminal": false
+    },
+    {
+      "id": "344341",
+      "code": "OSS",
+      "name": "Ostrava-Svinov",
+      "type": "hub",
+      "platforms": 8,
+      "isTerminal": false
+    },
+    {
+      "id": "343640",
+      "code": "OHN",
+      "name": "Ostrava hlavní nádraží",
+      "type": "hub",
+      "platforms": 8,
+      "isTerminal": false
+    },
+    {
+      "id": "343939",
+      "code": "OST",
+      "name": "Ostrava-Stodolní",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false
+    },
+    {
+      "id": "344143",
+      "code": "OSK",
+      "name": "Ostrava-Kunčice",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false
+    },
+    {
+      "id": "333443",
+      "code": "FRM",
+      "name": "Frýdek-Místek",
+      "type": "terminal",
+      "platforms": 5,
+      "isTerminal": false
+    },
+    {
+      "id": "85699259-4aec-4cd1-874e-4f55665f44a5",
+      "code": "DBH",
+      "name": "Berlin Hbf (tief)",
+      "type": "terminal",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Germany"
+    },
+    {
+      "id": "64f7a87f-7b0c-4a3b-8382-d5542b70ed59",
+      "code": "DBS",
+      "name": "Berlin Südkreuz",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Germany"
+    },
+    {
+      "id": "0d58a15a-9e72-4482-a7cb-db0d3f888df1",
+      "code": "DDN",
+      "name": "Dresden-Neustadt",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Germany"
+    },
+    {
+      "id": "82c5ed84-cc36-4462-8772-bcc6bad24eab",
+      "code": "DDH",
+      "name": "Dresden Hbf",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Germany"
+    },
+    {
+      "id": "d0352445-687d-42b5-aac2-13e6c6f6626d",
+      "code": "DBS",
+      "name": "Bad Schandau",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Germany"
+    },
+    {
+      "id": "773825f6-0162-4d1c-b73b-7d87e18ae62d",
+      "code": "AWH",
+      "name": "Wien Hbf",
+      "type": "hub",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Austria"
+    },
+    {
+      "id": "1104677f-a85f-4309-94b8-9ab6bf00427f",
+      "code": "HHE",
+      "name": "Hegyeshalom",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Hungary"
+    },
+    {
+      "id": "1d4b74f8-f806-4ec4-90d7-f5f770ca7074",
+      "code": "HMO",
+      "name": "Mosonmagyarovar",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Hungary"
+    },
+    {
+      "id": "2d19af86-2001-4fac-8802-ddf996ba1d53",
+      "code": "HGY",
+      "name": "Györ",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Hungary"
+    },
+    {
+      "id": "0f2af08b-38b5-4880-a197-60d358292995",
+      "code": "HBK",
+      "name": "Budapest-Kelenföld",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Hungary"
+    },
+    {
+      "id": "ec0f7222-bf9e-4925-82fb-01ca97e5a2db",
+      "code": "HBD",
+      "name": "Budapest-Deli pu",
+      "type": "terminal",
+      "platforms": 1,
+      "isTerminal": true,
+      "country": "Hungary"
+    },
+    {
+      "id": "c46ea047-5670-412b-8b75-0a99915cb120",
+      "code": "SKU",
+      "name": "Kúty",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "3cf958f8-ca91-4898-b805-002575b8f0db",
+      "code": "SBH",
+      "name": "Bratislava hlavná stanica",
+      "type": "hub",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "8fb33b98-ce5f-4784-b582-2a331c7b24da",
+      "code": "SNZ",
+      "name": "Nové Zámky",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "ac11bfa3-1cbf-452c-8187-16e7bd8424e8",
+      "code": "SST",
+      "name": "Štúrovo",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "749937ad-8f59-4e59-82fd-fa1683673ad9",
+      "code": "HSZ",
+      "name": "Szob",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Hungary"
+    },
+    {
+      "id": "419f2e35-a31e-4b5e-bfb4-f214d9d62a03",
+      "code": "HNV",
+      "name": "Nagymaros-Visegrad",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Hungary"
+    },
+    {
+      "id": "061fffc8-7ab5-40f8-ae35-755724394006",
+      "code": "HVA",
+      "name": "Vac",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Hungary"
+    },
+    {
+      "id": "6d5582a3-4bce-40c7-9206-f140d674ab3e",
+      "code": "HBN",
+      "name": "Budapest-Nyugati pu",
+      "type": "terminal",
+      "platforms": 1,
+      "isTerminal": true,
+      "country": "Hungary"
+    },
+    {
+      "id": "b988be91-8213-4906-9633-ba29989813cc",
+      "code": "PHV",
+      "name": "Praha východ VRT",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false
+    },
+    {
+      "id": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+      "code": "BHN",
+      "name": "Brno hlavní nádraží",
+      "type": "regular",
+      "platforms": 10,
+      "isTerminal": false
+    },
+    {
+      "id": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+      "code": "BOH",
+      "name": "Bohumín",
+      "type": "hub",
+      "platforms": 9,
+      "isTerminal": false
+    },
+    {
+      "id": "0f7d1240-94a0-406e-8a71-5cd39b889977",
+      "code": "PZE",
+      "name": "Zebrzydowice",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "6c910788-748c-44eb-98d4-2f6179e4c3c7",
+      "code": "PPS",
+      "name": "Pszczyna",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "4e505e48-8c69-46f7-9b60-641b1f740e2c",
+      "code": "PTY",
+      "name": "Tychy",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "b53d5b3e-5c33-4ad3-9a0a-9d604ac60687",
+      "code": "PKA",
+      "name": "Katowice",
+      "type": "hub",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "0473463b-a48c-433a-a3de-a76ab759b897",
+      "code": "PSG",
+      "name": "Sosnowiec Glowny",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "f52db3b0-fecd-4853-8fbb-4b95bd000d1b",
+      "code": "PDG",
+      "name": "Dabrowa Gornicza",
+      "type": "hub",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "5d70dac4-10f9-4722-bca0-7f43dcbc81da",
+      "code": "PZA",
+      "name": "Zawiercie",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "6872c64b-3375-45fc-a529-c94537953676",
+      "code": "PWP",
+      "name": "Wloszczowa Polnoc",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "cf9d8ef2-05b4-4131-8ff3-d58d49c110b1",
+      "code": "POP",
+      "name": "Opoczno Poludnie",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "1ca5fc18-8a74-4c0e-85ed-5366771fa399",
+      "code": "PWZ",
+      "name": "Warszawa Zachodnia",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "68327217-007c-4fbb-bfb9-1683f3924d31",
+      "code": "PWC",
+      "name": "Warszawa Centralna",
+      "type": "hub",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "ae2e10cf-36db-4fdb-a205-e352589e2f26",
+      "code": "PWW",
+      "name": "Warszawa Wschodnia",
+      "type": "terminal",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "c2afc38c-ff21-49d5-9ff2-f01126401645",
+      "code": "BRN",
+      "name": "Brno",
+      "type": "hub",
+      "platforms": 0,
+      "isTerminal": false,
+      "isVirtual": true,
+      "memberStationIds": [
+        "01",
+        "bd714298-6633-4d19-92aa-b1f4c42f0a6b"
+      ]
+    },
+    {
+      "id": "eda0dc61-c3ff-40dd-b3dd-1c7286bf8dda",
+      "code": "BUD",
+      "name": "Budapest",
+      "type": "hub",
+      "platforms": 0,
+      "isTerminal": false,
+      "isVirtual": true,
+      "memberStationIds": [
+        "6d5582a3-4bce-40c7-9206-f140d674ab3e",
+        "ec0f7222-bf9e-4925-82fb-01ca97e5a2db"
+      ]
+    },
+    {
+      "id": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+      "code": "KHN",
+      "name": "Karviná hlavní nádraží",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false
+    },
+    {
+      "id": "77fd513e-923a-42c3-bf25-c64313a8621f",
+      "code": "CTE",
+      "name": "Český Těšín (Czeski Cieszyn)",
+      "type": "hub",
+      "platforms": 6,
+      "isTerminal": false
+    },
+    {
+      "id": "29e30bf0-264b-4427-b0e8-6cf792655674",
+      "code": "TCE",
+      "name": "Třinec centrum (Trzyniec centrum)",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false
+    },
+    {
+      "id": "2b7bd42a-c26b-470c-9857-ada706cda926",
+      "code": "NAV",
+      "name": "Návsí (Nawsie)",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false
+    },
+    {
+      "id": "63583d19-02e9-403a-9fba-98073026b135",
+      "code": "SCA",
+      "name": "Čadca",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+      "code": "SZI",
+      "name": "Žilina",
+      "type": "hub",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "01c4bfa2-ccac-4d63-8059-6fa0856c3ce2",
+      "code": "SVR",
+      "name": "Vrútky",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "e53f0769-9800-4c30-844e-793a3f11961a",
+      "code": "SKR",
+      "name": "Kraľovany",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "e4adac8b-0ce7-48af-ba78-ed7f758c2e4f",
+      "code": "SRU",
+      "name": "Ružomberok",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "4fea46c9-59a9-4d2a-b389-dfc07079c2e2",
+      "code": "SLM",
+      "name": "Liptovský Mikuláš",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "abc7ee73-7d3f-4af2-a99b-a801c3ebe3d1",
+      "code": "SST",
+      "name": "Štrba",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "fc5c279a-f392-4548-b04a-102df479387d",
+      "code": "SPT",
+      "name": "Poprad-Tatry",
+      "type": "hub",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "6a1660f0-f136-4386-a2fd-c07345ef3e97",
+      "code": "SSN",
+      "name": "Spišská Nová Ves",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "2a0d30be-69c6-421a-b24b-668e66c2ddd4",
+      "code": "SKY",
+      "name": "Kysak",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "46032ccb-4260-4150-8b4c-ead2c7d7eb2a",
+      "code": "SKO",
+      "name": "Košice",
+      "type": "terminal",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "b9b445b9-cd9e-42b6-bf1a-9ee60adbb9df",
+      "code": "CHE",
+      "name": "Cheb",
+      "type": "terminal",
+      "platforms": 7,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "d5ad9917-989d-4da0-9a96-3bc9ad50ce6c",
+      "code": "MLA",
+      "name": "Mariánské lázně",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "2a235fd4-8789-4b97-b646-cb0ca1907f6e",
+      "code": "PML",
+      "name": "Planá u Mariánských Lázní",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "b339d2d3-28b3-42e4-8e8d-e6a2ada9bbeb",
+      "code": "STR",
+      "name": "Stříbro",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "e721c7d4-36d8-4355-9f59-54e83c8c5da1",
+      "code": "PJP",
+      "name": "Plzeň-Jižní Předměstí",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "0824f2ae-9b6a-492e-9005-01c6d08b2cd7",
+      "code": "PHN",
+      "name": "Plzeň hlavní nádraží",
+      "type": "hub",
+      "platforms": 10,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "53199a3d-1846-42b6-a8c5-8eddd6705fd4",
+      "code": "PSM",
+      "name": "Praha-Smíchov",
+      "type": "hub",
+      "platforms": 6,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "d54f8791-39ee-4fb4-98e5-c29783870c67",
+      "code": "PDB",
+      "name": "Pardubice hlavní nádraží",
+      "type": "hub",
+      "platforms": 11,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a3ecfe9f-de5d-43e6-afd6-3c87862624cc",
+      "code": "UNO",
+      "name": "Ústí nad Orlicí",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "74bba77a-f8f8-427b-b3d9-6cc2d2c37e91",
+      "code": "ZNM",
+      "name": "Zábřeh na Moravě",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "4e4dc494-2786-483f-9570-9d856b35c28c",
+      "code": "OLH",
+      "name": "Olomouc hlavní nádraží",
+      "type": "hub",
+      "platforms": 10,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+      "code": "HNM",
+      "name": "Hranice na Moravě",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "cdafff75-6941-46c1-a517-b76675408b6f",
+      "code": "VME",
+      "name": "Valašské Meziříčí",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "8441175e-3d4c-4a16-a1a8-84431b525f8b",
+      "code": "VSE",
+      "name": "Vsetín",
+      "type": "hub",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "6447755f-5608-45d4-b47f-15e73add84c2",
+      "code": "HLI",
+      "name": "Horní Lideč",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "1f16197d-d0ce-4750-bb43-9b353df885f7",
+      "code": "SPC",
+      "name": "Púchov",
+      "type": "hub",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "86fd4eda-4b4c-4ad2-a9e0-7e4ee0bea73d",
+      "code": "SPB",
+      "name": "Považská Bystrica",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852",
+      "code": "OVI",
+      "name": "Ostrava-Vítkovice",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "b76a601b-7a5c-4cac-bd64-e29a0ea47edd",
+      "code": "OST",
+      "name": "Ostrava",
+      "type": "hub",
+      "platforms": 0,
+      "isTerminal": false,
+      "isVirtual": true,
+      "memberStationIds": [
+        "344341",
+        "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852"
+      ]
+    }
+  ]
+}

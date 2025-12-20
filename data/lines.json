@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "spr1",
+      "identifier": "RJ",
+      "name": "RegioJet",
+      "color": "#F39C12",
+      "textColor": "#000000",
+      "type": "express",
+      "variants": [
+        "Spr1"
+      ]
+    },
+    {
+      "id": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
+      "identifier": "LE",
+      "name": "LeoExpress",
+      "color": "#000000",
+      "textColor": "#FFFFFF",
+      "type": "express",
+      "variants": []
+    },
+    {
+      "id": "452ab6ca-3630-45a9-bde0-a6de0302b901",
+      "identifier": "Ex1",
+      "name": "Ex1",
+      "color": "#E31E24",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "87b15e44-e1e7-4987-9618-5fb31408d53d",
+      "identifier": "Ex2",
+      "name": "Ex2",
+      "color": "#E31E24",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    }
+  ]
+}
