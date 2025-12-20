@@ -4,7 +4,7 @@ import { getVariant, generateTimetables, deleteTimetablesByVariant } from '@/lib
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
-    const { variantId, firstDeparture, interval, endTime, operatingDays, trainNumberPrefix, clearExisting } = data;
+    const { variantId, firstDeparture, interval, endTime, operatingDays, trainNumberPrefix, startBaseNumber, clearExisting } = data;
 
     const variant = await getVariant(variantId);
     if (!variant) {
@@ -23,6 +23,7 @@ export async function POST(request: NextRequest) {
       endTime,
       operatingDays,
       trainNumberPrefix,
+      startBaseNumber: startBaseNumber || 100,
     });
 
     return NextResponse.json(timetables, { status: 201 });

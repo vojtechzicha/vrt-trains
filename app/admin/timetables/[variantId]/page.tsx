@@ -4,10 +4,13 @@ import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Variant, Station, Line, Timetable, OperatingDay } from '@/types';
-import { Card, CardHeader, CardBody, Button, Input } from '@/components/ui';
+import { Card, CardHeader, CardBody, Button } from '@/components/ui';
 import { LineBadge } from '@/components/lines';
 import { TimetableGenerator } from '@/components/admin/TimetableGenerator';
 import { OperatingDaysSelector } from '@/components/admin/OperatingDaysSelector';
+import { TrainNumberInput } from '@/components/admin/TrainNumberInput';
+import { TimetableEditModal } from '@/components/admin/TimetableEditModal';
+import { calculateCoreNumber, formatTrainNumber } from '@/lib/trainNumbers';
 
 export default function TimetableEditorPage({
   params,
@@ -24,8 +27,10 @@ export default function TimetableEditorPage({
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
 
+  // Add form state
   const [showAddForm, setShowAddForm] = useState(false);
-  const [newTrainNumber, setNewTrainNumber] = useState('');
+  const [newPrefix, setNewPrefix] = useState('');
+  const [newBaseNumber, setNewBaseNumber] = useState(1);
   const [newOperatingDays, setNewOperatingDays] = useState<OperatingDay[]>([
     'monday',
     'tuesday',
@@ -37,10 +42,21 @@ export default function TimetableEditorPage({
   ]);
   const [newFirstDeparture, setNewFirstDeparture] = useState('06:00');
   const [saving, setSaving] = useState(false);
+  const [addError, setAddError] = useState<string | null>(null);
+
+  // Edit modal state
+  const [editingTimetable, setEditingTimetable] = useState<Timetable | null>(null);
 
   useEffect(() => {
     fetchData();
   }, [variantId]);
+
+  // Initialize prefix from variant code
+  useEffect(() => {
+    if (variant) {
+      setNewPrefix(variant.code);
+    }
+  }, [variant]);
 
   async function fetchData() {
     try {
@@ -85,6 +101,7 @@ export default function TimetableEditorPage({
     endTime: string;
     operatingDays: OperatingDay[];
     trainNumberPrefix: string;
+    startBaseNumber: number;
     clearExisting: boolean;
   }) {
     setGenerating(true);
@@ -109,56 +126,86 @@ export default function TimetableEditorPage({
   }
 
   async function handleAddManual() {
-    if (!variant || !newTrainNumber) return;
+    if (!variant || !newPrefix) return;
 
     setSaving(true);
+    setAddError(null);
+
+    // Calculate train number
+    const coreNumber = calculateCoreNumber(newBaseNumber, variant.direction);
+    const trainNumber = formatTrainNumber(newPrefix, coreNumber);
+
+    // Calculate departures based on variant stops and first departure time
+    const departures = variant.stations.map((stop) => {
+      const [hours, mins] = newFirstDeparture.split(':').map(Number);
+      const baseMinutes = hours * 60 + mins;
+
+      const arrivalMinutes =
+        stop.arrivalOffset !== null ? baseMinutes + stop.arrivalOffset : null;
+      const departureMinutes =
+        stop.departureOffset !== null ? baseMinutes + stop.departureOffset : null;
+
+      const formatTime = (minutes: number | null) => {
+        if (minutes === null) return null;
+        const h = Math.floor(minutes / 60) % 24;
+        const m = minutes % 60;
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+      };
+
+      return {
+        stationId: stop.stationId,
+        arrival: formatTime(arrivalMinutes),
+        departure: formatTime(departureMinutes),
+        platform: stop.platform,
+      };
+    });
+
     try {
-      // Calculate departures based on variant stops and first departure time
-      const departures = variant.stations.map((stop) => {
-        const [hours, mins] = newFirstDeparture.split(':').map(Number);
-        const baseMinutes = hours * 60 + mins;
-
-        const arrivalMinutes =
-          stop.arrivalOffset !== null ? baseMinutes + stop.arrivalOffset : null;
-        const departureMinutes =
-          stop.departureOffset !== null ? baseMinutes + stop.departureOffset : null;
-
-        const formatTime = (minutes: number | null) => {
-          if (minutes === null) return null;
-          const h = Math.floor(minutes / 60) % 24;
-          const m = minutes % 60;
-          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
-        };
-
-        return {
-          stationId: stop.stationId,
-          arrival: formatTime(arrivalMinutes),
-          departure: formatTime(departureMinutes),
-          platform: stop.platform,
-        };
-      });
-
       const res = await fetch('/api/admin/timetables', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           variantId,
-          trainNumber: newTrainNumber,
+          trainNumber,
           operatingDays: newOperatingDays,
           departures,
         }),
       });
 
-      if (res.ok) {
-        await fetchData();
-        setShowAddForm(false);
-        setNewTrainNumber('');
+      if (!res.ok) {
+        const error = await res.json();
+        if (error.code === 'DUPLICATE_TRAIN_NUMBER') {
+          setAddError('This train number is already in use');
+          return;
+        }
+        throw new Error(error.error);
       }
+
+      await fetchData();
+      setShowAddForm(false);
+      setNewPrefix(variant.code);
+      setNewBaseNumber(1);
     } catch (error) {
       console.error('Failed to add timetable:', error);
+      setAddError('Failed to add timetable');
     } finally {
       setSaving(false);
     }
+  }
+
+  async function handleEdit(id: string, updates: Partial<Timetable>) {
+    const res = await fetch(`/api/admin/timetables/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updates),
+    });
+
+    if (!res.ok) {
+      const error = await res.json();
+      throw { code: error.code, message: error.error };
+    }
+
+    await fetchData();
   }
 
   async function handleDelete(id: string) {
@@ -240,7 +287,10 @@ export default function TimetableEditorPage({
         <div>
           <h1 className="text-xl font-bold text-gray-900">Timetables</h1>
           <p className="text-sm text-gray-500">
-            {variant.code} - {variant.name}
+            {variant.code} - {variant.name}{' '}
+            <span className="text-xs text-gray-400">
+              ({variant.direction === 'outbound' ? 'odd numbers' : 'even numbers'})
+            </span>
           </p>
         </div>
       </div>
@@ -263,35 +313,37 @@ export default function TimetableEditorPage({
                 <div className="mb-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                   <h3 className="font-medium text-sm mb-3">Add New Train</h3>
                   <div className="space-y-3">
-                    <div className="grid gap-3 md:grid-cols-2">
-                      <Input
-                        label="Train Number"
-                        value={newTrainNumber}
-                        onChange={(e) => setNewTrainNumber(e.target.value)}
-                        placeholder="SPR-001"
-                        required
+                    <TrainNumberInput
+                      prefix={newPrefix}
+                      onPrefixChange={setNewPrefix}
+                      baseNumber={newBaseNumber}
+                      onBaseNumberChange={setNewBaseNumber}
+                      direction={variant.direction}
+                      error={addError || undefined}
+                    />
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        First Departure
+                      </label>
+                      <input
+                        type="time"
+                        value={newFirstDeparture}
+                        onChange={(e) => setNewFirstDeparture(e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
-                          First Departure
-                        </label>
-                        <input
-                          type="time"
-                          value={newFirstDeparture}
-                          onChange={(e) => setNewFirstDeparture(e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                      </div>
                     </div>
                     <OperatingDaysSelector
                       value={newOperatingDays}
                       onChange={setNewOperatingDays}
                     />
                     <div className="flex gap-2">
-                      <Button onClick={handleAddManual} disabled={saving || !newTrainNumber}>
+                      <Button onClick={handleAddManual} disabled={saving || !newPrefix}>
                         {saving ? 'Adding...' : 'Add Train'}
                       </Button>
-                      <Button variant="secondary" onClick={() => setShowAddForm(false)}>
+                      <Button variant="secondary" onClick={() => {
+                        setShowAddForm(false);
+                        setAddError(null);
+                      }}>
                         Cancel
                       </Button>
                     </div>
@@ -326,12 +378,20 @@ export default function TimetableEditorPage({
                           {formatOperatingDays(timetable.operatingDays)}
                         </span>
                       </div>
-                      <button
-                        onClick={() => handleDelete(timetable.id)}
-                        className="text-sm text-red-600 hover:underline"
-                      >
-                        Delete
-                      </button>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => setEditingTimetable(timetable)}
+                          className="text-sm text-blue-600 hover:underline"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          onClick={() => handleDelete(timetable.id)}
+                          className="text-sm text-red-600 hover:underline"
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -348,7 +408,8 @@ export default function TimetableEditorPage({
             <CardBody>
               <TimetableGenerator
                 onGenerate={handleGenerate}
-                defaultPrefix={variant.code.toUpperCase()}
+                defaultPrefix={variant.code}
+                direction={variant.direction}
                 generating={generating}
               />
             </CardBody>
@@ -374,6 +435,17 @@ export default function TimetableEditorPage({
           </Card>
         </div>
       </div>
+
+      {/* Edit Modal */}
+      {editingTimetable && (
+        <TimetableEditModal
+          timetable={editingTimetable}
+          variant={variant}
+          isOpen={true}
+          onClose={() => setEditingTimetable(null)}
+          onSave={handleEdit}
+        />
+      )}
     </div>
   );
 }

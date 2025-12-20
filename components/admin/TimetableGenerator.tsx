@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-import { OperatingDay } from '@/types';
+import { useState, useMemo } from 'react';
+import { OperatingDay, Direction } from '@/types';
 import { Button, Input } from '@/components/ui';
 import { OperatingDaysSelector } from './OperatingDaysSelector';
+import { calculateCoreNumber, formatTrainNumber } from '@/lib/trainNumbers';
 
 interface TimetableGeneratorProps {
   onGenerate: (params: {
@@ -12,15 +13,18 @@ interface TimetableGeneratorProps {
     endTime: string;
     operatingDays: OperatingDay[];
     trainNumberPrefix: string;
+    startBaseNumber: number;
     clearExisting: boolean;
   }) => Promise<void>;
   defaultPrefix: string;
+  direction: Direction;
   generating?: boolean;
 }
 
 export function TimetableGenerator({
   onGenerate,
   defaultPrefix,
+  direction,
   generating = false,
 }: TimetableGeneratorProps) {
   const [firstDeparture, setFirstDeparture] = useState('06:00');
@@ -36,6 +40,7 @@ export function TimetableGenerator({
     'sunday',
   ]);
   const [trainNumberPrefix, setTrainNumberPrefix] = useState(defaultPrefix);
+  const [startBaseNumber, setStartBaseNumber] = useState(100);
   const [clearExisting, setClearExisting] = useState(true);
 
   async function handleGenerate() {
@@ -45,6 +50,7 @@ export function TimetableGenerator({
       endTime,
       operatingDays,
       trainNumberPrefix,
+      startBaseNumber,
       clearExisting,
     });
   }
@@ -60,6 +66,17 @@ export function TimetableGenerator({
   };
 
   const trainCount = calculateTrainCount();
+
+  // Preview first few train numbers
+  const previewNumbers = useMemo(() => {
+    const numbers: string[] = [];
+    for (let i = 0; i < Math.min(3, trainCount); i++) {
+      const base = startBaseNumber + (i * 2); // Increment by 2 for each train
+      const core = calculateCoreNumber(base, direction);
+      numbers.push(formatTrainNumber(trainNumberPrefix, core));
+    }
+    return numbers;
+  }, [trainNumberPrefix, startBaseNumber, direction, trainCount]);
 
   return (
     <div className="space-y-4">
@@ -101,14 +118,40 @@ export function TimetableGenerator({
         </div>
       </div>
 
-      <div>
+      <div className="grid gap-4 md:grid-cols-2">
         <Input
           label="Train Number Prefix"
           value={trainNumberPrefix}
           onChange={(e) => setTrainNumberPrefix(e.target.value)}
-          placeholder="SPR"
+          placeholder="Ex"
         />
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Start Base Number
+          </label>
+          <input
+            type="number"
+            value={startBaseNumber}
+            onChange={(e) => setStartBaseNumber(parseInt(e.target.value) || 100)}
+            min={1}
+            max={9999}
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
       </div>
+
+      {trainCount > 0 && trainNumberPrefix && (
+        <div className="text-sm text-gray-500">
+          <span>Numbers: </span>
+          <span className="font-mono">
+            {previewNumbers.join(', ')}
+            {trainCount > 3 && '...'}
+          </span>
+          <span className="text-xs ml-2">
+            ({direction === 'outbound' ? 'odd' : 'even'} numbers)
+          </span>
+        </div>
+      )}
 
       <OperatingDaysSelector value={operatingDays} onChange={setOperatingDays} />
 
@@ -129,7 +172,7 @@ export function TimetableGenerator({
         <div className="text-sm text-gray-500">
           Will generate <strong>{trainCount}</strong> train{trainCount !== 1 ? 's' : ''}
         </div>
-        <Button onClick={handleGenerate} disabled={generating || trainCount === 0}>
+        <Button onClick={handleGenerate} disabled={generating || trainCount === 0 || !trainNumberPrefix}>
           {generating ? 'Generating...' : `Generate ${trainCount} Timetables`}
         </Button>
       </div>

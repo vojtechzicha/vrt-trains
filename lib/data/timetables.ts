@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { Timetable, OperatingDay, TimetableDeparture, Variant } from '@/types';
 import { generateId, addMinutesToTime } from './helpers';
+import { calculateCoreNumber, formatTrainNumber } from '@/lib/trainNumbers';
 
 const dataPath = path.join(process.cwd(), 'data', 'timetables.json');
 
@@ -54,6 +55,24 @@ export async function getTimetablesByDay(day: OperatingDay): Promise<Timetable[]
   return timetables.filter((t) => matchesDay(t.operatingDays, day));
 }
 
+/**
+ * Get all train numbers currently in use
+ */
+export async function getAllTrainNumbers(): Promise<string[]> {
+  const timetables = await getTimetables();
+  return timetables.map((t) => t.trainNumber);
+}
+
+/**
+ * Check if a train number is unique across all timetables
+ * @param trainNumber - The train number to check
+ * @param excludeId - Optional timetable ID to exclude (for edit operations)
+ */
+export async function isTrainNumberUnique(trainNumber: string, excludeId?: string): Promise<boolean> {
+  const timetables = await getTimetables();
+  return !timetables.some((t) => t.trainNumber === trainNumber && t.id !== excludeId);
+}
+
 export async function createTimetable(data: Omit<Timetable, 'id'>): Promise<Timetable> {
   const file = await readTimetablesFile();
   const timetable: Timetable = {
@@ -99,18 +118,24 @@ interface GenerateTimetablesParams {
   endTime: string;
   operatingDays: OperatingDay[];
   trainNumberPrefix: string;
+  startBaseNumber: number;
 }
 
 export async function generateTimetables(params: GenerateTimetablesParams): Promise<Timetable[]> {
-  const { variant, firstDeparture, interval, endTime, operatingDays, trainNumberPrefix } = params;
+  const { variant, firstDeparture, interval, endTime, operatingDays, trainNumberPrefix, startBaseNumber } = params;
 
   const generatedTimetables: Timetable[] = [];
   let currentDeparture = firstDeparture;
-  let trainNumber = 1;
+  let baseNumber = startBaseNumber;
+
+  // Get existing train numbers to check for duplicates
+  const existingNumbers = new Set(await getAllTrainNumbers());
 
   // Parse end time for comparison
   const [endHours, endMins] = endTime.split(':').map(Number);
   const endMinutes = endHours * 60 + endMins;
+
+  let trainCount = 0;
 
   while (true) {
     const [currentHours, currentMins] = currentDeparture.split(':').map(Number);
@@ -118,6 +143,17 @@ export async function generateTimetables(params: GenerateTimetablesParams): Prom
 
     // Stop if we've passed the end time
     if (currentMinutes > endMinutes) break;
+
+    // Calculate train number using odd/even rule
+    const coreNumber = calculateCoreNumber(baseNumber, variant.direction);
+    const trainNumber = formatTrainNumber(trainNumberPrefix, coreNumber);
+
+    // Skip if duplicate
+    if (existingNumbers.has(trainNumber)) {
+      baseNumber++;
+      continue;
+    }
+    existingNumbers.add(trainNumber);
 
     // Generate departures for this train
     const departures: TimetableDeparture[] = variant.stations.map((stop) => {
@@ -138,7 +174,7 @@ export async function generateTimetables(params: GenerateTimetablesParams): Prom
 
     const timetable: Omit<Timetable, 'id'> = {
       variantId: variant.id,
-      trainNumber: `${trainNumberPrefix}-${String(trainNumber).padStart(3, '0')}`,
+      trainNumber,
       operatingDays,
       departures,
     };
@@ -150,10 +186,11 @@ export async function generateTimetables(params: GenerateTimetablesParams): Prom
 
     // Move to next departure
     currentDeparture = addMinutesToTime(currentDeparture, interval);
-    trainNumber++;
+    baseNumber += 2; // Increment by 2 to get next odd/even number
+    trainCount++;
 
     // Safety limit
-    if (trainNumber > 100) break;
+    if (trainCount > 100) break;
   }
 
   // Save all generated timetables
