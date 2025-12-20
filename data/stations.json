@@ -239,9 +239,10 @@
       "id": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
       "code": "BHN",
       "name": "Brno hlavní nádraží",
-      "type": "regular",
+      "type": "terminal",
       "platforms": 10,
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
@@ -300,7 +301,7 @@
       "id": "f52db3b0-fecd-4853-8fbb-4b95bd000d1b",
       "code": "PDG",
       "name": "Dabrowa Gornicza",
-      "type": "hub",
+      "type": "regular",
       "platforms": 1,
       "isTerminal": false,
       "country": "Poland"
@@ -690,6 +691,285 @@
         "344341",
         "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852"
       ]
+    },
+    {
+      "id": "ea26f0d0-0966-4cac-8577-0c6162be3a24",
+      "code": "HAV",
+      "name": "Havířov",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+      "code": "PLI",
+      "name": "Praha-Libeň",
+      "type": "regular",
+      "platforms": 6,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "17f3a2f0-4bc8-44c1-a5d6-7e3aa9148d41",
+      "code": "LVH",
+      "name": "Letiště Václava Havla",
+      "type": "airport",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "6753427b-73ab-49d2-b50d-d37658250810",
+      "code": "KLA",
+      "name": "Kladno",
+      "type": "hub",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "76b7df53-d522-47ca-a2a6-bb1619a647f0",
+      "code": "KLM",
+      "name": "Kladno město",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "5204c107-d6a4-4ed9-9baf-291ed601188f",
+      "code": "KOL",
+      "name": "Kolín",
+      "type": "hub",
+      "platforms": 10,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "30c44393-f28a-466b-9920-fd9f9c4a1f6d",
+      "code": "PRC",
+      "name": "Přelouč",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "3fca2a4f-dad7-4cd8-b1a6-23afd2e25fc6",
+      "code": "CHO",
+      "name": "Choceň",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "960ade80-b6b6-48c6-8d07-493e7a6c01cf",
+      "code": "CTR",
+      "name": "Česká Třebová",
+      "type": "hub",
+      "platforms": 7,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "31c5a74f-7a57-457d-a3c2-a1252622c10e",
+      "code": "MOH",
+      "name": "Mohelnice",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "cf75fbe7-ef0d-4fdf-8ea2-3367845a548e",
+      "code": "CER",
+      "name": "Červenka",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "d5a6ba79-7a44-48dc-912f-4df004dbeba3",
+      "code": "PRE",
+      "name": "Přerov",
+      "type": "hub",
+      "platforms": 11,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "8a77129c-cb25-41f2-9408-b52c37ac0464",
+      "code": "LNB",
+      "name": "Lipník nad Bečvou",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "5d7004a2-7725-404c-b6fa-d80216993753",
+      "code": "SNO",
+      "name": "Suchdol nad Odrou",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "c0736077-4e35-4f84-9849-b10eaaf42286",
+      "code": "STU",
+      "name": "Studénka",
+      "type": "regular",
+      "platforms": 6,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a1887209-c7f1-4dd8-b68e-7ab7f262a2fe",
+      "code": "KRN",
+      "name": "Krnov",
+      "type": "hub",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "48aaeedb-34f5-4b73-96ce-12b76cda9d78",
+      "code": "KRC",
+      "name": "Krnov-Cvilín",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "e36f7545-0758-4859-8ff0-f076159d16f0",
+      "code": "OPZ",
+      "name": "Opava západ",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "5fe582c9-2960-4a67-a288-fd7d6f0ee762",
+      "code": "OPV",
+      "name": "Opava východ",
+      "type": "hub",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "49e63854-0fad-4451-a8e2-bbdfe317edcc",
+      "code": "OST",
+      "name": "Ostrava střed",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "edfef02b-bb15-45e3-afd4-b00cc90d6cf1",
+      "code": "HMU",
+      "name": "Hlubočky-Mariánské údolí",
+      "type": "request",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "c1435668-f8db-4146-90a6-da9d1fef5cd0",
+      "code": "DNB",
+      "name": "Domašov nad Bystřicí",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "9bb8c903-bac3-43bc-98bb-b8a309bba363",
+      "code": "MBE",
+      "name": "Moravský Beroun",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a3b5665c-a194-4473-a5a2-a31ca49a6fad",
+      "code": "DEB",
+      "name": "Dětřichov nad Bystřicí",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "98ffa809-d9b3-46c7-a834-063aec03da25",
+      "code": "BRU",
+      "name": "Bruntál",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "fe455ed1-1528-4342-a4ca-d9553e11cea9",
+      "code": "MNO",
+      "name": "Milotice nad Opavou",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "3910fc43-166c-48a0-94a2-2851c38b4964",
+      "code": "ZNO",
+      "name": "Znojmo",
+      "type": "hub",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "32b3c392-48c1-48ad-b103-0b2f7bc6f36b",
+      "code": "POD",
+      "name": "Podyjí",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "e09a4b66-e1b6-4520-9cac-31b72b2bedc8",
+      "code": "VNM",
+      "name": "Vyškov na Moravě",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "6484dd6f-c55d-4107-9afa-d64502be4f3a",
+      "code": "NEZ",
+      "name": "Nezamyslice",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "c9d4bc34-afaf-475b-b0b7-27eadb2ab3f3",
+      "code": "KOJ",
+      "name": "Kojetín",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
     }
   ]
 }
