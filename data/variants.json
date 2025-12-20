@@ -20,7 +20,7 @@
           "sequence": 2,
           "arrivalOffset": 60,
           "departureOffset": 61,
-          "platform": "1",
+          "platform": "3",
           "stopType": "regular"
         },
         {
@@ -85,7 +85,7 @@
           "sequence": 2,
           "arrivalOffset": 60,
           "departureOffset": 61,
-          "platform": "1",
+          "platform": "3",
           "stopType": "regular"
         },
         {
@@ -288,7 +288,7 @@
           "sequence": 7,
           "arrivalOffset": 247,
           "departureOffset": 248,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -458,7 +458,7 @@
           "sequence": 2,
           "arrivalOffset": 60,
           "departureOffset": 61,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -563,7 +563,7 @@
           "sequence": 7,
           "arrivalOffset": 247,
           "departureOffset": 248,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -734,7 +734,7 @@
           "sequence": 2,
           "arrivalOffset": 60,
           "departureOffset": 61,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -896,7 +896,7 @@
           "sequence": 2,
           "arrivalOffset": 60,
           "departureOffset": 61,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -970,7 +970,7 @@
           "sequence": 3,
           "arrivalOffset": 70,
           "departureOffset": 71,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -1002,7 +1002,7 @@
           "sequence": 7,
           "arrivalOffset": 139,
           "departureOffset": 140,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -1243,7 +1243,7 @@
           "sequence": 15,
           "arrivalOffset": 270,
           "departureOffset": 271,
-          "platform": "1",
+          "platform": "3",
           "stopType": "regular"
         },
         {
@@ -1275,7 +1275,7 @@
           "sequence": 19,
           "arrivalOffset": 339,
           "departureOffset": 340,
-          "platform": "1",
+          "platform": "2",
           "stopType": "regular"
         },
         {
@@ -1324,7 +1324,7 @@
           "sequence": 3,
           "arrivalOffset": 70,
           "departureOffset": 71,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -1356,7 +1356,7 @@
           "sequence": 7,
           "arrivalOffset": 139,
           "departureOffset": 140,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -1429,7 +1429,7 @@
           "sequence": 3,
           "arrivalOffset": 70,
           "departureOffset": 71,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -1461,7 +1461,7 @@
           "sequence": 7,
           "arrivalOffset": 139,
           "departureOffset": 140,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -1542,7 +1542,7 @@
           "sequence": 6,
           "arrivalOffset": 72,
           "departureOffset": 73,
-          "platform": "1",
+          "platform": "3",
           "stopType": "regular"
         },
         {
@@ -1574,7 +1574,7 @@
           "sequence": 10,
           "arrivalOffset": 141,
           "departureOffset": 142,
-          "platform": "1",
+          "platform": "2",
           "stopType": "regular"
         },
         {
@@ -1631,7 +1631,7 @@
           "sequence": 4,
           "arrivalOffset": 29,
           "departureOffset": 30,
-          "platform": "1",
+          "platform": "3",
           "stopType": "regular"
         },
         {
@@ -1663,7 +1663,7 @@
           "sequence": 8,
           "arrivalOffset": 98,
           "departureOffset": 99,
-          "platform": "1",
+          "platform": "2",
           "stopType": "regular"
         },
         {
@@ -1712,7 +1712,7 @@
           "sequence": 3,
           "arrivalOffset": 70,
           "departureOffset": 71,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -1865,7 +1865,7 @@
           "sequence": 3,
           "arrivalOffset": 70,
           "departureOffset": 71,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -1954,7 +1954,7 @@
           "sequence": 3,
           "arrivalOffset": 70,
           "departureOffset": 71,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -2019,7 +2019,7 @@
           "sequence": 4,
           "arrivalOffset": 58,
           "departureOffset": 59,
-          "platform": "1",
+          "platform": "2",
           "stopType": "regular"
         },
         {
@@ -2108,7 +2108,7 @@
           "sequence": 8,
           "arrivalOffset": 158,
           "departureOffset": 159,
-          "platform": "1",
+          "platform": "2",
           "stopType": "regular"
         },
         {
@@ -2261,7 +2261,7 @@
           "sequence": 16,
           "arrivalOffset": 335,
           "departureOffset": 336,
-          "platform": "1",
+          "platform": "2",
           "stopType": "regular"
         },
         {
@@ -3844,7 +3844,7 @@
           "sequence": 1,
           "arrivalOffset": null,
           "departureOffset": 0,
-          "platform": "1",
+          "platform": "5",
           "stopType": "regular"
         },
         {
@@ -3852,7 +3852,7 @@
           "sequence": 2,
           "arrivalOffset": 14,
           "departureOffset": 15,
-          "platform": "1",
+          "platform": "3",
           "stopType": "regular"
         },
         {
@@ -4095,7 +4095,7 @@
           "sequence": 9,
           "arrivalOffset": 167,
           "departureOffset": 168,
-          "platform": "1",
+          "platform": "2",
           "stopType": "regular"
         },
         {
@@ -4103,7 +4103,7 @@
           "sequence": 10,
           "arrivalOffset": 182,
           "departureOffset": null,
-          "platform": "1",
+          "platform": "5",
           "stopType": "regular"
         }
       ]
@@ -4774,7 +4774,7 @@
           "sequence": 10,
           "arrivalOffset": 79,
           "departureOffset": 80,
-          "platform": "1",
+          "platform": "3",
           "stopType": "regular"
         },
         {
@@ -4839,7 +4839,7 @@
           "sequence": 4,
           "arrivalOffset": 32,
           "departureOffset": 33,
-          "platform": "1",
+          "platform": "4",
           "stopType": "regular"
         },
         {
@@ -5590,7 +5590,7 @@
           "sequence": 3,
           "arrivalOffset": 46,
           "departureOffset": 47,
-          "platform": "1",
+          "platform": "5",
           "stopType": "regular"
         },
         {
@@ -5703,7 +5703,7 @@
           "sequence": 3,
           "arrivalOffset": 46,
           "departureOffset": 47,
-          "platform": "1",
+          "platform": "5",
           "stopType": "regular"
         },
         {
@@ -5768,7 +5768,7 @@
           "sequence": 3,
           "arrivalOffset": 46,
           "departureOffset": null,
-          "platform": "1",
+          "platform": "5",
           "stopType": "regular"
         }
       ]
@@ -5880,6 +5880,104 @@
           "stationId": "3910fc43-166c-48a0-94a2-2851c38b4964",
           "sequence": 13,
           "arrivalOffset": 193,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "36493cda-6a72-43a6-bbee-a78939b1aa21",
+      "lineId": "56cf49d2-4fc7-4273-b32e-81020af461d6",
+      "code": "R28",
+      "name": "Leoš Janáček",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "d5a6ba79-7a44-48dc-912f-4df004dbeba3",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "c9d4bc34-afaf-475b-b0b7-27eadb2ab3f3",
+          "sequence": 2,
+          "arrivalOffset": 11,
+          "departureOffset": 12,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6484dd6f-c55d-4107-9afa-d64502be4f3a",
+          "sequence": 3,
+          "arrivalOffset": 22,
+          "departureOffset": 23,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e09a4b66-e1b6-4520-9cac-31b72b2bedc8",
+          "sequence": 4,
+          "arrivalOffset": 32,
+          "departureOffset": 33,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 5,
+          "arrivalOffset": 68,
+          "departureOffset": 69,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "32b3c392-48c1-48ad-b103-0b2f7bc6f36b",
+          "sequence": 6,
+          "arrivalOffset": 86,
+          "departureOffset": 87,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "3910fc43-166c-48a0-94a2-2851c38b4964",
+          "sequence": 7,
+          "arrivalOffset": 115,
+          "departureOffset": null,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "139a8c47-9e47-4f66-8c92-f773006f094e",
+      "lineId": "56cf49d2-4fc7-4273-b32e-81020af461d6",
+      "code": "R28",
+      "name": "Leoš Janáček",
+      "direction": "inbound",
+      "stations": [
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 1,
+          "arrivalOffset": null,
+          "departureOffset": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "32b3c392-48c1-48ad-b103-0b2f7bc6f36b",
+          "sequence": 2,
+          "arrivalOffset": 17,
+          "departureOffset": 18,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "3910fc43-166c-48a0-94a2-2851c38b4964",
+          "sequence": 3,
+          "arrivalOffset": 46,
           "departureOffset": null,
           "platform": "1",
           "stopType": "regular"
