@@ -168,7 +168,6 @@ export async function generateTimetables(params: GenerateTimetablesParams): Prom
         stationId: stop.stationId,
         arrival,
         departure,
-        platform: stop.platform,
       };
     });
 

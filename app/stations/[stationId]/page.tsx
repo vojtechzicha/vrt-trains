@@ -1,12 +1,13 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getStation, getVariantsByStation, getLines, getTimetables, getStations } from '@/lib/data';
-import { StationLines, DirectConnections } from '@/components/stations';
+import { PlatformDiagram, DirectConnections } from '@/components/stations';
 import { Card, CardHeader, CardBody, Badge } from '@/components/ui';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui';
 import { LineBadge } from '@/components/lines';
 import { compareTime } from '@/lib/utils';
 import { getDirectConnections } from '@/lib/connections';
+import { aggregatePlatformData } from '@/lib/platforms';
 
 interface StationDetailPageProps {
   params: Promise<{ stationId: string }>;
@@ -37,6 +38,9 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
   const lineIds = [...new Set(variants.map((v) => v.lineId))];
   const lines = allLines.filter((l) => lineIds.includes(l.id));
 
+  // Aggregate platform data for the diagram
+  const platformData = aggregatePlatformData(stationId, variants, lines);
+
   // Get departures from this station
   type DepartureInfo = {
     time: string;
@@ -66,13 +70,17 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
     const lastStop = tt.departures[tt.departures.length - 1];
     const destStation = allStations.find((s) => s.id === lastStop.stationId);
 
+    // Get platform from variant (source of truth)
+    const variantStop = variant.stations.find((s) => s.stationId === stationId);
+    const platform = variantStop?.platform || '';
+
     departures.push({
       time: stop.departure,
       trainNumber: tt.trainNumber,
       lineId: variant.lineId,
       variantCode: variant.code,
       destination: destStation?.name || 'Unknown',
-      platform: stop.platform,
+      platform,
     });
   });
 
@@ -112,10 +120,10 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
       <div className="grid gap-6 lg:grid-cols-2">
         <Card>
           <CardHeader>
-            <h2 className="text-lg font-semibold">Lines</h2>
+            <h2 className="text-lg font-semibold">Platforms</h2>
           </CardHeader>
           <CardBody>
-            <StationLines lines={lines} />
+            <PlatformDiagram platforms={platformData} stationPlatformCount={station.platforms} />
           </CardBody>
         </Card>
 

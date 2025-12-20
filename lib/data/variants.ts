@@ -110,3 +110,50 @@ export async function duplicateVariant(
 
   return createVariant(newVariant);
 }
+
+export async function updateVariantPlatformAtStation(
+  variantId: string,
+  stationId: string,
+  platform: string
+): Promise<Variant> {
+  const file = await readVariantsFile();
+  const index = file.variants.findIndex((v) => v.id === variantId);
+  if (index === -1) {
+    throw new Error(`Variant with id ${variantId} not found`);
+  }
+
+  const variant = file.variants[index];
+  const stationIndex = variant.stations.findIndex((s) => s.stationId === stationId);
+  if (stationIndex === -1) {
+    throw new Error(`Station ${stationId} not found in variant ${variantId}`);
+  }
+
+  variant.stations[stationIndex] = {
+    ...variant.stations[stationIndex],
+    platform,
+  };
+
+  await writeVariantsFile(file);
+  return variant;
+}
+
+export async function updateMultipleVariantPlatforms(
+  updates: { variantId: string; stationId: string; platform: string }[]
+): Promise<void> {
+  const file = await readVariantsFile();
+
+  for (const update of updates) {
+    const variant = file.variants.find((v) => v.id === update.variantId);
+    if (!variant) continue;
+
+    const stationIndex = variant.stations.findIndex((s) => s.stationId === update.stationId);
+    if (stationIndex === -1) continue;
+
+    variant.stations[stationIndex] = {
+      ...variant.stations[stationIndex],
+      platform: update.platform,
+    };
+  }
+
+  await writeVariantsFile(file);
+}

@@ -156,6 +156,14 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
                 Cancel
               </Button>
             </div>
+            <div className="border-t pt-4 mt-6">
+              <Link
+                href={`/admin/stations/${id}/platforms`}
+                className="text-blue-600 hover:underline text-sm"
+              >
+                Manage Platform Assignments &rarr;
+              </Link>
+            </div>
           </form>
         </CardBody>
       </Card>

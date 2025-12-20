@@ -65,7 +65,6 @@ export interface TimetableDeparture {
   stationId: string;
   arrival: string | null;
   departure: string | null;
-  platform: string;
 }
 
 export interface Timetable {

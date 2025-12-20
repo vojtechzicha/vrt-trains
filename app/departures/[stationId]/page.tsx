@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getStation, getVariantsByStation, getLines, getTimetables, getStations, getMemberStations } from '@/lib/data';
-import { DepartureBoard } from '@/components/departures';
+import { DepartureBoardWithTabs } from '@/components/departures';
 import { DepartureInfo, Station, Line, Variant, Timetable } from '@/types';
 import { compareTime } from '@/lib/utils';
 
@@ -53,6 +53,10 @@ function buildDeparturesForStation(
       .map((d) => stationMap.get(d.stationId)?.name || '')
       .filter(Boolean);
 
+    // Get platform from variant (source of truth)
+    const variantStop = variant.stations.find((s) => s.stationId === physicalStationId);
+    const platform = variantStop?.platform || '';
+
     departures.push({
       time: stop.departure,
       lineId: line.id,
@@ -62,7 +66,7 @@ function buildDeparturesForStation(
       variantCode: variant.code,
       variantName: variant.name,
       destination: destStation?.name || 'Unknown',
-      platform: stop.platform,
+      platform,
       trainNumber: tt.trainNumber,
       operatingDays: tt.operatingDays,
       viaStations,
@@ -134,7 +138,12 @@ export default async function DepartureBoardPage({ params }: DepartureBoardPageP
         </Link>
       </div>
 
-      <DepartureBoard stationName={station.name} departures={departures} />
+      <DepartureBoardWithTabs
+        stationName={station.name}
+        departures={departures}
+        platformCount={station.platforms}
+        isVirtual={station.isVirtual || false}
+      />
     </div>
   );
 }

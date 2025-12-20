@@ -75,7 +75,6 @@ export function TimetableEditModal({
         stationId: stop.stationId,
         arrival: formatTime(arrivalMinutes),
         departure: formatTime(departureMinutes),
-        platform: stop.platform,
       };
     });
   }
