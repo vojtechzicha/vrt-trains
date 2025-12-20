@@ -9,6 +9,9 @@ export {
   findCommonStationWithSorted,
   getTimeAtStation,
   sortEntriesHolistically,
+  parseTimeToMinutes,
+  isOvernightTrain,
+  applyOvernightPenalty,
   type TimetableEntry,
   type BuildTimetableResult,
 } from './buildTimetableData';

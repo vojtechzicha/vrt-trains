@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getStation, getVariantsByStation, getLines, getTimetables, getStations } from '@/lib/data';
-import { StationLines } from '@/components/stations';
+import { StationLines, DirectConnections } from '@/components/stations';
 import { Card, CardHeader, CardBody, Badge } from '@/components/ui';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui';
 import { LineBadge } from '@/components/lines';
 import { compareTime } from '@/lib/utils';
+import { getDirectConnections } from '@/lib/connections';
 
 interface StationDetailPageProps {
   params: Promise<{ stationId: string }>;
@@ -77,6 +78,15 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
 
   // Sort by departure time
   departures.sort((a, b) => compareTime(a.time, b.time));
+
+  // Get direct connections from this station
+  const directConnections = getDirectConnections({
+    stationId,
+    variants,
+    timetables: allTimetables,
+    lines: allLines,
+    stations: allStations,
+  });
 
   return (
     <div>
@@ -157,6 +167,17 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
                 </TableBody>
               </Table>
             )}
+          </CardBody>
+        </Card>
+      </div>
+
+      <div className="mt-6">
+        <Card>
+          <CardHeader>
+            <h2 className="text-lg font-semibold">Direct Connections</h2>
+          </CardHeader>
+          <CardBody>
+            <DirectConnections connections={directConnections} />
           </CardBody>
         </Card>
       </div>

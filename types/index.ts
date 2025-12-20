@@ -99,3 +99,22 @@ export interface DepartureInfo {
 export interface StationWithLines extends Station {
   lines: Line[];
 }
+
+// Connection types for station direct connections
+export interface LineConnection {
+  lineId: string;
+  lineIdentifier: string;
+  lineColor: string;
+  lineTextColor: string;
+  travelTimeMinutes: number;
+  trainsPerDay: number;
+}
+
+export interface DirectConnection {
+  destinationStationId: string;
+  destinationStationName: string;
+  destinationStationCode: string;
+  destinationType: StationType;
+  isVirtual: boolean;
+  lines: LineConnection[];
+}
