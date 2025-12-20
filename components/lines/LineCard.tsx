@@ -5,9 +5,12 @@ import { LineBadge } from './LineBadge';
 
 interface LineCardProps {
   line: Line;
+  variantCount?: number;
 }
 
-export function LineCard({ line }: LineCardProps) {
+export function LineCard({ line, variantCount }: LineCardProps) {
+  const count = variantCount ?? line.variants.length;
+
   return (
     <Link href={`/lines/${line.id}`}>
       <Card className="hover:shadow-md transition-shadow cursor-pointer">
@@ -23,7 +26,7 @@ export function LineCard({ line }: LineCardProps) {
             <p className="text-sm text-gray-500 capitalize">{line.type}</p>
           </div>
           <div className="text-sm text-gray-400">
-            {line.variants.length} variant{line.variants.length !== 1 ? 's' : ''}
+            {count} variant{count !== 1 ? 's' : ''}
           </div>
         </CardBody>
       </Card>

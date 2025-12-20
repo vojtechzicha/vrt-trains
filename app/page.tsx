@@ -1,12 +1,21 @@
 import Link from 'next/link';
-import { getLines, getStations } from '@/lib/data';
+import { getLines, getStations, getVariants } from '@/lib/data';
 import { Card, CardHeader, CardBody } from '@/components/ui';
 import { LineCard } from '@/components/lines';
 import { StationCard } from '@/components/stations';
 
 export default async function Home() {
-  const lines = await getLines();
-  const stations = await getStations();
+  const [lines, stations, variants] = await Promise.all([
+    getLines(),
+    getStations(),
+    getVariants(),
+  ]);
+
+  // Calculate actual variant counts from variants.json
+  const variantCounts = new Map<string, number>();
+  for (const variant of variants) {
+    variantCounts.set(variant.lineId, (variantCounts.get(variant.lineId) || 0) + 1);
+  }
 
   return (
     <div>
@@ -33,7 +42,7 @@ export default async function Home() {
         <Card>
           <CardBody className="text-center">
             <div className="text-3xl font-bold text-purple-600">
-              {lines.reduce((acc, l) => acc + l.variants.length, 0)}
+              {variants.length}
             </div>
             <div className="text-gray-500">Route Variants</div>
           </CardBody>
@@ -50,7 +59,7 @@ export default async function Home() {
           </div>
           <div className="space-y-3">
             {lines.slice(0, 4).map((line) => (
-              <LineCard key={line.id} line={line} />
+              <LineCard key={line.id} line={line} variantCount={variantCounts.get(line.id) || 0} />
             ))}
           </div>
         </div>
