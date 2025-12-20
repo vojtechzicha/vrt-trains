@@ -37,6 +37,51 @@
       "textColor": "#FFFFFF",
       "type": "intercity",
       "variants": []
+    },
+    {
+      "id": "f1a67be8-bf6d-4a4f-bca9-3ee3616d70ed",
+      "identifier": "Ex11",
+      "name": "Ex11",
+      "color": "#E31E24",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "430b46b7-8434-4023-bdd2-0ac562ff4f76",
+      "identifier": "R18",
+      "name": "R18",
+      "color": "#00A651",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "8f2e8061-8a6a-4eff-8e0b-a515d16edf94",
+      "identifier": "R60",
+      "name": "ODIS R60",
+      "color": "#8E44AD",
+      "textColor": "#FFFFFF",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "89ba7ca2-16a4-4b8e-aeef-dcb3bd0b661a",
+      "identifier": "R27",
+      "name": "R27",
+      "color": "#00A651",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "56cf49d2-4fc7-4273-b32e-81020af461d6",
+      "identifier": "R28",
+      "name": "R28",
+      "color": "#00A651",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
     }
   ]
 }
