@@ -98,83 +98,92 @@ export function DirectConnections({ connections }: DirectConnectionsProps) {
   const lineGroups = groupByLine(minorConnections);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div className="space-y-6">
       {/* Featured stations (virtual, hubs, terminals, multi-line) */}
-      {featuredConnections.map((connection) => {
-        const lineGroupsByTime = groupLinesByTime(connection.lines);
+      {featuredConnections.length > 0 && (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          {featuredConnections.map((connection) => {
+            const lineGroupsByTime = groupLinesByTime(connection.lines);
 
-        return (
-          <div
-            key={connection.destinationStationId}
-            className="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors"
-          >
-            <Link
-              href={`/stations/${connection.destinationStationId}`}
-              className="font-medium text-gray-900 hover:text-blue-600 transition-colors"
-            >
-              {connection.destinationStationName}
-              {connection.isVirtual && (
-                <span className="ml-2 text-xs text-gray-400">(city)</span>
-              )}
-            </Link>
-            <div className="mt-3 space-y-2">
-              {lineGroupsByTime.map((group) => {
-                const travelTime = group[0].travelTimeMinutes;
-                const totalTrains = group.reduce((sum, line) => sum + line.trainsPerDay, 0);
-
-                return (
-                  <div key={travelTime} className="flex items-center gap-2 text-sm flex-wrap">
-                    <div className="flex items-center gap-1">
-                      {group.map((line) => (
-                        <Link key={line.lineId} href={`/lines/${line.lineId}`}>
-                          <LineBadge
-                            identifier={line.lineIdentifier}
-                            color={line.lineColor}
-                            textColor={line.lineTextColor}
-                            className="hover:opacity-80 transition-opacity cursor-pointer"
-                          />
-                        </Link>
-                      ))}
-                    </div>
-                    <span className="text-gray-600">{formatTravelTime(travelTime)}</span>
-                    <span className="text-gray-400 text-xs">({formatFrequency(totalTrains)})</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
-
-      {/* Line-grouped minor stations */}
-      {lineGroups.map((lineGroup) => (
-        <div
-          key={lineGroup.lineId}
-          className="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors"
-        >
-          <Link href={`/lines/${lineGroup.lineId}`} className="inline-block">
-            <LineBadge
-              identifier={lineGroup.lineIdentifier}
-              color={lineGroup.lineColor}
-              textColor={lineGroup.lineTextColor}
-              className="hover:opacity-80 transition-opacity cursor-pointer"
-            />
-          </Link>
-          <div className="mt-3 space-y-1.5">
-            {lineGroup.stations.map((station) => (
-              <div key={station.stationId} className="flex items-center justify-between text-sm">
+            return (
+              <div
+                key={connection.destinationStationId}
+                className="border border-gray-200 rounded-lg p-3 hover:border-gray-300 transition-colors"
+              >
                 <Link
-                  href={`/stations/${station.stationId}`}
-                  className="text-gray-700 hover:text-blue-600 transition-colors"
+                  href={`/stations/${connection.destinationStationId}`}
+                  className="font-medium text-gray-900 hover:text-blue-600 transition-colors text-sm"
                 >
-                  {station.stationName}
+                  {connection.destinationStationName}
+                  {connection.isVirtual && (
+                    <span className="ml-1 text-xs text-gray-400">(city)</span>
+                  )}
                 </Link>
-                <span className="text-gray-500 ml-2">{formatTravelTime(station.travelTimeMinutes)}</span>
+                <div className="mt-2 space-y-1">
+                  {lineGroupsByTime.map((group) => {
+                    const travelTime = group[0].travelTimeMinutes;
+
+                    return (
+                      <div key={travelTime} className="flex items-center gap-2 text-xs">
+                        <div className="flex items-center gap-0.5">
+                          {group.map((line) => (
+                            <Link key={line.lineId} href={`/lines/${line.lineId}`}>
+                              <LineBadge
+                                identifier={line.lineIdentifier}
+                                color={line.lineColor}
+                                textColor={line.lineTextColor}
+                                className="hover:opacity-80 transition-opacity cursor-pointer text-xs"
+                              />
+                            </Link>
+                          ))}
+                        </div>
+                        <span className="text-gray-500">{formatTravelTime(travelTime)}</span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      ))}
+      )}
+
+      {/* All stops by line - full width table format */}
+      {lineGroups.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-sm font-medium text-gray-700">All Stops</h3>
+          {lineGroups.map((lineGroup) => (
+            <div key={lineGroup.lineId}>
+              <div className="flex items-center gap-2 mb-2">
+                <Link href={`/lines/${lineGroup.lineId}`}>
+                  <LineBadge
+                    identifier={lineGroup.lineIdentifier}
+                    color={lineGroup.lineColor}
+                    textColor={lineGroup.lineTextColor}
+                    className="hover:opacity-80 transition-opacity cursor-pointer"
+                  />
+                </Link>
+              </div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                {lineGroup.stations.map((station, idx) => (
+                  <span key={station.stationId} className="flex items-center gap-1 text-gray-600">
+                    <Link
+                      href={`/stations/${station.stationId}`}
+                      className="hover:text-blue-600 transition-colors"
+                    >
+                      {station.stationName}
+                    </Link>
+                    <span className="text-gray-400 text-xs">{formatTravelTime(station.travelTimeMinutes)}</span>
+                    {idx < lineGroup.stations.length - 1 && (
+                      <span className="text-gray-300 ml-2">·</span>
+                    )}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

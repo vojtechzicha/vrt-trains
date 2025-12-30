@@ -36,7 +36,8 @@ async function writeVariantsFile(data: VariantsData): Promise<void> {
 
 export async function getRoutes(): Promise<RouteCorridor[]> {
   const parsed = await readRoutesFile();
-  return parsed.routes;
+  // Always sort routes by name
+  return parsed.routes.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export async function getRoute(id: string): Promise<RouteCorridor | undefined> {
