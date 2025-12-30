@@ -128,6 +128,10 @@ export async function generateTimetables(params: GenerateTimetablesParams): Prom
   let currentDeparture = firstDeparture;
   let baseNumber = startBaseNumber;
 
+  // The first station's departureOffset includes dwell time, but user expects
+  // firstDeparture to be the actual departure time from station 1
+  const firstStationOffset = variant.stations[0]?.departureOffset ?? 0;
+
   // Get existing train numbers to check for duplicates
   const existingNumbers = new Set(await getAllTrainNumbers());
 
@@ -156,12 +160,13 @@ export async function generateTimetables(params: GenerateTimetablesParams): Prom
     existingNumbers.add(trainNumber);
 
     // Generate departures for this train
+    // Subtract firstStationOffset so that firstDeparture is the actual departure from station 1
     const departures: TimetableDeparture[] = variant.stations.map((stop) => {
       const arrival = stop.arrivalOffset !== null
-        ? addMinutesToTime(currentDeparture, stop.arrivalOffset)
+        ? addMinutesToTime(currentDeparture, stop.arrivalOffset - firstStationOffset)
         : null;
       const departure = stop.departureOffset !== null
-        ? addMinutesToTime(currentDeparture, stop.departureOffset)
+        ? addMinutesToTime(currentDeparture, stop.departureOffset - firstStationOffset)
         : null;
 
       return {
