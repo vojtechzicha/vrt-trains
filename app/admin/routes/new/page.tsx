@@ -1,16 +1,18 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Station, RouteCorridor } from '@/types';
 import { Card, CardBody } from '@/components/ui';
 import { RouteCorridorEditor } from '@/components/admin/RouteCorridorEditor';
+import { buildRoutePathLookup } from '@/components/admin/RoutePathEditor';
 
 export default function NewRoutePage() {
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [stations, setStations] = useState<Station[]>([]);
+  const [routes, setRoutes] = useState<RouteCorridor[]>([]);
   const [loading, setLoading] = useState(true);
 
   const [routeData, setRouteData] = useState<
@@ -22,20 +24,28 @@ export default function NewRoutePage() {
   });
 
   useEffect(() => {
-    async function fetchStations() {
+    async function fetchData() {
       try {
-        const response = await fetch('/api/admin/stations');
-        const data = await response.json();
+        const [stationsRes, routesRes] = await Promise.all([
+          fetch('/api/admin/stations'),
+          fetch('/api/admin/routes'),
+        ]);
+        const stationsData = await stationsRes.json();
+        const routesData = await routesRes.json();
         // Filter to physical stations only
-        setStations(data.filter((s: Station) => !s.isVirtual));
+        setStations(stationsData.filter((s: Station) => !s.isVirtual));
+        setRoutes(routesData);
       } catch (error) {
-        console.error('Failed to fetch stations:', error);
+        console.error('Failed to fetch data:', error);
       } finally {
         setLoading(false);
       }
     }
-    fetchStations();
+    fetchData();
   }, []);
+
+  // Build lookup for prefilling station data
+  const routePathLookup = useMemo(() => buildRoutePathLookup(routes), [routes]);
 
   async function handleSave() {
     setSaving(true);
@@ -85,6 +95,7 @@ export default function NewRoutePage() {
             stations={stations}
             value={routeData}
             onChange={setRouteData}
+            routePathLookup={routePathLookup}
             onSave={handleSave}
             onCancel={() => router.push('/admin/routes')}
             saving={saving}

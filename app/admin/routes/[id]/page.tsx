@@ -1,17 +1,19 @@
 'use client';
 
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect, use, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Station, RouteCorridor, RoutePath, Variant } from '@/types';
 import { Card, CardBody } from '@/components/ui';
 import { RouteCorridorEditor } from '@/components/admin/RouteCorridorEditor';
+import { buildRoutePathLookup } from '@/components/admin/RoutePathEditor';
 
 export default function EditRoutePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const router = useRouter();
   const [route, setRoute] = useState<RouteCorridor | null>(null);
   const [stations, setStations] = useState<Station[]>([]);
+  const [allRoutes, setAllRoutes] = useState<RouteCorridor[]>([]);
   const [lockedPathIds, setLockedPathIds] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -30,10 +32,11 @@ export default function EditRoutePage({ params }: { params: Promise<{ id: string
 
   async function fetchData() {
     try {
-      const [routeRes, stationsRes, variantsRes] = await Promise.all([
+      const [routeRes, stationsRes, variantsRes, allRoutesRes] = await Promise.all([
         fetch(`/api/admin/routes/${id}`),
         fetch('/api/admin/stations'),
         fetch('/api/admin/variants'),
+        fetch('/api/admin/routes'),
       ]);
 
       if (!routeRes.ok) {
@@ -44,6 +47,7 @@ export default function EditRoutePage({ params }: { params: Promise<{ id: string
       const routeData = await routeRes.json();
       const stationsData = await stationsRes.json();
       const variantsData: Variant[] = await variantsRes.json();
+      const allRoutesData: RouteCorridor[] = await allRoutesRes.json();
 
       setRoute(routeData);
       setRouteData({
@@ -58,6 +62,7 @@ export default function EditRoutePage({ params }: { params: Promise<{ id: string
 
       // Filter to physical stations only
       setStations(stationsData.filter((s: Station) => !s.isVirtual));
+      setAllRoutes(allRoutesData);
 
       // Find which paths are locked (used by variants)
       const locked: string[] = [];
@@ -110,6 +115,9 @@ export default function EditRoutePage({ params }: { params: Promise<{ id: string
     }
   }
 
+  // Build lookup for prefilling station data
+  const routePathLookup = useMemo(() => buildRoutePathLookup(allRoutes), [allRoutes]);
+
   if (loading) {
     return <div className="flex items-center justify-center py-12">Loading...</div>;
   }
@@ -147,6 +155,7 @@ export default function EditRoutePage({ params }: { params: Promise<{ id: string
             value={routeData}
             onChange={setRouteData}
             lockedPathIds={lockedPathIds}
+            routePathLookup={routePathLookup}
             onSave={handleSave}
             onCancel={() => router.push('/admin/routes')}
             saving={saving}

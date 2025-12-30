@@ -1,8 +1,46 @@
 'use client';
 
 import { useState, useRef, KeyboardEvent } from 'react';
-import { Station, RoutePath, RoutePathStop, ReverseTimeAdjustment } from '@/types';
+import { Station, RoutePath, RoutePathStop, ReverseTimeAdjustment, RouteCorridor } from '@/types';
 import { StationSelector } from './StationSelector';
+
+// Types for route path lookup (prefill when adding stations)
+export interface RouteSegmentLookup {
+  baseTimeFromPrevious: number;
+  distanceFromPrevious: number;
+  defaultDwellTime: number;
+}
+
+export type RoutePathLookup = Map<string, RouteSegmentLookup>;
+
+/**
+ * Build a lookup map of station pairs to their segment data.
+ * Used to prefill distance/time/dwell when adding stations.
+ */
+export function buildRoutePathLookup(routes: RouteCorridor[]): RoutePathLookup {
+  const lookup = new Map<string, RouteSegmentLookup>();
+
+  for (const route of routes) {
+    for (const path of route.paths) {
+      for (let i = 1; i < path.stops.length; i++) {
+        const prev = path.stops[i - 1];
+        const curr = path.stops[i];
+        const key = `${prev.stationId}:${curr.stationId}`;
+
+        // Only store if not already present (first wins)
+        if (!lookup.has(key)) {
+          lookup.set(key, {
+            baseTimeFromPrevious: curr.baseTimeFromPrevious,
+            distanceFromPrevious: curr.distanceFromPrevious,
+            defaultDwellTime: curr.defaultDwellTime,
+          });
+        }
+      }
+    }
+  }
+
+  return lookup;
+}
 
 const countryFlags: Record<string, string> = {
   Czech: '',
@@ -22,6 +60,7 @@ interface RoutePathEditorProps {
   value: RoutePath;
   onChange: (path: RoutePath) => void;
   isLocked?: boolean; // True if path is used by variants (structural changes blocked)
+  routePathLookup?: RoutePathLookup; // Lookup for prefilling distance/time/dwell
 }
 
 export function RoutePathEditor({
@@ -29,6 +68,7 @@ export function RoutePathEditor({
   value,
   onChange,
   isLocked = false,
+  routePathLookup,
 }: RoutePathEditorProps) {
   const [isAddingNew, setIsAddingNew] = useState(false);
   const [showReverseAdjustments, setShowReverseAdjustments] = useState(
@@ -69,13 +109,31 @@ export function RoutePathEditor({
   }
 
   function handleAddStation(stationId: string) {
+    // Try to prefill from existing routes
+    let defaultDistance = 10;
+    let defaultTime = 10;
+    let defaultDwell = 1;
+
+    if (value.stops.length > 0 && routePathLookup) {
+      const prevStationId = value.stops[value.stops.length - 1].stationId;
+      const keyForward = `${prevStationId}:${stationId}`;
+      const keyBackward = `${stationId}:${prevStationId}`;
+      const segment = routePathLookup.get(keyForward) ?? routePathLookup.get(keyBackward);
+
+      if (segment) {
+        defaultDistance = segment.distanceFromPrevious;
+        defaultTime = segment.baseTimeFromPrevious;
+        defaultDwell = segment.defaultDwellTime;
+      }
+    }
+
     const newStop: RoutePathStop = {
       stationId,
       sequence: value.stops.length + 1,
-      distanceFromPrevious: value.stops.length === 0 ? 0 : 10,
+      distanceFromPrevious: value.stops.length === 0 ? 0 : defaultDistance,
       distanceKm: 0, // Will be recalculated
-      baseTimeFromPrevious: value.stops.length === 0 ? 0 : 10,
-      defaultDwellTime: 1,
+      baseTimeFromPrevious: value.stops.length === 0 ? 0 : defaultTime,
+      defaultDwellTime: defaultDwell,
     };
 
     const newStops = [...value.stops, newStop];

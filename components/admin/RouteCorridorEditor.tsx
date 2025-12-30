@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Station, RouteCorridor, RoutePath, RoutePathStop } from '@/types';
-import { RoutePathEditor } from './RoutePathEditor';
+import { RoutePathEditor, RoutePathLookup } from './RoutePathEditor';
 import { Button } from '@/components/ui';
 
 interface RouteCorridorEditorProps {
@@ -10,6 +10,7 @@ interface RouteCorridorEditorProps {
   value: Omit<RouteCorridor, 'id' | 'createdAt' | 'updatedAt'>;
   onChange: (route: Omit<RouteCorridor, 'id' | 'createdAt' | 'updatedAt'>) => void;
   lockedPathIds?: string[]; // Paths that are used by variants
+  routePathLookup?: RoutePathLookup; // Lookup for prefilling distance/time/dwell
   onSave: () => void;
   onCancel: () => void;
   saving?: boolean;
@@ -20,6 +21,7 @@ export function RouteCorridorEditor({
   value,
   onChange,
   lockedPathIds = [],
+  routePathLookup,
   onSave,
   onCancel,
   saving = false,
@@ -237,6 +239,7 @@ export function RouteCorridorEditor({
                           handlePathChange(index, updatedPath)
                         }
                         isLocked={isLocked}
+                        routePathLookup={routePathLookup}
                       />
                     </div>
                   )}
