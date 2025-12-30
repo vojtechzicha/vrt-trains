@@ -577,7 +577,7 @@ export function segmentsToVariantStops(
       }
 
       // Add dwell time for departure
-      const departureOffset = cumulativeTime + (stop.defaultDwellTime || 1);
+      const departureOffset = cumulativeTime + (stop.defaultDwellTime ?? 1);
       cumulativeTime = departureOffset;
 
       allStops.push({
@@ -661,7 +661,7 @@ export function segmentsToRouteStops(
       allStops.push({
         stationId: stop.stationId,
         minutesFromPrevious: isFirst ? 0 : timeFromPrevious,
-        dwellTime: stop.defaultDwellTime || 1,
+        dwellTime: stop.defaultDwellTime ?? 1,
         platform: '1', // Default, needs to be selected
         stopType: 'regular',
       });
