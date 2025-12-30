@@ -799,7 +799,7 @@
     },
     {
       "id": "7ce3545d-d374-4a10-a2bb-c6b95c7939ba",
-      "name": "271 Hranice na Moravě - Bohumín - Chałupki",
+      "name": "271 Hranice na Moravě - Bohumín - Chałupki, Veřovice - Mošnov, Ostrava Airport - Studénka",
       "description": "",
       "paths": [
         {
@@ -863,10 +863,110 @@
               "defaultDwellTime": 1
             }
           ]
+        },
+        {
+          "id": "846eeede-da4a-4ff6-8530-be195a0377df",
+          "name": "Veřovice -> Studénka (via Mošnov, Ostrava Airport)",
+          "stops": [
+            {
+              "stationId": "10b27cb8-4fd4-4a20-b1e9-b1f66c889d3f",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "9aefb173-6acc-4c41-903a-61e66faa7f8e",
+              "sequence": 2,
+              "distanceFromPrevious": 6,
+              "distanceKm": 6,
+              "baseTimeFromPrevious": 12,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "d540eb4a-5284-4712-bbce-87f1aa02d61f",
+              "sequence": 3,
+              "distanceFromPrevious": 3,
+              "distanceKm": 9,
+              "baseTimeFromPrevious": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "76278036-f10d-4c88-97d3-e9b38941d789",
+              "sequence": 4,
+              "distanceFromPrevious": 5,
+              "distanceKm": 14,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b9abed64-7590-4040-8cb7-ce2825189a40",
+              "sequence": 5,
+              "distanceFromPrevious": 4,
+              "distanceKm": 18,
+              "baseTimeFromPrevious": 9,
+              "defaultDwellTime": 7
+            },
+            {
+              "stationId": "c0736077-4e35-4f84-9849-b10eaaf42286",
+              "sequence": 6,
+              "distanceFromPrevious": 9,
+              "distanceKm": 27,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "cbde3b05-0d3d-4fae-ba58-9045f40daf13",
+          "name": "Veřovice -> Studénka (direct)",
+          "stops": [
+            {
+              "stationId": "10b27cb8-4fd4-4a20-b1e9-b1f66c889d3f",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "9aefb173-6acc-4c41-903a-61e66faa7f8e",
+              "sequence": 2,
+              "distanceFromPrevious": 6,
+              "distanceKm": 6,
+              "baseTimeFromPrevious": 12,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "d540eb4a-5284-4712-bbce-87f1aa02d61f",
+              "sequence": 3,
+              "distanceFromPrevious": 3,
+              "distanceKm": 9,
+              "baseTimeFromPrevious": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "76278036-f10d-4c88-97d3-e9b38941d789",
+              "sequence": 4,
+              "distanceFromPrevious": 5,
+              "distanceKm": 14,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "c0736077-4e35-4f84-9849-b10eaaf42286",
+              "sequence": 5,
+              "distanceFromPrevious": 9,
+              "distanceKm": 23,
+              "baseTimeFromPrevious": 13,
+              "defaultDwellTime": 3
+            }
+          ]
         }
       ],
       "createdAt": "2025-12-30T11:45:12.738Z",
-      "updatedAt": "2025-12-30T11:48:32.130Z"
+      "updatedAt": "2025-12-30T11:52:56.114Z"
     }
   ]
 }
