@@ -44,6 +44,9 @@ export default function StationsAdminPage() {
   const [selectedMemberIds, setSelectedMemberIds] = useState<string[]>([]);
   const [memberFilter, setMemberFilter] = useState('');
 
+  // Error state
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
     fetchStations();
   }, []);
@@ -63,6 +66,7 @@ export default function StationsAdminPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSaving(true);
+    setError(null);
 
     try {
       const res = await fetch('/api/admin/stations', {
@@ -75,9 +79,13 @@ export default function StationsAdminPage() {
         await fetchStations();
         resetForm();
         setShowForm(null);
+      } else {
+        const data = await res.json();
+        setError(data.error || 'Failed to create station');
       }
-    } catch (error) {
-      console.error('Failed to create station:', error);
+    } catch (err) {
+      console.error('Failed to create station:', err);
+      setError('Failed to create station');
     } finally {
       setSaving(false);
     }
@@ -86,10 +94,11 @@ export default function StationsAdminPage() {
   async function handleVirtualSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (selectedMemberIds.length < 2) {
-      alert('Please select at least 2 stations');
+      setError('Please select at least 2 stations');
       return;
     }
     setSaving(true);
+    setError(null);
 
     try {
       const res = await fetch('/api/admin/stations', {
@@ -110,9 +119,13 @@ export default function StationsAdminPage() {
         await fetchStations();
         resetVirtualForm();
         setShowForm(null);
+      } else {
+        const data = await res.json();
+        setError(data.error || 'Failed to create virtual station');
       }
-    } catch (error) {
-      console.error('Failed to create virtual station:', error);
+    } catch (err) {
+      console.error('Failed to create virtual station:', err);
+      setError('Failed to create virtual station');
     } finally {
       setSaving(false);
     }
@@ -136,6 +149,7 @@ export default function StationsAdminPage() {
     setPlatforms(2);
     setIsTerminal(false);
     setCountry('Czech');
+    setError(null);
   }
 
   function resetVirtualForm() {
@@ -143,6 +157,7 @@ export default function StationsAdminPage() {
     setVirtualName('');
     setSelectedMemberIds([]);
     setMemberFilter('');
+    setError(null);
   }
 
   function toggleMemberStation(stationId: string) {
@@ -186,6 +201,11 @@ export default function StationsAdminPage() {
             <h2 className="text-lg font-semibold">New Physical Station</h2>
           </CardHeader>
           <CardBody>
+            {error && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                {error}
+              </div>
+            )}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <Input
@@ -259,6 +279,11 @@ export default function StationsAdminPage() {
             </h2>
           </CardHeader>
           <CardBody>
+            {error && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                {error}
+              </div>
+            )}
             <form onSubmit={handleVirtualSubmit} className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <Input

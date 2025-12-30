@@ -67,7 +67,7 @@
     },
     {
       "id": "64f7a87f-7b0c-4a3b-8382-d5542b70ed59",
-      "code": "DBS",
+      "code": "BSK",
       "name": "Berlin Südkreuz",
       "type": "regular",
       "platforms": 1,
@@ -94,7 +94,7 @@
     },
     {
       "id": "d0352445-687d-42b5-aac2-13e6c6f6626d",
-      "code": "DBS",
+      "code": "BDS",
       "name": "Bad Schandau",
       "type": "regular",
       "platforms": 1,
@@ -184,7 +184,7 @@
     },
     {
       "id": "ac11bfa3-1cbf-452c-8187-16e7bd8424e8",
-      "code": "SST",
+      "code": "STU",
       "name": "Štúrovo",
       "type": "regular",
       "platforms": 1,
@@ -474,7 +474,7 @@
     },
     {
       "id": "abc7ee73-7d3f-4af2-a99b-a801c3ebe3d1",
-      "code": "SST",
+      "code": "STB",
       "name": "Štrba",
       "type": "regular",
       "platforms": 1,
@@ -564,7 +564,7 @@
     },
     {
       "id": "0824f2ae-9b6a-492e-9005-01c6d08b2cd7",
-      "code": "PHN",
+      "code": "PLH",
       "name": "Plzeň hlavní nádraží",
       "type": "hub",
       "platforms": 10,
@@ -681,7 +681,7 @@
     },
     {
       "id": "b76a601b-7a5c-4cac-bd64-e29a0ea47edd",
-      "code": "OST",
+      "code": "OSV",
       "name": "Ostrava",
       "type": "hub",
       "platforms": 0,
@@ -820,7 +820,7 @@
     },
     {
       "id": "c0736077-4e35-4f84-9849-b10eaaf42286",
-      "code": "STU",
+      "code": "SDK",
       "name": "Studénka",
       "type": "regular",
       "platforms": 6,
@@ -865,7 +865,7 @@
     },
     {
       "id": "49e63854-0fad-4451-a8e2-bbdfe317edcc",
-      "code": "OST",
+      "code": "OSD",
       "name": "Ostrava střed",
       "type": "regular",
       "platforms": 3,
@@ -1198,7 +1198,7 @@
     },
     {
       "id": "9aefb173-6acc-4c41-903a-61e66faa7f8e",
-      "code": "STR",
+      "code": "SBK",
       "name": "Štramberk",
       "type": "regular",
       "platforms": 3,
@@ -1229,6 +1229,78 @@
       "name": "Mošnov, Ostrava Airport",
       "type": "airport",
       "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "025b520f-834d-452c-ac88-640ba5a4a942",
+      "code": "HAS",
+      "name": "Havířov střed",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "c96f2164-b69c-4ede-9881-42fa44f1c538",
+      "code": "HSU",
+      "name": "Havířov-Suchá",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "8d3b8178-2ddc-45e0-9e97-1e360ca65506",
+      "code": "HRS",
+      "name": "Horní Suchá",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "955d1ab8-7f10-48c3-8128-7c921e22754f",
+      "code": "ACT",
+      "name": "Albrechtice u Českého Těšína",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "d8c4aa1a-35c9-45d7-b2ea-7fa2f8c0db56",
+      "code": "FNO",
+      "name": "Frýdlant nad Ostravicí",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "63cd6d19-0eb3-4f65-ae06-db495f81c210",
+      "code": "OSI",
+      "name": "Ostravice",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": true,
+      "country": "Czech"
+    },
+    {
+      "id": "b26b5ab5-0d05-4f7f-8110-397dc9f0c943",
+      "code": "FPR",
+      "name": "Frenštát pod Radhoštěm",
+      "type": "hub",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "2566448e-9d60-469e-9cd0-bf513a8d861f",
+      "code": "FRE",
+      "name": "Frenštát pod Radhoštěm město",
+      "type": "regular",
+      "platforms": 1,
       "isTerminal": false,
       "country": "Czech"
     }

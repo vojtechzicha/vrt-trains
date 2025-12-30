@@ -28,6 +28,7 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const [code, setCode] = useState('');
   const [name, setName] = useState('');
@@ -64,6 +65,7 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSaving(true);
+    setError(null);
 
     try {
       const res = await fetch(`/api/admin/stations/${id}`, {
@@ -74,9 +76,13 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
 
       if (res.ok) {
         router.push('/admin/stations');
+      } else {
+        const data = await res.json();
+        setError(data.error || 'Failed to update station');
       }
-    } catch (error) {
-      console.error('Failed to update station:', error);
+    } catch (err) {
+      console.error('Failed to update station:', err);
+      setError('Failed to update station');
     } finally {
       setSaving(false);
     }
@@ -99,6 +105,11 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
           <h1 className="text-xl font-bold">Edit Station</h1>
         </CardHeader>
         <CardBody>
+          {error && (
+            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+              {error}
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
               <Input

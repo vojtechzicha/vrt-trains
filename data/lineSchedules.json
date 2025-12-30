@@ -160,8 +160,8 @@
       "name": "Spr1 Schedule",
       "patternId": "cc0afe6d-8a39-4dd9-9a8e-b07963c7f5c2",
       "primaryPair": {
-        "outboundVariantId": "c852dfe1-4089-40e1-a5e5-1afb993e9c5e",
-        "inboundVariantId": "f2a55325-b9b0-4d16-99a9-425f1bb0173f"
+        "outboundVariantId": "f3e6edbf-5973-4acc-aa1c-52a85945f62a",
+        "inboundVariantId": "9d867c90-b040-4cea-aea0-71bca10e290e"
       },
       "anchorStationId": "570762",
       "outboundAnchorMinute": 0,

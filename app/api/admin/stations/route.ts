@@ -13,6 +13,19 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
+
+    // Validate unique station code
+    if (data.code) {
+      const stations = await getStations();
+      const existing = stations.find(s => s.code === data.code);
+      if (existing) {
+        return NextResponse.json(
+          { error: `Station code "${data.code}" is already used by "${existing.name}"` },
+          { status: 400 }
+        );
+      }
+    }
+
     const station = await createStation(data);
     return NextResponse.json(station, { status: 201 });
   } catch (error) {

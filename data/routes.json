@@ -967,6 +967,139 @@
       ],
       "createdAt": "2025-12-30T11:45:12.738Z",
       "updatedAt": "2025-12-30T11:52:56.114Z"
+    },
+    {
+      "id": "04a0c6d0-c930-4fd6-82d0-f1cfe86c05ca",
+      "name": "321 Ostrava-Svinov - Havířov - Český Těšín, Ostrava-Svinov - Ostrava-Kunčice",
+      "description": "",
+      "paths": [
+        {
+          "id": "de819a78-21f5-484f-acab-87c21332f2cd",
+          "name": "Ostrava-Svinov -> Český Těšín (via Ostrava hl.n.)",
+          "stops": [
+            {
+              "stationId": "344341",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "343640",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "343939",
+              "sequence": 3,
+              "distanceFromPrevious": 2,
+              "distanceKm": 7,
+              "baseTimeFromPrevious": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "49e63854-0fad-4451-a8e2-bbdfe317edcc",
+              "sequence": 4,
+              "distanceFromPrevious": 1,
+              "distanceKm": 8,
+              "baseTimeFromPrevious": 1,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "344143",
+              "sequence": 5,
+              "distanceFromPrevious": 5,
+              "distanceKm": 13,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "ea26f0d0-0966-4cac-8577-0c6162be3a24",
+              "sequence": 6,
+              "distanceFromPrevious": 10,
+              "distanceKm": 23,
+              "baseTimeFromPrevious": 8,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "025b520f-834d-452c-ac88-640ba5a4a942",
+              "sequence": 7,
+              "distanceFromPrevious": 1,
+              "distanceKm": 24,
+              "baseTimeFromPrevious": 3,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "c96f2164-b69c-4ede-9881-42fa44f1c538",
+              "sequence": 8,
+              "distanceFromPrevious": 3,
+              "distanceKm": 27,
+              "baseTimeFromPrevious": 3,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "8d3b8178-2ddc-45e0-9e97-1e360ca65506",
+              "sequence": 9,
+              "distanceFromPrevious": 2,
+              "distanceKm": 29,
+              "baseTimeFromPrevious": 2,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "955d1ab8-7f10-48c3-8128-7c921e22754f",
+              "sequence": 10,
+              "distanceFromPrevious": 2,
+              "distanceKm": 31,
+              "baseTimeFromPrevious": 3,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+              "sequence": 11,
+              "distanceFromPrevious": 11,
+              "distanceKm": 42,
+              "baseTimeFromPrevious": 9,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "893716a5-9fe2-4645-becc-172f3517870f",
+          "name": "Ostrava-Svinov -> Ostrava-Kunčice (via Ostrava-Vítkovice)",
+          "stops": [
+            {
+              "stationId": "344341",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852",
+              "sequence": 2,
+              "distanceFromPrevious": 8,
+              "distanceKm": 8,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "344143",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 12,
+              "baseTimeFromPrevious": 4,
+              "defaultDwellTime": 2
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T11:57:31.423Z",
+      "updatedAt": "2025-12-30T12:04:29.165Z"
     }
   ]
 }

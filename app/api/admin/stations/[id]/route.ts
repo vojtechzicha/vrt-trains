@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getStation, updateStation, deleteStation } from '@/lib/data';
+import { getStation, getStations, updateStation, deleteStation } from '@/lib/data';
 
 export async function GET(
   request: NextRequest,
@@ -24,6 +24,19 @@ export async function PUT(
   try {
     const { id } = await params;
     const data = await request.json();
+
+    // Validate unique station code (exclude current station)
+    if (data.code) {
+      const stations = await getStations();
+      const existing = stations.find(s => s.code === data.code && s.id !== id);
+      if (existing) {
+        return NextResponse.json(
+          { error: `Station code "${data.code}" is already used by "${existing.name}"` },
+          { status: 400 }
+        );
+      }
+    }
+
     const station = await updateStation(id, data);
     return NextResponse.json(station);
   } catch (error) {
