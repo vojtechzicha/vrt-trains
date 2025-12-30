@@ -105,6 +105,7 @@ export async function duplicateVariant(
     code: options.code,
     name: options.name,
     direction: source.direction,
+    routeRefs: source.routeRefs || [],
     stations: stations.map((s, i) => ({ ...s, sequence: i + 1 })),
   };
 

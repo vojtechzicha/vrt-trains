@@ -102,6 +102,12 @@ export default function VariantsPage({ params }: { params: Promise<{ id: string 
           </div>
         </div>
         <div className="flex gap-2">
+          <Link
+            href={`/admin/lines/${id}/schedule`}
+            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+          >
+            Schedule
+          </Link>
           <Button variant="secondary" onClick={() => setShowBulkAdjust(true)}>
             Bulk Time Adjust
           </Button>

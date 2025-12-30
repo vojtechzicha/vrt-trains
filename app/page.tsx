@@ -1,15 +1,21 @@
 import Link from 'next/link';
-import { getLines, getStations, getVariants } from '@/lib/data';
+import { getLines, getStations, getVariants, getRoutes } from '@/lib/data';
 import { Card, CardHeader, CardBody } from '@/components/ui';
 import { LineCard } from '@/components/lines';
 import { StationCard } from '@/components/stations';
+import { RouteCard } from '@/components/routes';
+import { getRouteEndpoints, calculatePathDistance, calculatePathTime } from '@/lib/timetable';
 
 export default async function Home() {
-  const [lines, stations, variants] = await Promise.all([
+  const [lines, stations, variants, routes] = await Promise.all([
     getLines(),
     getStations(),
     getVariants(),
+    getRoutes(),
   ]);
+
+  // Create station lookup for route endpoints
+  const stationMap = new Map(stations.map((s) => [s.id, s]));
 
   // Calculate actual variant counts from variants.json
   const variantCounts = new Map<string, number>();
@@ -26,11 +32,17 @@ export default async function Home() {
         </p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3 mb-8">
+      <div className="grid gap-4 md:grid-cols-4 mb-8">
         <Card>
           <CardBody className="text-center">
             <div className="text-3xl font-bold text-blue-600">{lines.length}</div>
             <div className="text-gray-500">Train Lines</div>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody className="text-center">
+            <div className="text-3xl font-bold text-orange-600">{routes.length}</div>
+            <div className="text-gray-500">Route Corridors</div>
           </CardBody>
         </Card>
         <Card>
@@ -78,6 +90,40 @@ export default async function Home() {
           </div>
         </div>
       </div>
+
+      {routes.length > 0 && (
+        <div className="mt-8">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold text-gray-900">Route Corridors</h2>
+            <Link href="/routes" className="text-sm text-blue-600 hover:underline">
+              View all →
+            </Link>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {routes.slice(0, 3).map((route) => {
+              const endpoints = getRouteEndpoints(route, stationMap);
+              const firstPath = route.paths[0];
+              const totalDistance = firstPath ? calculatePathDistance(firstPath) : 0;
+              const totalTime = firstPath ? calculatePathTime(firstPath) : 0;
+
+              return (
+                <RouteCard
+                  key={route.id}
+                  route={route}
+                  lineCount={0}
+                  trainCount={0}
+                  endpoints={{
+                    from: endpoints.from?.name || 'Unknown',
+                    to: endpoints.to?.name || 'Unknown',
+                  }}
+                  totalDistance={totalDistance}
+                  totalTime={totalTime}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       <div className="mt-8">
         <Card className="bg-gray-900">

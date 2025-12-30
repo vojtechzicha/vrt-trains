@@ -1,86 +1,12 @@
 {
   "lines": [
     {
-      "id": "spr1",
-      "identifier": "RJ",
-      "name": "RegioJet",
-      "color": "#F39C12",
-      "textColor": "#000000",
-      "type": "express",
-      "variants": [
-        "Spr1"
-      ]
-    },
-    {
-      "id": "fd66c913-2c15-4213-b0af-3bd5d18133fe",
-      "identifier": "LE",
-      "name": "LeoExpress",
-      "color": "#000000",
-      "textColor": "#FFFFFF",
-      "type": "express",
-      "variants": []
-    },
-    {
-      "id": "452ab6ca-3630-45a9-bde0-a6de0302b901",
-      "identifier": "Ex1",
-      "name": "Ex1",
+      "id": "4c2028ed-0014-4b32-9305-b351340780ad",
+      "identifier": "Spr1",
+      "name": "Sprinter Praha -> Brno -> Ostrava -> Frýdek Místek",
       "color": "#E31E24",
       "textColor": "#FFFFFF",
       "type": "intercity",
-      "variants": []
-    },
-    {
-      "id": "87b15e44-e1e7-4987-9618-5fb31408d53d",
-      "identifier": "Ex2",
-      "name": "Ex2",
-      "color": "#E31E24",
-      "textColor": "#FFFFFF",
-      "type": "intercity",
-      "variants": []
-    },
-    {
-      "id": "f1a67be8-bf6d-4a4f-bca9-3ee3616d70ed",
-      "identifier": "Ex11",
-      "name": "Ex11",
-      "color": "#E31E24",
-      "textColor": "#FFFFFF",
-      "type": "intercity",
-      "variants": []
-    },
-    {
-      "id": "430b46b7-8434-4023-bdd2-0ac562ff4f76",
-      "identifier": "R18",
-      "name": "R18",
-      "color": "#00A651",
-      "textColor": "#FFFFFF",
-      "type": "regional",
-      "variants": []
-    },
-    {
-      "id": "8f2e8061-8a6a-4eff-8e0b-a515d16edf94",
-      "identifier": "R60",
-      "name": "ODIS R60",
-      "color": "#8E44AD",
-      "textColor": "#FFFFFF",
-      "type": "suburban",
-      "variants": []
-    },
-    {
-      "id": "89ba7ca2-16a4-4b8e-aeef-dcb3bd0b661a",
-      "identifier": "R27",
-      "name": "R27",
-      "color": "#00A651",
-      "textColor": "#FFFFFF",
-      "type": "regional",
-      "variants": []
-    },
-    {
-      "id": "56cf49d2-4fc7-4273-b32e-81020af461d6",
-      "identifier": "R28",
-      "name": "R28",
-      "color": "#00A651",
-      "textColor": "#FFFFFF",
-      "type": "regional",
       "variants": []
     }
   ]

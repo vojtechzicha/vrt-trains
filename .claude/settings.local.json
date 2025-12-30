@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git push)",
+      "Bash(cat:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run test:run:*)",
+      "Bash(node:*)",
+      "Bash(npm test)",
+      "Bash(head:*)",
+      "Bash(curl:*)",
+      "Skill(interview-plan)",
+      "Bash(ls -la \"C:\\\\Users\\\\vojte\\\\Developer\\\\vrt-trains\\\\components\\\\admin\"\" | grep -E \".tsx)",
+      "Bash(git diff:*)"
+    ]
+  }
+}

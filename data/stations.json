@@ -954,20 +954,281 @@
       "country": "Czech"
     },
     {
-      "id": "6484dd6f-c55d-4107-9afa-d64502be4f3a",
-      "code": "NEZ",
-      "name": "Nezamyslice",
+      "id": "c9d4bc34-afaf-475b-b0b7-27eadb2ab3f3",
+      "code": "KOJ",
+      "name": "Kojetín",
+      "type": "regular",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
+      "code": "PZM",
+      "name": "Praha-Zahradní Město",
       "type": "regular",
       "platforms": 4,
       "isTerminal": false,
       "country": "Czech"
     },
     {
-      "id": "c9d4bc34-afaf-475b-b0b7-27eadb2ab3f3",
-      "code": "KOJ",
-      "name": "Kojetín",
+      "id": "5f890e0d-544b-4126-a371-0045507ec6c6",
+      "code": "KRO",
+      "name": "Kroměříž",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "935184bb-4f3d-4e9e-b182-31c2be2de847",
+      "code": "OTR",
+      "name": "Otrokovice",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "e0e16d4c-1ce5-40b2-ba14-88abacc0727e",
+      "code": "ZST",
+      "name": "Zlín střed",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "58df0937-8bdb-42fe-88d7-6f291ca8f1dd",
+      "code": "SUH",
+      "name": "Staré Město u Uherského Hradiště",
+      "type": "hub",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "036e32f4-333e-470e-b9ac-06a0d2da84b1",
+      "code": "UHR",
+      "name": "Uherské Hradiště",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "9d378c18-cd6e-4698-8425-bd79a7461f63",
+      "code": "UBR",
+      "name": "Uherský Brod",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "8aa825e2-677d-46ab-a039-96c6f5ba376e",
+      "code": "LUH",
+      "name": "Luhačovice",
+      "type": "terminal",
+      "platforms": 1,
+      "isTerminal": true,
+      "country": "Czech"
+    },
+    {
+      "id": "f0cb9062-c708-4c4a-8429-8dd99612bf1f",
+      "code": "POR",
+      "name": "Poříčany",
+      "type": "regular",
+      "platforms": 7,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "55a49ab6-c07e-4e91-afed-a3b3a481c39c",
+      "code": "PEC",
+      "name": "Pečky",
       "type": "regular",
       "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "2abcb7ea-a1b0-4fde-8e6b-c9a390a5ac7c",
+      "code": "JVR",
+      "name": "Jihlava VRT",
+      "type": "hub",
+      "platforms": 6,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "4d474ceb-5153-4649-b85c-3349562a42d0",
+      "code": "PVR",
+      "name": "Praha-Vršovice",
+      "type": "regular",
+      "platforms": 7,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "e2815464-9609-47c8-a599-7757f6441f07",
+      "code": "KBV",
+      "name": "Kořenice-Bečváry VRT",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "efe3d432-de57-4ede-8861-81df5c1839af",
+      "code": "JIM",
+      "name": "Jihlava město",
+      "type": "hub",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "dfa2875f-7fcc-4017-b19d-f285f34bfd29",
+      "code": "JIH",
+      "name": "Jihlava",
+      "type": "hub",
+      "platforms": 7,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "6ae3517e-3790-457a-87d7-6f459c9c8850",
+      "code": "JIA",
+      "name": "Jihlava",
+      "type": "hub",
+      "platforms": 0,
+      "isTerminal": false,
+      "isVirtual": true,
+      "memberStationIds": [
+        "dfa2875f-7fcc-4017-b19d-f285f34bfd29",
+        "efe3d432-de57-4ede-8861-81df5c1839af",
+        "2abcb7ea-a1b0-4fde-8e6b-c9a390a5ac7c"
+      ]
+    },
+    {
+      "id": "f00906d8-72b7-45df-8f2a-75c6b0ef697a",
+      "code": "VBI",
+      "name": "Velká Bíteš",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "93b99127-1f8a-4e35-a882-5a884d5a52f1",
+      "code": "OBI",
+      "name": "Osová Bitýška",
+      "type": "request",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "2cd65e4f-e2d1-4a4d-8711-3c39afb496a8",
+      "code": "SNS",
+      "name": "Světlá nad Sázavou",
+      "type": "hub",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "0a73fd7b-f69d-4ce4-8d67-59ffc0e914db",
+      "code": "NYH",
+      "name": "Nymburk hlavní nádraží",
+      "type": "hub",
+      "platforms": 8,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "5cd599bf-b3fc-49fb-9392-cb65afb6209f",
+      "code": "NYM",
+      "name": "Nymburk město",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "4bf7f5a7-6344-4958-ad2b-324d2fa43f74",
+      "code": "NYB",
+      "name": "Nymburk",
+      "type": "hub",
+      "platforms": 0,
+      "isTerminal": false,
+      "isVirtual": true,
+      "memberStationIds": [
+        "0a73fd7b-f69d-4ce4-8d67-59ffc0e914db",
+        "5cd599bf-b3fc-49fb-9392-cb65afb6209f"
+      ]
+    },
+    {
+      "id": "f5405d4a-a9e8-4a72-a9fe-769f47f5018a",
+      "code": "NZM",
+      "name": "Nezamyslice",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "c3b11402-8070-48f7-830f-33eefb893fe8",
+      "code": "PCH",
+      "name": "Chałupki",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Poland"
+    },
+    {
+      "id": "10b27cb8-4fd4-4a20-b1e9-b1f66c889d3f",
+      "code": "VER",
+      "name": "Veřovice",
+      "type": "hub",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "9aefb173-6acc-4c41-903a-61e66faa7f8e",
+      "code": "STR",
+      "name": "Štramberk",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "d540eb4a-5284-4712-bbce-87f1aa02d61f",
+      "code": "KOP",
+      "name": "Kopřivnice",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "76278036-f10d-4c88-97d3-e9b38941d789",
+      "code": "PRI",
+      "name": "Příbor",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "b9abed64-7590-4040-8cb7-ce2825189a40",
+      "code": "MOA",
+      "name": "Mošnov, Ostrava Airport",
+      "type": "airport",
+      "platforms": 2,
       "isTerminal": false,
       "country": "Czech"
     }

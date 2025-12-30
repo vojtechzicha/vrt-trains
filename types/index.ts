@@ -40,13 +40,54 @@ export interface VariantStop {
   stopType: StopType;
 }
 
+// Route corridor types
+export interface RoutePathStop {
+  stationId: string;
+  sequence: number;
+  distanceFromPrevious: number;   // Segment distance in km (user enters this)
+  distanceKm: number;             // Cumulative distance from path start (auto-calculated)
+  baseTimeFromPrevious: number;   // Minutes from previous stop
+  defaultDwellTime: number;       // Default stop duration (minutes)
+}
+
+export interface ReverseTimeAdjustment {
+  stationId: string;
+  baseTimeFromPrevious: number;   // Different time when going in reverse
+}
+
+export interface RoutePath {
+  id: string;
+  name: string;                   // Freeform text, e.g., "via VRT", "via Jihlava"
+  stops: RoutePathStop[];
+  reverseTimeAdjustments?: ReverseTimeAdjustment[];
+}
+
+export interface RouteCorridor {
+  id: string;
+  name: string;                   // Freeform text, e.g., "Praha-Brno Corridor"
+  description?: string;
+  paths: RoutePath[];             // Multiple alternative paths through this corridor
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface VariantRouteRef {
+  routeId: string;
+  pathId: string;
+  direction: Direction;
+  startStationId?: string;        // Where to join this route (optional subset)
+  endStationId?: string;          // Where to leave this route (optional subset)
+}
+
 export interface Variant {
   id: string;
   lineId: string;
   code: string;
   name: string;
   direction: Direction;
-  stations: VariantStop[];
+  routeRefs: VariantRouteRef[];   // Required - one or more route references
+  stations: VariantStop[];        // Actual stops with adjusted times
+  outOfSync?: boolean;            // Flag when source route has changed
 }
 
 // Timetable types
@@ -116,4 +157,61 @@ export interface DirectConnection {
   destinationType: StationType;
   isVirtual: boolean;
   lines: LineConnection[];
+}
+
+// Operating pattern types for auto-generated timetables
+export interface OffPeakReduction {
+  startTime: string;  // "09:00"
+  endTime: string;    // "16:00"
+}
+
+export interface ServicePeriod {
+  startTime: string;
+  endTime: string;
+  intervalMinutes: number;  // Minutes between trains (e.g., 60 = 1tph, 120 = 1 per 2h)
+  offPeakReduction?: OffPeakReduction;
+}
+
+export interface OperatingPattern {
+  id: string;
+  name: string;
+  periods: ServicePeriod[];
+  operatingDays: OperatingDay[];
+}
+
+export interface ShortTurnConfig {
+  startingStations: string[];  // Stations where morning trains can start
+  endingStations: string[];    // Stations where evening trains can end
+  generatedVariants: string[]; // IDs of auto-generated short variants
+}
+
+export interface VariantPairRef {
+  outboundVariantId: string;
+  inboundVariantId: string;
+}
+
+export interface LineSchedule {
+  id: string;
+  lineId: string;
+  name: string;
+  patternId: string;
+  primaryPair: VariantPairRef;
+  anchorStationId: string;
+  outboundAnchorMinute: number;  // 0-59, departure minute at anchor station
+  inboundAnchorMinute: number;
+  trainNumberPrefix: string;
+  startBaseNumber: number;
+  shortTurnConfig?: ShortTurnConfig;
+}
+
+// Suggested short-turn variant (for confirmation UI)
+export interface ShortTurnSuggestion {
+  direction: Direction;
+  startStationId: string;
+  endStationId: string;
+  purpose: 'morning-starter' | 'evening-terminator';
+  trainsNeeded: number;
+  timeRange: { start: string; end: string };
+  suggestedCode: string;
+  suggestedName: string;
 }

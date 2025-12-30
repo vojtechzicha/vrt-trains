@@ -1,0 +1,872 @@
+{
+  "routes": [
+    {
+      "id": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+      "name": "001 RS1 Praha -> Brno -> Ostrava",
+      "description": "This route consists of:\n* VRT Praha\n* VRT Polabí\n* VRT Střední Čechy\n* VRT Vysočina I\n* VRT Vysočina II\n* VRT Haná\n* VRT Moravská brána",
+      "paths": [
+        {
+          "id": "1e4df4d0-9ce4-40f3-8a95-091b9a41834c",
+          "name": "Praha hl.n. -> Brno hl.n. via Zahradní Město",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "4d474ceb-5153-4649-b85c-3349562a42d0",
+              "sequence": 2,
+              "distanceFromPrevious": 3,
+              "distanceKm": 3,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 7,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 4,
+              "distanceFromPrevious": 14,
+              "distanceKm": 21,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
+              "sequence": 5,
+              "distanceFromPrevious": 35,
+              "distanceKm": 56,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "2abcb7ea-a1b0-4fde-8e6b-c9a390a5ac7c",
+              "sequence": 6,
+              "distanceFromPrevious": 68,
+              "distanceKm": 124,
+              "baseTimeFromPrevious": 14,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "01",
+              "sequence": 7,
+              "distanceFromPrevious": 75,
+              "distanceKm": 199,
+              "baseTimeFromPrevious": 16,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 8,
+              "distanceFromPrevious": 7,
+              "distanceKm": 206,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "eb9be7c2-4c3d-4d80-9266-6095f3850d57",
+          "name": "Praha hl.n. -> Brno hl.n. via Praha-Libeň",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 3,
+              "distanceFromPrevious": 19,
+              "distanceKm": 24,
+              "baseTimeFromPrevious": 11,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
+              "sequence": 4,
+              "distanceFromPrevious": 35,
+              "distanceKm": 59,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "2abcb7ea-a1b0-4fde-8e6b-c9a390a5ac7c",
+              "sequence": 5,
+              "distanceFromPrevious": 68,
+              "distanceKm": 127,
+              "baseTimeFromPrevious": 14,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "01",
+              "sequence": 6,
+              "distanceFromPrevious": 75,
+              "distanceKm": 202,
+              "baseTimeFromPrevious": 16,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 7,
+              "distanceFromPrevious": 7,
+              "distanceKm": 209,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "0d2e2740-f9cb-468a-9675-db5f916ac05e",
+          "name": "Praha hl.n. -> Poříčany via Zahradní Město",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "4d474ceb-5153-4649-b85c-3349562a42d0",
+              "sequence": 2,
+              "distanceFromPrevious": 3,
+              "distanceKm": 3,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 7,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 4,
+              "distanceFromPrevious": 14,
+              "distanceKm": 21,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "f0cb9062-c708-4c4a-8429-8dd99612bf1f",
+              "sequence": 5,
+              "distanceFromPrevious": 21,
+              "distanceKm": 42,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "8b7a6f40-9cef-496e-8418-13e8cc741496",
+          "name": "Praha hl.n. -> Poříčany via Praha-Libeň",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 3,
+              "distanceFromPrevious": 19,
+              "distanceKm": 24,
+              "baseTimeFromPrevious": 11,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "f0cb9062-c708-4c4a-8429-8dd99612bf1f",
+              "sequence": 4,
+              "distanceFromPrevious": 21,
+              "distanceKm": 45,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "5259f979-0f03-4539-b603-045d943b9860",
+          "name": "Praha hl.n. -> Nymburk via Zahradní Město",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "4d474ceb-5153-4649-b85c-3349562a42d0",
+              "sequence": 2,
+              "distanceFromPrevious": 3,
+              "distanceKm": 3,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 7,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 4,
+              "distanceFromPrevious": 14,
+              "distanceKm": 21,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "0a73fd7b-f69d-4ce4-8d67-59ffc0e914db",
+              "sequence": 5,
+              "distanceFromPrevious": 26,
+              "distanceKm": 47,
+              "baseTimeFromPrevious": 14,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "a1a8b84d-4dda-4ec5-bd63-40e255f6fd52",
+          "name": "Praha hl.n. -> Nymburk via Praha-Libeň ",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 3,
+              "distanceFromPrevious": 19,
+              "distanceKm": 24,
+              "baseTimeFromPrevious": 11,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "0a73fd7b-f69d-4ce4-8d67-59ffc0e914db",
+              "sequence": 4,
+              "distanceFromPrevious": 26,
+              "distanceKm": 50,
+              "baseTimeFromPrevious": 14,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "17a61359-2df5-4682-b556-d26e6a7bb93a",
+          "name": "Praha hl.n. -> Světlá nad Sázavou via Zahradní Město",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "4d474ceb-5153-4649-b85c-3349562a42d0",
+              "sequence": 2,
+              "distanceFromPrevious": 3,
+              "distanceKm": 3,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 7,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 4,
+              "distanceFromPrevious": 14,
+              "distanceKm": 21,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
+              "sequence": 5,
+              "distanceFromPrevious": 35,
+              "distanceKm": 56,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "2cd65e4f-e2d1-4a4d-8711-3c39afb496a8",
+              "sequence": 6,
+              "distanceFromPrevious": 47,
+              "distanceKm": 103,
+              "baseTimeFromPrevious": 15,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "19ae13c7-9c2f-4245-987e-3f77f7333c91",
+          "name": "Praha hl.n. -> Světlá nad Sázavou via Praha-Libeň",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 3,
+              "distanceFromPrevious": 19,
+              "distanceKm": 24,
+              "baseTimeFromPrevious": 11,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
+              "sequence": 4,
+              "distanceFromPrevious": 35,
+              "distanceKm": 59,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "2cd65e4f-e2d1-4a4d-8711-3c39afb496a8",
+              "sequence": 5,
+              "distanceFromPrevious": 47,
+              "distanceKm": 106,
+              "baseTimeFromPrevious": 15,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "65a5941b-1c16-4e9f-8062-d2d18c7eeea7",
+          "name": "Osová Bítýška -> Brno hl.n.",
+          "stops": [
+            {
+              "stationId": "93b99127-1f8a-4e35-a882-5a884d5a52f1",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "f00906d8-72b7-45df-8f2a-75c6b0ef697a",
+              "sequence": 2,
+              "distanceFromPrevious": 9,
+              "distanceKm": 9,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "01",
+              "sequence": 3,
+              "distanceFromPrevious": 33,
+              "distanceKm": 42,
+              "baseTimeFromPrevious": 9,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 4,
+              "distanceFromPrevious": 7,
+              "distanceKm": 49,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "5f4211a8-38d2-4fdf-af0e-ec65f042ddcf",
+          "name": "Praha hl.n. -> Jihlava město via Zahradní Město",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "4d474ceb-5153-4649-b85c-3349562a42d0",
+              "sequence": 2,
+              "distanceFromPrevious": 3,
+              "distanceKm": 3,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 7,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 4,
+              "distanceFromPrevious": 14,
+              "distanceKm": 21,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
+              "sequence": 5,
+              "distanceFromPrevious": 35,
+              "distanceKm": 56,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "efe3d432-de57-4ede-8861-81df5c1839af",
+              "sequence": 6,
+              "distanceFromPrevious": 74,
+              "distanceKm": 130,
+              "baseTimeFromPrevious": 17,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "dbea26d1-26cf-42a4-ad00-3618e8305453",
+          "name": "Praha hl.n. -> Jihlava město via Praha-Libeň",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 3,
+              "distanceFromPrevious": 19,
+              "distanceKm": 24,
+              "baseTimeFromPrevious": 11,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
+              "sequence": 4,
+              "distanceFromPrevious": 35,
+              "distanceKm": 59,
+              "baseTimeFromPrevious": 7,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "efe3d432-de57-4ede-8861-81df5c1839af",
+              "sequence": 5,
+              "distanceFromPrevious": 74,
+              "distanceKm": 133,
+              "baseTimeFromPrevious": 17,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "b9162d7f-6a58-4fb7-bba9-9c45512c36ad",
+          "name": "Jihlava město -> Brno hl.n.",
+          "stops": [
+            {
+              "stationId": "efe3d432-de57-4ede-8861-81df5c1839af",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "01",
+              "sequence": 2,
+              "distanceFromPrevious": 81,
+              "distanceKm": 81,
+              "baseTimeFromPrevious": 36,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 3,
+              "distanceFromPrevious": 7,
+              "distanceKm": 88,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "931a2488-a90d-4051-bd99-35a90afef39e",
+          "name": "Brno hl.n. -> Ostrava-Svinov",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 7,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "344341",
+              "sequence": 2,
+              "distanceFromPrevious": 158,
+              "distanceKm": 158,
+              "baseTimeFromPrevious": 35,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "351a799f-7ba7-4e7b-ab24-7d28d8c8fa32",
+          "name": "Brno hl.n. -> Nezamyslice",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 7,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "f5405d4a-a9e8-4a72-a9fe-769f47f5018a",
+              "sequence": 2,
+              "distanceFromPrevious": 42,
+              "distanceKm": 42,
+              "baseTimeFromPrevious": 14,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "7d0371c3-c0e6-409b-8604-b77e2bc16e71",
+          "name": "Brno hl.n. -> Hranice na Moravě",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 108,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 27,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+              "sequence": 2,
+              "distanceFromPrevious": 108,
+              "distanceKm": 108,
+              "baseTimeFromPrevious": 27,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "938cebc9-c5bb-4eea-bef9-b5e3ea7f88c6",
+          "name": "Brno hl.n. -> Olomouc hl.n.",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 7,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+              "sequence": 2,
+              "distanceFromPrevious": 87,
+              "distanceKm": 87,
+              "baseTimeFromPrevious": 25,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "736393c1-c44e-427a-ad21-3cfc335e320e",
+          "name": "Olomouc hl.n. -> Hranice na Moravě",
+          "stops": [
+            {
+              "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+              "sequence": 2,
+              "distanceFromPrevious": 34,
+              "distanceKm": 34,
+              "baseTimeFromPrevious": 16,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "7a77cd73-5159-49c7-89ba-3daa7b866d5a",
+          "name": "Olomouc hl.n. -> Ostrava-Svinov",
+          "stops": [
+            {
+              "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "344341",
+              "sequence": 2,
+              "distanceFromPrevious": 85,
+              "distanceKm": 85,
+              "baseTimeFromPrevious": 35,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "e2ff3ff6-4ac7-4304-ba55-21513ef8884c",
+          "name": "Hranice na Moravě -> Ostrava-Svinov",
+          "stops": [
+            {
+              "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "344341",
+              "sequence": 2,
+              "distanceFromPrevious": 54,
+              "distanceKm": 54,
+              "baseTimeFromPrevious": 17,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "c82b6e4b-1bd0-4f8d-bc13-5fba1f77396b",
+          "name": "Brno hl.n. -> Ostrava-Vítkovice",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 7,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 5,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "344341",
+              "sequence": 2,
+              "distanceFromPrevious": 160,
+              "distanceKm": 160,
+              "baseTimeFromPrevious": 38,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "0db7b2a0-2d39-45e0-aeda-d24adedc7450",
+          "name": "Olomouc hl.n. -> Ostrava-Vítkovice",
+          "stops": [
+            {
+              "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852",
+              "sequence": 2,
+              "distanceFromPrevious": 87,
+              "distanceKm": 87,
+              "baseTimeFromPrevious": 39,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "bb8bfd78-4a7e-4996-a4b2-ae0d5b75dbd3",
+          "name": "Hranice na Moravě -> Ostrava-Vítkovice",
+          "stops": [
+            {
+              "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 10,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852",
+              "sequence": 2,
+              "distanceFromPrevious": 56,
+              "distanceKm": 56,
+              "baseTimeFromPrevious": 21,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T09:26:59.089Z",
+      "updatedAt": "2025-12-30T11:40:48.320Z"
+    },
+    {
+      "id": "7ce3545d-d374-4a10-a2bb-c6b95c7939ba",
+      "name": "271 Hranice na Moravě - Bohumín - Chałupki",
+      "description": "",
+      "paths": [
+        {
+          "id": "cc833c86-d25b-4d31-be97-119f4a9272be",
+          "name": "Hranice na Moravě -> Chałupki",
+          "stops": [
+            {
+              "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "baseTimeFromPrevious": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "5d7004a2-7725-404c-b6fa-d80216993753",
+              "sequence": 2,
+              "distanceFromPrevious": 21,
+              "distanceKm": 21,
+              "baseTimeFromPrevious": 12,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "c0736077-4e35-4f84-9849-b10eaaf42286",
+              "sequence": 3,
+              "distanceFromPrevious": 12,
+              "distanceKm": 33,
+              "baseTimeFromPrevious": 8,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "344341",
+              "sequence": 4,
+              "distanceFromPrevious": 17,
+              "distanceKm": 50,
+              "baseTimeFromPrevious": 9,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "343640",
+              "sequence": 5,
+              "distanceFromPrevious": 5,
+              "distanceKm": 55,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+              "sequence": 6,
+              "distanceFromPrevious": 8,
+              "distanceKm": 63,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "c3b11402-8070-48f7-830f-33eefb893fe8",
+              "sequence": 7,
+              "distanceFromPrevious": 9,
+              "distanceKm": 72,
+              "baseTimeFromPrevious": 6,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T11:45:12.738Z",
+      "updatedAt": "2025-12-30T11:48:32.130Z"
+    }
+  ]
+}

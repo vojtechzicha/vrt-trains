@@ -1,13 +1,14 @@
 'use client';
 
-import { useState, useRef, useEffect, KeyboardEvent } from 'react';
+import { useState, useRef, KeyboardEvent } from 'react';
 import { Station, StopType, Variant } from '@/types';
 import { StationSelector } from './StationSelector';
-import { Button } from '@/components/ui';
 
-interface RouteStop {
+// Exported so other components can use this interface
+export interface RouteStop {
   stationId: string;
-  minutesFromPrevious: number;
+  minutesFromPrevious: number;  // Travel time from previous station
+  dwellTime: number;            // Time spent at this station
   platform: string;
   stopType: StopType;
 }
@@ -45,16 +46,16 @@ export function buildDurationLookup(variants: Variant[]): DurationLookup {
 }
 
 const countryFlags: Record<string, string> = {
-  Czech: '🇨🇿',
-  Germany: '🇩🇪',
-  Austria: '🇦🇹',
-  Poland: '🇵🇱',
-  Slovakia: '🇸🇰',
-  Hungary: '🇭🇺',
+  Czech: '',
+  Germany: '',
+  Austria: '',
+  Poland: '',
+  Slovakia: '',
+  Hungary: '',
 };
 
 function getCountryFlag(country?: string): string {
-  return countryFlags[country || 'Czech'] || '🏳️';
+  return countryFlags[country || 'Czech'] || '';
 }
 
 interface RouteBuilderProps {
@@ -62,12 +63,19 @@ interface RouteBuilderProps {
   value: RouteStop[];
   onChange: (stops: RouteStop[]) => void;
   durationLookup?: DurationLookup;
+  allowAddStations?: boolean;  // If false, only editing existing stops is allowed
 }
 
-export function RouteBuilder({ stations, value, onChange, durationLookup }: RouteBuilderProps) {
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+export function RouteBuilder({
+  stations,
+  value,
+  onChange,
+  durationLookup,
+  allowAddStations = true,
+}: RouteBuilderProps) {
   const [isAddingNew, setIsAddingNew] = useState(false);
   const minutesRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const dwellRefs = useRef<(HTMLInputElement | null)[]>([]);
   const platformRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const stationMap = new Map(stations.map((s) => [s.id, s]));
@@ -91,6 +99,7 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
     const newStop: RouteStop = {
       stationId,
       minutesFromPrevious: value.length === 0 ? 0 : defaultMinutes,
+      dwellTime: 1,  // Default dwell time
       platform: '1',
       stopType: 'regular',
     };
@@ -113,28 +122,45 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
     onChange(newStops);
   }
 
-  function handleRemoveStop(index: number) {
-    const newStops = value.filter((_, i) => i !== index);
-    onChange(newStops);
+  // Skip/remove a station - recalculate times when removing middle stations
+  function handleSkipStation(index: number) {
+    const isFirst = index === 0;
+    const isLast = index === value.length - 1;
+
+    // When removing a middle station, add its travel time to the next station
+    if (!isFirst && !isLast) {
+      const removedStop = value[index];
+      const nextStop = value[index + 1];
+
+      // Sum the travel times: A->B + B->C = A->C
+      const combinedTime = removedStop.minutesFromPrevious + nextStop.minutesFromPrevious;
+
+      const newStops = value.filter((_, i) => i !== index);
+      // Update the next station (which is now at index) with combined time
+      newStops[index] = { ...newStops[index], minutesFromPrevious: combinedTime };
+      onChange(newStops);
+    } else {
+      // First or last station - just remove without time recalculation
+      const newStops = value.filter((_, i) => i !== index);
+      // If we removed the first station, reset the new first's travel time to 0
+      if (isFirst && newStops.length > 0) {
+        newStops[0] = { ...newStops[0], minutesFromPrevious: 0 };
+      }
+      onChange(newStops);
+    }
   }
 
-  function handleMoveUp(index: number) {
-    if (index === 0) return;
-    const newStops = [...value];
-    [newStops[index - 1], newStops[index]] = [newStops[index], newStops[index - 1]];
-    onChange(newStops);
-  }
-
-  function handleMoveDown(index: number) {
-    if (index === value.length - 1) return;
-    const newStops = [...value];
-    [newStops[index], newStops[index + 1]] = [newStops[index + 1], newStops[index]];
-    onChange(newStops);
-  }
-
-  function handleKeyDown(e: KeyboardEvent<HTMLInputElement>, index: number, field: 'minutes' | 'platform') {
+  function handleKeyDown(
+    e: KeyboardEvent<HTMLInputElement>,
+    index: number,
+    field: 'minutes' | 'dwell' | 'platform'
+  ) {
     if (e.key === 'Enter' || e.key === 'Tab') {
       if (field === 'minutes' && !e.shiftKey) {
+        e.preventDefault();
+        dwellRefs.current[index]?.focus();
+        dwellRefs.current[index]?.select();
+      } else if (field === 'dwell' && !e.shiftKey) {
         e.preventDefault();
         platformRefs.current[index]?.focus();
         platformRefs.current[index]?.select();
@@ -142,7 +168,9 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
         e.preventDefault();
         // Move to next row or show add station
         if (index === value.length - 1) {
-          setIsAddingNew(true);
+          if (allowAddStations) {
+            setIsAddingNew(true);
+          }
         } else {
           minutesRefs.current[index + 1]?.focus();
           minutesRefs.current[index + 1]?.select();
@@ -151,23 +179,52 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
     }
   }
 
-  // Calculate cumulative times
-  let cumulative = 0;
-  const cumulativeTimes = value.map((stop, index) => {
+  // Calculate cumulative times (arrival and departure)
+  // First station: departs at 0 (train starts here, no dwell wait)
+  // Subsequent stations: arrival = prev departure + travel time, departure = arrival + dwell
+  let lastDeparture = 0;
+  const times = value.map((stop, index) => {
     if (index === 0) {
-      cumulative = 0;
-    } else {
-      cumulative += stop.minutesFromPrevious;
+      // First station: train starts here, departs immediately at 0
+      lastDeparture = 0;
+      return { arrival: 0, departure: 0 };
     }
-    return cumulative;
+
+    // Arrival = previous station's departure + travel time
+    const arrival = lastDeparture + stop.minutesFromPrevious;
+    // Departure = arrival + dwell time at this station
+    const departure = arrival + stop.dwellTime;
+    lastDeparture = departure;
+    return { arrival, departure };
   });
 
+  // Format time as H:MM
+  function formatTime(minutes: number): string {
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    return `${h}:${m.toString().padStart(2, '0')}`;
+  }
+
   return (
-    <div className="space-y-2">
+    <div className="space-y-1">
+      {/* Header row */}
+      <div className="flex items-center gap-2 px-2 py-1 text-xs text-gray-500 font-medium">
+        <span className="w-6"></span>
+        <span className="flex-1">Station</span>
+        <span className="w-16 text-center">Travel</span>
+        <span className="w-14 text-center">Dwell</span>
+        <span className="w-12 text-center">Arr</span>
+        <span className="w-12 text-center">Dep</span>
+        <span className="w-14 text-center">Plt</span>
+        <span className="w-20 text-center">Type</span>
+        <span className="w-8"></span>
+      </div>
+
       {value.map((stop, index) => {
         const station = stationMap.get(stop.stationId);
         const isFirst = index === 0;
         const isLast = index === value.length - 1;
+        const { arrival, departure } = times[index];
 
         return (
           <div
@@ -182,7 +239,9 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
             {/* Station name */}
             <div className="flex-1 min-w-0">
               <div className="font-medium text-sm truncate flex items-center gap-1">
-                <span>{getCountryFlag(station?.country)}</span>
+                {getCountryFlag(station?.country) && (
+                  <span>{getCountryFlag(station?.country)}</span>
+                )}
                 {station?.name || 'Unknown'}
               </div>
               <div className="text-xs text-gray-400 font-mono">
@@ -190,9 +249,9 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
               </div>
             </div>
 
-            {/* Minutes */}
-            <div className="w-20">
-              <div className="flex items-center gap-1">
+            {/* Travel time from previous */}
+            <div className="w-16">
+              <div className="flex items-center justify-center gap-0.5">
                 <input
                   ref={(el) => { minutesRefs.current[index] = el; }}
                   type="number"
@@ -203,17 +262,43 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
                   onKeyDown={(e) => handleKeyDown(e, index, 'minutes')}
                   disabled={isFirst}
                   min={0}
-                  className="w-12 px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-10 px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
-                <span className="text-xs text-gray-400">min</span>
-              </div>
-              <div className="text-xs text-gray-400 text-center mt-0.5">
-                Σ {cumulativeTimes[index]}
+                <span className="text-xs text-gray-400">m</span>
               </div>
             </div>
 
+            {/* Dwell time */}
+            <div className="w-14">
+              <div className="flex items-center justify-center gap-0.5">
+                <input
+                  ref={(el) => { dwellRefs.current[index] = el; }}
+                  type="number"
+                  value={stop.dwellTime}
+                  onChange={(e) =>
+                    handleUpdateStop(index, { dwellTime: parseInt(e.target.value) || 0 })
+                  }
+                  onKeyDown={(e) => handleKeyDown(e, index, 'dwell')}
+                  disabled={isLast}
+                  min={0}
+                  className="w-10 px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                />
+                <span className="text-xs text-gray-400">m</span>
+              </div>
+            </div>
+
+            {/* Arrival time */}
+            <div className="w-12 text-center text-sm text-gray-500">
+              {isFirst ? '--' : formatTime(arrival)}
+            </div>
+
+            {/* Departure time */}
+            <div className="w-12 text-center text-sm font-medium">
+              {isLast ? '--' : formatTime(departure)}
+            </div>
+
             {/* Platform */}
-            <div className="w-16">
+            <div className="w-14">
               <input
                 ref={(el) => { platformRefs.current[index] = el; }}
                 type="text"
@@ -221,7 +306,7 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
                 onChange={(e) => handleUpdateStop(index, { platform: e.target.value })}
                 onKeyDown={(e) => handleKeyDown(e, index, 'platform')}
                 placeholder="Plt"
-                className="w-full px-2 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
@@ -236,31 +321,13 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
               <option value="pass">Pass</option>
             </select>
 
-            {/* Actions */}
-            <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            {/* Skip/Remove action */}
+            <div className="w-8 flex justify-center">
               <button
                 type="button"
-                onClick={() => handleMoveUp(index)}
-                disabled={isFirst}
-                className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30"
-                title="Move up"
-              >
-                ↑
-              </button>
-              <button
-                type="button"
-                onClick={() => handleMoveDown(index)}
-                disabled={isLast}
-                className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30"
-                title="Move down"
-              >
-                ↓
-              </button>
-              <button
-                type="button"
-                onClick={() => handleRemoveStop(index)}
-                className="p-1 text-red-400 hover:text-red-600"
-                title="Remove"
+                onClick={() => handleSkipStation(index)}
+                className="p-1 text-red-400 hover:text-red-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                title={isFirst || isLast ? "Remove" : "Skip (time added to next)"}
               >
                 ×
               </button>
@@ -270,32 +337,34 @@ export function RouteBuilder({ stations, value, onChange, durationLookup }: Rout
       })}
 
       {/* Add station row */}
-      {isAddingNew ? (
-        <div className="p-2 border-2 border-dashed border-blue-300 rounded-lg bg-blue-50">
-          <StationSelector
-            stations={stations}
-            value={null}
-            onChange={handleAddStation}
-            excludeIds={usedStationIds}
-            placeholder="Search for station..."
-            autoFocus
-          />
+      {allowAddStations && (
+        isAddingNew ? (
+          <div className="p-2 border-2 border-dashed border-blue-300 rounded-lg bg-blue-50">
+            <StationSelector
+              stations={stations}
+              value={null}
+              onChange={handleAddStation}
+              excludeIds={usedStationIds}
+              placeholder="Search for station..."
+              autoFocus
+            />
+            <button
+              type="button"
+              onClick={() => setIsAddingNew(false)}
+              className="mt-2 text-xs text-gray-500 hover:text-gray-700"
+            >
+              Cancel
+            </button>
+          </div>
+        ) : (
           <button
             type="button"
-            onClick={() => setIsAddingNew(false)}
-            className="mt-2 text-xs text-gray-500 hover:text-gray-700"
+            onClick={() => setIsAddingNew(true)}
+            className="w-full p-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:border-blue-400 hover:text-blue-600 transition-colors text-sm"
           >
-            Cancel
+            + Add Station
           </button>
-        </div>
-      ) : (
-        <button
-          type="button"
-          onClick={() => setIsAddingNew(true)}
-          className="w-full p-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:border-blue-400 hover:text-blue-600 transition-colors text-sm"
-        >
-          + Add Station
-        </button>
+        )
       )}
     </div>
   );
