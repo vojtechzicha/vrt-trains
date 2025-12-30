@@ -3,7 +3,7 @@
 import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Variant, Station, Line, Timetable, OperatingDay } from '@/types';
+import { Variant, Station, Line, Timetable, OperatingDay, RouteCorridor, CalculatedVariantStop } from '@/types';
 import { Card, CardHeader, CardBody, Button } from '@/components/ui';
 import { LineBadge } from '@/components/lines';
 import { TimetableGenerator } from '@/components/admin/TimetableGenerator';
@@ -11,6 +11,7 @@ import { OperatingDaysSelector } from '@/components/admin/OperatingDaysSelector'
 import { TrainNumberInput } from '@/components/admin/TrainNumberInput';
 import { TimetableEditModal } from '@/components/admin/TimetableEditModal';
 import { calculateCoreNumber, formatTrainNumber } from '@/lib/trainNumbers';
+import { calculateVariantTimes } from '@/lib/routeTimes';
 
 export default function TimetableEditorPage({
   params,
@@ -23,6 +24,8 @@ export default function TimetableEditorPage({
   const [variant, setVariant] = useState<Variant | null>(null);
   const [line, setLine] = useState<Line | null>(null);
   const [stations, setStations] = useState<Station[]>([]);
+  const [routes, setRoutes] = useState<RouteCorridor[]>([]);
+  const [calculatedStops, setCalculatedStops] = useState<CalculatedVariantStop[]>([]);
   const [timetables, setTimetables] = useState<Timetable[]>([]);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
@@ -60,10 +63,11 @@ export default function TimetableEditorPage({
 
   async function fetchData() {
     try {
-      const [variantRes, stationsRes, timetablesRes] = await Promise.all([
+      const [variantRes, stationsRes, timetablesRes, routesRes] = await Promise.all([
         fetch(`/api/admin/variants/${variantId}`),
         fetch('/api/admin/stations'),
         fetch(`/api/admin/timetables?variantId=${variantId}`),
+        fetch('/api/admin/routes'),
       ]);
 
       if (!variantRes.ok) {
@@ -71,15 +75,25 @@ export default function TimetableEditorPage({
         return;
       }
 
-      const [variantData, stationsData, timetablesData] = await Promise.all([
+      const [variantData, stationsData, timetablesData, routesData] = await Promise.all([
         variantRes.json(),
         stationsRes.json(),
         timetablesRes.json(),
+        routesRes.json(),
       ]);
 
       setVariant(variantData);
       setStations(stationsData);
+      setRoutes(routesData);
       setTimetables(timetablesData);
+
+      // Calculate variant times on-the-fly
+      const calculated = calculateVariantTimes(
+        variantData.stations,
+        variantData.routeRefs || [],
+        routesData
+      );
+      setCalculatedStops(calculated);
 
       // Fetch line data
       if (variantData.lineId) {
@@ -126,7 +140,7 @@ export default function TimetableEditorPage({
   }
 
   async function handleAddManual() {
-    if (!variant || !newPrefix) return;
+    if (!variant || !newPrefix || calculatedStops.length === 0) return;
 
     setSaving(true);
     setAddError(null);
@@ -135,8 +149,8 @@ export default function TimetableEditorPage({
     const coreNumber = calculateCoreNumber(newBaseNumber, variant.direction);
     const trainNumber = formatTrainNumber(newPrefix, coreNumber);
 
-    // Calculate departures based on variant stops and first departure time
-    const departures = variant.stations.map((stop) => {
+    // Calculate departures based on calculated variant stops and first departure time
+    const departures = calculatedStops.map((stop) => {
       const [hours, mins] = newFirstDeparture.split(':').map(Number);
       const baseMinutes = hours * 60 + mins;
 
@@ -421,7 +435,7 @@ export default function TimetableEditorPage({
             </CardHeader>
             <CardBody>
               <div className="text-sm text-gray-600 space-y-1">
-                {variant.stations.map((stop, index) => (
+                {calculatedStops.map((stop, index) => (
                   <div key={stop.stationId} className="flex items-center gap-2">
                     <span className="text-gray-400 w-4">{index + 1}.</span>
                     <span>{getStationName(stop.stationId)}</span>
@@ -441,6 +455,7 @@ export default function TimetableEditorPage({
         <TimetableEditModal
           timetable={editingTimetable}
           variant={variant}
+          calculatedStops={calculatedStops}
           isOpen={true}
           onClose={() => setEditingTimetable(null)}
           onSave={handleEdit}

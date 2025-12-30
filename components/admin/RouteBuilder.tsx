@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, KeyboardEvent } from 'react';
-import { Station, StopType, Variant } from '@/types';
+import { Station, StopType, Variant, RouteCorridor } from '@/types';
 import { StationSelector } from './StationSelector';
 
 // Exported so other components can use this interface
@@ -16,27 +16,35 @@ export interface RouteStop {
 // Map of stationA:stationB -> shortest duration in minutes
 export type DurationLookup = Map<string, number>;
 
-// Build a duration lookup from existing variants
-// Uses the shortest duration when multiple variants have the same station pair
+// Build a duration lookup from existing variants (deprecated - use buildDurationLookupFromRoutes)
+// Now uses dwellTime since offsets are no longer stored
 export function buildDurationLookup(variants: Variant[]): DurationLookup {
+  // This function is deprecated - return empty lookup
+  // Routes should be used as the source of truth for travel times
+  return new Map<string, number>();
+}
+
+// Build a duration lookup from route corridors
+// Uses the VRT time (or fallback) for each segment
+export function buildDurationLookupFromRoutes(routes: RouteCorridor[]): DurationLookup {
   const lookup = new Map<string, number>();
 
-  for (const variant of variants) {
-    for (let i = 1; i < variant.stations.length; i++) {
-      const prev = variant.stations[i - 1];
-      const curr = variant.stations[i];
+  for (const route of routes) {
+    for (const path of route.paths) {
+      for (let i = 1; i < path.stops.length; i++) {
+        const prev = path.stops[i - 1];
+        const curr = path.stops[i];
 
-      // Calculate duration between consecutive stops
-      const prevDeparture = prev.departureOffset ?? prev.arrivalOffset ?? 0;
-      const currArrival = curr.arrivalOffset ?? curr.departureOffset ?? 0;
-      const duration = currArrival - prevDeparture;
+        // Use VRT time, falling back to fast then slow
+        const duration = curr.vrtTime ?? curr.fastTime ?? curr.slowTime ?? 0;
 
-      if (duration > 0) {
-        const key = `${prev.stationId}:${curr.stationId}`;
-        const existing = lookup.get(key);
-        // Keep the shorter duration
-        if (existing === undefined || duration < existing) {
-          lookup.set(key, duration);
+        if (duration > 0) {
+          const key = `${prev.stationId}:${curr.stationId}`;
+          const existing = lookup.get(key);
+          // Keep the shorter duration
+          if (existing === undefined || duration < existing) {
+            lookup.set(key, duration);
+          }
         }
       }
     }
@@ -64,6 +72,7 @@ interface RouteBuilderProps {
   onChange: (stops: RouteStop[]) => void;
   durationLookup?: DurationLookup;
   allowAddStations?: boolean;  // If false, only editing existing stops is allowed
+  readOnlyTravelTime?: boolean;  // If true, travel time cannot be edited (comes from route)
 }
 
 export function RouteBuilder({
@@ -72,6 +81,7 @@ export function RouteBuilder({
   onChange,
   durationLookup,
   allowAddStations = true,
+  readOnlyTravelTime = false,
 }: RouteBuilderProps) {
   const [isAddingNew, setIsAddingNew] = useState(false);
   const minutesRefs = useRef<(HTMLInputElement | null)[]>([]);
@@ -122,32 +132,24 @@ export function RouteBuilder({
     onChange(newStops);
   }
 
-  // Skip/remove a station - recalculate times when removing middle stations
-  function handleSkipStation(index: number) {
+  // Remove station and combine travel times
+  function handleRemoveStation(index: number) {
     const isFirst = index === 0;
-    const isLast = index === value.length - 1;
+    const removedStop = value[index];
+    const newStops = value.filter((_, i) => i !== index);
 
-    // When removing a middle station, add its travel time to the next station
-    if (!isFirst && !isLast) {
-      const removedStop = value[index];
-      const nextStop = value[index + 1];
-
-      // Sum the travel times: A->B + B->C = A->C
-      const combinedTime = removedStop.minutesFromPrevious + nextStop.minutesFromPrevious;
-
-      const newStops = value.filter((_, i) => i !== index);
-      // Update the next station (which is now at index) with combined time
-      newStops[index] = { ...newStops[index], minutesFromPrevious: combinedTime };
-      onChange(newStops);
-    } else {
-      // First or last station - just remove without time recalculation
-      const newStops = value.filter((_, i) => i !== index);
+    if (isFirst && newStops.length > 0) {
       // If we removed the first station, reset the new first's travel time to 0
-      if (isFirst && newStops.length > 0) {
-        newStops[0] = { ...newStops[0], minutesFromPrevious: 0 };
-      }
-      onChange(newStops);
+      newStops[0] = { ...newStops[0], minutesFromPrevious: 0 };
+    } else if (!isFirst && index < value.length && newStops.length > index) {
+      // Middle station: add removed station's travel time to the next station
+      newStops[index] = {
+        ...newStops[index],
+        minutesFromPrevious: newStops[index].minutesFromPrevious + removedStop.minutesFromPrevious,
+      };
     }
+
+    onChange(newStops);
   }
 
   function handleKeyDown(
@@ -229,7 +231,7 @@ export function RouteBuilder({
         return (
           <div
             key={`${stop.stationId}-${index}`}
-            className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg group"
+            className="flex items-center gap-2 p-2 rounded-lg group bg-gray-50"
           >
             {/* Sequence number */}
             <span className="w-6 text-center text-sm text-gray-400 font-mono">
@@ -252,18 +254,24 @@ export function RouteBuilder({
             {/* Travel time from previous */}
             <div className="w-16">
               <div className="flex items-center justify-center gap-0.5">
-                <input
-                  ref={(el) => { minutesRefs.current[index] = el; }}
-                  type="number"
-                  value={stop.minutesFromPrevious}
-                  onChange={(e) =>
-                    handleUpdateStop(index, { minutesFromPrevious: parseInt(e.target.value) || 0 })
-                  }
-                  onKeyDown={(e) => handleKeyDown(e, index, 'minutes')}
-                  disabled={isFirst}
-                  min={0}
-                  className="w-10 px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                />
+                {readOnlyTravelTime ? (
+                  <span className="w-10 px-1 py-1 text-sm text-center text-gray-500">
+                    {isFirst ? '-' : stop.minutesFromPrevious}
+                  </span>
+                ) : (
+                  <input
+                    ref={(el) => { minutesRefs.current[index] = el; }}
+                    type="number"
+                    value={stop.minutesFromPrevious}
+                    onChange={(e) =>
+                      handleUpdateStop(index, { minutesFromPrevious: parseInt(e.target.value) || 0 })
+                    }
+                    onKeyDown={(e) => handleKeyDown(e, index, 'minutes')}
+                    disabled={isFirst}
+                    min={0}
+                    className="w-10 px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  />
+                )}
                 <span className="text-xs text-gray-400">m</span>
               </div>
             </div>
@@ -318,16 +326,15 @@ export function RouteBuilder({
             >
               <option value="regular">Regular</option>
               <option value="request">Request</option>
-              <option value="pass">Pass</option>
             </select>
 
-            {/* Skip/Remove action */}
+            {/* Remove action */}
             <div className="w-8 flex justify-center">
               <button
                 type="button"
-                onClick={() => handleSkipStation(index)}
+                onClick={() => handleRemoveStation(index)}
                 className="p-1 text-red-400 hover:text-red-600 opacity-0 group-hover:opacity-100 transition-opacity"
-                title={isFirst || isLast ? "Remove" : "Skip (time added to next)"}
+                title="Remove station"
               >
                 ×
               </button>

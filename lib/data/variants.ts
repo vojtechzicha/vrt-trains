@@ -72,6 +72,16 @@ export async function deleteVariant(id: string): Promise<void> {
   await writeVariantsFile(file);
 }
 
+export async function deleteVariantsByLine(lineId: string): Promise<string[]> {
+  const file = await readVariantsFile();
+  const deletedVariantIds = file.variants
+    .filter((v) => v.lineId === lineId)
+    .map((v) => v.id);
+  file.variants = file.variants.filter((v) => v.lineId !== lineId);
+  await writeVariantsFile(file);
+  return deletedVariantIds;
+}
+
 export async function duplicateVariant(
   sourceId: string,
   options: { code: string; name: string; truncateAtStationId?: string }
@@ -90,13 +100,7 @@ export async function duplicateVariant(
     );
     if (truncateIndex !== -1) {
       stations = stations.slice(0, truncateIndex + 1);
-      // Update the last station to be terminal (no departure)
-      if (stations.length > 0) {
-        stations[stations.length - 1] = {
-          ...stations[stations.length - 1],
-          departureOffset: null,
-        };
-      }
+      // Note: Last station is implicitly terminal (departure calculated as null on-the-fly)
     }
   }
 

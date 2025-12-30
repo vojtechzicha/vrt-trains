@@ -6,7 +6,9 @@ import { StationSelector } from './StationSelector';
 
 // Types for route path lookup (prefill when adding stations)
 export interface RouteSegmentLookup {
-  baseTimeFromPrevious: number;
+  vrtTime?: number;
+  fastTime?: number;
+  slowTime?: number;
   distanceFromPrevious: number;
   defaultDwellTime: number;
 }
@@ -30,7 +32,9 @@ export function buildRoutePathLookup(routes: RouteCorridor[]): RoutePathLookup {
         // Only store if not already present (first wins)
         if (!lookup.has(key)) {
           lookup.set(key, {
-            baseTimeFromPrevious: curr.baseTimeFromPrevious,
+            vrtTime: curr.vrtTime,
+            fastTime: curr.fastTime,
+            slowTime: curr.slowTime,
             distanceFromPrevious: curr.distanceFromPrevious,
             defaultDwellTime: curr.defaultDwellTime,
           });
@@ -76,7 +80,9 @@ export function RoutePathEditor({
   );
 
   const distanceRefs = useRef<(HTMLInputElement | null)[]>([]);
-  const timeRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const vrtTimeRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const fastTimeRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const slowTimeRefs = useRef<(HTMLInputElement | null)[]>([]);
   const dwellRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const stationMap = new Map(stations.map((s) => [s.id, s]));
@@ -93,12 +99,17 @@ export function RoutePathEditor({
     return cumulative;
   });
 
-  // Calculate cumulative times (travel time only, no dwell)
+  // Get effective time for display (first available: vrt > fast > slow)
+  function getEffectiveTime(stop: RoutePathStop): number {
+    return stop.vrtTime ?? stop.fastTime ?? stop.slowTime ?? 0;
+  }
+
+  // Calculate cumulative times (travel time only, no dwell) using effective time
   const cumulativeTimes = value.stops.map((_, index) => {
     let cumulative = 0;
     for (let i = 0; i <= index; i++) {
       if (i > 0) {
-        cumulative += value.stops[i].baseTimeFromPrevious;
+        cumulative += getEffectiveTime(value.stops[i]);
       }
     }
     return cumulative;
@@ -111,7 +122,9 @@ export function RoutePathEditor({
   function handleAddStation(stationId: string) {
     // Try to prefill from existing routes
     let defaultDistance = 10;
-    let defaultTime = 10;
+    let defaultVrtTime: number | undefined = 10;
+    let defaultFastTime: number | undefined = undefined;
+    let defaultSlowTime: number | undefined = undefined;
     let defaultDwell = 1;
 
     if (value.stops.length > 0 && routePathLookup) {
@@ -122,17 +135,22 @@ export function RoutePathEditor({
 
       if (segment) {
         defaultDistance = segment.distanceFromPrevious;
-        defaultTime = segment.baseTimeFromPrevious;
+        defaultVrtTime = segment.vrtTime;
+        defaultFastTime = segment.fastTime;
+        defaultSlowTime = segment.slowTime;
         defaultDwell = segment.defaultDwellTime;
       }
     }
 
+    const isFirst = value.stops.length === 0;
     const newStop: RoutePathStop = {
       stationId,
       sequence: value.stops.length + 1,
-      distanceFromPrevious: value.stops.length === 0 ? 0 : defaultDistance,
+      distanceFromPrevious: isFirst ? 0 : defaultDistance,
       distanceKm: 0, // Will be recalculated
-      baseTimeFromPrevious: value.stops.length === 0 ? 0 : defaultTime,
+      vrtTime: isFirst ? 0 : defaultVrtTime,
+      fastTime: isFirst ? undefined : defaultFastTime,
+      slowTime: isFirst ? undefined : defaultSlowTime,
       defaultDwellTime: defaultDwell,
     };
 
@@ -210,14 +228,20 @@ export function RoutePathEditor({
   function handleKeyDown(
     e: KeyboardEvent<HTMLInputElement>,
     index: number,
-    field: 'distance' | 'time' | 'dwell'
+    field: 'distance' | 'vrt' | 'fast' | 'slow' | 'dwell'
   ) {
     if (e.key === 'Enter' || (e.key === 'Tab' && !e.shiftKey)) {
       e.preventDefault();
       if (field === 'distance') {
-        timeRefs.current[index]?.focus();
-        timeRefs.current[index]?.select();
-      } else if (field === 'time') {
+        vrtTimeRefs.current[index]?.focus();
+        vrtTimeRefs.current[index]?.select();
+      } else if (field === 'vrt') {
+        fastTimeRefs.current[index]?.focus();
+        fastTimeRefs.current[index]?.select();
+      } else if (field === 'fast') {
+        slowTimeRefs.current[index]?.focus();
+        slowTimeRefs.current[index]?.select();
+      } else if (field === 'slow') {
         dwellRefs.current[index]?.focus();
         dwellRefs.current[index]?.select();
       } else if (field === 'dwell') {
@@ -234,24 +258,32 @@ export function RoutePathEditor({
     }
   }
 
-  function handleReverseAdjustmentChange(stationId: string, baseTimeFromPrevious: number) {
+  function handleReverseAdjustmentChange(
+    stationId: string,
+    field: 'vrtTime' | 'fastTime' | 'slowTime',
+    time: number | undefined
+  ) {
     const existing = value.reverseTimeAdjustments || [];
     const index = existing.findIndex((adj) => adj.stationId === stationId);
 
     let newAdjustments: ReverseTimeAdjustment[];
     if (index >= 0) {
       newAdjustments = [...existing];
-      newAdjustments[index] = { stationId, baseTimeFromPrevious };
+      newAdjustments[index] = { ...newAdjustments[index], [field]: time };
     } else {
-      newAdjustments = [...existing, { stationId, baseTimeFromPrevious }];
+      newAdjustments = [...existing, { stationId, [field]: time }];
     }
+
+    // Remove empty adjustments
+    newAdjustments = newAdjustments.filter(
+      adj => adj.vrtTime !== undefined || adj.fastTime !== undefined || adj.slowTime !== undefined
+    );
 
     onChange({ ...value, reverseTimeAdjustments: newAdjustments });
   }
 
-  function getReverseAdjustment(stationId: string): number | undefined {
-    return value.reverseTimeAdjustments?.find((adj) => adj.stationId === stationId)
-      ?.baseTimeFromPrevious;
+  function getReverseAdjustment(stationId: string): ReverseTimeAdjustment | undefined {
+    return value.reverseTimeAdjustments?.find((adj) => adj.stationId === stationId);
   }
 
   return (
@@ -281,11 +313,19 @@ export function RoutePathEditor({
       <div className="flex items-center gap-2 px-2 text-xs text-gray-500 font-medium">
         <span className="w-6"></span>
         <span className="flex-1">Station</span>
-        <span className="w-20 text-center">Distance</span>
-        <span className="w-20 text-center">Time</span>
-        <span className="w-16 text-center">Dwell</span>
+        <span className="w-16 text-center">Dist</span>
+        <span className="w-14 text-center">VRT</span>
+        <span className="w-14 text-center">Fast</span>
+        <span className="w-14 text-center">Slow</span>
+        <span className="w-12 text-center">Dwell</span>
+        <span className="w-14 text-center">Σ km</span>
+        <span className="w-12 text-center">Σ min</span>
         {showReverseAdjustments && (
-          <span className="w-20 text-center">Rev. Time</span>
+          <>
+            <span className="w-12 text-center text-purple-600">R.VRT</span>
+            <span className="w-12 text-center text-purple-600">R.Fast</span>
+            <span className="w-12 text-center text-purple-600">R.Slow</span>
+          </>
         )}
         <span className="w-16"></span>
       </div>
@@ -296,7 +336,7 @@ export function RoutePathEditor({
           const station = stationMap.get(stop.stationId);
           const isFirst = index === 0;
           const isLast = index === value.stops.length - 1;
-          const reverseTime = getReverseAdjustment(stop.stationId);
+          const reverseAdj = getReverseAdjustment(stop.stationId);
 
           return (
             <div
@@ -322,95 +362,170 @@ export function RoutePathEditor({
               </div>
 
               {/* Distance from previous */}
-              <div className="w-20">
-                <div className="flex items-center gap-1">
-                  <input
-                    ref={(el) => { distanceRefs.current[index] = el; }}
-                    type="number"
-                    value={stop.distanceFromPrevious}
-                    onChange={(e) =>
-                      handleUpdateStop(index, {
-                        distanceFromPrevious: parseFloat(e.target.value) || 0,
-                      })
-                    }
-                    onKeyDown={(e) => handleKeyDown(e, index, 'distance')}
-                    disabled={isFirst}
-                    min={0}
-                    step={0.1}
-                    className="w-12 px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  />
-                  <span className="text-xs text-gray-400">km</span>
-                </div>
-                <div className="text-xs text-gray-400 text-center mt-0.5">
-                  {cumulativeDistances[index].toFixed(1)}
-                </div>
+              <div className="w-16">
+                <input
+                  ref={(el) => { distanceRefs.current[index] = el; }}
+                  type="number"
+                  value={stop.distanceFromPrevious}
+                  onChange={(e) =>
+                    handleUpdateStop(index, {
+                      distanceFromPrevious: parseFloat(e.target.value) || 0,
+                    })
+                  }
+                  onKeyDown={(e) => handleKeyDown(e, index, 'distance')}
+                  disabled={isFirst}
+                  min={0}
+                  step={0.1}
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  placeholder="-"
+                />
               </div>
 
-              {/* Time from previous */}
-              <div className="w-20">
-                <div className="flex items-center gap-1">
-                  <input
-                    ref={(el) => { timeRefs.current[index] = el; }}
-                    type="number"
-                    value={stop.baseTimeFromPrevious}
-                    onChange={(e) =>
-                      handleUpdateStop(index, {
-                        baseTimeFromPrevious: parseInt(e.target.value) || 0,
-                      })
-                    }
-                    onKeyDown={(e) => handleKeyDown(e, index, 'time')}
-                    disabled={isFirst}
-                    min={0}
-                    className="w-12 px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  />
-                  <span className="text-xs text-gray-400">min</span>
-                </div>
-                <div className="text-xs text-gray-400 text-center mt-0.5">
-                  {cumulativeTimes[index]}
-                </div>
+              {/* VRT Time */}
+              <div className="w-14">
+                <input
+                  ref={(el) => { vrtTimeRefs.current[index] = el; }}
+                  type="number"
+                  value={stop.vrtTime ?? ''}
+                  onChange={(e) =>
+                    handleUpdateStop(index, {
+                      vrtTime: e.target.value === '' ? undefined : parseInt(e.target.value),
+                    })
+                  }
+                  onKeyDown={(e) => handleKeyDown(e, index, 'vrt')}
+                  disabled={isFirst}
+                  min={0}
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  placeholder="-"
+                />
+              </div>
+
+              {/* Fast Time */}
+              <div className="w-14">
+                <input
+                  ref={(el) => { fastTimeRefs.current[index] = el; }}
+                  type="number"
+                  value={stop.fastTime ?? ''}
+                  onChange={(e) =>
+                    handleUpdateStop(index, {
+                      fastTime: e.target.value === '' ? undefined : parseInt(e.target.value),
+                    })
+                  }
+                  onKeyDown={(e) => handleKeyDown(e, index, 'fast')}
+                  disabled={isFirst}
+                  min={0}
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  placeholder="-"
+                />
+              </div>
+
+              {/* Slow Time */}
+              <div className="w-14">
+                <input
+                  ref={(el) => { slowTimeRefs.current[index] = el; }}
+                  type="number"
+                  value={stop.slowTime ?? ''}
+                  onChange={(e) =>
+                    handleUpdateStop(index, {
+                      slowTime: e.target.value === '' ? undefined : parseInt(e.target.value),
+                    })
+                  }
+                  onKeyDown={(e) => handleKeyDown(e, index, 'slow')}
+                  disabled={isFirst}
+                  min={0}
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  placeholder="-"
+                />
               </div>
 
               {/* Dwell time */}
-              <div className="w-16">
-                <div className="flex items-center gap-1">
-                  <input
-                    ref={(el) => { dwellRefs.current[index] = el; }}
-                    type="number"
-                    value={stop.defaultDwellTime}
-                    onChange={(e) =>
-                      handleUpdateStop(index, {
-                        defaultDwellTime: parseInt(e.target.value) || 0,
-                      })
-                    }
-                    onKeyDown={(e) => handleKeyDown(e, index, 'dwell')}
-                    min={0}
-                    className="w-10 px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
-                  />
-                  <span className="text-xs text-gray-400">m</span>
-                </div>
+              <div className="w-12">
+                <input
+                  ref={(el) => { dwellRefs.current[index] = el; }}
+                  type="number"
+                  value={stop.defaultDwellTime}
+                  onChange={(e) =>
+                    handleUpdateStop(index, {
+                      defaultDwellTime: parseInt(e.target.value) || 0,
+                    })
+                  }
+                  onKeyDown={(e) => handleKeyDown(e, index, 'dwell')}
+                  min={0}
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                />
               </div>
 
-              {/* Reverse time adjustment */}
+              {/* Cumulative km */}
+              <div className="w-14 text-center text-sm text-gray-500">
+                {cumulativeDistances[index].toFixed(1)}
+              </div>
+
+              {/* Cumulative minutes (VRT) */}
+              <div className="w-12 text-center text-sm text-gray-500">
+                {cumulativeTimes[index]}
+              </div>
+
+              {/* Reverse time adjustments */}
               {showReverseAdjustments && (
-                <div className="w-20">
-                  {!isFirst && (
-                    <div className="flex items-center gap-1">
+                <>
+                  {/* R.VRT */}
+                  <div className="w-12">
+                    {!isFirst && (
                       <input
                         type="number"
-                        value={reverseTime ?? stop.baseTimeFromPrevious}
+                        value={reverseAdj?.vrtTime ?? ''}
                         onChange={(e) =>
                           handleReverseAdjustmentChange(
                             stop.stationId,
-                            parseInt(e.target.value) || 0
+                            'vrtTime',
+                            e.target.value === '' ? undefined : parseInt(e.target.value)
                           )
                         }
                         min={0}
-                        className="w-12 px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        className="w-full px-1 py-1 text-sm text-center border border-purple-200 rounded focus:outline-none focus:ring-1 focus:ring-purple-500"
+                        placeholder="-"
                       />
-                      <span className="text-xs text-gray-400">min</span>
-                    </div>
-                  )}
-                </div>
+                    )}
+                  </div>
+                  {/* R.Fast */}
+                  <div className="w-12">
+                    {!isFirst && (
+                      <input
+                        type="number"
+                        value={reverseAdj?.fastTime ?? ''}
+                        onChange={(e) =>
+                          handleReverseAdjustmentChange(
+                            stop.stationId,
+                            'fastTime',
+                            e.target.value === '' ? undefined : parseInt(e.target.value)
+                          )
+                        }
+                        min={0}
+                        className="w-full px-1 py-1 text-sm text-center border border-purple-200 rounded focus:outline-none focus:ring-1 focus:ring-purple-500"
+                        placeholder="-"
+                      />
+                    )}
+                  </div>
+                  {/* R.Slow */}
+                  <div className="w-12">
+                    {!isFirst && (
+                      <input
+                        type="number"
+                        value={reverseAdj?.slowTime ?? ''}
+                        onChange={(e) =>
+                          handleReverseAdjustmentChange(
+                            stop.stationId,
+                            'slowTime',
+                            e.target.value === '' ? undefined : parseInt(e.target.value)
+                          )
+                        }
+                        min={0}
+                        className="w-full px-1 py-1 text-sm text-center border border-purple-200 rounded focus:outline-none focus:ring-1 focus:ring-purple-500"
+                        placeholder="-"
+                      />
+                    )}
+                  </div>
+                </>
               )}
 
               {/* Actions */}
@@ -510,7 +625,7 @@ export function RoutePathEditor({
         <span className="font-medium">
           {cumulativeTimes[cumulativeTimes.length - 1] || 0}
         </span>{' '}
-        min total
+        min
       </div>
     </div>
   );

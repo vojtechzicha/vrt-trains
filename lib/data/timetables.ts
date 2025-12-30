@@ -1,8 +1,9 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { Timetable, OperatingDay, TimetableDeparture, Variant } from '@/types';
+import { Timetable, OperatingDay, TimetableDeparture, Variant, RouteCorridor } from '@/types';
 import { generateId, addMinutesToTime } from './helpers';
 import { calculateCoreNumber, formatTrainNumber } from '@/lib/trainNumbers';
+import { calculateVariantTimes } from '@/lib/routeTimes';
 
 const dataPath = path.join(process.cwd(), 'data', 'timetables.json');
 
@@ -113,6 +114,7 @@ export async function deleteTimetablesByVariant(variantId: string): Promise<void
 
 interface GenerateTimetablesParams {
   variant: Variant;
+  routes: RouteCorridor[];  // Routes for calculating times
   firstDeparture: string;
   interval: number;
   endTime: string;
@@ -122,7 +124,14 @@ interface GenerateTimetablesParams {
 }
 
 export async function generateTimetables(params: GenerateTimetablesParams): Promise<Timetable[]> {
-  const { variant, firstDeparture, interval, endTime, operatingDays, trainNumberPrefix, startBaseNumber } = params;
+  const { variant, routes, firstDeparture, interval, endTime, operatingDays, trainNumberPrefix, startBaseNumber } = params;
+
+  // Calculate variant times from routes
+  const calculatedStops = calculateVariantTimes(
+    variant.stations,
+    variant.routeRefs || [],
+    routes
+  );
 
   const generatedTimetables: Timetable[] = [];
   let currentDeparture = firstDeparture;
@@ -130,7 +139,7 @@ export async function generateTimetables(params: GenerateTimetablesParams): Prom
 
   // The first station's departureOffset includes dwell time, but user expects
   // firstDeparture to be the actual departure time from station 1
-  const firstStationOffset = variant.stations[0]?.departureOffset ?? 0;
+  const firstStationOffset = calculatedStops[0]?.departureOffset ?? 0;
 
   // Get existing train numbers to check for duplicates
   const existingNumbers = new Set(await getAllTrainNumbers());
@@ -159,22 +168,25 @@ export async function generateTimetables(params: GenerateTimetablesParams): Prom
     }
     existingNumbers.add(trainNumber);
 
-    // Generate departures for this train
+    // Generate departures for this train using calculated stops
     // Subtract firstStationOffset so that firstDeparture is the actual departure from station 1
-    const departures: TimetableDeparture[] = variant.stations.map((stop) => {
-      const arrival = stop.arrivalOffset !== null
-        ? addMinutesToTime(currentDeparture, stop.arrivalOffset - firstStationOffset)
-        : null;
-      const departure = stop.departureOffset !== null
-        ? addMinutesToTime(currentDeparture, stop.departureOffset - firstStationOffset)
-        : null;
+    // Filter out pass-through stations
+    const departures: TimetableDeparture[] = calculatedStops
+      .filter((stop) => stop.stopType !== 'pass')
+      .map((stop) => {
+        const arrival = stop.arrivalOffset !== null
+          ? addMinutesToTime(currentDeparture, stop.arrivalOffset - firstStationOffset)
+          : null;
+        const departure = stop.departureOffset !== null
+          ? addMinutesToTime(currentDeparture, stop.departureOffset - firstStationOffset)
+          : null;
 
-      return {
-        stationId: stop.stationId,
-        arrival,
-        departure,
-      };
-    });
+        return {
+          stationId: stop.stationId,
+          arrival,
+          departure,
+        };
+      });
 
     const timetable: Omit<Timetable, 'id'> = {
       variantId: variant.id,

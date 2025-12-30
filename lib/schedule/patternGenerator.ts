@@ -6,15 +6,19 @@ import {
   TimetableDeparture,
   ServicePeriod,
   Direction,
+  RouteCorridor,
+  CalculatedVariantStop,
 } from '@/types';
 import { generateId, addMinutesToTime } from '@/lib/data/helpers';
 import { calculateCoreNumber, formatTrainNumber } from '@/lib/trainNumbers';
+import { calculateVariantTimes } from '@/lib/routeTimes';
 
 interface GenerationContext {
   schedule: LineSchedule;
   pattern: OperatingPattern;
   outboundVariant: Variant;
   inboundVariant: Variant;
+  routes: RouteCorridor[];  // Routes for calculating times
   shortTurnVariants?: {
     outboundMorning?: Variant;
     inboundMorning?: Variant;
@@ -119,9 +123,13 @@ function calculateDepartureSlots(
 
 /**
  * Get the journey time from origin to anchor station for a variant
+ * Uses calculated stops with offsets
  */
-function getJourneyTimeToAnchor(variant: Variant, anchorStationId: string): number {
-  const anchorStop = variant.stations.find((s) => s.stationId === anchorStationId);
+function getJourneyTimeToAnchor(
+  calculatedStops: CalculatedVariantStop[],
+  anchorStationId: string
+): number {
+  const anchorStop = calculatedStops.find((s) => s.stationId === anchorStationId);
   if (!anchorStop) return 0;
   return anchorStop.departureOffset ?? anchorStop.arrivalOffset ?? 0;
 }
@@ -135,18 +143,20 @@ function isReasonableDepartureTime(minutes: number): boolean {
 
 /**
  * Determine which variant to use for a given departure slot
+ * Uses calculated stops for the primary variant
  */
 function selectVariantForSlot(
   slot: DepartureSlot,
   direction: Direction,
   ctx: GenerationContext,
-  anchorMinute: number
-): { variant: Variant; isShortTurn: boolean } {
-  const { outboundVariant, inboundVariant, shortTurnVariants, schedule } = ctx;
+  anchorMinute: number,
+  primaryCalculatedStops: CalculatedVariantStop[]
+): { variant: Variant; calculatedStops: CalculatedVariantStop[]; isShortTurn: boolean } {
+  const { outboundVariant, inboundVariant, shortTurnVariants, schedule, routes } = ctx;
   const primaryVariant = direction === 'outbound' ? outboundVariant : inboundVariant;
 
   // Calculate origin departure time for full variant
-  const journeyToAnchor = getJourneyTimeToAnchor(primaryVariant, schedule.anchorStationId);
+  const journeyToAnchor = getJourneyTimeToAnchor(primaryCalculatedStops, schedule.anchorStationId);
   const originDeparture = slot.anchorTime - journeyToAnchor;
 
   // Check if we need a morning short-turn
@@ -156,12 +166,13 @@ function selectVariantForSlot(
       : shortTurnVariants?.inboundMorning;
 
     if (shortTurn) {
-      return { variant: shortTurn, isShortTurn: true };
+      const shortCalculatedStops = calculateVariantTimes(shortTurn.stations, shortTurn.routeRefs || [], routes);
+      return { variant: shortTurn, calculatedStops: shortCalculatedStops, isShortTurn: true };
     }
   }
 
   // Check if we need an evening short-turn (arrival after midnight)
-  const terminusStop = primaryVariant.stations[primaryVariant.stations.length - 1];
+  const terminusStop = primaryCalculatedStops[primaryCalculatedStops.length - 1];
   const terminusArrival = slot.anchorTime + (terminusStop?.arrivalOffset ?? 0) - journeyToAnchor;
 
   if (terminusArrival >= 1440) { // After midnight
@@ -170,34 +181,38 @@ function selectVariantForSlot(
       : shortTurnVariants?.inboundEvening;
 
     if (shortTurn) {
-      return { variant: shortTurn, isShortTurn: true };
+      const shortCalculatedStops = calculateVariantTimes(shortTurn.stations, shortTurn.routeRefs || [], routes);
+      return { variant: shortTurn, calculatedStops: shortCalculatedStops, isShortTurn: true };
     }
   }
 
-  return { variant: primaryVariant, isShortTurn: false };
+  return { variant: primaryVariant, calculatedStops: primaryCalculatedStops, isShortTurn: false };
 }
 
 /**
- * Generate timetable departures for a variant given a first departure time
+ * Generate timetable departures using calculated stops given a first departure time
+ * Pass-through stations (stopType: 'pass') are excluded from departures
  */
 function generateDepartures(
-  variant: Variant,
+  calculatedStops: CalculatedVariantStop[],
   firstDepartureTime: string
 ): TimetableDeparture[] {
-  return variant.stations.map((stop) => {
-    const arrival = stop.arrivalOffset !== null
-      ? addMinutesToTime(firstDepartureTime, stop.arrivalOffset)
-      : null;
-    const departure = stop.departureOffset !== null
-      ? addMinutesToTime(firstDepartureTime, stop.departureOffset)
-      : null;
+  return calculatedStops
+    .filter((stop) => stop.stopType !== 'pass')
+    .map((stop) => {
+      const arrival = stop.arrivalOffset !== null
+        ? addMinutesToTime(firstDepartureTime, stop.arrivalOffset)
+        : null;
+      const departure = stop.departureOffset !== null
+        ? addMinutesToTime(firstDepartureTime, stop.departureOffset)
+        : null;
 
-    return {
-      stationId: stop.stationId,
-      arrival,
-      departure,
-    };
-  });
+      return {
+        stationId: stop.stationId,
+        arrival,
+        departure,
+      };
+    });
 }
 
 /**
@@ -210,11 +225,23 @@ export function generateTimetables(
   outboundTimetables: Timetable[];
   inboundTimetables: Timetable[];
 } {
-  const { schedule, pattern } = ctx;
+  const { schedule, pattern, outboundVariant, inboundVariant, routes } = ctx;
   const { outboundAnchorMinute, inboundAnchorMinute, trainNumberPrefix, startBaseNumber } = schedule;
 
   const outboundTimetables: Timetable[] = [];
   const inboundTimetables: Timetable[] = [];
+
+  // Pre-calculate variant times for primary variants
+  const outboundCalculatedStops = calculateVariantTimes(
+    outboundVariant.stations,
+    outboundVariant.routeRefs || [],
+    routes
+  );
+  const inboundCalculatedStops = calculateVariantTimes(
+    inboundVariant.stations,
+    inboundVariant.routeRefs || [],
+    routes
+  );
 
   // Calculate all departure slots for both directions
   const outboundSlots = calculateDepartureSlots(pattern, outboundAnchorMinute);
@@ -233,12 +260,19 @@ export function generateTimetables(
     // Skip if this slot should be skipped due to off-peak reduction
     if (slot.skipDueToReduction) continue;
 
-    // Select the appropriate variant
+    // Select the appropriate variant and its calculated stops
     const anchorMinute = direction === 'outbound' ? outboundAnchorMinute : inboundAnchorMinute;
-    const { variant } = selectVariantForSlot(slot, direction, ctx, anchorMinute);
+    const primaryCalculatedStops = direction === 'outbound' ? outboundCalculatedStops : inboundCalculatedStops;
+    const { variant, calculatedStops } = selectVariantForSlot(
+      slot,
+      direction,
+      ctx,
+      anchorMinute,
+      primaryCalculatedStops
+    );
 
     // Calculate origin departure time
-    const journeyToAnchor = getJourneyTimeToAnchor(variant, schedule.anchorStationId);
+    const journeyToAnchor = getJourneyTimeToAnchor(calculatedStops, schedule.anchorStationId);
     const originDeparture = slot.anchorTime - journeyToAnchor;
 
     // Skip if origin departure is unreasonable and we don't have a short-turn variant
@@ -255,9 +289,9 @@ export function generateTimetables(
     }
     usedNumbers.add(trainNumber);
 
-    // Generate departures
+    // Generate departures using calculated stops
     const firstDepartureTime = minutesToTime(originDeparture);
-    const departures = generateDepartures(variant, firstDepartureTime);
+    const departures = generateDepartures(calculatedStops, firstDepartureTime);
 
     const timetable: Timetable = {
       id: generateId(),

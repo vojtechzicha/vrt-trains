@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Timetable, Variant, OperatingDay, TimetableDeparture } from '@/types';
+import { Timetable, Variant, OperatingDay, TimetableDeparture, CalculatedVariantStop } from '@/types';
 import { Button } from '@/components/ui';
 import { TrainNumberInput } from './TrainNumberInput';
 import { OperatingDaysSelector } from './OperatingDaysSelector';
@@ -10,6 +10,7 @@ import { parseTrainNumber, calculateCoreNumber, formatTrainNumber, extractBaseNu
 interface TimetableEditModalProps {
   timetable: Timetable;
   variant: Variant;
+  calculatedStops: CalculatedVariantStop[];  // Calculated stops with arrivalOffset/departureOffset
   isOpen: boolean;
   onClose: () => void;
   onSave: (id: string, updates: Partial<Timetable>) => Promise<void>;
@@ -18,6 +19,7 @@ interface TimetableEditModalProps {
 export function TimetableEditModal({
   timetable,
   variant,
+  calculatedStops,
   isOpen,
   onClose,
   onSave,
@@ -58,7 +60,7 @@ export function TimetableEditModal({
     const [hours, mins] = newFirstDeparture.split(':').map(Number);
     const baseMinutes = hours * 60 + mins;
 
-    return variant.stations.map((stop) => {
+    return calculatedStops.map((stop) => {
       const arrivalMinutes =
         stop.arrivalOffset !== null ? baseMinutes + stop.arrivalOffset : null;
       const departureMinutes =

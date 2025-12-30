@@ -1,12 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getVariant, generateTimetables, deleteTimetablesByVariant } from '@/lib/data';
+import { getVariant, getRoutes, generateTimetables, deleteTimetablesByVariant } from '@/lib/data';
 
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
     const { variantId, firstDeparture, interval, endTime, operatingDays, trainNumberPrefix, startBaseNumber, clearExisting } = data;
 
-    const variant = await getVariant(variantId);
+    const [variant, routes] = await Promise.all([
+      getVariant(variantId),
+      getRoutes(),
+    ]);
+
     if (!variant) {
       return NextResponse.json({ error: 'Variant not found' }, { status: 404 });
     }
@@ -18,6 +22,7 @@ export async function POST(request: NextRequest) {
 
     const timetables = await generateTimetables({
       variant,
+      routes,
       firstDeparture,
       interval,
       endTime,

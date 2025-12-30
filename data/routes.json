@@ -2,7 +2,7 @@
   "routes": [
     {
       "id": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
-      "name": "001 RS1 Praha -> Brno -> Ostrava",
+      "name": "001 RS1 Praha - Brno - Ostrava",
       "description": "This route consists of:\n* VRT Praha\n* VRT Polabí\n* VRT Střední Čechy\n* VRT Vysočina I\n* VRT Vysočina II\n* VRT Haná\n* VRT Moravská brána",
       "paths": [
         {
@@ -14,7 +14,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -22,56 +22,66 @@
               "sequence": 2,
               "distanceFromPrevious": 3,
               "distanceKm": 3,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 1
+              "vrtTime": 5,
+              "defaultDwellTime": 1,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
               "sequence": 3,
               "distanceFromPrevious": 4,
               "distanceKm": 7,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 2
+              "vrtTime": 5,
+              "defaultDwellTime": 2,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 4,
               "distanceFromPrevious": 14,
               "distanceKm": 21,
-              "baseTimeFromPrevious": 6,
-              "defaultDwellTime": 2
+              "vrtTime": 6,
+              "defaultDwellTime": 2,
+              "fastTime": 7
             },
             {
               "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
               "sequence": 5,
               "distanceFromPrevious": 35,
               "distanceKm": 56,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 1
+              "vrtTime": 7,
+              "defaultDwellTime": 1,
+              "fastTime": 12
             },
             {
               "stationId": "2abcb7ea-a1b0-4fde-8e6b-c9a390a5ac7c",
               "sequence": 6,
               "distanceFromPrevious": 68,
               "distanceKm": 124,
-              "baseTimeFromPrevious": 14,
-              "defaultDwellTime": 2
+              "vrtTime": 14,
+              "defaultDwellTime": 2,
+              "fastTime": 22
             },
             {
               "stationId": "01",
               "sequence": 7,
               "distanceFromPrevious": 75,
               "distanceKm": 199,
-              "baseTimeFromPrevious": 16,
-              "defaultDwellTime": 3
+              "vrtTime": 16,
+              "defaultDwellTime": 3,
+              "fastTime": 24
             },
             {
               "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
               "sequence": 8,
               "distanceFromPrevious": 7,
               "distanceKm": 206,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 3
+              "vrtTime": 5,
+              "defaultDwellTime": 3,
+              "fastTime": 5,
+              "slowTime": 5
             }
           ]
         },
@@ -84,7 +94,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -92,48 +102,56 @@
               "sequence": 2,
               "distanceFromPrevious": 5,
               "distanceKm": 5,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 2
+              "vrtTime": 7,
+              "defaultDwellTime": 2,
+              "fastTime": 7,
+              "slowTime": 7
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 3,
               "distanceFromPrevious": 19,
               "distanceKm": 24,
-              "baseTimeFromPrevious": 11,
-              "defaultDwellTime": 2
+              "vrtTime": 11,
+              "defaultDwellTime": 2,
+              "fastTime": 13
             },
             {
               "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
               "sequence": 4,
               "distanceFromPrevious": 35,
               "distanceKm": 59,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 1
+              "vrtTime": 7,
+              "defaultDwellTime": 1,
+              "fastTime": 12
             },
             {
               "stationId": "2abcb7ea-a1b0-4fde-8e6b-c9a390a5ac7c",
               "sequence": 5,
               "distanceFromPrevious": 68,
               "distanceKm": 127,
-              "baseTimeFromPrevious": 14,
-              "defaultDwellTime": 2
+              "vrtTime": 14,
+              "defaultDwellTime": 2,
+              "fastTime": 22
             },
             {
               "stationId": "01",
               "sequence": 6,
               "distanceFromPrevious": 75,
               "distanceKm": 202,
-              "baseTimeFromPrevious": 16,
-              "defaultDwellTime": 3
+              "vrtTime": 16,
+              "defaultDwellTime": 3,
+              "fastTime": 24
             },
             {
               "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
               "sequence": 7,
               "distanceFromPrevious": 7,
               "distanceKm": 209,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 3
+              "vrtTime": 5,
+              "defaultDwellTime": 3,
+              "fastTime": 5,
+              "slowTime": 5
             }
           ]
         },
@@ -146,7 +164,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -154,32 +172,38 @@
               "sequence": 2,
               "distanceFromPrevious": 3,
               "distanceKm": 3,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 1
+              "vrtTime": 5,
+              "defaultDwellTime": 1,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
               "sequence": 3,
               "distanceFromPrevious": 4,
               "distanceKm": 7,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 2
+              "vrtTime": 5,
+              "defaultDwellTime": 2,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 4,
               "distanceFromPrevious": 14,
               "distanceKm": 21,
-              "baseTimeFromPrevious": 6,
-              "defaultDwellTime": 2
+              "vrtTime": 6,
+              "defaultDwellTime": 2,
+              "fastTime": 7
             },
             {
               "stationId": "f0cb9062-c708-4c4a-8429-8dd99612bf1f",
               "sequence": 5,
               "distanceFromPrevious": 21,
               "distanceKm": 42,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 1
+              "vrtTime": 7,
+              "defaultDwellTime": 1,
+              "fastTime": 9
             }
           ]
         },
@@ -192,7 +216,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -200,37 +224,41 @@
               "sequence": 2,
               "distanceFromPrevious": 5,
               "distanceKm": 5,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 2
+              "vrtTime": 7,
+              "defaultDwellTime": 2,
+              "fastTime": 7,
+              "slowTime": 7
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 3,
               "distanceFromPrevious": 19,
               "distanceKm": 24,
-              "baseTimeFromPrevious": 11,
-              "defaultDwellTime": 2
+              "vrtTime": 11,
+              "defaultDwellTime": 2,
+              "fastTime": 13
             },
             {
               "stationId": "f0cb9062-c708-4c4a-8429-8dd99612bf1f",
               "sequence": 4,
               "distanceFromPrevious": 21,
               "distanceKm": 45,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 2
+              "vrtTime": 7,
+              "defaultDwellTime": 2,
+              "fastTime": 12
             }
           ]
         },
         {
           "id": "5259f979-0f03-4539-b603-045d943b9860",
-          "name": "Praha hl.n. -> Nymburk via Zahradní Město",
+          "name": "Praha hl.n. -> Nymburk město via Zahradní Město",
           "stops": [
             {
               "stationId": "570762",
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -238,32 +266,38 @@
               "sequence": 2,
               "distanceFromPrevious": 3,
               "distanceKm": 3,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 1
+              "vrtTime": 5,
+              "defaultDwellTime": 1,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
               "sequence": 3,
               "distanceFromPrevious": 4,
               "distanceKm": 7,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 2
+              "vrtTime": 5,
+              "defaultDwellTime": 2,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 4,
               "distanceFromPrevious": 14,
               "distanceKm": 21,
-              "baseTimeFromPrevious": 6,
-              "defaultDwellTime": 2
+              "vrtTime": 6,
+              "defaultDwellTime": 2,
+              "fastTime": 7
             },
             {
-              "stationId": "0a73fd7b-f69d-4ce4-8d67-59ffc0e914db",
+              "stationId": "5cd599bf-b3fc-49fb-9392-cb65afb6209f",
               "sequence": 5,
               "distanceFromPrevious": 26,
               "distanceKm": 47,
-              "baseTimeFromPrevious": 14,
-              "defaultDwellTime": 3
+              "vrtTime": 14,
+              "fastTime": 16,
+              "defaultDwellTime": 1
             }
           ]
         },
@@ -276,7 +310,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -284,24 +318,28 @@
               "sequence": 2,
               "distanceFromPrevious": 5,
               "distanceKm": 5,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 2
+              "vrtTime": 7,
+              "defaultDwellTime": 2,
+              "fastTime": 7,
+              "slowTime": 7
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 3,
               "distanceFromPrevious": 19,
               "distanceKm": 24,
-              "baseTimeFromPrevious": 11,
-              "defaultDwellTime": 2
+              "vrtTime": 11,
+              "defaultDwellTime": 2,
+              "fastTime": 12
             },
             {
-              "stationId": "0a73fd7b-f69d-4ce4-8d67-59ffc0e914db",
+              "stationId": "5cd599bf-b3fc-49fb-9392-cb65afb6209f",
               "sequence": 4,
               "distanceFromPrevious": 26,
               "distanceKm": 50,
-              "baseTimeFromPrevious": 14,
-              "defaultDwellTime": 3
+              "vrtTime": 14,
+              "fastTime": 16,
+              "defaultDwellTime": 1
             }
           ]
         },
@@ -314,7 +352,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -322,40 +360,47 @@
               "sequence": 2,
               "distanceFromPrevious": 3,
               "distanceKm": 3,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 1
+              "vrtTime": 5,
+              "defaultDwellTime": 1,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
               "sequence": 3,
               "distanceFromPrevious": 4,
               "distanceKm": 7,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 2
+              "vrtTime": 5,
+              "defaultDwellTime": 2,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 4,
               "distanceFromPrevious": 14,
               "distanceKm": 21,
-              "baseTimeFromPrevious": 6,
-              "defaultDwellTime": 2
+              "vrtTime": 6,
+              "defaultDwellTime": 2,
+              "fastTime": 7
             },
             {
               "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
               "sequence": 5,
               "distanceFromPrevious": 35,
               "distanceKm": 56,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 1
+              "vrtTime": 7,
+              "defaultDwellTime": 1,
+              "fastTime": 12
             },
             {
               "stationId": "2cd65e4f-e2d1-4a4d-8711-3c39afb496a8",
               "sequence": 6,
               "distanceFromPrevious": 47,
               "distanceKm": 103,
-              "baseTimeFromPrevious": 15,
-              "defaultDwellTime": 2
+              "vrtTime": 15,
+              "defaultDwellTime": 2,
+              "fastTime": 15
             }
           ]
         },
@@ -368,7 +413,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -376,32 +421,37 @@
               "sequence": 2,
               "distanceFromPrevious": 5,
               "distanceKm": 5,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 2
+              "vrtTime": 7,
+              "defaultDwellTime": 2,
+              "fastTime": 7,
+              "slowTime": 7
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 3,
               "distanceFromPrevious": 19,
               "distanceKm": 24,
-              "baseTimeFromPrevious": 11,
-              "defaultDwellTime": 2
+              "vrtTime": 11,
+              "defaultDwellTime": 2,
+              "fastTime": 12
             },
             {
               "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
               "sequence": 4,
               "distanceFromPrevious": 35,
               "distanceKm": 59,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 1
+              "vrtTime": 7,
+              "defaultDwellTime": 1,
+              "fastTime": 12
             },
             {
               "stationId": "2cd65e4f-e2d1-4a4d-8711-3c39afb496a8",
               "sequence": 5,
               "distanceFromPrevious": 47,
               "distanceKm": 106,
-              "baseTimeFromPrevious": 15,
-              "defaultDwellTime": 2
+              "vrtTime": 15,
+              "defaultDwellTime": 2,
+              "fastTime": 15
             }
           ]
         },
@@ -414,7 +464,7 @@
               "sequence": 1,
               "distanceFromPrevious": 10,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 1
             },
             {
@@ -422,24 +472,28 @@
               "sequence": 2,
               "distanceFromPrevious": 9,
               "distanceKm": 9,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 1
+              "vrtTime": 5,
+              "defaultDwellTime": 1,
+              "fastTime": 5
             },
             {
               "stationId": "01",
               "sequence": 3,
               "distanceFromPrevious": 33,
               "distanceKm": 42,
-              "baseTimeFromPrevious": 9,
-              "defaultDwellTime": 3
+              "vrtTime": 9,
+              "defaultDwellTime": 3,
+              "fastTime": 11
             },
             {
               "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
               "sequence": 4,
               "distanceFromPrevious": 7,
               "distanceKm": 49,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 3
+              "vrtTime": 5,
+              "defaultDwellTime": 3,
+              "fastTime": 5,
+              "slowTime": 5
             }
           ]
         },
@@ -452,7 +506,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -460,40 +514,47 @@
               "sequence": 2,
               "distanceFromPrevious": 3,
               "distanceKm": 3,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 1
+              "vrtTime": 5,
+              "defaultDwellTime": 1,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
               "sequence": 3,
               "distanceFromPrevious": 4,
               "distanceKm": 7,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 2
+              "vrtTime": 5,
+              "defaultDwellTime": 2,
+              "fastTime": 5,
+              "slowTime": 5
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 4,
               "distanceFromPrevious": 14,
               "distanceKm": 21,
-              "baseTimeFromPrevious": 6,
-              "defaultDwellTime": 2
+              "vrtTime": 6,
+              "defaultDwellTime": 2,
+              "fastTime": 7
             },
             {
               "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
               "sequence": 5,
               "distanceFromPrevious": 35,
               "distanceKm": 56,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 1
+              "vrtTime": 7,
+              "defaultDwellTime": 1,
+              "fastTime": 12
             },
             {
               "stationId": "efe3d432-de57-4ede-8861-81df5c1839af",
               "sequence": 6,
               "distanceFromPrevious": 74,
               "distanceKm": 130,
-              "baseTimeFromPrevious": 17,
-              "defaultDwellTime": 2
+              "vrtTime": 17,
+              "defaultDwellTime": 2,
+              "fastTime": 28
             }
           ]
         },
@@ -506,7 +567,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 5
             },
             {
@@ -514,32 +575,37 @@
               "sequence": 2,
               "distanceFromPrevious": 5,
               "distanceKm": 5,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 2
+              "vrtTime": 7,
+              "defaultDwellTime": 2,
+              "fastTime": 7,
+              "slowTime": 7
             },
             {
               "stationId": "b988be91-8213-4906-9633-ba29989813cc",
               "sequence": 3,
               "distanceFromPrevious": 19,
               "distanceKm": 24,
-              "baseTimeFromPrevious": 11,
-              "defaultDwellTime": 2
+              "vrtTime": 11,
+              "defaultDwellTime": 2,
+              "fastTime": 12
             },
             {
               "stationId": "e2815464-9609-47c8-a599-7757f6441f07",
               "sequence": 4,
               "distanceFromPrevious": 35,
               "distanceKm": 59,
-              "baseTimeFromPrevious": 7,
-              "defaultDwellTime": 1
+              "vrtTime": 7,
+              "defaultDwellTime": 1,
+              "fastTime": 12
             },
             {
               "stationId": "efe3d432-de57-4ede-8861-81df5c1839af",
               "sequence": 5,
               "distanceFromPrevious": 74,
               "distanceKm": 133,
-              "baseTimeFromPrevious": 17,
-              "defaultDwellTime": 1
+              "vrtTime": 17,
+              "defaultDwellTime": 1,
+              "fastTime": 28
             }
           ]
         },
@@ -552,7 +618,7 @@
               "sequence": 1,
               "distanceFromPrevious": 10,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 1
             },
             {
@@ -560,16 +626,19 @@
               "sequence": 2,
               "distanceFromPrevious": 81,
               "distanceKm": 81,
-              "baseTimeFromPrevious": 36,
-              "defaultDwellTime": 3
+              "vrtTime": 36,
+              "defaultDwellTime": 3,
+              "fastTime": 41
             },
             {
               "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
               "sequence": 3,
               "distanceFromPrevious": 7,
               "distanceKm": 88,
-              "baseTimeFromPrevious": 5,
-              "defaultDwellTime": 3
+              "vrtTime": 5,
+              "defaultDwellTime": 3,
+              "fastTime": 5,
+              "slowTime": 5
             }
           ]
         },
@@ -582,7 +651,7 @@
               "sequence": 1,
               "distanceFromPrevious": 7,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 5,
+              "vrtTime": 5,
               "defaultDwellTime": 3
             },
             {
@@ -590,8 +659,9 @@
               "sequence": 2,
               "distanceFromPrevious": 158,
               "distanceKm": 158,
-              "baseTimeFromPrevious": 35,
-              "defaultDwellTime": 3
+              "vrtTime": 35,
+              "defaultDwellTime": 3,
+              "fastTime": 52
             }
           ]
         },
@@ -604,7 +674,7 @@
               "sequence": 1,
               "distanceFromPrevious": 7,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 5,
+              "vrtTime": 5,
               "defaultDwellTime": 3
             },
             {
@@ -612,8 +682,9 @@
               "sequence": 2,
               "distanceFromPrevious": 42,
               "distanceKm": 42,
-              "baseTimeFromPrevious": 14,
-              "defaultDwellTime": 1
+              "vrtTime": 14,
+              "defaultDwellTime": 1,
+              "fastTime": 17
             }
           ]
         },
@@ -626,7 +697,7 @@
               "sequence": 1,
               "distanceFromPrevious": 108,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 27,
+              "vrtTime": 27,
               "defaultDwellTime": 3
             },
             {
@@ -634,8 +705,9 @@
               "sequence": 2,
               "distanceFromPrevious": 108,
               "distanceKm": 108,
-              "baseTimeFromPrevious": 27,
-              "defaultDwellTime": 2
+              "vrtTime": 27,
+              "defaultDwellTime": 2,
+              "fastTime": 37
             }
           ]
         },
@@ -648,7 +720,7 @@
               "sequence": 1,
               "distanceFromPrevious": 7,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 5,
+              "vrtTime": 5,
               "defaultDwellTime": 3
             },
             {
@@ -656,8 +728,9 @@
               "sequence": 2,
               "distanceFromPrevious": 87,
               "distanceKm": 87,
-              "baseTimeFromPrevious": 25,
-              "defaultDwellTime": 3
+              "vrtTime": 25,
+              "defaultDwellTime": 3,
+              "fastTime": 32
             }
           ]
         },
@@ -670,7 +743,7 @@
               "sequence": 1,
               "distanceFromPrevious": 10,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 3
             },
             {
@@ -678,8 +751,9 @@
               "sequence": 2,
               "distanceFromPrevious": 34,
               "distanceKm": 34,
-              "baseTimeFromPrevious": 16,
-              "defaultDwellTime": 2
+              "vrtTime": 16,
+              "defaultDwellTime": 2,
+              "fastTime": 19
             }
           ]
         },
@@ -692,7 +766,7 @@
               "sequence": 1,
               "distanceFromPrevious": 10,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 3
             },
             {
@@ -700,8 +774,9 @@
               "sequence": 2,
               "distanceFromPrevious": 85,
               "distanceKm": 85,
-              "baseTimeFromPrevious": 35,
-              "defaultDwellTime": 3
+              "vrtTime": 35,
+              "defaultDwellTime": 3,
+              "fastTime": 38
             }
           ]
         },
@@ -714,7 +789,7 @@
               "sequence": 1,
               "distanceFromPrevious": 10,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 2
             },
             {
@@ -722,8 +797,9 @@
               "sequence": 2,
               "distanceFromPrevious": 54,
               "distanceKm": 54,
-              "baseTimeFromPrevious": 17,
-              "defaultDwellTime": 3
+              "vrtTime": 17,
+              "defaultDwellTime": 3,
+              "fastTime": 19
             }
           ]
         },
@@ -736,7 +812,7 @@
               "sequence": 1,
               "distanceFromPrevious": 7,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 5,
+              "vrtTime": 5,
               "defaultDwellTime": 3
             },
             {
@@ -744,8 +820,9 @@
               "sequence": 2,
               "distanceFromPrevious": 160,
               "distanceKm": 160,
-              "baseTimeFromPrevious": 38,
-              "defaultDwellTime": 1
+              "vrtTime": 38,
+              "defaultDwellTime": 1,
+              "fastTime": 55
             }
           ]
         },
@@ -758,7 +835,7 @@
               "sequence": 1,
               "distanceFromPrevious": 10,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 3
             },
             {
@@ -766,7 +843,7 @@
               "sequence": 2,
               "distanceFromPrevious": 87,
               "distanceKm": 87,
-              "baseTimeFromPrevious": 39,
+              "vrtTime": 41,
               "defaultDwellTime": 1
             }
           ]
@@ -780,7 +857,7 @@
               "sequence": 1,
               "distanceFromPrevious": 10,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 2
             },
             {
@@ -788,14 +865,15 @@
               "sequence": 2,
               "distanceFromPrevious": 56,
               "distanceKm": 56,
-              "baseTimeFromPrevious": 21,
-              "defaultDwellTime": 1
+              "vrtTime": 21,
+              "defaultDwellTime": 1,
+              "fastTime": 24
             }
           ]
         }
       ],
       "createdAt": "2025-12-30T09:26:59.089Z",
-      "updatedAt": "2025-12-30T11:40:48.320Z"
+      "updatedAt": "2025-12-30T15:07:31.936Z"
     },
     {
       "id": "7ce3545d-d374-4a10-a2bb-c6b95c7939ba",
@@ -811,7 +889,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 1
             },
             {
@@ -819,7 +897,7 @@
               "sequence": 2,
               "distanceFromPrevious": 21,
               "distanceKm": 21,
-              "baseTimeFromPrevious": 12,
+              "vrtTime": 12,
               "defaultDwellTime": 1
             },
             {
@@ -827,7 +905,7 @@
               "sequence": 3,
               "distanceFromPrevious": 12,
               "distanceKm": 33,
-              "baseTimeFromPrevious": 8,
+              "vrtTime": 8,
               "defaultDwellTime": 2
             },
             {
@@ -835,7 +913,7 @@
               "sequence": 4,
               "distanceFromPrevious": 17,
               "distanceKm": 50,
-              "baseTimeFromPrevious": 9,
+              "vrtTime": 9,
               "defaultDwellTime": 3
             },
             {
@@ -843,7 +921,7 @@
               "sequence": 5,
               "distanceFromPrevious": 5,
               "distanceKm": 55,
-              "baseTimeFromPrevious": 6,
+              "vrtTime": 6,
               "defaultDwellTime": 2
             },
             {
@@ -851,7 +929,7 @@
               "sequence": 6,
               "distanceFromPrevious": 8,
               "distanceKm": 63,
-              "baseTimeFromPrevious": 6,
+              "vrtTime": 6,
               "defaultDwellTime": 3
             },
             {
@@ -859,7 +937,7 @@
               "sequence": 7,
               "distanceFromPrevious": 9,
               "distanceKm": 72,
-              "baseTimeFromPrevious": 6,
+              "vrtTime": 6,
               "defaultDwellTime": 1
             }
           ]
@@ -873,7 +951,7 @@
               "sequence": 1,
               "distanceFromPrevious": 10,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 1
             },
             {
@@ -881,7 +959,7 @@
               "sequence": 2,
               "distanceFromPrevious": 6,
               "distanceKm": 6,
-              "baseTimeFromPrevious": 12,
+              "vrtTime": 12,
               "defaultDwellTime": 1
             },
             {
@@ -889,7 +967,7 @@
               "sequence": 3,
               "distanceFromPrevious": 3,
               "distanceKm": 9,
-              "baseTimeFromPrevious": 4,
+              "vrtTime": 4,
               "defaultDwellTime": 0
             },
             {
@@ -897,7 +975,7 @@
               "sequence": 4,
               "distanceFromPrevious": 5,
               "distanceKm": 14,
-              "baseTimeFromPrevious": 5,
+              "vrtTime": 5,
               "defaultDwellTime": 2
             },
             {
@@ -905,7 +983,7 @@
               "sequence": 5,
               "distanceFromPrevious": 4,
               "distanceKm": 18,
-              "baseTimeFromPrevious": 9,
+              "vrtTime": 9,
               "defaultDwellTime": 7
             },
             {
@@ -913,7 +991,7 @@
               "sequence": 6,
               "distanceFromPrevious": 9,
               "distanceKm": 27,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 3
             }
           ]
@@ -927,7 +1005,7 @@
               "sequence": 1,
               "distanceFromPrevious": 10,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 10,
+              "vrtTime": 10,
               "defaultDwellTime": 1
             },
             {
@@ -935,7 +1013,7 @@
               "sequence": 2,
               "distanceFromPrevious": 6,
               "distanceKm": 6,
-              "baseTimeFromPrevious": 12,
+              "vrtTime": 12,
               "defaultDwellTime": 1
             },
             {
@@ -943,7 +1021,7 @@
               "sequence": 3,
               "distanceFromPrevious": 3,
               "distanceKm": 9,
-              "baseTimeFromPrevious": 4,
+              "vrtTime": 4,
               "defaultDwellTime": 0
             },
             {
@@ -951,7 +1029,7 @@
               "sequence": 4,
               "distanceFromPrevious": 5,
               "distanceKm": 14,
-              "baseTimeFromPrevious": 5,
+              "vrtTime": 5,
               "defaultDwellTime": 2
             },
             {
@@ -959,7 +1037,7 @@
               "sequence": 5,
               "distanceFromPrevious": 9,
               "distanceKm": 23,
-              "baseTimeFromPrevious": 13,
+              "vrtTime": 13,
               "defaultDwellTime": 3
             }
           ]
@@ -982,7 +1060,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 1
             },
             {
@@ -990,7 +1068,7 @@
               "sequence": 2,
               "distanceFromPrevious": 5,
               "distanceKm": 5,
-              "baseTimeFromPrevious": 6,
+              "vrtTime": 6,
               "defaultDwellTime": 3
             },
             {
@@ -998,7 +1076,7 @@
               "sequence": 3,
               "distanceFromPrevious": 2,
               "distanceKm": 7,
-              "baseTimeFromPrevious": 4,
+              "vrtTime": 4,
               "defaultDwellTime": 0
             },
             {
@@ -1006,7 +1084,7 @@
               "sequence": 4,
               "distanceFromPrevious": 1,
               "distanceKm": 8,
-              "baseTimeFromPrevious": 1,
+              "vrtTime": 1,
               "defaultDwellTime": 1
             },
             {
@@ -1014,7 +1092,7 @@
               "sequence": 5,
               "distanceFromPrevious": 5,
               "distanceKm": 13,
-              "baseTimeFromPrevious": 6,
+              "vrtTime": 6,
               "defaultDwellTime": 1
             },
             {
@@ -1022,7 +1100,7 @@
               "sequence": 6,
               "distanceFromPrevious": 10,
               "distanceKm": 23,
-              "baseTimeFromPrevious": 8,
+              "vrtTime": 8,
               "defaultDwellTime": 2
             },
             {
@@ -1030,7 +1108,7 @@
               "sequence": 7,
               "distanceFromPrevious": 1,
               "distanceKm": 24,
-              "baseTimeFromPrevious": 3,
+              "vrtTime": 3,
               "defaultDwellTime": 0
             },
             {
@@ -1038,7 +1116,7 @@
               "sequence": 8,
               "distanceFromPrevious": 3,
               "distanceKm": 27,
-              "baseTimeFromPrevious": 3,
+              "vrtTime": 3,
               "defaultDwellTime": 0
             },
             {
@@ -1046,7 +1124,7 @@
               "sequence": 9,
               "distanceFromPrevious": 2,
               "distanceKm": 29,
-              "baseTimeFromPrevious": 2,
+              "vrtTime": 2,
               "defaultDwellTime": 0
             },
             {
@@ -1054,7 +1132,7 @@
               "sequence": 10,
               "distanceFromPrevious": 2,
               "distanceKm": 31,
-              "baseTimeFromPrevious": 3,
+              "vrtTime": 3,
               "defaultDwellTime": 0
             },
             {
@@ -1062,7 +1140,7 @@
               "sequence": 11,
               "distanceFromPrevious": 11,
               "distanceKm": 42,
-              "baseTimeFromPrevious": 9,
+              "vrtTime": 9,
               "defaultDwellTime": 2
             }
           ]
@@ -1076,7 +1154,7 @@
               "sequence": 1,
               "distanceFromPrevious": 0,
               "distanceKm": 0,
-              "baseTimeFromPrevious": 0,
+              "vrtTime": 0,
               "defaultDwellTime": 1
             },
             {
@@ -1084,7 +1162,7 @@
               "sequence": 2,
               "distanceFromPrevious": 8,
               "distanceKm": 8,
-              "baseTimeFromPrevious": 5,
+              "vrtTime": 5,
               "defaultDwellTime": 0
             },
             {
@@ -1092,7 +1170,7 @@
               "sequence": 3,
               "distanceFromPrevious": 4,
               "distanceKm": 12,
-              "baseTimeFromPrevious": 4,
+              "vrtTime": 4,
               "defaultDwellTime": 2
             }
           ]
@@ -1100,6 +1178,1679 @@
       ],
       "createdAt": "2025-12-30T11:57:31.423Z",
       "updatedAt": "2025-12-30T12:04:29.165Z"
+    },
+    {
+      "id": "dc9c510e-926e-46eb-84dc-681c7ef56938",
+      "name": "323 Ostrava - Valašské Meziříčí, Frýdlant nad Ostravicí - Ostravice",
+      "description": "",
+      "paths": [
+        {
+          "id": "45bc6800-bac9-4164-88f1-be1f73e6e1a9",
+          "name": "Ostrava hl.n. -> Valašské Meziříčí",
+          "stops": [
+            {
+              "stationId": "343640",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "343939",
+              "sequence": 2,
+              "distanceFromPrevious": 2,
+              "distanceKm": 2,
+              "vrtTime": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "49e63854-0fad-4451-a8e2-bbdfe317edcc",
+              "sequence": 3,
+              "distanceFromPrevious": 1,
+              "distanceKm": 3,
+              "vrtTime": 1,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "344143",
+              "sequence": 4,
+              "distanceFromPrevious": 5,
+              "distanceKm": 8,
+              "vrtTime": 6,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "333443",
+              "sequence": 5,
+              "distanceFromPrevious": 14,
+              "distanceKm": 22,
+              "vrtTime": 17,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "d8c4aa1a-35c9-45d7-b2ea-7fa2f8c0db56",
+              "sequence": 6,
+              "distanceFromPrevious": 10,
+              "distanceKm": 32,
+              "vrtTime": 14,
+              "defaultDwellTime": 4
+            },
+            {
+              "stationId": "b26b5ab5-0d05-4f7f-8110-397dc9f0c943",
+              "sequence": 7,
+              "distanceFromPrevious": 15,
+              "distanceKm": 47,
+              "vrtTime": 19,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "2566448e-9d60-469e-9cd0-bf513a8d861f",
+              "sequence": 8,
+              "distanceFromPrevious": 1,
+              "distanceKm": 48,
+              "vrtTime": 3,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "10b27cb8-4fd4-4a20-b1e9-b1f66c889d3f",
+              "sequence": 9,
+              "distanceFromPrevious": 7,
+              "distanceKm": 55,
+              "vrtTime": 8,
+              "defaultDwellTime": 6
+            },
+            {
+              "stationId": "cdafff75-6941-46c1-a517-b76675408b6f",
+              "sequence": 10,
+              "distanceFromPrevious": 17,
+              "distanceKm": 72,
+              "vrtTime": 21,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "804faa82-d1d1-41dd-ad07-9fc51c82a7d0",
+          "name": "Frýdlant nad Ostravicí -> Ostravice",
+          "stops": [
+            {
+              "stationId": "d8c4aa1a-35c9-45d7-b2ea-7fa2f8c0db56",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "63cd6d19-0eb3-4f65-ae06-db495f81c210",
+              "sequence": 2,
+              "distanceFromPrevious": 7,
+              "distanceKm": 7,
+              "vrtTime": 11,
+              "defaultDwellTime": 2
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T12:16:42.740Z",
+      "updatedAt": "2025-12-30T12:16:42.740Z"
+    },
+    {
+      "id": "2fb91139-b94e-41f4-b528-026f1cf89c60",
+      "name": "320 (Ostrava -) Bohumín - Čadca",
+      "description": "",
+      "paths": [
+        {
+          "id": "7f305d4b-4f27-4417-89fa-64b2b5a4484b",
+          "name": "Ostrava-Svinov -> Čadca",
+          "stops": [
+            {
+              "stationId": "344341",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "343640",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "vrtTime": 6,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+              "sequence": 3,
+              "distanceFromPrevious": 8,
+              "distanceKm": 13,
+              "vrtTime": 6,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+              "sequence": 4,
+              "distanceFromPrevious": 15,
+              "distanceKm": 28,
+              "vrtTime": 9,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+              "sequence": 5,
+              "distanceFromPrevious": 16,
+              "distanceKm": 44,
+              "vrtTime": 14,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "35717b0c-9663-40eb-af1b-161508592631",
+              "sequence": 6,
+              "distanceFromPrevious": 5,
+              "distanceKm": 49,
+              "vrtTime": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "f6c510fa-0c07-4951-b802-f655e81c3dec",
+              "sequence": 7,
+              "distanceFromPrevious": 6,
+              "distanceKm": 55,
+              "vrtTime": 2,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "29e30bf0-264b-4427-b0e8-6cf792655674",
+              "sequence": 8,
+              "distanceFromPrevious": 1,
+              "distanceKm": 56,
+              "vrtTime": 3,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "3b055d1d-eb38-4e69-94dc-23db763e1372",
+              "sequence": 9,
+              "distanceFromPrevious": 3,
+              "distanceKm": 59,
+              "vrtTime": 3,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "c3fab8ec-5667-4b1f-8919-9f79f656384c",
+              "sequence": 10,
+              "distanceFromPrevious": 3,
+              "distanceKm": 62,
+              "vrtTime": 3,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "358d5bac-da1f-4e80-99f6-73ea42dfbe83",
+              "sequence": 11,
+              "distanceFromPrevious": 2,
+              "distanceKm": 64,
+              "vrtTime": 3,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "2b7bd42a-c26b-470c-9857-ada706cda926",
+              "sequence": 12,
+              "distanceFromPrevious": 3,
+              "distanceKm": 67,
+              "vrtTime": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "0a4ab504-4606-4c5d-aee4-1b720facb7cf",
+              "sequence": 13,
+              "distanceFromPrevious": 8,
+              "distanceKm": 75,
+              "vrtTime": 8,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "63583d19-02e9-403a-9fba-98073026b135",
+              "sequence": 14,
+              "distanceFromPrevious": 19,
+              "distanceKm": 94,
+              "vrtTime": 6,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T12:35:42.450Z",
+      "updatedAt": "2025-12-30T12:35:42.450Z"
+    },
+    {
+      "id": "3efe935e-0b42-4367-99bc-34b1b0a13453",
+      "name": "SK1 Čadca -> Košice",
+      "description": "",
+      "paths": [
+        {
+          "id": "af44aeaf-b400-46ea-a955-a7cd4e73ec1c",
+          "name": "Čadca -> Košice",
+          "stops": [
+            {
+              "stationId": "63583d19-02e9-403a-9fba-98073026b135",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+              "sequence": 2,
+              "distanceFromPrevious": 30,
+              "distanceKm": 30,
+              "vrtTime": 23,
+              "defaultDwellTime": 4
+            },
+            {
+              "stationId": "01c4bfa2-ccac-4d63-8059-6fa0856c3ce2",
+              "sequence": 3,
+              "distanceFromPrevious": 21,
+              "distanceKm": 51,
+              "vrtTime": 19,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "e4adac8b-0ce7-48af-ba78-ed7f758c2e4f",
+              "sequence": 4,
+              "distanceFromPrevious": 36,
+              "distanceKm": 87,
+              "vrtTime": 25,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "4fea46c9-59a9-4d2a-b389-dfc07079c2e2",
+              "sequence": 5,
+              "distanceFromPrevious": 26,
+              "distanceKm": 113,
+              "vrtTime": 19,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "abc7ee73-7d3f-4af2-a99b-a801c3ebe3d1",
+              "sequence": 6,
+              "distanceFromPrevious": 39,
+              "distanceKm": 152,
+              "vrtTime": 26,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "fc5c279a-f392-4548-b04a-102df479387d",
+              "sequence": 7,
+              "distanceFromPrevious": 19,
+              "distanceKm": 171,
+              "vrtTime": 14,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "6a1660f0-f136-4386-a2fd-c07345ef3e97",
+              "sequence": 8,
+              "distanceFromPrevious": 26,
+              "distanceKm": 197,
+              "vrtTime": 22,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "2a0d30be-69c6-421a-b24b-668e66c2ddd4",
+              "sequence": 9,
+              "distanceFromPrevious": 59,
+              "distanceKm": 256,
+              "vrtTime": 38,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "46032ccb-4260-4150-8b4c-ead2c7d7eb2a",
+              "sequence": 10,
+              "distanceFromPrevious": 16,
+              "distanceKm": 272,
+              "vrtTime": 16,
+              "defaultDwellTime": 5
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T12:41:10.732Z",
+      "updatedAt": "2025-12-30T12:41:10.732Z"
+    },
+    {
+      "id": "0980d1fd-df96-4bec-a951-98adba1ebd12",
+      "name": "PL1 Bohumín -> Warszawa Wschodnia",
+      "description": "",
+      "paths": [
+        {
+          "id": "0aea906f-7cff-4fa0-beaa-547c45366e4f",
+          "name": "Bohumín -> Warszawa Wschodnia",
+          "stops": [
+            {
+              "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "0f7d1240-94a0-406e-8a71-5cd39b889977",
+              "sequence": 2,
+              "distanceFromPrevious": 20,
+              "distanceKm": 20,
+              "vrtTime": 21,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "6c910788-748c-44eb-98d4-2f6179e4c3c7",
+              "sequence": 3,
+              "distanceFromPrevious": 36,
+              "distanceKm": 56,
+              "vrtTime": 39,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "4e505e48-8c69-46f7-9b60-641b1f740e2c",
+              "sequence": 4,
+              "distanceFromPrevious": 19,
+              "distanceKm": 75,
+              "vrtTime": 18,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "b53d5b3e-5c33-4ad3-9a0a-9d604ac60687",
+              "sequence": 5,
+              "distanceFromPrevious": 16,
+              "distanceKm": 91,
+              "vrtTime": 18,
+              "defaultDwellTime": 7
+            },
+            {
+              "stationId": "0473463b-a48c-433a-a3de-a76ab759b897",
+              "sequence": 6,
+              "distanceFromPrevious": 9,
+              "distanceKm": 100,
+              "vrtTime": 15,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "f52db3b0-fecd-4853-8fbb-4b95bd000d1b",
+              "sequence": 7,
+              "distanceFromPrevious": 9,
+              "distanceKm": 109,
+              "vrtTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "5d70dac4-10f9-4722-bca0-7f43dcbc81da",
+              "sequence": 8,
+              "distanceFromPrevious": 26,
+              "distanceKm": 135,
+              "vrtTime": 15,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "6872c64b-3375-45fc-a529-c94537953676",
+              "sequence": 9,
+              "distanceFromPrevious": 70,
+              "distanceKm": 205,
+              "vrtTime": 31,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "cf9d8ef2-05b4-4131-8ff3-d58d49c110b1",
+              "sequence": 10,
+              "distanceFromPrevious": 62,
+              "distanceKm": 267,
+              "vrtTime": 26,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "1ca5fc18-8a74-4c0e-85ed-5366771fa399",
+              "sequence": 11,
+              "distanceFromPrevious": 119,
+              "distanceKm": 386,
+              "vrtTime": 52,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "68327217-007c-4fbb-bfb9-1683f3924d31",
+              "sequence": 12,
+              "distanceFromPrevious": 3,
+              "distanceKm": 389,
+              "vrtTime": 4,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "ae2e10cf-36db-4fdb-a205-e352589e2f26",
+              "sequence": 13,
+              "distanceFromPrevious": 4,
+              "distanceKm": 393,
+              "vrtTime": 6,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T12:47:53.035Z",
+      "updatedAt": "2025-12-30T13:10:40.466Z"
+    },
+    {
+      "id": "dd865f18-70ac-4bfd-b152-2af1e7f01ad3",
+      "name": "280 (Olomouc -) Přerov - Hranice na Moravě - Střelná (- Púchov)",
+      "description": "",
+      "paths": [
+        {
+          "id": "5e3d2ba1-bcf9-4984-b42c-61b9cf350ba4",
+          "name": "Olomouc hl.n. -> Púchov (přes Přerov)",
+          "stops": [
+            {
+              "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "d5a6ba79-7a44-48dc-912f-4df004dbeba3",
+              "sequence": 2,
+              "distanceFromPrevious": 22,
+              "distanceKm": 22,
+              "vrtTime": 12,
+              "defaultDwellTime": 11
+            },
+            {
+              "stationId": "8a77129c-cb25-41f2-9408-b52c37ac0464",
+              "sequence": 3,
+              "distanceFromPrevious": 15,
+              "distanceKm": 37,
+              "vrtTime": 12,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+              "sequence": 4,
+              "distanceFromPrevious": 14,
+              "distanceKm": 51,
+              "vrtTime": 13,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "cdafff75-6941-46c1-a517-b76675408b6f",
+              "sequence": 5,
+              "distanceFromPrevious": 26,
+              "distanceKm": 77,
+              "vrtTime": 20,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "8441175e-3d4c-4a16-a1a8-84431b525f8b",
+              "sequence": 6,
+              "distanceFromPrevious": 19,
+              "distanceKm": 96,
+              "vrtTime": 15,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "6447755f-5608-45d4-b47f-15e73add84c2",
+              "sequence": 7,
+              "distanceFromPrevious": 18,
+              "distanceKm": 114,
+              "vrtTime": 22,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "f44f8fe2-4d79-4642-998e-9a931750e92a",
+              "sequence": 8,
+              "distanceFromPrevious": 2,
+              "distanceKm": 116,
+              "vrtTime": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "1f16197d-d0ce-4750-bb43-9b353df885f7",
+              "sequence": 9,
+              "distanceFromPrevious": 21,
+              "distanceKm": 137,
+              "vrtTime": 19,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "a29dd26c-d647-4808-9abd-0dde38fe8b6c",
+          "name": "Olomouc hl.n. -> Hranice na Moravě (mimo Přerov)",
+          "stops": [
+            {
+              "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "8a77129c-cb25-41f2-9408-b52c37ac0464",
+              "sequence": 2,
+              "distanceFromPrevious": 37,
+              "distanceKm": 37,
+              "vrtTime": 20,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+              "sequence": 3,
+              "distanceFromPrevious": 14,
+              "distanceKm": 51,
+              "vrtTime": 13,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T13:56:35.517Z",
+      "updatedAt": "2025-12-30T14:02:52.603Z"
+    },
+    {
+      "id": "eabb834d-b0fd-4d99-a69f-22897278e032",
+      "name": "SK2 Púchov - Žilina",
+      "description": "",
+      "paths": [
+        {
+          "id": "4224e4a0-0ab9-476a-9c08-2f44a6bbc290",
+          "name": "Púchov -> Žilina",
+          "stops": [
+            {
+              "stationId": "1f16197d-d0ce-4750-bb43-9b353df885f7",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "86fd4eda-4b4c-4ad2-a9e0-7e4ee0bea73d",
+              "sequence": 2,
+              "distanceFromPrevious": 11,
+              "distanceKm": 11,
+              "vrtTime": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+              "sequence": 3,
+              "distanceFromPrevious": 32,
+              "distanceKm": 43,
+              "vrtTime": 19,
+              "defaultDwellTime": 5
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T13:58:14.126Z",
+      "updatedAt": "2025-12-30T13:58:14.126Z"
+    },
+    {
+      "id": "af3f9111-29be-4489-afde-4afcd5c3dd19",
+      "name": "270 Česká Třebová - Přerov, Rudoltice v Čechách - Lanškroun",
+      "description": "",
+      "paths": [
+        {
+          "id": "13787a4a-e7cf-4322-84fa-1ceec90f8174",
+          "name": "Česká Třebová -> Přerov",
+          "stops": [
+            {
+              "stationId": "960ade80-b6b6-48c6-8d07-493e7a6c01cf",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "defaultDwellTime": 2,
+              "vrtTime": 0
+            },
+            {
+              "stationId": "87645902-ab40-4270-93f2-92dd1ace63f9",
+              "sequence": 2,
+              "distanceFromPrevious": 14,
+              "distanceKm": 14,
+              "defaultDwellTime": 1,
+              "vrtTime": 11
+            },
+            {
+              "stationId": "74bba77a-f8f8-427b-b3d9-6cc2d2c37e91",
+              "sequence": 3,
+              "distanceFromPrevious": 26,
+              "distanceKm": 40,
+              "defaultDwellTime": 2,
+              "vrtTime": 10
+            },
+            {
+              "stationId": "31c5a74f-7a57-457d-a3c2-a1252622c10e",
+              "sequence": 4,
+              "distanceFromPrevious": 12,
+              "distanceKm": 52,
+              "defaultDwellTime": 0,
+              "vrtTime": 8
+            },
+            {
+              "stationId": "cf75fbe7-ef0d-4fdf-8ea2-3367845a548e",
+              "sequence": 5,
+              "distanceFromPrevious": 13,
+              "distanceKm": 65,
+              "defaultDwellTime": 2,
+              "vrtTime": 7
+            },
+            {
+              "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+              "sequence": 6,
+              "distanceFromPrevious": 21,
+              "distanceKm": 86,
+              "defaultDwellTime": 3,
+              "vrtTime": 11
+            },
+            {
+              "stationId": "d5a6ba79-7a44-48dc-912f-4df004dbeba3",
+              "sequence": 7,
+              "distanceFromPrevious": 22,
+              "distanceKm": 108,
+              "defaultDwellTime": 2,
+              "vrtTime": 12
+            }
+          ]
+        },
+        {
+          "id": "a9f94d2d-8a06-40ac-a782-a4988573f174",
+          "name": "Rudoltice v Čechách -> Lanškroun",
+          "stops": [
+            {
+              "stationId": "87645902-ab40-4270-93f2-92dd1ace63f9",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "defaultDwellTime": 2,
+              "vrtTime": 10
+            },
+            {
+              "stationId": "57c1bcb6-8521-4b47-9453-081170e2904a",
+              "sequence": 2,
+              "distanceFromPrevious": 4,
+              "distanceKm": 4,
+              "defaultDwellTime": 2,
+              "vrtTime": 6
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T14:02:40.143Z",
+      "updatedAt": "2025-12-30T14:03:27.120Z"
+    },
+    {
+      "id": "da758a83-2029-4838-a6b9-46b4f2ad6ba2",
+      "name": "010 Poříčany - Česká Třebová",
+      "description": "",
+      "paths": [
+        {
+          "id": "ee8f2731-e856-49db-a29c-6cccf3211a93",
+          "name": "Poříčany-> Česká Třebová",
+          "stops": [
+            {
+              "stationId": "f0cb9062-c708-4c4a-8429-8dd99612bf1f",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "55a49ab6-c07e-4e91-afed-a3b3a481c39c",
+              "sequence": 2,
+              "distanceFromPrevious": 8,
+              "distanceKm": 8,
+              "fastTime": 5,
+              "slowTime": 7,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "5204c107-d6a4-4ed9-9baf-291ed601188f",
+              "sequence": 3,
+              "distanceFromPrevious": 14,
+              "distanceKm": 22,
+              "fastTime": 17,
+              "slowTime": 18,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "30c44393-f28a-466b-9920-fd9f9c4a1f6d",
+              "sequence": 4,
+              "distanceFromPrevious": 29,
+              "distanceKm": 51,
+              "fastTime": 14,
+              "slowTime": 33,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "d54f8791-39ee-4fb4-98e5-c29783870c67",
+              "sequence": 5,
+              "distanceFromPrevious": 13,
+              "distanceKm": 64,
+              "fastTime": 7,
+              "slowTime": 14,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "3fca2a4f-dad7-4cd8-b1a6-23afd2e25fc6",
+              "sequence": 6,
+              "distanceFromPrevious": 35,
+              "distanceKm": 99,
+              "fastTime": 20,
+              "slowTime": 41,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "a3ecfe9f-de5d-43e6-afd6-3c87862624cc",
+              "sequence": 7,
+              "distanceFromPrevious": 15,
+              "distanceKm": 114,
+              "fastTime": 10,
+              "slowTime": 12,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "8f6fa2ae-b4b3-479e-929c-647f6c961cb2",
+              "sequence": 8,
+              "distanceFromPrevious": 1,
+              "distanceKm": 115,
+              "fastTime": 2,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "960ade80-b6b6-48c6-8d07-493e7a6c01cf",
+              "sequence": 9,
+              "distanceFromPrevious": 9,
+              "distanceKm": 124,
+              "fastTime": 6,
+              "slowTime": 7,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T14:23:18.487Z",
+      "updatedAt": "2025-12-30T14:23:18.487Z"
+    },
+    {
+      "id": "e9d47583-f33c-4572-811a-aa65ef2733c5",
+      "name": "170 (Praha -) Beroun - Plzeň - Klatovy",
+      "description": "",
+      "paths": [
+        {
+          "id": "6a67a152-0b36-4bd0-beaf-0c533ce3d214",
+          "name": "Praha hl.n. -> Klatovy",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4",
+              "sequence": 2,
+              "distanceFromPrevious": 4,
+              "distanceKm": 4,
+              "fastTime": 10,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "0dbd256a-a267-4742-8e57-4e84b67f4425",
+              "sequence": 3,
+              "distanceFromPrevious": 39,
+              "distanceKm": 43,
+              "fastTime": 35,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "7fd38df8-b1bd-45d6-8bc3-f4d4c259f0d9",
+              "sequence": 4,
+              "distanceFromPrevious": 9,
+              "distanceKm": 52,
+              "fastTime": 7,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e204056e-1416-4fe4-9bdd-3cee0cfc0a0e",
+              "sequence": 5,
+              "distanceFromPrevious": 10,
+              "distanceKm": 62,
+              "fastTime": 8,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "fd58ad10-8f5f-4594-8706-528aea797c67",
+              "sequence": 6,
+              "distanceFromPrevious": 11,
+              "distanceKm": 73,
+              "fastTime": 8,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "a0d91942-c420-461b-963e-91bccb0d6e2e",
+              "sequence": 7,
+              "distanceFromPrevious": 17,
+              "distanceKm": 90,
+              "fastTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "f2e0cbf8-69e4-42cd-b9c9-150ecdbb9543",
+              "sequence": 8,
+              "distanceFromPrevious": 8,
+              "distanceKm": 98,
+              "slowTime": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "0824f2ae-9b6a-492e-9005-01c6d08b2cd7",
+              "sequence": 9,
+              "distanceFromPrevious": 11,
+              "distanceKm": 109,
+              "fastTime": 5,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "a984a309-2c69-407c-89ed-e0471be81d0b",
+              "sequence": 10,
+              "distanceFromPrevious": 1,
+              "distanceKm": 110,
+              "fastTime": 3,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "205fa4b7-f9de-4a8f-ad60-70e41ee04f09",
+              "sequence": 11,
+              "distanceFromPrevious": 13,
+              "distanceKm": 123,
+              "fastTime": 12,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "352910e3-9fbb-400c-9dbf-bb36a1803531",
+              "sequence": 12,
+              "distanceFromPrevious": 4,
+              "distanceKm": 127,
+              "fastTime": 5,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "2b55b037-8a37-4ccb-99e1-6c76f6e4fdfe",
+              "sequence": 13,
+              "distanceFromPrevious": 7,
+              "distanceKm": 134,
+              "fastTime": 6,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "b77af1ad-eb5a-4a40-928b-2cd6dd1ffe49",
+              "sequence": 14,
+              "distanceFromPrevious": 13,
+              "distanceKm": 147,
+              "fastTime": 6,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "763589d5-dee2-4963-9970-ec34a5979219",
+              "sequence": 15,
+              "distanceFromPrevious": 10,
+              "distanceKm": 157,
+              "fastTime": 9,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "f7019835-f34f-4b0b-8c48-eea93894cca4",
+          "name": "Praha hl.n. -> Plzeň hl.n.",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4",
+              "sequence": 2,
+              "distanceFromPrevious": 4,
+              "distanceKm": 4,
+              "fastTime": 10,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "0824f2ae-9b6a-492e-9005-01c6d08b2cd7",
+              "sequence": 3,
+              "distanceFromPrevious": 103,
+              "distanceKm": 107,
+              "fastTime": 73,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T15:01:16.480Z",
+      "updatedAt": "2025-12-30T15:19:35.934Z"
+    },
+    {
+      "id": "349f858f-eb26-4d27-8b10-122caaf81726",
+      "name": "171 (Praha -) Plzeň - Cheb",
+      "description": "",
+      "paths": [
+        {
+          "id": "f6fcc0da-15ff-432a-baed-34b8022af406",
+          "name": "Plzeň hl.n. -> Cheb",
+          "stops": [
+            {
+              "stationId": "0824f2ae-9b6a-492e-9005-01c6d08b2cd7",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "e721c7d4-36d8-4355-9f59-54e83c8c5da1",
+              "sequence": 2,
+              "distanceFromPrevious": 1,
+              "distanceKm": 1,
+              "fastTime": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "b339d2d3-28b3-42e4-8e8d-e6a2ada9bbeb",
+              "sequence": 3,
+              "distanceFromPrevious": 32,
+              "distanceKm": 33,
+              "fastTime": 23,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "2a235fd4-8789-4b97-b646-cb0ca1907f6e",
+              "sequence": 4,
+              "distanceFromPrevious": 31,
+              "distanceKm": 64,
+              "fastTime": 21,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "d5ad9917-989d-4da0-9a96-3bc9ad50ce6c",
+              "sequence": 5,
+              "distanceFromPrevious": 12,
+              "distanceKm": 76,
+              "fastTime": 11,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b9b445b9-cd9e-42b6-bf1a-9ee60adbb9df",
+              "sequence": 6,
+              "distanceFromPrevious": 30,
+              "distanceKm": 106,
+              "fastTime": 19,
+              "defaultDwellTime": 4
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T15:05:08.719Z",
+      "updatedAt": "2025-12-30T15:05:08.719Z"
+    },
+    {
+      "id": "83599f25-b219-48ed-b746-eea056a096d3",
+      "name": "005 RS5 Praha - Hradec Králové / Pardubice",
+      "description": "",
+      "paths": [
+        {
+          "id": "085e2ecd-08d8-4656-904f-fc33b993ae81",
+          "name": "Praha východ VRT -> Pardubice hl.n. (via Praha-Libeň)",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "vrtTime": 7,
+              "fastTime": 7,
+              "slowTime": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 3,
+              "distanceFromPrevious": 19,
+              "distanceKm": 24,
+              "vrtTime": 11,
+              "fastTime": 13,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "d54f8791-39ee-4fb4-98e5-c29783870c67",
+              "sequence": 4,
+              "distanceFromPrevious": 72,
+              "distanceKm": 96,
+              "vrtTime": 21,
+              "fastTime": 28,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "59f9a450-fdb3-45f6-b5b1-9e39eac418fb",
+          "name": "Praha východ VRT -> Hradec Králové hl.n. (via Praha-Libeň)",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "vrtTime": 7,
+              "fastTime": 7,
+              "slowTime": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 3,
+              "distanceFromPrevious": 19,
+              "distanceKm": 24,
+              "vrtTime": 11,
+              "fastTime": 13,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "2402bee8-4a1d-410d-a82f-7f9e8d84caf1",
+              "sequence": 4,
+              "distanceFromPrevious": 58,
+              "distanceKm": 82,
+              "vrtTime": 22,
+              "fastTime": 29,
+              "defaultDwellTime": 4
+            }
+          ]
+        },
+        {
+          "id": "8c9e660d-5ff7-44d3-9937-042a33608c2a",
+          "name": "Praha východ VRT -> Pardubice hl.n. (via Zahradní Město)",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "4d474ceb-5153-4649-b85c-3349562a42d0",
+              "sequence": 2,
+              "distanceFromPrevious": 3,
+              "distanceKm": 3,
+              "vrtTime": 5,
+              "fastTime": 5,
+              "slowTime": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 7,
+              "vrtTime": 5,
+              "fastTime": 5,
+              "slowTime": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 4,
+              "distanceFromPrevious": 14,
+              "distanceKm": 21,
+              "vrtTime": 6,
+              "fastTime": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "d54f8791-39ee-4fb4-98e5-c29783870c67",
+              "sequence": 5,
+              "distanceFromPrevious": 72,
+              "distanceKm": 93,
+              "vrtTime": 21,
+              "fastTime": 28,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "47a20ced-bd4c-464d-9a54-c05e6410252a",
+          "name": "Praha východ VRT -> Hradec Králové hl.n. (via Zahradní Město)",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "4d474ceb-5153-4649-b85c-3349562a42d0",
+              "sequence": 2,
+              "distanceFromPrevious": 3,
+              "distanceKm": 3,
+              "vrtTime": 5,
+              "fastTime": 5,
+              "slowTime": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e1ae4c4c-2257-4e0b-8ae2-22597b9018be",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 7,
+              "vrtTime": 5,
+              "fastTime": 5,
+              "slowTime": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+              "sequence": 4,
+              "distanceFromPrevious": 14,
+              "distanceKm": 21,
+              "vrtTime": 6,
+              "fastTime": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "2402bee8-4a1d-410d-a82f-7f9e8d84caf1",
+              "sequence": 5,
+              "distanceFromPrevious": 58,
+              "distanceKm": 79,
+              "vrtTime": 22,
+              "fastTime": 29,
+              "defaultDwellTime": 4
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T15:11:23.016Z",
+      "updatedAt": "2025-12-30T16:12:02.987Z"
+    },
+    {
+      "id": "cd7d3715-fa57-4a3e-983c-f4a14f7751a0",
+      "name": "120 Praha - Kladno - Rakovník, Praha-Ruzyně - Letiště Václava Havla - Jeneč",
+      "description": "",
+      "paths": [
+        {
+          "id": "5cf4495b-1f12-4278-bdea-795caf0662a5",
+          "name": "Praha Masarykovo nádraží -> Kladno město",
+          "stops": [
+            {
+              "stationId": "a9716cca-c94d-46c5-be1d-888a6b96d26f",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "31a9cda8-476a-40c1-8d58-88353608d4f9",
+              "sequence": 2,
+              "distanceFromPrevious": 2,
+              "distanceKm": 2,
+              "fastTime": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "c393f224-db4f-49bc-a368-8412ec2be8c7",
+              "sequence": 3,
+              "distanceFromPrevious": 3,
+              "distanceKm": 5,
+              "fastTime": 7,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "fc5f00d4-75c7-4b39-8e92-f5a6630c08e1",
+              "sequence": 4,
+              "distanceFromPrevious": 4,
+              "distanceKm": 9,
+              "fastTime": 8,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "03ab9be6-74b2-4d14-9c7b-68b71a2e2f9b",
+              "sequence": 5,
+              "distanceFromPrevious": 3,
+              "distanceKm": 12,
+              "slowTime": 5,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "1e9fcead-8cd2-4e8e-9454-f9ad1736423a",
+              "sequence": 6,
+              "distanceFromPrevious": 4,
+              "distanceKm": 16,
+              "fastTime": 4,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "87574896-1260-4f19-a5e0-725a146e321d",
+              "sequence": 7,
+              "distanceFromPrevious": 4,
+              "distanceKm": 20,
+              "slowTime": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "6753427b-73ab-49d2-b50d-d37658250810",
+              "sequence": 8,
+              "distanceFromPrevious": 10,
+              "distanceKm": 30,
+              "fastTime": 8,
+              "defaultDwellTime": 4
+            },
+            {
+              "stationId": "76b7df53-d522-47ca-a2a6-bb1619a647f0",
+              "sequence": 9,
+              "distanceFromPrevious": 3,
+              "distanceKm": 33,
+              "fastTime": 4,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "4d2a4e8a-fcc6-4cfc-82d0-1d0321ee3f35",
+          "name": "Kladno -> Rakovník",
+          "stops": [
+            {
+              "stationId": "6753427b-73ab-49d2-b50d-d37658250810",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "6709213b-5cd7-44ea-a76e-909b20b59406",
+              "sequence": 2,
+              "distanceFromPrevious": 10,
+              "distanceKm": 10,
+              "fastTime": 10,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "c678f088-564a-430f-80d6-e28eccc2b50a",
+              "sequence": 3,
+              "distanceFromPrevious": 3,
+              "distanceKm": 13,
+              "fastTime": 5,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "db7d7db6-1104-411a-98e8-977cad106188",
+              "sequence": 4,
+              "distanceFromPrevious": 7,
+              "distanceKm": 20,
+              "fastTime": 9,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "cc57e0e6-bd46-4747-a21e-698e823c6ca7",
+              "sequence": 5,
+              "distanceFromPrevious": 13,
+              "distanceKm": 33,
+              "fastTime": 12,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "9aaad192-fea7-427f-b53a-7730a3881e70",
+              "sequence": 6,
+              "distanceFromPrevious": 9,
+              "distanceKm": 42,
+              "fastTime": 8,
+              "defaultDwellTime": 5
+            }
+          ]
+        },
+        {
+          "id": "a2f2a60e-bf39-4872-9930-24c9b73693ff",
+          "name": "Praha-Ruzyně -> Praha-Letiště Václava Havla",
+          "stops": [
+            {
+              "stationId": "03ab9be6-74b2-4d14-9c7b-68b71a2e2f9b",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "17f3a2f0-4bc8-44c1-a5d6-7e3aa9148d41",
+              "sequence": 2,
+              "distanceFromPrevious": 8,
+              "distanceKm": 8,
+              "fastTime": 6,
+              "slowTime": 5,
+              "defaultDwellTime": 5
+            }
+          ]
+        },
+        {
+          "id": "a60dcb1b-3218-4362-bd29-adc9b70d2640",
+          "name": "Praha-Letiště Václava Havla -> Hostivice",
+          "stops": [
+            {
+              "stationId": "17f3a2f0-4bc8-44c1-a5d6-7e3aa9148d41",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "1e9fcead-8cd2-4e8e-9454-f9ad1736423a",
+              "sequence": 2,
+              "distanceFromPrevious": 8,
+              "distanceKm": 8,
+              "fastTime": 5,
+              "slowTime": 5,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "6927c5b2-dcd0-45c0-b593-8e61569f2121",
+          "name": "Praha-Letiště Václava Havla -> Jeneč",
+          "stops": [
+            {
+              "stationId": "17f3a2f0-4bc8-44c1-a5d6-7e3aa9148d41",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "87574896-1260-4f19-a5e0-725a146e321d",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "fastTime": 5,
+              "slowTime": 6,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T15:45:42.256Z",
+      "updatedAt": "2025-12-30T15:47:55.079Z"
+    },
+    {
+      "id": "0534dd16-0f17-4c50-8357-eb39372bf8d3",
+      "name": "122 Praha - Hostivice - Rudná u Prahy",
+      "description": "",
+      "paths": [
+        {
+          "id": "f082f66d-4534-4253-a199-8c732cee7687",
+          "name": "Praha-Smíchov -> Rudná u Prahy",
+          "stops": [
+            {
+              "stationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "db5c4aff-cd6b-4b4d-a21e-b95b5118e92a",
+              "sequence": 2,
+              "distanceFromPrevious": 15,
+              "distanceKm": 15,
+              "fastTime": 22,
+              "slowTime": 32,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "1e9fcead-8cd2-4e8e-9454-f9ad1736423a",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 19,
+              "fastTime": 4,
+              "slowTime": 4,
+              "defaultDwellTime": 6
+            },
+            {
+              "stationId": "211c775e-d111-4a79-822f-0a461e0f99dd",
+              "sequence": 4,
+              "distanceFromPrevious": 8,
+              "distanceKm": 27,
+              "slowTime": 14,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T15:50:01.292Z",
+      "updatedAt": "2025-12-30T15:50:01.292Z"
+    },
+    {
+      "id": "178dc034-2edf-4d95-b640-b1f34d25c1c9",
+      "name": "310 Olomouc - Opava, Rýmařov - Valšov",
+      "description": "",
+      "paths": [
+        {
+          "id": "82c63382-76c3-4ebf-9815-14394f7689fa",
+          "name": "Olomouc hl.n. -> Valšov",
+          "stops": [
+            {
+              "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "edfef02b-bb15-45e3-afd4-b00cc90d6cf1",
+              "sequence": 2,
+              "distanceFromPrevious": 11,
+              "distanceKm": 11,
+              "fastTime": 13,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "c1435668-f8db-4146-90a6-da9d1fef5cd0",
+              "sequence": 3,
+              "distanceFromPrevious": 18,
+              "distanceKm": 29,
+              "slowTime": 23,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "9bb8c903-bac3-43bc-98bb-b8a309bba363",
+              "sequence": 4,
+              "distanceFromPrevious": 7,
+              "distanceKm": 36,
+              "slowTime": 8,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "a3b5665c-a194-4473-a5a2-a31ca49a6fad",
+              "sequence": 5,
+              "distanceFromPrevious": 9,
+              "distanceKm": 45,
+              "slowTime": 11,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "893724c2-cd11-48e0-bb3c-79a31fc2e3ac",
+              "sequence": 6,
+              "distanceFromPrevious": 4,
+              "distanceKm": 49,
+              "slowTime": 6,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "a550d442-8aca-4fb6-adf8-e04a54ac2014",
+              "sequence": 7,
+              "distanceFromPrevious": 7,
+              "distanceKm": 56,
+              "slowTime": 7,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "2256f3f6-a32e-4b96-96fb-69b407793565",
+          "name": "Rýmařov -> Opava východ",
+          "stops": [
+            {
+              "stationId": "f9220bfd-9077-4b73-997e-35e7ace1350a",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "a550d442-8aca-4fb6-adf8-e04a54ac2014",
+              "sequence": 2,
+              "distanceFromPrevious": 15,
+              "distanceKm": 15,
+              "slowTime": 26,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "98ffa809-d9b3-46c7-a834-063aec03da25",
+              "sequence": 3,
+              "distanceFromPrevious": 8,
+              "distanceKm": 23,
+              "fastTime": 9,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "fe455ed1-1528-4342-a4ca-d9553e11cea9",
+              "sequence": 4,
+              "distanceFromPrevious": 9,
+              "distanceKm": 32,
+              "slowTime": 10,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "a1887209-c7f1-4dd8-b68e-7ab7f262a2fe",
+              "sequence": 5,
+              "distanceFromPrevious": 14,
+              "distanceKm": 46,
+              "fastTime": 16,
+              "defaultDwellTime": 8
+            },
+            {
+              "stationId": "48aaeedb-34f5-4b73-96ce-12b76cda9d78",
+              "sequence": 6,
+              "distanceFromPrevious": 3,
+              "distanceKm": 49,
+              "fastTime": 4,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e36f7545-0758-4859-8ff0-f076159d16f0",
+              "sequence": 7,
+              "distanceFromPrevious": 22,
+              "distanceKm": 71,
+              "fastTime": 19,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "5fe582c9-2960-4a67-a288-fd7d6f0ee762",
+              "sequence": 8,
+              "distanceFromPrevious": 4,
+              "distanceKm": 75,
+              "fastTime": 5,
+              "defaultDwellTime": 7
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T16:20:53.999Z",
+      "updatedAt": "2025-12-30T16:20:53.999Z"
+    },
+    {
+      "id": "fe3d50e8-7ad8-4b9f-a309-d8d6f8b5283c",
+      "name": "316 Opava - Ostrava",
+      "description": "",
+      "paths": [
+        {
+          "id": "fde9ce41-a76a-4ed0-977c-371a8ca65050",
+          "name": "Opava východ -> Ostrava-Svinov",
+          "stops": [
+            {
+              "stationId": "5fe582c9-2960-4a67-a288-fd7d6f0ee762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "cb4dd8c1-8c17-4e42-a64e-cce3e97613e4",
+              "sequence": 2,
+              "distanceFromPrevious": 7,
+              "distanceKm": 7,
+              "fastTime": 7,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "57a6e3a5-ca63-418f-8d7f-758d310ddced",
+              "sequence": 3,
+              "distanceFromPrevious": 6,
+              "distanceKm": 13,
+              "fastTime": 6,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "344341",
+              "sequence": 4,
+              "distanceFromPrevious": 15,
+              "distanceKm": 28,
+              "fastTime": 10,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-30T16:22:46.159Z",
+      "updatedAt": "2025-12-30T16:22:46.159Z"
     }
   ]
 }

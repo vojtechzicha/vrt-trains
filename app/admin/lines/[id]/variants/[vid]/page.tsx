@@ -16,7 +16,8 @@ import { Card, CardHeader, CardBody, Button, Input, Select } from '@/components/
 import { LineBadge } from '@/components/lines';
 import { RouteBuilder, buildDurationLookup, DurationLookup, RouteStop } from '@/components/admin/RouteBuilder';
 import { RoutePreview } from '@/components/admin/RoutePreview';
-import { segmentsToRouteStops } from '@/components/admin/RouteSequenceBuilder';
+import { segmentsToRouteStops, RouteSegment } from '@/components/admin/RouteSequenceBuilder';
+import { calculateVariantTimes } from '@/lib/routeTimes';
 
 const directionOptions = [
   { value: 'outbound', label: 'Outbound' },
@@ -85,27 +86,21 @@ export default function EditVariantPage({
       setRouteRefs(variantData.routeRefs || []);
       setOutOfSync(variantData.outOfSync || false);
 
-      // Convert VariantStop[] to RouteStop[] with dwellTime
-      const stops: RouteStop[] = variantData.stations.map(
-        (stop: VariantStop, index: number) => {
-          // Calculate dwell time from arrival/departure offset difference
-          const dwellTime = index === variantData.stations.length - 1
-            ? 0
-            : (stop.departureOffset || 0) - (stop.arrivalOffset || 0);
-
-          return {
-            stationId: stop.stationId,
-            minutesFromPrevious:
-              index === 0
-                ? 0
-                : (stop.arrivalOffset || 0) -
-                  (variantData.stations[index - 1].departureOffset || 0),
-            dwellTime: Math.max(dwellTime, 0),
-            platform: stop.platform,
-            stopType: stop.stopType,
-          };
-        }
+      // Convert VariantStop[] to RouteStop[] using calculated times from routes
+      // Calculate travel times on-the-fly using route references
+      const calculatedStops = calculateVariantTimes(
+        variantData.stations,
+        variantData.routeRefs || [],
+        routesData
       );
+
+      const stops: RouteStop[] = calculatedStops.map((stop, index) => ({
+        stationId: stop.stationId,
+        minutesFromPrevious: stop.travelTimeFromPrevious,
+        dwellTime: stop.dwellTime,
+        platform: stop.platform,
+        stopType: stop.stopType,
+      }));
       setRouteStops(stops);
     } catch (error) {
       console.error('Failed to fetch data:', error);
@@ -133,10 +128,11 @@ export default function EditVariantPage({
     try {
       // Convert route refs to segments format
       // Compute reversed by comparing ref direction to variant's base direction
-      const segments = routeRefs.map((ref) => ({
+      const segments: RouteSegment[] = routeRefs.map((ref) => ({
         routeId: ref.routeId,
         pathId: ref.pathId,
         reversed: ref.direction !== direction,
+        speedCategory: ref.speedCategory || 'vrt',
         startStationId: ref.startStationId,
         endStationId: ref.endStationId,
       }));
@@ -165,36 +161,15 @@ export default function EditVariantPage({
   }
 
   // Convert RouteStop[] to VariantStop[] for saving
+  // Note: VariantStop no longer stores arrivalOffset/departureOffset - times are calculated on-the-fly
   function routeStopsToVariantStops(stops: RouteStop[]): VariantStop[] {
-    let cumulativeMinutes = 0;
-
-    return stops.map((stop, index) => {
-      // Add travel time from previous
-      if (index > 0) {
-        cumulativeMinutes += stop.minutesFromPrevious;
-      }
-
-      const arrivalOffset = index === 0 ? null : cumulativeMinutes;
-
-      // Add dwell time for departure
-      const departureOffset = index === stops.length - 1
-        ? null
-        : cumulativeMinutes + stop.dwellTime;
-
-      // Update cumulative to include dwell for next iteration
-      if (index < stops.length - 1) {
-        cumulativeMinutes += stop.dwellTime;
-      }
-
-      return {
-        stationId: stop.stationId,
-        sequence: index + 1,
-        arrivalOffset,
-        departureOffset,
-        platform: stop.platform,
-        stopType: stop.stopType,
-      };
-    });
+    return stops.map((stop, index) => ({
+      stationId: stop.stationId,
+      sequence: index + 1,
+      dwellTime: stop.dwellTime,
+      platform: stop.platform,
+      stopType: stop.stopType,
+    }));
   }
 
   async function saveVariant(stops: RouteStop[], clearOutOfSync: boolean = false) {

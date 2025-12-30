@@ -30,14 +30,21 @@ export interface Line {
 // Variant types
 export type StopType = 'regular' | 'request' | 'pass';
 export type Direction = 'outbound' | 'inbound';
+export type SpeedCategory = 'vrt' | 'fast' | 'slow';
 
 export interface VariantStop {
   stationId: string;
   sequence: number;
-  arrivalOffset: number | null;
-  departureOffset: number | null;
+  dwellTime: number;            // User-customizable dwell time in minutes
   platform: string;
   stopType: StopType;
+}
+
+// Calculated variant stop with timing offsets (computed from route, not stored)
+export interface CalculatedVariantStop extends VariantStop {
+  arrivalOffset: number | null;    // Cumulative minutes from start (null for first)
+  departureOffset: number | null;  // Cumulative minutes from start (null for last)
+  travelTimeFromPrevious: number;  // Minutes from previous stop (for display)
 }
 
 // Route corridor types
@@ -46,13 +53,17 @@ export interface RoutePathStop {
   sequence: number;
   distanceFromPrevious: number;   // Segment distance in km (user enters this)
   distanceKm: number;             // Cumulative distance from path start (auto-calculated)
-  baseTimeFromPrevious: number;   // Minutes from previous stop
+  vrtTime?: number;               // VRT/high-speed time in minutes (at least one required)
+  fastTime?: number;              // Fast train time in minutes
+  slowTime?: number;              // Regional/slow train time in minutes
   defaultDwellTime: number;       // Default stop duration (minutes)
 }
 
 export interface ReverseTimeAdjustment {
   stationId: string;
-  baseTimeFromPrevious: number;   // Different time when going in reverse
+  vrtTime?: number;               // VRT time when going in reverse
+  fastTime?: number;              // Fast time when going in reverse
+  slowTime?: number;              // Slow time when going in reverse
 }
 
 export interface RoutePath {
@@ -75,6 +86,7 @@ export interface VariantRouteRef {
   routeId: string;
   pathId: string;
   direction: Direction;
+  speedCategory: SpeedCategory;   // Which speed times to use for this segment
   startStationId?: string;        // Where to join this route (optional subset)
   endStationId?: string;          // Where to leave this route (optional subset)
 }

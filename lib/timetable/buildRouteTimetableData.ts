@@ -406,9 +406,13 @@ export function calculatePathDistance(path: RoutePath): number {
 
 /**
  * Calculate total travel time for a route path (excluding dwell times).
+ * Uses VRT time with fallback to fast/slow.
  */
 export function calculatePathTime(path: RoutePath): number {
-  return path.stops.reduce((sum, stop) => sum + stop.baseTimeFromPrevious, 0);
+  return path.stops.reduce((sum, stop) => {
+    const time = stop.vrtTime ?? stop.fastTime ?? stop.slowTime ?? 0;
+    return sum + time;
+  }, 0);
 }
 
 /**

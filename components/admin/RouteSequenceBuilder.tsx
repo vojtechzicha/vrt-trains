@@ -6,10 +6,13 @@ import {
   RouteCorridor,
   RoutePath,
   RoutePathStop,
+  ReverseTimeAdjustment,
   VariantRouteRef,
   VariantStop,
   Direction,
+  SpeedCategory,
 } from '@/types';
+import { getSegmentTime } from '@/lib/routeTimes';
 import { Button } from '@/components/ui';
 import { RouteStop } from './RouteBuilder';
 
@@ -18,6 +21,7 @@ export interface RouteSegment {
   routeId: string;
   pathId: string;
   reversed: boolean;  // true = use path in reverse direction
+  speedCategory: SpeedCategory;  // Which speed times to use for this segment
   startStationId?: string;
   endStationId?: string;
 }
@@ -140,6 +144,7 @@ export function RouteSequenceBuilder({
       routeId: addingSegment.routeId,
       pathId: addingSegment.pathId,
       reversed: addingSegment.reversed || false,
+      speedCategory: addingSegment.speedCategory || 'vrt',
       startStationId: addingSegment.startStationId,
       endStationId: addingSegment.endStationId,
     };
@@ -228,118 +233,146 @@ export function RouteSequenceBuilder({
               </div>
             )}
 
-            <div className="grid grid-cols-2 gap-3">
-              {/* Route selection */}
-              <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1">
-                  Route
-                </label>
-                <select
-                  value={segment.routeId}
-                  onChange={(e) => {
-                    const newRouteId = e.target.value;
-                    const newRoute = routes.find((r) => r.id === newRouteId);
-                    const firstPath = newRoute?.paths[0];
-                    handleUpdateSegment(index, {
-                      routeId: newRouteId,
-                      pathId: firstPath?.id || '',
-                      reversed: false,
-                      startStationId: undefined,
-                      endStationId: undefined,
-                    });
-                  }}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
-                >
-                  <option value="">Select route...</option>
-                  {routes.map((r) => (
-                    <option key={r.id} value={r.id}>
-                      {r.name}
-                    </option>
-                  ))}
-                </select>
+            <div className="space-y-3">
+              {/* Route and Path row */}
+              <div className="grid grid-cols-2 gap-3">
+                {/* Route selection */}
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                    Route
+                  </label>
+                  <select
+                    value={segment.routeId}
+                    onChange={(e) => {
+                      const newRouteId = e.target.value;
+                      const newRoute = routes.find((r) => r.id === newRouteId);
+                      const firstPath = newRoute?.paths[0];
+                      handleUpdateSegment(index, {
+                        routeId: newRouteId,
+                        pathId: firstPath?.id || '',
+                        reversed: false,
+                        speedCategory: 'vrt',
+                        startStationId: undefined,
+                        endStationId: undefined,
+                      });
+                    }}
+                    className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  >
+                    <option value="">Select route...</option>
+                    {routes.map((r) => (
+                      <option key={r.id} value={r.id}>
+                        {r.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Path selection with speed buttons */}
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                    Path
+                  </label>
+                  <div className="flex gap-1">
+                    <select
+                      value={segment.pathId ? createPathValue(segment.pathId, segment.reversed) : ''}
+                      onChange={(e) => {
+                        const { pathId, reversed } = parsePathValue(e.target.value);
+                        handleUpdateSegment(index, {
+                          pathId,
+                          reversed,
+                          startStationId: undefined,
+                          endStationId: undefined,
+                        });
+                      }}
+                      disabled={!segment.routeId}
+                      className="flex-1 min-w-0 px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
+                    >
+                      <option value="">Select path...</option>
+                      {route?.paths.map((p) => (
+                        <optgroup key={p.id} label={p.name}>
+                          <option value={createPathValue(p.id, false)}>
+                            {getPathEndpoints(route, p, false)}
+                          </option>
+                          <option value={createPathValue(p.id, true)}>
+                            {getPathEndpoints(route, p, true)} (rev)
+                          </option>
+                        </optgroup>
+                      ))}
+                    </select>
+                    {/* Speed category buttons */}
+                    <div className="flex border border-gray-300 rounded overflow-hidden">
+                      {(['vrt', 'fast', 'slow'] as SpeedCategory[]).map((speed) => (
+                        <button
+                          key={speed}
+                          type="button"
+                          onClick={() => handleUpdateSegment(index, { speedCategory: speed })}
+                          disabled={!segment.pathId}
+                          className={`px-2 py-1.5 text-xs font-medium transition-colors ${
+                            segment.speedCategory === speed
+                              ? 'bg-blue-600 text-white'
+                              : 'bg-white text-gray-600 hover:bg-gray-100'
+                          } disabled:opacity-50 disabled:cursor-not-allowed`}
+                          title={speed === 'vrt' ? 'VRT (High-speed)' : speed === 'fast' ? 'Fast' : 'Slow (Regional)'}
+                        >
+                          {speed[0].toUpperCase()}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Path selection (with forward/reverse options) */}
-              <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1">
-                  Path
-                </label>
-                <select
-                  value={segment.pathId ? createPathValue(segment.pathId, segment.reversed) : ''}
-                  onChange={(e) => {
-                    const { pathId, reversed } = parsePathValue(e.target.value);
-                    handleUpdateSegment(index, {
-                      pathId,
-                      reversed,
-                      startStationId: undefined,
-                      endStationId: undefined,
-                    });
-                  }}
-                  disabled={!segment.routeId}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
-                >
-                  <option value="">Select path...</option>
-                  {route?.paths.map((p) => (
-                    <optgroup key={p.id} label={p.name}>
-                      <option value={createPathValue(p.id, false)}>
-                        {getPathEndpoints(route, p, false)}
-                      </option>
-                      <option value={createPathValue(p.id, true)}>
-                        {getPathEndpoints(route, p, true)} (reverse)
-                      </option>
-                    </optgroup>
-                  ))}
-                </select>
-              </div>
+              {/* Start and End stations row */}
+              <div className="grid grid-cols-2 gap-3">
+                {/* Start station (optional subset) */}
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                    Start Station (optional)
+                  </label>
+                  <select
+                    value={segment.startStationId || ''}
+                    onChange={(e) => handleUpdateSegment(index, {
+                      startStationId: e.target.value || undefined,
+                    })}
+                    disabled={!segment.pathId}
+                    className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
+                  >
+                    <option value="">(From beginning)</option>
+                    {pathStops.map((stop) => {
+                      const station = stationMap.get(stop.stationId);
+                      return (
+                        <option key={stop.stationId} value={stop.stationId}>
+                          {station?.name || stop.stationId}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
 
-              {/* Start station (optional subset) */}
-              <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1">
-                  Start Station (optional)
-                </label>
-                <select
-                  value={segment.startStationId || ''}
-                  onChange={(e) => handleUpdateSegment(index, {
-                    startStationId: e.target.value || undefined,
-                  })}
-                  disabled={!segment.pathId}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
-                >
-                  <option value="">(From beginning)</option>
-                  {pathStops.map((stop) => {
-                    const station = stationMap.get(stop.stationId);
-                    return (
-                      <option key={stop.stationId} value={stop.stationId}>
-                        {station?.name || stop.stationId}
-                      </option>
-                    );
-                  })}
-                </select>
-              </div>
-
-              {/* End station (optional subset) */}
-              <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1">
-                  End Station (optional)
-                </label>
-                <select
-                  value={segment.endStationId || ''}
-                  onChange={(e) => handleUpdateSegment(index, {
-                    endStationId: e.target.value || undefined,
-                  })}
-                  disabled={!segment.pathId}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
-                >
-                  <option value="">(To end)</option>
-                  {pathStops.map((stop) => {
-                    const station = stationMap.get(stop.stationId);
-                    return (
-                      <option key={stop.stationId} value={stop.stationId}>
-                        {station?.name || stop.stationId}
-                      </option>
-                    );
-                  })}
-                </select>
+                {/* End station (optional subset) */}
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                    End Station (optional)
+                  </label>
+                  <select
+                    value={segment.endStationId || ''}
+                    onChange={(e) => handleUpdateSegment(index, {
+                      endStationId: e.target.value || undefined,
+                    })}
+                    disabled={!segment.pathId}
+                    className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
+                  >
+                    <option value="">(To end)</option>
+                    {pathStops.map((stop) => {
+                      const station = stationMap.get(stop.stationId);
+                      return (
+                        <option key={stop.stationId} value={stop.stationId}>
+                          {station?.name || stop.stationId}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
               </div>
             </div>
 
@@ -348,6 +381,9 @@ export function RouteSequenceBuilder({
               <div className="text-xs text-gray-500">
                 {route?.name} / {path.name}
                 {segment.reversed && <span className="text-orange-600 ml-1">(reverse)</span>}
+                <span className="text-blue-600 ml-1">
+                  [{segment.speedCategory?.toUpperCase() || 'VRT'}]
+                </span>
                 : {getSegmentStops(segment).length} stops
               </div>
             )}
@@ -376,6 +412,7 @@ export function RouteSequenceBuilder({
                     routeId: newRouteId,
                     pathId: firstPath?.id,
                     reversed: false,
+                    speedCategory: 'vrt',
                   });
                 }}
                 className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -393,35 +430,56 @@ export function RouteSequenceBuilder({
               <label className="block text-xs font-medium text-gray-500 mb-1">
                 Path
               </label>
-              <select
-                value={addingSegment.pathId ? createPathValue(addingSegment.pathId, addingSegment.reversed || false) : ''}
-                onChange={(e) => {
-                  const { pathId, reversed } = parsePathValue(e.target.value);
-                  setAddingSegment({
-                    ...addingSegment,
-                    pathId,
-                    reversed,
-                  });
-                }}
-                disabled={!addingSegment.routeId}
-                className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
-              >
-                <option value="">Select path...</option>
-                {addingSegment.routeId &&
-                  routeMap.get(addingSegment.routeId)?.paths.map((p) => {
-                    const route = routeMap.get(addingSegment.routeId!);
-                    return (
-                      <optgroup key={p.id} label={p.name}>
-                        <option value={createPathValue(p.id, false)}>
-                          {route ? getPathEndpoints(route, p, false) : p.name}
-                        </option>
-                        <option value={createPathValue(p.id, true)}>
-                          {route ? getPathEndpoints(route, p, true) : p.name} (reverse)
-                        </option>
-                      </optgroup>
-                    );
-                  })}
-              </select>
+              <div className="flex gap-1">
+                <select
+                  value={addingSegment.pathId ? createPathValue(addingSegment.pathId, addingSegment.reversed || false) : ''}
+                  onChange={(e) => {
+                    const { pathId, reversed } = parsePathValue(e.target.value);
+                    setAddingSegment({
+                      ...addingSegment,
+                      pathId,
+                      reversed,
+                    });
+                  }}
+                  disabled={!addingSegment.routeId}
+                  className="flex-1 min-w-0 px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
+                >
+                  <option value="">Select path...</option>
+                  {addingSegment.routeId &&
+                    routeMap.get(addingSegment.routeId)?.paths.map((p) => {
+                      const route = routeMap.get(addingSegment.routeId!);
+                      return (
+                        <optgroup key={p.id} label={p.name}>
+                          <option value={createPathValue(p.id, false)}>
+                            {route ? getPathEndpoints(route, p, false) : p.name}
+                          </option>
+                          <option value={createPathValue(p.id, true)}>
+                            {route ? getPathEndpoints(route, p, true) : p.name} (rev)
+                          </option>
+                        </optgroup>
+                      );
+                    })}
+                </select>
+                {/* Speed category buttons */}
+                <div className="flex border border-gray-300 rounded overflow-hidden">
+                  {(['vrt', 'fast', 'slow'] as SpeedCategory[]).map((speed) => (
+                    <button
+                      key={speed}
+                      type="button"
+                      onClick={() => setAddingSegment({ ...addingSegment, speedCategory: speed })}
+                      disabled={!addingSegment.pathId}
+                      className={`px-2 py-1.5 text-xs font-medium transition-colors ${
+                        (addingSegment.speedCategory || 'vrt') === speed
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-white text-gray-600 hover:bg-gray-100'
+                      } disabled:opacity-50 disabled:cursor-not-allowed`}
+                      title={speed === 'vrt' ? 'VRT (High-speed)' : speed === 'fast' ? 'Fast' : 'Slow (Regional)'}
+                    >
+                      {speed[0].toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -505,12 +563,14 @@ export function segmentsToRouteRefs(
     direction: seg.reversed
       ? (baseDirection === 'outbound' ? 'inbound' : 'outbound')
       : baseDirection,
+    speedCategory: seg.speedCategory || 'vrt',
     startStationId: seg.startStationId,
     endStationId: seg.endStationId,
   }));
 }
 
 // Helper to convert route segments to VariantStops (prefilled from route)
+// Note: Variants no longer store arrival/departure offsets - times are calculated on-the-fly
 export function segmentsToVariantStops(
   segments: RouteSegment[],
   routes: RouteCorridor[]
@@ -518,7 +578,6 @@ export function segmentsToVariantStops(
   const routeMap = new Map(routes.map((r) => [r.id, r]));
   const allStops: VariantStop[] = [];
   let sequence = 1;
-  let cumulativeTime = 0;
 
   for (const segment of segments) {
     const route = routeMap.get(segment.routeId);
@@ -549,51 +608,20 @@ export function segmentsToVariantStops(
       }
     }
 
-    for (let i = 0; i < stops.length; i++) {
-      const stop = stops[i];
-
+    for (const stop of stops) {
       // Skip if this is a junction (same as last station)
       if (allStops.length > 0 && allStops[allStops.length - 1].stationId === stop.stationId) {
         continue;
       }
 
-      const isFirst = allStops.length === 0;
-
-      // Calculate arrival time
-      let arrivalOffset: number | null = null;
-      if (!isFirst) {
-        // For reversed segments, use reverse adjustments if available
-        let timeFromPrevious = stop.baseTimeFromPrevious;
-        if (segment.reversed && path.reverseTimeAdjustments) {
-          const adjustment = path.reverseTimeAdjustments.find(
-            (adj) => adj.stationId === stop.stationId
-          );
-          if (adjustment) {
-            timeFromPrevious = adjustment.baseTimeFromPrevious;
-          }
-        }
-        cumulativeTime += timeFromPrevious;
-        arrivalOffset = cumulativeTime;
-      }
-
-      // Add dwell time for departure
-      const departureOffset = cumulativeTime + (stop.defaultDwellTime ?? 1);
-      cumulativeTime = departureOffset;
-
       allStops.push({
         stationId: stop.stationId,
         sequence: sequence++,
-        arrivalOffset: isFirst ? null : arrivalOffset,
-        departureOffset: departureOffset,
+        dwellTime: stop.defaultDwellTime ?? 1,
         platform: '1', // Default, needs to be selected
         stopType: 'regular',
       });
     }
-  }
-
-  // Set last stop departure to null
-  if (allStops.length > 0) {
-    allStops[allStops.length - 1].departureOffset = null;
   }
 
   return allStops;
@@ -601,6 +629,7 @@ export function segmentsToVariantStops(
 
 // Helper to convert route segments to RouteStop[] for the RouteBuilder component
 // Includes dwellTime from route's defaultDwellTime
+// Uses getSegmentTime to lookup time based on segment's speedCategory
 export function segmentsToRouteStops(
   segments: RouteSegment[],
   routes: RouteCorridor[]
@@ -647,20 +676,29 @@ export function segmentsToRouteStops(
 
       const isFirst = allStops.length === 0;
 
-      // For reversed segments, use reverse adjustments if available
-      let timeFromPrevious = stop.baseTimeFromPrevious;
-      if (segment.reversed && path.reverseTimeAdjustments) {
-        const adjustment = path.reverseTimeAdjustments.find(
-          (adj) => adj.stationId === stop.stationId
-        );
-        if (adjustment) {
-          timeFromPrevious = adjustment.baseTimeFromPrevious;
-        }
+      // Get time using speed category priority, with reverse adjustment if applicable
+      const reverseAdj = segment.reversed
+        ? path.reverseTimeAdjustments?.find((adj) => adj.stationId === stop.stationId)
+        : undefined;
+
+      let timeFromPrevious: number;
+      if (isFirst || i === 0) {
+        // First station overall OR first station of this segment (not a junction)
+        // If it were a junction, it would have been skipped above
+        timeFromPrevious = 0;
+      } else if (reverseAdj) {
+        // Use reverse adjustment if available (overrides calculated time)
+        timeFromPrevious = getSegmentTime(stop, segment.speedCategory || 'vrt', reverseAdj);
+      } else {
+        // For reversed paths, the travel time to stops[i] is stored on stops[i-1]
+        // (because times are stored as "time from previous station in FORWARD direction")
+        const timeSource = segment.reversed ? stops[i - 1] : stop;
+        timeFromPrevious = getSegmentTime(timeSource, segment.speedCategory || 'vrt');
       }
 
       allStops.push({
         stationId: stop.stationId,
-        minutesFromPrevious: isFirst ? 0 : timeFromPrevious,
+        minutesFromPrevious: timeFromPrevious,
         dwellTime: stop.defaultDwellTime ?? 1,
         platform: '1', // Default, needs to be selected
         stopType: 'regular',
@@ -672,6 +710,7 @@ export function segmentsToRouteStops(
 }
 
 // Helper to create reversed RouteStops from forward stops
+// Uses getSegmentTime with reverse adjustments and speed category
 export function reverseRouteStops(
   forwardStops: RouteStop[],
   segments: RouteSegment[],
@@ -684,15 +723,20 @@ export function reverseRouteStops(
   // Create reversed stops array
   const reversed = [...forwardStops].reverse();
 
-  // Get reverse time adjustments from route if available
-  const reverseTimeMap = new Map<string, number>();
+  // Build a station-to-segment map for looking up times
+  const stationToPathInfo = new Map<string, {
+    path: RoutePath;
+    stop: RoutePathStop;
+    segment: RouteSegment;
+  }>();
+
   for (const segment of segments) {
     const route = routeMap.get(segment.routeId);
     const path = route?.paths.find((p) => p.id === segment.pathId);
-    if (path?.reverseTimeAdjustments) {
-      for (const adj of path.reverseTimeAdjustments) {
-        reverseTimeMap.set(adj.stationId, adj.baseTimeFromPrevious);
-      }
+    if (!path) continue;
+
+    for (const stop of path.stops) {
+      stationToPathInfo.set(stop.stationId, { path, stop, segment });
     }
   }
 
@@ -722,10 +766,19 @@ export function reverseRouteStops(
       timeFromPrevious = forwardStops[forwardIndex].minutesFromPrevious;
     }
 
-    // Apply reverse time adjustment if available
-    const reverseAdj = reverseTimeMap.get(stop.stationId);
-    if (reverseAdj !== undefined) {
-      timeFromPrevious = reverseAdj;
+    // Apply reverse time adjustment if available using getSegmentTime
+    const pathInfo = stationToPathInfo.get(stop.stationId);
+    if (pathInfo) {
+      const reverseAdj = pathInfo.path.reverseTimeAdjustments?.find(
+        (adj) => adj.stationId === stop.stationId
+      );
+      if (reverseAdj) {
+        timeFromPrevious = getSegmentTime(
+          pathInfo.stop,
+          pathInfo.segment.speedCategory || 'vrt',
+          reverseAdj
+        );
+      }
     }
 
     return { ...stop, minutesFromPrevious: timeFromPrevious };

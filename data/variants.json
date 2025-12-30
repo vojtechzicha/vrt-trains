@@ -1,3 +1,1148 @@
 {
-  "variants": []
+  "variants": [
+    {
+      "id": "50d61058-4f81-4671-aff8-c5d267766de6",
+      "lineId": "bb818b68-0222-4fd8-9b00-23de68fb431f",
+      "code": "Ex15",
+      "name": "Haná",
+      "direction": "outbound",
+      "routeRefs": [
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "938cebc9-c5bb-4eea-bef9-b5e3ea7f88c6",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        }
+      ],
+      "stations": [
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 1,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+          "sequence": 2,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "11e39097-58bd-4abe-ae03-c07a047c0946",
+      "lineId": "bb818b68-0222-4fd8-9b00-23de68fb431f",
+      "code": "Ex15",
+      "name": "Haná",
+      "direction": "inbound",
+      "routeRefs": [
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "938cebc9-c5bb-4eea-bef9-b5e3ea7f88c6",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        }
+      ],
+      "stations": [
+        {
+          "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+          "sequence": 1,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 2,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "00beaffe-56b9-4450-9a38-c5a6082d3210",
+      "lineId": "51eec4f5-6f69-4696-a784-248d0ce50a1f",
+      "code": "Ex11",
+      "name": "Hutník",
+      "direction": "outbound",
+      "routeRefs": [
+        {
+          "routeId": "cd7d3715-fa57-4a3e-983c-f4a14f7751a0",
+          "pathId": "5cf4495b-1f12-4278-bdea-795caf0662a5",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "endStationId": "87574896-1260-4f19-a5e0-725a146e321d"
+        },
+        {
+          "routeId": "cd7d3715-fa57-4a3e-983c-f4a14f7751a0",
+          "pathId": "6927c5b2-dcd0-45c0-b593-8e61569f2121",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "cd7d3715-fa57-4a3e-983c-f4a14f7751a0",
+          "pathId": "a60dcb1b-3218-4362-bd29-adc9b70d2640",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "0534dd16-0f17-4c50-8357-eb39372bf8d3",
+          "pathId": "f082f66d-4534-4253-a199-8c732cee7687",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "1e9fcead-8cd2-4e8e-9454-f9ad1736423a"
+        },
+        {
+          "routeId": "e9d47583-f33c-4572-811a-aa65ef2733c5",
+          "pathId": "f7019835-f34f-4b0b-8c48-eea93894cca4",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4"
+        },
+        {
+          "routeId": "83599f25-b219-48ed-b746-eea056a096d3",
+          "pathId": "085e2ecd-08d8-4656-904f-fc33b993ae81",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "da758a83-2029-4838-a6b9-46b4f2ad6ba2",
+          "pathId": "ee8f2731-e856-49db-a29c-6cccf3211a93",
+          "direction": "outbound",
+          "speedCategory": "vrt",
+          "startStationId": "d54f8791-39ee-4fb4-98e5-c29783870c67"
+        },
+        {
+          "routeId": "af3f9111-29be-4489-afde-4afcd5c3dd19",
+          "pathId": "13787a4a-e7cf-4322-84fa-1ceec90f8174",
+          "direction": "outbound",
+          "speedCategory": "vrt",
+          "endStationId": "4e4dc494-2786-483f-9570-9d856b35c28c"
+        },
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "0db7b2a0-2d39-45e0-aeda-d24adedc7450",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "04a0c6d0-c930-4fd6-82d0-f1cfe86c05ca",
+          "pathId": "893716a5-9fe2-4645-becc-172f3517870f",
+          "direction": "outbound",
+          "speedCategory": "vrt",
+          "startStationId": "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852"
+        },
+        {
+          "routeId": "04a0c6d0-c930-4fd6-82d0-f1cfe86c05ca",
+          "pathId": "de819a78-21f5-484f-acab-87c21332f2cd",
+          "direction": "outbound",
+          "speedCategory": "vrt",
+          "startStationId": "344143",
+          "endStationId": "ea26f0d0-0966-4cac-8577-0c6162be3a24"
+        }
+      ],
+      "stations": [
+        {
+          "stationId": "76b7df53-d522-47ca-a2a6-bb1619a647f0",
+          "sequence": 1,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6753427b-73ab-49d2-b50d-d37658250810",
+          "sequence": 2,
+          "dwellTime": 4,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "17f3a2f0-4bc8-44c1-a5d6-7e3aa9148d41",
+          "sequence": 3,
+          "dwellTime": 7,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4",
+          "sequence": 4,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 5,
+          "dwellTime": 5,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+          "sequence": 6,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d54f8791-39ee-4fb4-98e5-c29783870c67",
+          "sequence": 7,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+          "sequence": 8,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852",
+          "sequence": 9,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "ea26f0d0-0966-4cac-8577-0c6162be3a24",
+          "sequence": 10,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "b1cc66c5-9fb3-4ef7-acfb-30169e5df990",
+      "lineId": "51eec4f5-6f69-4696-a784-248d0ce50a1f",
+      "code": "Ex11",
+      "name": "Hutník",
+      "direction": "inbound",
+      "routeRefs": [
+        {
+          "routeId": "cd7d3715-fa57-4a3e-983c-f4a14f7751a0",
+          "pathId": "5cf4495b-1f12-4278-bdea-795caf0662a5",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "endStationId": "87574896-1260-4f19-a5e0-725a146e321d"
+        },
+        {
+          "routeId": "cd7d3715-fa57-4a3e-983c-f4a14f7751a0",
+          "pathId": "6927c5b2-dcd0-45c0-b593-8e61569f2121",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "cd7d3715-fa57-4a3e-983c-f4a14f7751a0",
+          "pathId": "a60dcb1b-3218-4362-bd29-adc9b70d2640",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "0534dd16-0f17-4c50-8357-eb39372bf8d3",
+          "pathId": "f082f66d-4534-4253-a199-8c732cee7687",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "1e9fcead-8cd2-4e8e-9454-f9ad1736423a"
+        },
+        {
+          "routeId": "e9d47583-f33c-4572-811a-aa65ef2733c5",
+          "pathId": "f7019835-f34f-4b0b-8c48-eea93894cca4",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4"
+        },
+        {
+          "routeId": "83599f25-b219-48ed-b746-eea056a096d3",
+          "pathId": "085e2ecd-08d8-4656-904f-fc33b993ae81",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "da758a83-2029-4838-a6b9-46b4f2ad6ba2",
+          "pathId": "ee8f2731-e856-49db-a29c-6cccf3211a93",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "d54f8791-39ee-4fb4-98e5-c29783870c67"
+        },
+        {
+          "routeId": "af3f9111-29be-4489-afde-4afcd5c3dd19",
+          "pathId": "13787a4a-e7cf-4322-84fa-1ceec90f8174",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "endStationId": "4e4dc494-2786-483f-9570-9d856b35c28c"
+        },
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "0db7b2a0-2d39-45e0-aeda-d24adedc7450",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "04a0c6d0-c930-4fd6-82d0-f1cfe86c05ca",
+          "pathId": "893716a5-9fe2-4645-becc-172f3517870f",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852"
+        },
+        {
+          "routeId": "04a0c6d0-c930-4fd6-82d0-f1cfe86c05ca",
+          "pathId": "de819a78-21f5-484f-acab-87c21332f2cd",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "344143",
+          "endStationId": "ea26f0d0-0966-4cac-8577-0c6162be3a24"
+        }
+      ],
+      "stations": [
+        {
+          "stationId": "ea26f0d0-0966-4cac-8577-0c6162be3a24",
+          "sequence": 1,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "ad6c2a59-4f8e-4020-9fa2-8cc1522e3852",
+          "sequence": 2,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+          "sequence": 3,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d54f8791-39ee-4fb4-98e5-c29783870c67",
+          "sequence": 4,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+          "sequence": 5,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 6,
+          "dwellTime": 5,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4",
+          "sequence": 7,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "17f3a2f0-4bc8-44c1-a5d6-7e3aa9148d41",
+          "sequence": 8,
+          "dwellTime": 7,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6753427b-73ab-49d2-b50d-d37658250810",
+          "sequence": 9,
+          "dwellTime": 4,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "76b7df53-d522-47ca-a2a6-bb1619a647f0",
+          "sequence": 10,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "15667265-8c00-4712-ada9-7efb075ae1cf",
+      "lineId": "535a3171-84fb-4265-8f1c-ab05cd5ec922",
+      "code": "Ex2",
+      "name": "Transversála",
+      "direction": "outbound",
+      "routeRefs": [
+        {
+          "routeId": "349f858f-eb26-4d27-8b10-122caaf81726",
+          "pathId": "f6fcc0da-15ff-432a-baed-34b8022af406",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "e9d47583-f33c-4572-811a-aa65ef2733c5",
+          "pathId": "f7019835-f34f-4b0b-8c48-eea93894cca4",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "83599f25-b219-48ed-b746-eea056a096d3",
+          "pathId": "085e2ecd-08d8-4656-904f-fc33b993ae81",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "da758a83-2029-4838-a6b9-46b4f2ad6ba2",
+          "pathId": "ee8f2731-e856-49db-a29c-6cccf3211a93",
+          "direction": "outbound",
+          "speedCategory": "vrt",
+          "startStationId": "d54f8791-39ee-4fb4-98e5-c29783870c67"
+        },
+        {
+          "routeId": "af3f9111-29be-4489-afde-4afcd5c3dd19",
+          "pathId": "13787a4a-e7cf-4322-84fa-1ceec90f8174",
+          "direction": "outbound",
+          "speedCategory": "vrt",
+          "endStationId": "4e4dc494-2786-483f-9570-9d856b35c28c"
+        },
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "736393c1-c44e-427a-ad21-3cfc335e320e",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "dd865f18-70ac-4bfd-b152-2af1e7f01ad3",
+          "pathId": "5e3d2ba1-bcf9-4984-b42c-61b9cf350ba4",
+          "direction": "outbound",
+          "speedCategory": "vrt",
+          "startStationId": "cfb8430c-f038-491e-ace3-57f9480ca16e"
+        },
+        {
+          "routeId": "eabb834d-b0fd-4d99-a69f-22897278e032",
+          "pathId": "4224e4a0-0ab9-476a-9c08-2f44a6bbc290",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        }
+      ],
+      "stations": [
+        {
+          "stationId": "b9b445b9-cd9e-42b6-bf1a-9ee60adbb9df",
+          "sequence": 1,
+          "dwellTime": 4,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d5ad9917-989d-4da0-9a96-3bc9ad50ce6c",
+          "sequence": 2,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2a235fd4-8789-4b97-b646-cb0ca1907f6e",
+          "sequence": 3,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b339d2d3-28b3-42e4-8e8d-e6a2ada9bbeb",
+          "sequence": 4,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e721c7d4-36d8-4355-9f59-54e83c8c5da1",
+          "sequence": 5,
+          "dwellTime": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0824f2ae-9b6a-492e-9005-01c6d08b2cd7",
+          "sequence": 6,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4",
+          "sequence": 7,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 8,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 9,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d54f8791-39ee-4fb4-98e5-c29783870c67",
+          "sequence": 10,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "a3ecfe9f-de5d-43e6-afd6-3c87862624cc",
+          "sequence": 11,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "74bba77a-f8f8-427b-b3d9-6cc2d2c37e91",
+          "sequence": 12,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+          "sequence": 13,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+          "sequence": 14,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "cdafff75-6941-46c1-a517-b76675408b6f",
+          "sequence": 15,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "8441175e-3d4c-4a16-a1a8-84431b525f8b",
+          "sequence": 16,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6447755f-5608-45d4-b47f-15e73add84c2",
+          "sequence": 17,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1f16197d-d0ce-4750-bb43-9b353df885f7",
+          "sequence": 18,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "86fd4eda-4b4c-4ad2-a9e0-7e4ee0bea73d",
+          "sequence": 19,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+          "sequence": 20,
+          "dwellTime": 5,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "abeb799f-4075-489b-8eb1-0b8d62b35d41",
+      "lineId": "535a3171-84fb-4265-8f1c-ab05cd5ec922",
+      "code": "Ex2",
+      "name": "Transversála",
+      "direction": "inbound",
+      "routeRefs": [
+        {
+          "routeId": "349f858f-eb26-4d27-8b10-122caaf81726",
+          "pathId": "f6fcc0da-15ff-432a-baed-34b8022af406",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "e9d47583-f33c-4572-811a-aa65ef2733c5",
+          "pathId": "f7019835-f34f-4b0b-8c48-eea93894cca4",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "83599f25-b219-48ed-b746-eea056a096d3",
+          "pathId": "085e2ecd-08d8-4656-904f-fc33b993ae81",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "da758a83-2029-4838-a6b9-46b4f2ad6ba2",
+          "pathId": "ee8f2731-e856-49db-a29c-6cccf3211a93",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "d54f8791-39ee-4fb4-98e5-c29783870c67"
+        },
+        {
+          "routeId": "af3f9111-29be-4489-afde-4afcd5c3dd19",
+          "pathId": "13787a4a-e7cf-4322-84fa-1ceec90f8174",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "endStationId": "4e4dc494-2786-483f-9570-9d856b35c28c"
+        },
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "736393c1-c44e-427a-ad21-3cfc335e320e",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "dd865f18-70ac-4bfd-b152-2af1e7f01ad3",
+          "pathId": "5e3d2ba1-bcf9-4984-b42c-61b9cf350ba4",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "cfb8430c-f038-491e-ace3-57f9480ca16e"
+        },
+        {
+          "routeId": "eabb834d-b0fd-4d99-a69f-22897278e032",
+          "pathId": "4224e4a0-0ab9-476a-9c08-2f44a6bbc290",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        }
+      ],
+      "stations": [
+        {
+          "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+          "sequence": 1,
+          "dwellTime": 5,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "86fd4eda-4b4c-4ad2-a9e0-7e4ee0bea73d",
+          "sequence": 2,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "1f16197d-d0ce-4750-bb43-9b353df885f7",
+          "sequence": 3,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6447755f-5608-45d4-b47f-15e73add84c2",
+          "sequence": 4,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "8441175e-3d4c-4a16-a1a8-84431b525f8b",
+          "sequence": 5,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "cdafff75-6941-46c1-a517-b76675408b6f",
+          "sequence": 6,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "cfb8430c-f038-491e-ace3-57f9480ca16e",
+          "sequence": 7,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+          "sequence": 8,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "74bba77a-f8f8-427b-b3d9-6cc2d2c37e91",
+          "sequence": 9,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "a3ecfe9f-de5d-43e6-afd6-3c87862624cc",
+          "sequence": 10,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d54f8791-39ee-4fb4-98e5-c29783870c67",
+          "sequence": 11,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 12,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 13,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "53199a3d-1846-42b6-a8c5-8eddd6705fd4",
+          "sequence": 14,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "0824f2ae-9b6a-492e-9005-01c6d08b2cd7",
+          "sequence": 15,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e721c7d4-36d8-4355-9f59-54e83c8c5da1",
+          "sequence": 16,
+          "dwellTime": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b339d2d3-28b3-42e4-8e8d-e6a2ada9bbeb",
+          "sequence": 17,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2a235fd4-8789-4b97-b646-cb0ca1907f6e",
+          "sequence": 18,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d5ad9917-989d-4da0-9a96-3bc9ad50ce6c",
+          "sequence": 19,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b9b445b9-cd9e-42b6-bf1a-9ee60adbb9df",
+          "sequence": 20,
+          "dwellTime": 4,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "9249ba44-09de-4363-bb25-d55d9a3f9bde",
+      "lineId": "3431498e-10e8-4af9-b11f-337bde7e0b0e",
+      "code": "Ex1-SK",
+      "name": "Košičan",
+      "direction": "outbound",
+      "routeRefs": [
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "1e4df4d0-9ce4-40f3-8a95-091b9a41834c",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "931a2488-a90d-4051-bd99-35a90afef39e",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "7ce3545d-d374-4a10-a2bb-c6b95c7939ba",
+          "pathId": "cc833c86-d25b-4d31-be97-119f4a9272be",
+          "direction": "outbound",
+          "speedCategory": "vrt",
+          "startStationId": "344341",
+          "endStationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc"
+        },
+        {
+          "routeId": "2fb91139-b94e-41f4-b528-026f1cf89c60",
+          "pathId": "7f305d4b-4f27-4417-89fa-64b2b5a4484b",
+          "direction": "outbound",
+          "speedCategory": "vrt",
+          "startStationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc"
+        },
+        {
+          "routeId": "3efe935e-0b42-4367-99bc-34b1b0a13453",
+          "pathId": "af44aeaf-b400-46ea-a955-a7cd4e73ec1c",
+          "direction": "outbound",
+          "speedCategory": "vrt"
+        }
+      ],
+      "stations": [
+        {
+          "stationId": "570762",
+          "sequence": 1,
+          "dwellTime": 5,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 2,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 3,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 4,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 5,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 6,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+          "sequence": 7,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+          "sequence": 8,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "29e30bf0-264b-4427-b0e8-6cf792655674",
+          "sequence": 9,
+          "dwellTime": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2b7bd42a-c26b-470c-9857-ada706cda926",
+          "sequence": 10,
+          "dwellTime": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "63583d19-02e9-403a-9fba-98073026b135",
+          "sequence": 11,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+          "sequence": 12,
+          "dwellTime": 4,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01c4bfa2-ccac-4d63-8059-6fa0856c3ce2",
+          "sequence": 13,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e4adac8b-0ce7-48af-ba78-ed7f758c2e4f",
+          "sequence": 14,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4fea46c9-59a9-4d2a-b389-dfc07079c2e2",
+          "sequence": 15,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "abc7ee73-7d3f-4af2-a99b-a801c3ebe3d1",
+          "sequence": 16,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "fc5c279a-f392-4548-b04a-102df479387d",
+          "sequence": 17,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6a1660f0-f136-4386-a2fd-c07345ef3e97",
+          "sequence": 18,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2a0d30be-69c6-421a-b24b-668e66c2ddd4",
+          "sequence": 19,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "46032ccb-4260-4150-8b4c-ead2c7d7eb2a",
+          "sequence": 20,
+          "dwellTime": 5,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    },
+    {
+      "id": "e50c4e2c-f4b3-4da8-8f71-d748c03ac7af",
+      "lineId": "3431498e-10e8-4af9-b11f-337bde7e0b0e",
+      "code": "Ex1-SK",
+      "name": "Košičan",
+      "direction": "inbound",
+      "routeRefs": [
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "1e4df4d0-9ce4-40f3-8a95-091b9a41834c",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "9a019f1b-3f94-46e3-8bfe-7b1874bcbb56",
+          "pathId": "931a2488-a90d-4051-bd99-35a90afef39e",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        },
+        {
+          "routeId": "7ce3545d-d374-4a10-a2bb-c6b95c7939ba",
+          "pathId": "cc833c86-d25b-4d31-be97-119f4a9272be",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "344341",
+          "endStationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc"
+        },
+        {
+          "routeId": "2fb91139-b94e-41f4-b528-026f1cf89c60",
+          "pathId": "7f305d4b-4f27-4417-89fa-64b2b5a4484b",
+          "direction": "inbound",
+          "speedCategory": "vrt",
+          "startStationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc"
+        },
+        {
+          "routeId": "3efe935e-0b42-4367-99bc-34b1b0a13453",
+          "pathId": "af44aeaf-b400-46ea-a955-a7cd4e73ec1c",
+          "direction": "inbound",
+          "speedCategory": "vrt"
+        }
+      ],
+      "stations": [
+        {
+          "stationId": "46032ccb-4260-4150-8b4c-ead2c7d7eb2a",
+          "sequence": 1,
+          "dwellTime": 5,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2a0d30be-69c6-421a-b24b-668e66c2ddd4",
+          "sequence": 2,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "6a1660f0-f136-4386-a2fd-c07345ef3e97",
+          "sequence": 3,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "fc5c279a-f392-4548-b04a-102df479387d",
+          "sequence": 4,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "abc7ee73-7d3f-4af2-a99b-a801c3ebe3d1",
+          "sequence": 5,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "4fea46c9-59a9-4d2a-b389-dfc07079c2e2",
+          "sequence": 6,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "e4adac8b-0ce7-48af-ba78-ed7f758c2e4f",
+          "sequence": 7,
+          "dwellTime": 1,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "01c4bfa2-ccac-4d63-8059-6fa0856c3ce2",
+          "sequence": 8,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d9084ea0-0d74-4297-b1a4-7904bb45cf64",
+          "sequence": 9,
+          "dwellTime": 4,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "63583d19-02e9-403a-9fba-98073026b135",
+          "sequence": 10,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "2b7bd42a-c26b-470c-9857-ada706cda926",
+          "sequence": 11,
+          "dwellTime": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "29e30bf0-264b-4427-b0e8-6cf792655674",
+          "sequence": 12,
+          "dwellTime": 0,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "77fd513e-923a-42c3-bf25-c64313a8621f",
+          "sequence": 13,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "26ef2193-5a5a-4599-ab7b-566cd9abb420",
+          "sequence": 14,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "d537bc46-1a33-4320-b8f5-49565d22b7fc",
+          "sequence": 15,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "343640",
+          "sequence": 16,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "344341",
+          "sequence": 17,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+          "sequence": 18,
+          "dwellTime": 3,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "b988be91-8213-4906-9633-ba29989813cc",
+          "sequence": 19,
+          "dwellTime": 2,
+          "platform": "1",
+          "stopType": "regular"
+        },
+        {
+          "stationId": "570762",
+          "sequence": 20,
+          "dwellTime": 5,
+          "platform": "1",
+          "stopType": "regular"
+        }
+      ]
+    }
+  ]
 }

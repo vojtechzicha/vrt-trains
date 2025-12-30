@@ -25,6 +25,7 @@ import {
   reverseRouteStops,
   validateSegmentJunctions,
 } from '@/components/admin/RouteSequenceBuilder';
+import { calculateVariantTimes } from '@/lib/routeTimes';
 
 const directionOptions = [
   { value: 'outbound', label: 'Outbound' },
@@ -122,25 +123,20 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
     setDirection(variant.direction);
     setRouteRefs(variant.routeRefs || []);
 
-    // Convert VariantStop[] to RouteStop[]
-    const stops: RouteStop[] = variant.stations.map((stop, index) => {
-      // Calculate dwell time from arrival/departure offset difference
-      const dwellTime = index === variant.stations.length - 1
-        ? 0
-        : (stop.departureOffset || 0) - (stop.arrivalOffset || 0);
+    // Convert VariantStop[] to RouteStop[] using calculated times from routes
+    const calculatedStops = calculateVariantTimes(
+      variant.stations,
+      variant.routeRefs || [],
+      routes
+    );
 
-      return {
-        stationId: stop.stationId,
-        minutesFromPrevious:
-          index === 0
-            ? 0
-            : (stop.arrivalOffset || 0) -
-              (variant.stations[index - 1].departureOffset || 0),
-        dwellTime: Math.max(dwellTime, 0),
-        platform: stop.platform,
-        stopType: stop.stopType,
-      };
-    });
+    const stops: RouteStop[] = calculatedStops.map((stop) => ({
+      stationId: stop.stationId,
+      minutesFromPrevious: stop.travelTimeFromPrevious,
+      dwellTime: stop.dwellTime,
+      platform: stop.platform,
+      stopType: stop.stopType,
+    }));
     setRouteStops(stops);
 
     // If variant has route refs, reconstruct segments
@@ -150,6 +146,7 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
         routeId: ref.routeId,
         pathId: ref.pathId,
         reversed: ref.direction !== variant.direction,
+        speedCategory: ref.speedCategory || 'vrt',
         startStationId: ref.startStationId,
         endStationId: ref.endStationId,
       }));
@@ -163,7 +160,14 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
     sourceVariant: Variant,
     options?: { truncateAtStationId?: string; reverse?: boolean }
   ) {
-    let stationsToLoad = [...sourceVariant.stations];
+    // Calculate times from routes
+    const calculatedStops = calculateVariantTimes(
+      sourceVariant.stations,
+      sourceVariant.routeRefs || [],
+      routes
+    );
+
+    let stationsToLoad = [...calculatedStops];
 
     if (options?.truncateAtStationId) {
       const truncateIndex = stationsToLoad.findIndex(
@@ -189,26 +193,14 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
             durationLookup.get(keyForward) ?? durationLookup.get(keyBackward);
           minutesFromPrevious = duration ?? 5;
         } else {
-          const origIndex = sourceVariant.stations.findIndex(
-            (s) => s.stationId === stop.stationId
-          );
-          if (origIndex > 0) {
-            minutesFromPrevious =
-              (stop.arrivalOffset || 0) -
-              (sourceVariant.stations[origIndex - 1].departureOffset || 0);
-          }
+          minutesFromPrevious = stop.travelTimeFromPrevious;
         }
       }
-
-      // Calculate dwell time
-      const dwellTime = index === stationsToLoad.length - 1
-        ? 0
-        : (stop.departureOffset || 0) - (stop.arrivalOffset || 0);
 
       return {
         stationId: stop.stationId,
         minutesFromPrevious,
-        dwellTime: Math.max(dwellTime, 1),
+        dwellTime: stop.dwellTime,
         platform: stop.platform,
         stopType: stop.stopType,
       };
@@ -248,6 +240,7 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
         routeId: ref.routeId,
         pathId: ref.pathId,
         reversed: ref.direction !== newDirection,
+        speedCategory: ref.speedCategory || 'vrt',
         startStationId: ref.startStationId,
         endStationId: ref.endStationId,
       }));
@@ -295,36 +288,15 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
   }
 
   // Convert RouteStop[] to VariantStop[] for saving
+  // Note: VariantStop no longer stores arrivalOffset/departureOffset - times are calculated on-the-fly
   function routeStopsToVariantStops(stops: RouteStop[]): VariantStop[] {
-    let cumulativeMinutes = 0;
-
-    return stops.map((stop, index) => {
-      // Add travel time from previous
-      if (index > 0) {
-        cumulativeMinutes += stop.minutesFromPrevious;
-      }
-
-      const arrivalOffset = index === 0 ? null : cumulativeMinutes;
-
-      // Add dwell time for departure
-      const departureOffset = index === stops.length - 1
-        ? null
-        : cumulativeMinutes + stop.dwellTime;
-
-      // Update cumulative to include dwell for next iteration
-      if (index < stops.length - 1) {
-        cumulativeMinutes += stop.dwellTime;
-      }
-
-      return {
-        stationId: stop.stationId,
-        sequence: index + 1,
-        arrivalOffset,
-        departureOffset,
-        platform: stop.platform,
-        stopType: stop.stopType,
-      };
-    });
+    return stops.map((stop, index) => ({
+      stationId: stop.stationId,
+      sequence: index + 1,
+      dwellTime: stop.dwellTime,
+      platform: stop.platform,
+      stopType: stop.stopType,
+    }));
   }
 
   async function saveVariant(

@@ -2,6 +2,8 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { Line } from '@/types';
 import { generateId } from './helpers';
+import { deleteVariantsByLine } from './variants';
+import { deleteTimetablesByVariant } from './timetables';
 
 const dataPath = path.join(process.cwd(), 'data', 'lines.json');
 
@@ -20,7 +22,10 @@ async function writeLinesFile(data: LinesData): Promise<void> {
 
 export async function getLines(): Promise<Line[]> {
   const parsed = await readLinesFile();
-  return parsed.lines;
+  // Sort by name with natural ordering (Ex1 before Ex11)
+  return parsed.lines.sort((a, b) =>
+    a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' })
+  );
 }
 
 export async function getLine(id: string): Promise<Line | undefined> {
@@ -61,6 +66,13 @@ export async function deleteLine(id: string): Promise<void> {
   if (index === -1) {
     throw new Error(`Line with id ${id} not found`);
   }
+
+  // Cascade delete: first delete timetables for all variants, then variants
+  const deletedVariantIds = await deleteVariantsByLine(id);
+  for (const variantId of deletedVariantIds) {
+    await deleteTimetablesByVariant(variantId);
+  }
+
   file.lines.splice(index, 1);
   await writeLinesFile(file);
 }

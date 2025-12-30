@@ -4,13 +4,19 @@ import {
   Variant,
   ShortTurnSuggestion,
   ServicePeriod,
+  RouteCorridor,
+  CalculatedVariantStop,
 } from '@/types';
+import { calculateVariantTimes } from '@/lib/routeTimes';
 
 interface AnalysisContext {
   schedule: LineSchedule;
   pattern: OperatingPattern;
   outboundVariant: Variant;
   inboundVariant: Variant;
+  routes: RouteCorridor[];
+  outboundCalculatedStops: CalculatedVariantStop[];
+  inboundCalculatedStops: CalculatedVariantStop[];
 }
 
 /**
@@ -32,15 +38,15 @@ function minutesToTime(minutes: number): string {
 }
 
 /**
- * Get the journey time from one station to another in a variant
+ * Get the journey time from one station to another using calculated stops
  */
 function getJourneyTime(
-  variant: Variant,
+  calculatedStops: CalculatedVariantStop[],
   fromStationId: string,
   toStationId: string
 ): number | null {
-  const fromStop = variant.stations.find((s) => s.stationId === fromStationId);
-  const toStop = variant.stations.find((s) => s.stationId === toStationId);
+  const fromStop = calculatedStops.find((s) => s.stationId === fromStationId);
+  const toStop = calculatedStops.find((s) => s.stationId === toStationId);
 
   if (!fromStop || !toStop) return null;
 
@@ -86,11 +92,12 @@ function getFirstAnchorTime(period: ServicePeriod, anchorMinute: number): number
  */
 function calculateOriginDeparture(
   anchorTime: number,
-  variant: Variant,
+  calculatedStops: CalculatedVariantStop[],
   anchorStationId: string
 ): number {
-  const originId = getOriginStationId(variant);
-  const journeyTime = getJourneyTime(variant, originId, anchorStationId);
+  const originId = calculatedStops[0]?.stationId;
+  if (!originId) return anchorTime;
+  const journeyTime = getJourneyTime(calculatedStops, originId, anchorStationId);
   if (journeyTime === null) return anchorTime; // Fallback
   return anchorTime - journeyTime;
 }
@@ -109,7 +116,7 @@ function isReasonableDepartureTime(minutes: number): boolean {
 function analyzeMorningOutbound(
   ctx: AnalysisContext
 ): ShortTurnSuggestion | null {
-  const { schedule, pattern, outboundVariant } = ctx;
+  const { schedule, pattern, outboundVariant, outboundCalculatedStops } = ctx;
   const { anchorStationId, outboundAnchorMinute, shortTurnConfig } = schedule;
 
   if (!shortTurnConfig?.startingStations?.length) return null;
@@ -122,10 +129,9 @@ function analyzeMorningOutbound(
   const firstAnchorTime = getFirstAnchorTime(firstPeriod, outboundAnchorMinute);
 
   // Calculate when full variant needs to depart from origin
-  const originId = getOriginStationId(outboundVariant);
   const fullVariantDeparture = calculateOriginDeparture(
     firstAnchorTime,
-    outboundVariant,
+    outboundCalculatedStops,
     anchorStationId
   );
 
@@ -140,7 +146,7 @@ function analyzeMorningOutbound(
   let firstReasonableFullTrainTime = firstAnchorTime;
 
   for (const startStationId of shortTurnConfig.startingStations) {
-    const journeyToAnchor = getJourneyTime(outboundVariant, startStationId, anchorStationId);
+    const journeyToAnchor = getJourneyTime(outboundCalculatedStops, startStationId, anchorStationId);
     if (journeyToAnchor === null) continue;
 
     const requiredDeparture = firstAnchorTime - journeyToAnchor;
@@ -157,7 +163,7 @@ function analyzeMorningOutbound(
   let trainsNeeded = 0;
   let currentAnchorTime = firstAnchorTime;
 
-  while (!isReasonableDepartureTime(calculateOriginDeparture(currentAnchorTime, outboundVariant, anchorStationId))) {
+  while (!isReasonableDepartureTime(calculateOriginDeparture(currentAnchorTime, outboundCalculatedStops, anchorStationId))) {
     trainsNeeded++;
     currentAnchorTime += interval;
     if (trainsNeeded > 10) break; // Safety limit
@@ -188,7 +194,7 @@ function analyzeMorningOutbound(
 function analyzeMorningInbound(
   ctx: AnalysisContext
 ): ShortTurnSuggestion | null {
-  const { schedule, pattern, inboundVariant } = ctx;
+  const { schedule, pattern, inboundVariant, inboundCalculatedStops } = ctx;
   const { anchorStationId, inboundAnchorMinute, shortTurnConfig } = schedule;
 
   if (!shortTurnConfig?.startingStations?.length) return null;
@@ -199,10 +205,9 @@ function analyzeMorningInbound(
   if (!firstPeriod) return null;
 
   const firstAnchorTime = getFirstAnchorTime(firstPeriod, inboundAnchorMinute);
-  const originId = getOriginStationId(inboundVariant);
   const fullVariantDeparture = calculateOriginDeparture(
     firstAnchorTime,
-    inboundVariant,
+    inboundCalculatedStops,
     anchorStationId
   );
 
@@ -219,7 +224,7 @@ function analyzeMorningInbound(
     const stationOnInbound = inboundVariant.stations.find(s => s.stationId === startStationId);
     if (!stationOnInbound) continue;
 
-    const journeyToAnchor = getJourneyTime(inboundVariant, startStationId, anchorStationId);
+    const journeyToAnchor = getJourneyTime(inboundCalculatedStops, startStationId, anchorStationId);
     if (journeyToAnchor === null) continue;
 
     const requiredDeparture = firstAnchorTime - journeyToAnchor;
@@ -235,7 +240,7 @@ function analyzeMorningInbound(
   let trainsNeeded = 0;
   let currentAnchorTime = firstAnchorTime;
 
-  while (!isReasonableDepartureTime(calculateOriginDeparture(currentAnchorTime, inboundVariant, anchorStationId))) {
+  while (!isReasonableDepartureTime(calculateOriginDeparture(currentAnchorTime, inboundCalculatedStops, anchorStationId))) {
     trainsNeeded++;
     currentAnchorTime += interval;
     if (trainsNeeded > 10) break;
@@ -264,7 +269,7 @@ function analyzeMorningInbound(
 function analyzeEveningOutbound(
   ctx: AnalysisContext
 ): ShortTurnSuggestion | null {
-  const { schedule, pattern, outboundVariant } = ctx;
+  const { schedule, pattern, outboundVariant, outboundCalculatedStops } = ctx;
   const { anchorStationId, outboundAnchorMinute, shortTurnConfig } = schedule;
 
   if (!shortTurnConfig?.endingStations?.length) return null;
@@ -286,7 +291,7 @@ function analyzeEveningOutbound(
 
   // Check if terminus arrival is too late
   const terminusId = getTerminusStationId(outboundVariant);
-  const journeyToTerminus = getJourneyTime(outboundVariant, anchorStationId, terminusId);
+  const journeyToTerminus = getJourneyTime(outboundCalculatedStops, anchorStationId, terminusId);
   if (journeyToTerminus === null) return null;
 
   const terminusArrival = lastAnchorTime + journeyToTerminus;
@@ -301,7 +306,7 @@ function analyzeEveningOutbound(
   let bestArrival = terminusArrival;
 
   for (const endStationId of shortTurnConfig.endingStations) {
-    const journeyToEnd = getJourneyTime(outboundVariant, anchorStationId, endStationId);
+    const journeyToEnd = getJourneyTime(outboundCalculatedStops, anchorStationId, endStationId);
     if (journeyToEnd === null) continue;
 
     const endArrival = lastAnchorTime + journeyToEnd;
@@ -350,7 +355,7 @@ function analyzeEveningOutbound(
 function analyzeEveningInbound(
   ctx: AnalysisContext
 ): ShortTurnSuggestion | null {
-  const { schedule, pattern, inboundVariant } = ctx;
+  const { schedule, pattern, inboundVariant, inboundCalculatedStops } = ctx;
   const { anchorStationId, inboundAnchorMinute, shortTurnConfig } = schedule;
 
   if (!shortTurnConfig?.endingStations?.length) return null;
@@ -368,7 +373,7 @@ function analyzeEveningInbound(
   }
 
   const terminusId = getTerminusStationId(inboundVariant);
-  const journeyToTerminus = getJourneyTime(inboundVariant, anchorStationId, terminusId);
+  const journeyToTerminus = getJourneyTime(inboundCalculatedStops, anchorStationId, terminusId);
   if (journeyToTerminus === null) return null;
 
   const terminusArrival = lastAnchorTime + journeyToTerminus;
@@ -385,7 +390,7 @@ function analyzeEveningInbound(
     const stationOnInbound = inboundVariant.stations.find(s => s.stationId === endStationId);
     if (!stationOnInbound) continue;
 
-    const journeyToEnd = getJourneyTime(inboundVariant, anchorStationId, endStationId);
+    const journeyToEnd = getJourneyTime(inboundCalculatedStops, anchorStationId, endStationId);
     if (journeyToEnd === null) continue;
 
     const endArrival = lastAnchorTime + journeyToEnd;
@@ -434,13 +439,29 @@ export function analyzeShortTurnNeeds(
   schedule: LineSchedule,
   pattern: OperatingPattern,
   outboundVariant: Variant,
-  inboundVariant: Variant
+  inboundVariant: Variant,
+  routes: RouteCorridor[]
 ): ShortTurnSuggestion[] {
+  // Pre-calculate variant times
+  const outboundCalculatedStops = calculateVariantTimes(
+    outboundVariant.stations,
+    outboundVariant.routeRefs || [],
+    routes
+  );
+  const inboundCalculatedStops = calculateVariantTimes(
+    inboundVariant.stations,
+    inboundVariant.routeRefs || [],
+    routes
+  );
+
   const ctx: AnalysisContext = {
     schedule,
     pattern,
     outboundVariant,
     inboundVariant,
+    routes,
+    outboundCalculatedStops,
+    inboundCalculatedStops,
   };
 
   const suggestions: ShortTurnSuggestion[] = [];
@@ -469,12 +490,25 @@ export function getFullVariantCoverage(
   schedule: LineSchedule,
   pattern: OperatingPattern,
   outboundVariant: Variant,
-  inboundVariant: Variant
+  inboundVariant: Variant,
+  routes: RouteCorridor[]
 ): {
   outbound: { firstAnchorTime: string; lastAnchorTime: string };
   inbound: { firstAnchorTime: string; lastAnchorTime: string };
 } {
   const { anchorStationId, outboundAnchorMinute, inboundAnchorMinute } = schedule;
+
+  // Pre-calculate variant times
+  const outboundCalculatedStops = calculateVariantTimes(
+    outboundVariant.stations,
+    outboundVariant.routeRefs || [],
+    routes
+  );
+  const inboundCalculatedStops = calculateVariantTimes(
+    inboundVariant.stations,
+    inboundVariant.routeRefs || [],
+    routes
+  );
 
   const firstPeriod = pattern.periods[0];
   const lastPeriod = pattern.periods[pattern.periods.length - 1];
@@ -483,7 +517,7 @@ export function getFullVariantCoverage(
   let firstOutboundAnchor = getFirstAnchorTime(firstPeriod, outboundAnchorMinute);
   const interval = getIntervalForPeriod(firstPeriod);
 
-  while (!isReasonableDepartureTime(calculateOriginDeparture(firstOutboundAnchor, outboundVariant, anchorStationId))) {
+  while (!isReasonableDepartureTime(calculateOriginDeparture(firstOutboundAnchor, outboundCalculatedStops, anchorStationId))) {
     firstOutboundAnchor += interval;
   }
 
@@ -497,7 +531,7 @@ export function getFullVariantCoverage(
 
   // Same for inbound
   let firstInboundAnchor = getFirstAnchorTime(firstPeriod, inboundAnchorMinute);
-  while (!isReasonableDepartureTime(calculateOriginDeparture(firstInboundAnchor, inboundVariant, anchorStationId))) {
+  while (!isReasonableDepartureTime(calculateOriginDeparture(firstInboundAnchor, inboundCalculatedStops, anchorStationId))) {
     firstInboundAnchor += interval;
   }
 

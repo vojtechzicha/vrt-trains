@@ -1,9 +1,36 @@
 {
   "lines": [
     {
-      "id": "4c2028ed-0014-4b32-9305-b351340780ad",
-      "identifier": "Spr1",
-      "name": "Sprinter Praha -> Brno -> Ostrava -> Frýdek Místek",
+      "id": "bb818b68-0222-4fd8-9b00-23de68fb431f",
+      "identifier": "Ex15",
+      "name": "Ex15 Brno -> Olomouc",
+      "color": "#E31E24",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "51eec4f5-6f69-4696-a784-248d0ce50a1f",
+      "identifier": "Ex11",
+      "name": "Kladno -> Letiště -> Praha -> Pardubice -> Ostrava -> Havířov",
+      "color": "#E31E24",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "535a3171-84fb-4265-8f1c-ab05cd5ec922",
+      "identifier": "Ex2",
+      "name": "Ex2 Cheb -> Praha -> Pardubice -> Vsetín -> Žilina",
+      "color": "#E31E24",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "3431498e-10e8-4af9-b11f-337bde7e0b0e",
+      "identifier": "Ex1",
+      "name": "Praha -> Brno -> Ostrava -> Polsko/Slovensko",
       "color": "#E31E24",
       "textColor": "#FFFFFF",
       "type": "intercity",

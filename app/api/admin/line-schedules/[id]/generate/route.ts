@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getLineSchedule, getPattern } from '@/lib/data/lineSchedules';
 import { getVariant, getVariantsByLine } from '@/lib/data/variants';
+import { getRoutes } from '@/lib/data/routes';
 import { getTimetables, deleteTimetablesByVariant, getAllTrainNumbers } from '@/lib/data/timetables';
 import { generateTimetables } from '@/lib/schedule/patternGenerator';
 import { promises as fs } from 'fs';
@@ -37,9 +38,12 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
       return NextResponse.json({ error: 'Pattern not found' }, { status: 404 });
     }
 
-    // Get the primary variants
-    const outboundVariant = await getVariant(schedule.primaryPair.outboundVariantId);
-    const inboundVariant = await getVariant(schedule.primaryPair.inboundVariantId);
+    // Get the primary variants and routes
+    const [outboundVariant, inboundVariant, routes] = await Promise.all([
+      getVariant(schedule.primaryPair.outboundVariantId),
+      getVariant(schedule.primaryPair.inboundVariantId),
+      getRoutes(),
+    ]);
 
     if (!outboundVariant || !inboundVariant) {
       return NextResponse.json({ error: 'Variants not found' }, { status: 404 });
@@ -84,6 +88,7 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
         pattern,
         outboundVariant,
         inboundVariant,
+        routes,
         shortTurnVariants,
       },
       existingNumbers

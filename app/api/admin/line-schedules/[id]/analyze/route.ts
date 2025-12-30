@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getLineSchedule, getPattern } from '@/lib/data/lineSchedules';
 import { getVariant } from '@/lib/data/variants';
+import { getRoutes } from '@/lib/data/routes';
 import { analyzeShortTurnNeeds, getFullVariantCoverage } from '@/lib/schedule/shortTurnAnalyzer';
 import { calculateTrainCount, generateDeparturePreview } from '@/lib/schedule/patternGenerator';
 
@@ -24,9 +25,12 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       return NextResponse.json({ error: 'Pattern not found' }, { status: 404 });
     }
 
-    // Get the variants
-    const outboundVariant = await getVariant(schedule.primaryPair.outboundVariantId);
-    const inboundVariant = await getVariant(schedule.primaryPair.inboundVariantId);
+    // Get the variants and routes
+    const [outboundVariant, inboundVariant, routes] = await Promise.all([
+      getVariant(schedule.primaryPair.outboundVariantId),
+      getVariant(schedule.primaryPair.inboundVariantId),
+      getRoutes(),
+    ]);
 
     if (!outboundVariant || !inboundVariant) {
       return NextResponse.json({ error: 'Variants not found' }, { status: 404 });
@@ -37,7 +41,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       schedule,
       pattern,
       outboundVariant,
-      inboundVariant
+      inboundVariant,
+      routes
     );
 
     // Get full variant coverage info
@@ -45,7 +50,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       schedule,
       pattern,
       outboundVariant,
-      inboundVariant
+      inboundVariant,
+      routes
     );
 
     // Calculate train counts

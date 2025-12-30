@@ -1303,6 +1303,420 @@
       "platforms": 1,
       "isTerminal": false,
       "country": "Czech"
+    },
+    {
+      "id": "35717b0c-9663-40eb-af1b-161508592631",
+      "code": "TKO",
+      "name": "Třinec-Konská (Trzyniec-Końska)",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "f6c510fa-0c07-4951-b802-f655e81c3dec",
+      "code": "TRI",
+      "name": "Třinec (Trzyniec)",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "3b055d1d-eb38-4e69-94dc-23db763e1372",
+      "code": "VEN",
+      "name": "Vendryně (Wędrynia)",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "c3fab8ec-5667-4b1f-8919-9f79f656384c",
+      "code": "BYS",
+      "name": "Bystřice (Bystrzyca)",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "358d5bac-da1f-4e80-99f6-73ea42dfbe83",
+      "code": "HRA",
+      "name": "Hrádek (Gródek)",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "0a4ab504-4606-4c5d-aee4-1b720facb7cf",
+      "code": "MUJ",
+      "name": "Mosty u Jablunkova",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "f44f8fe2-4d79-4642-998e-9a931750e92a",
+      "code": "SST",
+      "name": "Střelná",
+      "type": "request",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Slovakia"
+    },
+    {
+      "id": "87645902-ab40-4270-93f2-92dd1ace63f9",
+      "code": "RVC",
+      "name": "Rudoltice v Čechách",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "57c1bcb6-8521-4b47-9453-081170e2904a",
+      "code": "LAN",
+      "name": "Lanškroun",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": true,
+      "country": "Czech"
+    },
+    {
+      "id": "2b641c60-08da-4f5f-bd4b-feec98900477",
+      "code": "PCE",
+      "name": "Pardubice centrum",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": true,
+      "country": "Czech"
+    },
+    {
+      "id": "b4c8d94e-d80a-49c4-be70-0dd13670d2a9",
+      "code": "MOR",
+      "name": "Moravany",
+      "type": "regular",
+      "platforms": 6,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "8f6fa2ae-b4b3-479e-929c-647f6c961cb2",
+      "code": "UNM",
+      "name": "Ústí nad Orlicí město",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "0dbd256a-a267-4742-8e57-4e84b67f4425",
+      "code": "BER",
+      "name": "Beroun",
+      "type": "hub",
+      "platforms": 7,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "7fd38df8-b1bd-45d6-8bc3-f4d4c259f0d9",
+      "code": "ZDI",
+      "name": "Zdice",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "e204056e-1416-4fe4-9bdd-3cee0cfc0a0e",
+      "code": "HOR",
+      "name": "Hořovice",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "fd58ad10-8f5f-4594-8706-528aea797c67",
+      "code": "KAR",
+      "name": "Kařez",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a0d91942-c420-461b-963e-91bccb0d6e2e",
+      "code": "ROK",
+      "name": "Rokycany",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "f2e0cbf8-69e4-42cd-b9c9-150ecdbb9543",
+      "code": "EJP",
+      "name": "Ejpovice",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a984a309-2c69-407c-89ed-e0471be81d0b",
+      "code": "PLZ",
+      "name": "Plzeň zastávka",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "205fa4b7-f9de-4a8f-ad60-70e41ee04f09",
+      "code": "DOB",
+      "name": "Dobřany",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "352910e3-9fbb-400c-9dbf-bb36a1803531",
+      "code": "CHL",
+      "name": "Chlumčany u Dobřan",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "2b55b037-8a37-4ccb-99e1-6c76f6e4fdfe",
+      "code": "PRS",
+      "name": "Přeštice",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "2e222788-e548-40d8-a45f-d5ee1e5e387d",
+      "code": "LUZ",
+      "name": "Lužany",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "6db46681-f1d1-42a3-a8bf-106983ad1f11",
+      "code": "BOR",
+      "name": "Borovy",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "b77af1ad-eb5a-4a40-928b-2cd6dd1ffe49",
+      "code": "SUK",
+      "name": "Švihov u Klatov",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "763589d5-dee2-4963-9970-ec34a5979219",
+      "code": "KLV",
+      "name": "Klatovy",
+      "type": "hub",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "2402bee8-4a1d-410d-a82f-7f9e8d84caf1",
+      "code": "HRK",
+      "name": "Hradec Králové hlavní nádraží",
+      "type": "hub",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a9716cca-c94d-46c5-be1d-888a6b96d26f",
+      "code": "PMN",
+      "name": "Praha Masarykovo nádraží",
+      "type": "terminal",
+      "platforms": 7,
+      "isTerminal": true,
+      "country": "Czech"
+    },
+    {
+      "id": "31a9cda8-476a-40c1-8d58-88353608d4f9",
+      "code": "PBU",
+      "name": "Praha-Bubny",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "c393f224-db4f-49bc-a368-8412ec2be8c7",
+      "code": "PDE",
+      "name": "Praha-Dejvice",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "fc5f00d4-75c7-4b39-8e92-f5a6630c08e1",
+      "code": "PVE",
+      "name": "Praha-Veleslavín",
+      "type": "hub",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "1e9fcead-8cd2-4e8e-9454-f9ad1736423a",
+      "code": "HOS",
+      "name": "Hostivice",
+      "type": "regular",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "03ab9be6-74b2-4d14-9c7b-68b71a2e2f9b",
+      "code": "PRU",
+      "name": "Praha-Ruzyně",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "87574896-1260-4f19-a5e0-725a146e321d",
+      "code": "JEN",
+      "name": "Jeneč",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "6709213b-5cd7-44ea-a76e-909b20b59406",
+      "code": "KAC",
+      "name": "Kačice",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "c678f088-564a-430f-80d6-e28eccc2b50a",
+      "code": "STO",
+      "name": "Stochov",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "db7d7db6-1104-411a-98e8-977cad106188",
+      "code": "NST",
+      "name": "Nové Strašecí",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "cc57e0e6-bd46-4747-a21e-698e823c6ca7",
+      "code": "LUR",
+      "name": "Lužná u Rakovníka",
+      "type": "hub",
+      "platforms": 4,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "9aaad192-fea7-427f-b53a-7730a3881e70",
+      "code": "RAK",
+      "name": "Rakovník",
+      "type": "terminal",
+      "platforms": 5,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "db5c4aff-cd6b-4b4d-a21e-b95b5118e92a",
+      "code": "PZL",
+      "name": "Praha-Zličín",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "211c775e-d111-4a79-822f-0a461e0f99dd",
+      "code": "RUP",
+      "name": "Rudná u Prahy",
+      "type": "hub",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "f9220bfd-9077-4b73-997e-35e7ace1350a",
+      "code": "RYM",
+      "name": "Rýmařov",
+      "type": "terminal",
+      "platforms": 1,
+      "isTerminal": true,
+      "country": "Czech"
+    },
+    {
+      "id": "893724c2-cd11-48e0-bb3c-79a31fc2e3ac",
+      "code": "LRY",
+      "name": "Lumnice u Rýmařova",
+      "type": "regular",
+      "platforms": 1,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a550d442-8aca-4fb6-adf8-e04a54ac2014",
+      "code": "VAL",
+      "name": "Valšov",
+      "type": "regular",
+      "platforms": 3,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "cb4dd8c1-8c17-4e42-a64e-cce3e97613e4",
+      "code": "STI",
+      "name": "Štítina",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "57a6e3a5-ca63-418f-8d7f-758d310ddced",
+      "code": "HVS",
+      "name": "Háj ve Slezsku",
+      "type": "regular",
+      "platforms": 2,
+      "isTerminal": false,
+      "country": "Czech"
     }
   ]
 }
