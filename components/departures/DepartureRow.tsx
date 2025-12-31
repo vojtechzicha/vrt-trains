@@ -16,6 +16,7 @@ interface DepartureRowProps {
   allStations: string[];
   variantCode: string;
   variantName: string;
+  trainNumber: string;
   isPast?: boolean;
   isNext?: boolean;
   isDepartingSoon?: boolean;
@@ -33,25 +34,22 @@ export function DepartureRow({
   allStations,
   variantCode,
   variantName,
+  trainNumber,
   isPast = false,
   isNext = false,
   isDepartingSoon = false,
   fromStationName,
 }: DepartureRowProps) {
-  const [showVariant, setShowVariant] = useState(false);
+  // Cycle through: 0 = line, 1 = variant, 2 = train number
+  const [displayMode, setDisplayMode] = useState<0 | 1 | 2>(0);
 
-  // Cycle between line code and variant code every 3 seconds
   useEffect(() => {
-    if (variantCode === lineIdentifier) return; // No need to cycle if they're the same
-
     const interval = setInterval(() => {
-      setShowVariant((v) => !v);
+      setDisplayMode((m) => ((m + 1) % 3) as 0 | 1 | 2);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [variantCode, lineIdentifier]);
-
-  const displayCode = showVariant && variantCode !== lineIdentifier ? variantCode : lineIdentifier;
+  }, []);
 
   const rowClasses = [
     'flex items-center gap-4 px-6 py-4 border-b border-gray-700 last:border-b-0 transition-all duration-300',
@@ -70,14 +68,20 @@ export function DepartureRow({
       <div className={timeClasses}>
         {time}
       </div>
-      <div className="w-24">
+      <div className="w-24 flex justify-center">
         <div className="transition-opacity duration-300">
-          <LineBadge
-            identifier={displayCode}
-            color={lineColor}
-            textColor={lineTextColor}
-            className={`text-lg ${isPast ? 'opacity-70' : ''}`}
-          />
+          {displayMode === 2 ? (
+            <div className={`text-lg font-mono ${isPast ? 'text-gray-500' : 'text-gray-300'}`}>
+              {trainNumber}
+            </div>
+          ) : (
+            <LineBadge
+              identifier={displayMode === 1 && variantCode !== lineIdentifier ? variantCode : lineIdentifier}
+              color={lineColor}
+              textColor={lineTextColor}
+              className={`text-lg ${isPast ? 'opacity-70' : ''}`}
+            />
+          )}
         </div>
       </div>
       <div className="flex-1">

@@ -27,6 +27,7 @@ function isWithinMinutes(departureTime: string, currentTime: string, minutes: nu
 export function DepartureBoard({ stationName, departures }: DepartureBoardProps) {
   const [currentTime, setCurrentTime] = useState(() => getCurrentTimeString());
   const [showPast, setShowPast] = useState(false);
+  const [headerMode, setHeaderMode] = useState<0 | 1 | 2>(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,6 +35,16 @@ export function DepartureBoard({ stationName, departures }: DepartureBoardProps)
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // Cycle header: Line → Variant → Train
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeaderMode((m) => ((m + 1) % 3) as 0 | 1 | 2);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const headerLabels = ['Line', 'Line', 'Train'];
 
   const pastDepartures = departures.filter((d) => d.time < currentTime);
   const upcomingDepartures = departures.filter((d) => d.time >= currentTime);
@@ -57,7 +68,7 @@ export function DepartureBoard({ stationName, departures }: DepartureBoardProps)
       {/* Column headers */}
       <div className="bg-gray-800 px-6 py-2 border-b border-gray-700 flex gap-4 text-xs text-gray-400 uppercase tracking-wider">
         <div className="w-20">Time</div>
-        <div className="w-24">Line</div>
+        <div className="w-24 text-center">{headerLabels[headerMode]}</div>
         <div className="flex-1">Destination</div>
         <div className="w-64">Calling at</div>
         <div className="w-52">Via</div>
@@ -96,6 +107,7 @@ export function DepartureBoard({ stationName, departures }: DepartureBoardProps)
             allStations={dep.allStations}
             variantCode={dep.variantCode}
             variantName={dep.variantName}
+            trainNumber={dep.trainNumber}
             isPast={true}
             isNext={false}
             isDepartingSoon={false}
@@ -128,6 +140,7 @@ export function DepartureBoard({ stationName, departures }: DepartureBoardProps)
               allStations={dep.allStations}
               variantCode={dep.variantCode}
               variantName={dep.variantName}
+              trainNumber={dep.trainNumber}
               isPast={false}
               isNext={idx === 0}
               isDepartingSoon={isWithinMinutes(dep.time, currentTime, 5)}
