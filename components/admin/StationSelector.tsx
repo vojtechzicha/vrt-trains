@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef, KeyboardEvent } from 'react';
+import { useState, useEffect, useRef, KeyboardEvent, useMemo } from 'react';
 import { Station } from '@/types';
+import { smartMatchStation } from '@/lib/search/smartSearch';
 
 interface StationSelectorProps {
   stations: Station[];
@@ -28,14 +29,13 @@ export function StationSelector({
 
   const selectedStation = stations.find((s) => s.id === value);
 
-  const filteredStations = stations
-    .filter((s) => !excludeIds.includes(s.id))
-    .filter((s) =>
-      search
-        ? s.name.toLowerCase().includes(search.toLowerCase()) ||
-          s.code.toLowerCase().includes(search.toLowerCase())
-        : true
-    );
+  const filteredStations = useMemo(
+    () =>
+      stations
+        .filter((s) => !excludeIds.includes(s.id))
+        .filter((s) => smartMatchStation(search, s)),
+    [stations, excludeIds, search]
+  );
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -132,7 +132,7 @@ export function StationSelector({
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Type to search..."
+              placeholder="Search (try 'p h n')..."
               className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </div>

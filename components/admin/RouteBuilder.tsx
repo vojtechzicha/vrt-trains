@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, KeyboardEvent } from 'react';
-import { Station, StopType, Variant, RouteCorridor, Platform } from '@/types';
+import { Station, Variant, RouteCorridor, Platform } from '@/types';
 import { StationSelector } from './StationSelector';
 
 // Exported so other components can use this interface
@@ -10,7 +10,6 @@ export interface RouteStop {
   minutesFromPrevious: number;  // Travel time from previous station
   dwellTime: number;            // Time spent at this station
   platform: string;
-  stopType: StopType;
 }
 
 // Map of stationA:stationB -> shortest duration in minutes
@@ -111,7 +110,6 @@ export function RouteBuilder({
       minutesFromPrevious: value.length === 0 ? 0 : defaultMinutes,
       dwellTime: 1,  // Default dwell time
       platform: '1',
-      stopType: 'regular',
     };
     onChange([...value, newStop]);
     setIsAddingNew(false);
@@ -218,7 +216,6 @@ export function RouteBuilder({
         <span className="w-12 text-center">Arr</span>
         <span className="w-12 text-center">Dep</span>
         <span className="w-20 text-center">Plt</span>
-        <span className="w-20 text-center">Type</span>
         <span className="w-8"></span>
       </div>
 
@@ -337,16 +334,6 @@ export function RouteBuilder({
                 />
               )}
             </div>
-
-            {/* Stop type */}
-            <select
-              value={stop.stopType}
-              onChange={(e) => handleUpdateStop(index, { stopType: e.target.value as StopType })}
-              className="w-20 px-1 py-1 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
-            >
-              <option value="regular">Regular</option>
-              <option value="request">Request</option>
-            </select>
 
             {/* Remove action */}
             <div className="w-8 flex justify-center">

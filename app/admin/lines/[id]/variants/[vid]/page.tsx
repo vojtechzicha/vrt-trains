@@ -168,7 +168,7 @@ export default function EditVariantPage({
       sequence: index + 1,
       dwellTime: stop.dwellTime,
       platform: stop.platform,
-      stopType: stop.stopType,
+      stopType: 'regular' as const,
     }));
   }
 

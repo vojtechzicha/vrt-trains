@@ -707,7 +707,6 @@ export function segmentsToRouteStops(
         minutesFromPrevious: timeFromPrevious,
         dwellTime: stop.defaultDwellTime ?? 1,
         platform: '1', // Default, needs to be selected
-        stopType: 'regular',
       });
     }
   }

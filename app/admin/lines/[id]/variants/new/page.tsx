@@ -135,7 +135,6 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
       minutesFromPrevious: stop.travelTimeFromPrevious,
       dwellTime: stop.dwellTime,
       platform: stop.platform,
-      stopType: stop.stopType,
     }));
     setRouteStops(stops);
 
@@ -202,7 +201,6 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
         minutesFromPrevious,
         dwellTime: stop.dwellTime,
         platform: stop.platform,
-        stopType: stop.stopType,
       };
     });
 
@@ -295,7 +293,7 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
       sequence: index + 1,
       dwellTime: stop.dwellTime,
       platform: stop.platform,
-      stopType: stop.stopType,
+      stopType: 'regular' as const,
     }));
   }
 
