@@ -2,21 +2,29 @@
 
 import { useState, useMemo } from 'react';
 import { DepartureBoard } from './DepartureBoard';
-import { DepartureInfo } from '@/types';
+import { DepartureInfo, Platform } from '@/types';
 
 interface DepartureBoardWithTabsProps {
   stationName: string;
   departures: DepartureInfo[];
-  platformCount: number;
+  platforms: Platform[];
   isVirtual: boolean;
 }
 
 export function DepartureBoardWithTabs({
   stationName,
   departures,
-  platformCount,
+  platforms,
   isVirtual,
 }: DepartureBoardWithTabsProps) {
+  // Create platform name lookup
+  const platformNameMap = useMemo(() => {
+    const map = new Map<string, string>();
+    platforms.forEach((p) => {
+      if (p.name) map.set(p.code, p.name);
+    });
+    return map;
+  }, [platforms]);
   const [selectedPlatform, setSelectedPlatform] = useState<string | null>(null);
 
   // Get unique platforms that have departures
@@ -51,7 +59,9 @@ export function DepartureBoardWithTabs({
 
   // Build display name for header
   const displayName = selectedPlatform
-    ? `${stationName} - Platform ${selectedPlatform}`
+    ? platformNameMap.get(selectedPlatform)
+      ? `${stationName} - Platform ${selectedPlatform} (${platformNameMap.get(selectedPlatform)})`
+      : `${stationName} - Platform ${selectedPlatform}`
     : stationName;
 
   return (
@@ -69,19 +79,23 @@ export function DepartureBoardWithTabs({
           >
             All Platforms
           </button>
-          {platformsWithDepartures.map((platform) => (
-            <button
-              key={platform}
-              onClick={() => setSelectedPlatform(platform)}
-              className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
-                selectedPlatform === platform
-                  ? 'bg-amber-500 text-gray-900'
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-              }`}
-            >
-              Platform {platform}
-            </button>
-          ))}
+          {platformsWithDepartures.map((platform) => {
+            const platformName = platformNameMap.get(platform);
+            return (
+              <button
+                key={platform}
+                onClick={() => setSelectedPlatform(platform)}
+                title={platformName || undefined}
+                className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
+                  selectedPlatform === platform
+                    ? 'bg-amber-500 text-gray-900'
+                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                }`}
+              >
+                Platform {platform}
+              </button>
+            );
+          })}
         </div>
       )}
 

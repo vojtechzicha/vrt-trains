@@ -16,6 +16,8 @@ interface LineItem {
 
 interface PlatformDropZoneProps {
   platformNumber: string;
+  platformName?: string;
+  isBay?: boolean;
   items: LineItem[];
   showVariantMode: boolean;
   onRemove?: (itemId: string) => void;
@@ -23,6 +25,8 @@ interface PlatformDropZoneProps {
 
 export function PlatformDropZone({
   platformNumber,
+  platformName,
+  isBay,
   items,
   showVariantMode,
   onRemove,
@@ -40,13 +44,27 @@ export function PlatformDropZone({
       className={`
         border-2 rounded-lg p-4 min-h-[80px] transition-colors
         ${isOver ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white'}
+        ${isBay ? 'border-l-4 border-l-amber-400' : ''}
       `}
     >
       <div className="flex items-center gap-2 mb-3">
         <span className="text-sm font-semibold text-gray-700">
           Platform {platformNumber}
+          {platformName && (
+            <span className="font-normal text-gray-500 ml-1">
+              ({platformName})
+            </span>
+          )}
         </span>
-        <div className="flex-1 h-1 bg-gray-300 rounded" />
+        {isBay && (
+          <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">
+            Bay
+          </span>
+        )}
+        <div className={`flex-1 h-1 rounded ${isBay ? 'bg-amber-300' : 'bg-gray-300'}`} />
+        {isBay && (
+          <div className="w-2 h-2 bg-amber-400 rounded-full" title="Bay platform (terminus)" />
+        )}
       </div>
 
       <div className="flex flex-wrap gap-2 min-h-[32px]">

@@ -1,12 +1,18 @@
 // Station types
 export type StationType = 'hub' | 'terminal' | 'regular' | 'airport' | 'request';
 
+export interface Platform {
+  code: string;      // e.g., "1", "1A" - unique within station
+  name: string;      // e.g., "to Ostrava" - can be empty
+  isBay: boolean;    // terminus bay platform (dead-end track)
+}
+
 export interface Station {
   id: string;
   code: string;
   name: string;
   type: StationType;
-  platforms: number;
+  platforms: Platform[];
   isTerminal: boolean;
   country?: string;  // defaults to "Czech"
   // Virtual station fields

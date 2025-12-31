@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Station, StationType } from '@/types';
+import { Station, StationType, Platform } from '@/types';
 import { Card, CardHeader, CardBody, Button, Input, Select, NumberInput } from '@/components/ui';
+import { generateDefaultPlatforms } from '@/lib/platforms/helpers';
 
 const stationTypes: { value: StationType; label: string }[] = [
   { value: 'hub', label: 'Hub' },
@@ -72,7 +73,14 @@ export default function StationsAdminPage() {
       const res = await fetch('/api/admin/stations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ code, name, type, platforms, isTerminal, country }),
+        body: JSON.stringify({
+          code,
+          name,
+          type,
+          platforms: generateDefaultPlatforms(platforms),
+          isTerminal,
+          country,
+        }),
       });
 
       if (res.ok) {
@@ -108,7 +116,7 @@ export default function StationsAdminPage() {
           code: virtualCode,
           name: virtualName,
           type: 'hub',
-          platforms: 0,
+          platforms: [],
           isTerminal: false,
           isVirtual: true,
           memberStationIds: selectedMemberIds,
@@ -439,7 +447,7 @@ export default function StationsAdminPage() {
                   <td className="px-4 py-3 text-sm font-mono font-medium">{station.code}</td>
                   <td className="px-4 py-3 text-sm">{station.name}</td>
                   <td className="px-4 py-3 text-sm capitalize">{station.type}</td>
-                  <td className="px-4 py-3 text-sm">{station.platforms}</td>
+                  <td className="px-4 py-3 text-sm">{station.platforms?.length || 0}</td>
                   <td className="px-4 py-3 text-sm text-right">
                     <Link
                       href={`/admin/stations/${station.id}`}

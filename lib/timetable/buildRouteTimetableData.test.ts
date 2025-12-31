@@ -471,6 +471,155 @@ describe('buildRouteTimetableData', () => {
 
     expect(result.outboundEntries.map((e) => e.trainNumber)).toEqual(['R101', 'R102', 'R103']);
   });
+
+  it('sorts trains using different paths correctly by common station time', () => {
+    // Route with two paths - one via PrahaVRT, one direct
+    // Trains using different paths should still be sorted by time at common station (Brno)
+    const extendedStations: Station[] = [
+      createStation('Praha', 'Praha hl.n.'),
+      createStation('PrahaVRT', 'Praha východ VRT'),
+      createStation('Brno', 'Brno hl.n.'),
+      createStation('Olomouc', 'Olomouc hl.n.'),
+    ];
+
+    const route: RouteCorridor = {
+      id: 'r1',
+      name: 'Praha-Olomouc',
+      paths: [
+        // Path via PrahaVRT (longer, will be base)
+        createPath('p1', 'via VRT', [
+          { stationId: 'PrahaVRT', sequence: 1 },
+          { stationId: 'Brno', sequence: 2 },
+          { stationId: 'Olomouc', sequence: 3 },
+        ]),
+        // Direct path
+        createPath('p2', 'Direct', [
+          { stationId: 'Praha', sequence: 1 },
+          { stationId: 'Brno', sequence: 2 },
+        ]),
+      ],
+      createdAt: '',
+      updatedAt: '',
+    };
+
+    // Variant 1: via PrahaVRT (Ex1505, Ex1507)
+    const variant1 = createVariant('v1', 'l1', ['PrahaVRT', 'Brno', 'Olomouc']);
+    // Variant 2: direct via Praha (Ex161)
+    const variant2 = createVariant('v2', 'l1', ['Praha', 'Brno', 'Olomouc']);
+
+    const timetables = [
+      // Ex1505: PrahaVRT 08:30 -> Brno 07:30 -> Olomouc 07:55
+      createTimetable('Ex1505', 'v1', [
+        { stationId: 'PrahaVRT', departure: '08:30' },
+        { stationId: 'Brno', arrival: '07:30', departure: '07:30' },
+        { stationId: 'Olomouc', arrival: '07:55' },
+      ]),
+      // Ex1507: PrahaVRT 09:30 -> Brno 08:30 -> Olomouc 08:55
+      createTimetable('Ex1507', 'v1', [
+        { stationId: 'PrahaVRT', departure: '09:30' },
+        { stationId: 'Brno', arrival: '08:30', departure: '08:30' },
+        { stationId: 'Olomouc', arrival: '08:55' },
+      ]),
+      // Ex161: Praha 06:15 -> Brno 07:18 -> Olomouc 09:27
+      // At Brno, Ex161 (07:18) should come BEFORE Ex1505 (07:30)
+      createTimetable('Ex161', 'v2', [
+        { stationId: 'Praha', departure: '06:15' },
+        { stationId: 'Brno', arrival: '07:15', departure: '07:18' },
+        { stationId: 'Olomouc', arrival: '09:27' },
+      ]),
+    ];
+
+    const result = buildRouteTimetableData(
+      route,
+      [variant1, variant2],
+      timetables,
+      extendedStations,
+      lines
+    );
+
+    // At Brno: Ex161(07:18) < Ex1505(07:30) < Ex1507(08:30)
+    // So order should be: Ex161, Ex1505, Ex1507
+    const trainOrder = result.outboundEntries.map((e) => e.trainNumber);
+    expect(trainOrder).toEqual(['Ex161', 'Ex1505', 'Ex1507']);
+  });
+
+  it('sorts trains correctly when initial best station excludes some trains', () => {
+    // Bug reproduction: when most trains share one station (PrahaVRT) but one train (Ex161)
+    // uses a different path, the insertion should still use the correct comparison station
+    const extendedStations: Station[] = [
+      createStation('PrahaVRT', 'Praha východ VRT'),
+      createStation('Brno', 'Brno hl.n.'),
+      createStation('Olomouc', 'Olomouc hl.n.'),
+      createStation('Praha', 'Praha hl.n.'),
+    ];
+
+    const route: RouteCorridor = {
+      id: 'r1',
+      name: 'Test Route',
+      paths: [
+        // Path via PrahaVRT - most trains use this
+        createPath('p1', 'via VRT', [
+          { stationId: 'PrahaVRT', sequence: 1 },
+          { stationId: 'Brno', sequence: 2 },
+          { stationId: 'Olomouc', sequence: 3 },
+        ]),
+        // Alternative path via Praha - fewer trains
+        createPath('p2', 'via Praha', [
+          { stationId: 'Praha', sequence: 1 },
+          { stationId: 'Olomouc', sequence: 2 },
+        ]),
+      ],
+      createdAt: '',
+      updatedAt: '',
+    };
+
+    // 4 trains via PrahaVRT (to make PrahaVRT the "best station")
+    const variant1 = createVariant('v1', 'l1', ['PrahaVRT', 'Brno', 'Olomouc']);
+    // 1 train via Praha (doesn't have PrahaVRT or Brno)
+    const variant2 = createVariant('v2', 'l1', ['Praha', 'Olomouc']);
+
+    const timetables = [
+      createTimetable('Ex1501', 'v1', [
+        { stationId: 'PrahaVRT', departure: '06:30' },
+        { stationId: 'Brno', departure: '05:30' },
+        { stationId: 'Olomouc', arrival: '05:55' },
+      ]),
+      createTimetable('Ex1503', 'v1', [
+        { stationId: 'PrahaVRT', departure: '07:30' },
+        { stationId: 'Brno', departure: '06:30' },
+        { stationId: 'Olomouc', arrival: '06:55' },
+      ]),
+      createTimetable('Ex1505', 'v1', [
+        { stationId: 'PrahaVRT', departure: '08:30' },
+        { stationId: 'Brno', departure: '07:30' },
+        { stationId: 'Olomouc', arrival: '07:55' },
+      ]),
+      createTimetable('Ex1507', 'v1', [
+        { stationId: 'PrahaVRT', departure: '09:30' },
+        { stationId: 'Brno', departure: '08:30' },
+        { stationId: 'Olomouc', arrival: '08:55' },
+      ]),
+      // Ex161 uses different path, only shares Olomouc with other trains
+      // At Olomouc: Ex161 arrives at 07:18, which is between Ex1503(06:55) and Ex1505(07:55)
+      createTimetable('Ex161', 'v2', [
+        { stationId: 'Praha', departure: '06:15' },
+        { stationId: 'Olomouc', arrival: '07:18' },
+      ]),
+    ];
+
+    const result = buildRouteTimetableData(
+      route,
+      [variant1, variant2],
+      timetables,
+      extendedStations,
+      lines
+    );
+
+    // At Olomouc: 05:55, 06:55, 07:18, 07:55, 08:55
+    // Order should be: Ex1501, Ex1503, Ex161, Ex1505, Ex1507
+    const trainOrder = result.outboundEntries.map((e) => e.trainNumber);
+    expect(trainOrder).toEqual(['Ex1501', 'Ex1503', 'Ex161', 'Ex1505', 'Ex1507']);
+  });
 });
 
 describe('buildRouteTimetableData direction splitting', () => {
@@ -733,14 +882,14 @@ describe('calculatePathTime', () => {
     expect(calculatePathTime(path)).toBe(0);
   });
 
-  it('sums baseTimeFromPrevious for all stops', () => {
+  it('sums vrtTime for all stops', () => {
     const path: RoutePath = {
       id: 'p1',
       name: 'Test',
       stops: [
-        { stationId: 'A', sequence: 1, distanceFromPrevious: 0, distanceKm: 0, baseTimeFromPrevious: 0, defaultDwellTime: 1 },
-        { stationId: 'B', sequence: 2, distanceFromPrevious: 50, distanceKm: 50, baseTimeFromPrevious: 30, defaultDwellTime: 1 },
-        { stationId: 'C', sequence: 3, distanceFromPrevious: 75, distanceKm: 125, baseTimeFromPrevious: 45, defaultDwellTime: 1 },
+        { stationId: 'A', sequence: 1, distanceFromPrevious: 0, distanceKm: 0, vrtTime: 0, defaultDwellTime: 1 },
+        { stationId: 'B', sequence: 2, distanceFromPrevious: 50, distanceKm: 50, vrtTime: 30, defaultDwellTime: 1 },
+        { stationId: 'C', sequence: 3, distanceFromPrevious: 75, distanceKm: 125, vrtTime: 45, defaultDwellTime: 1 },
       ],
     };
     expect(calculatePathTime(path)).toBe(75); // 0 + 30 + 45

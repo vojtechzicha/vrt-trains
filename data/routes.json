@@ -2851,6 +2851,705 @@
       ],
       "createdAt": "2025-12-30T16:22:46.159Z",
       "updatedAt": "2025-12-30T16:22:46.159Z"
+    },
+    {
+      "id": "0142ef65-cb8c-4915-83e1-1cad293f9670",
+      "name": "260 Česká Třebová - Brno - Holubice",
+      "description": "",
+      "paths": [
+        {
+          "id": "4a161ab8-0584-4c76-ad4b-da6e1798fb9c",
+          "name": "Brno hl.n. -> Česká Třebová",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 4
+            },
+            {
+              "stationId": "36fb86c3-0d87-471f-b713-1ffba9d2839e",
+              "sequence": 2,
+              "distanceFromPrevious": 2,
+              "distanceKm": 2,
+              "slowTime": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "6f5b8a70-6eb5-4e4a-b59a-ea68c2756275",
+              "sequence": 3,
+              "distanceFromPrevious": 20,
+              "distanceKm": 22,
+              "fastTime": 13,
+              "slowTime": 24,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "3f91b1de-7311-4a36-8f5a-f771b713243c",
+              "sequence": 4,
+              "distanceFromPrevious": 1,
+              "distanceKm": 23,
+              "slowTime": 2,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "76faf553-379d-4835-a1ac-a4ea1d477609",
+              "sequence": 5,
+              "distanceFromPrevious": 7,
+              "distanceKm": 30,
+              "fastTime": 3,
+              "slowTime": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "4d5912ee-d650-492a-9a73-0e56480261e5",
+              "sequence": 6,
+              "distanceFromPrevious": 9,
+              "distanceKm": 39,
+              "fastTime": 5,
+              "slowTime": 8,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "a06cb237-3bcf-4479-b259-cc837093ab09",
+              "sequence": 7,
+              "distanceFromPrevious": 11,
+              "distanceKm": 50,
+              "fastTime": 7,
+              "slowTime": 11,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "9356d425-18f3-424c-955c-455b2485826f",
+              "sequence": 8,
+              "distanceFromPrevious": 10,
+              "distanceKm": 60,
+              "fastTime": 8,
+              "slowTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e0ac6ef6-3ffb-4811-b128-9ef8efc1bc7a",
+              "sequence": 9,
+              "distanceFromPrevious": 17,
+              "distanceKm": 77,
+              "fastTime": 11,
+              "slowTime": 12,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "960ade80-b6b6-48c6-8d07-493e7a6c01cf",
+              "sequence": 10,
+              "distanceFromPrevious": 17,
+              "distanceKm": 94,
+              "fastTime": 10,
+              "slowTime": 12,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "447d2a3a-fe32-4ac9-82aa-152671154655",
+          "name": "Brno hl.n. -> Holubice",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 4
+            },
+            {
+              "stationId": "8c3cb3a8-9a6a-47ca-aba4-9c1a9bd48231",
+              "sequence": 2,
+              "distanceFromPrevious": 9,
+              "distanceKm": 9,
+              "fastTime": 6,
+              "slowTime": 11,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "d5d93680-ef06-4c8c-9cc6-4b897fbc565c",
+              "sequence": 3,
+              "distanceFromPrevious": 7,
+              "distanceKm": 16,
+              "fastTime": 4,
+              "slowTime": 8,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "6fcec931-7791-43c5-aec5-c76a10eaa71d",
+              "sequence": 4,
+              "distanceFromPrevious": 8,
+              "distanceKm": 24,
+              "fastTime": 7,
+              "slowTime": 12,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "80a281c1-476a-408b-a941-b9018cc93aea",
+              "sequence": 5,
+              "distanceFromPrevious": 4,
+              "distanceKm": 28,
+              "fastTime": 3,
+              "slowTime": 4,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T06:50:44.842Z",
+      "updatedAt": "2025-12-31T06:50:44.842Z"
+    },
+    {
+      "id": "059622d5-c670-477e-84a9-6971d4d1fdf4",
+      "name": "011 Praha - Poříčany",
+      "description": "",
+      "paths": [
+        {
+          "id": "53f2fdcc-5b96-405b-8428-84baeae5ffdd",
+          "name": "Praha hl.n. -> Poříčany",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "vrtTime": 7,
+              "fastTime": 7,
+              "slowTime": 7,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "4a2b896f-cc56-47ca-87e1-6a5e15783301",
+              "sequence": 3,
+              "distanceFromPrevious": 18,
+              "distanceKm": 23,
+              "fastTime": 10,
+              "slowTime": 18,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "edc8a42d-566c-4355-898b-01f1505afc8b",
+              "sequence": 4,
+              "distanceFromPrevious": 11,
+              "distanceKm": 34,
+              "fastTime": 7,
+              "slowTime": 11,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "f0cb9062-c708-4c4a-8429-8dd99612bf1f",
+              "sequence": 5,
+              "distanceFromPrevious": 6,
+              "distanceKm": 40,
+              "fastTime": 5,
+              "slowTime": 6,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "3bcdb102-50d5-4a88-8208-198a818ab9f9",
+          "name": "Praha Masarykovo n. -> Praha-Libeň",
+          "stops": [
+            {
+              "stationId": "a9716cca-c94d-46c5-be1d-888a6b96d26f",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "fastTime": 5,
+              "slowTime": 6,
+              "defaultDwellTime": 2
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T07:03:45.492Z",
+      "updatedAt": "2025-12-31T07:03:45.492Z"
+    },
+    {
+      "id": "1fa0e4d3-1c03-493a-a012-f62974731348",
+      "name": "300 RS Brno - Přerov",
+      "description": "",
+      "paths": [
+        {
+          "id": "43d346ff-9dd4-4010-8f82-d49e5da9dafe",
+          "name": "Brno hl.n. -> Přerov",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "61129a88-a563-4f74-92d8-056d2869e768",
+              "sequence": 2,
+              "distanceFromPrevious": 6,
+              "distanceKm": 6,
+              "fastTime": 5,
+              "slowTime": 8,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "2a56d8a4-5e65-410d-bdc1-0e63e0da434c",
+              "sequence": 3,
+              "distanceFromPrevious": 10,
+              "distanceKm": 16,
+              "fastTime": 5,
+              "slowTime": 9,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "80a281c1-476a-408b-a941-b9018cc93aea",
+              "sequence": 4,
+              "distanceFromPrevious": 4,
+              "distanceKm": 20,
+              "fastTime": 2,
+              "slowTime": 4,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "a990304f-6d9c-4feb-ac66-a0b37874db5f",
+              "sequence": 5,
+              "distanceFromPrevious": 11,
+              "distanceKm": 31,
+              "fastTime": 3,
+              "slowTime": 7,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e09a4b66-e1b6-4520-9cac-31b72b2bedc8",
+              "sequence": 6,
+              "distanceFromPrevious": 6,
+              "distanceKm": 37,
+              "fastTime": 2,
+              "slowTime": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "1300e5ce-2fda-4906-81ea-e9481e63f747",
+              "sequence": 7,
+              "distanceFromPrevious": 9,
+              "distanceKm": 46,
+              "fastTime": 3,
+              "slowTime": 8,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "f5405d4a-a9e8-4a72-a9fe-769f47f5018a",
+              "sequence": 8,
+              "distanceFromPrevious": 7,
+              "distanceKm": 53,
+              "fastTime": 2,
+              "slowTime": 6,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "c9d4bc34-afaf-475b-b0b7-27eadb2ab3f3",
+              "sequence": 9,
+              "distanceFromPrevious": 9,
+              "distanceKm": 62,
+              "fastTime": 3,
+              "slowTime": 10,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "99acea1d-3340-40c4-9e05-7fa80e358445",
+              "sequence": 10,
+              "distanceFromPrevious": 5,
+              "distanceKm": 67,
+              "fastTime": 2,
+              "slowTime": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "d5a6ba79-7a44-48dc-912f-4df004dbeba3",
+              "sequence": 11,
+              "distanceFromPrevious": 9,
+              "distanceKm": 76,
+              "fastTime": 4,
+              "slowTime": 8,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T08:00:46.374Z",
+      "updatedAt": "2025-12-31T08:00:46.374Z"
+    },
+    {
+      "id": "f05d66ed-5bdb-4cf6-8df1-65241852ed5b",
+      "name": "303 Kojetín - Valašské Meziříčí",
+      "description": "",
+      "paths": [
+        {
+          "id": "38c5d2cf-b139-4bd5-8955-0dade41a2218",
+          "name": "Kojetín -> Valašské Meziříčí",
+          "stops": [
+            {
+              "stationId": "c9d4bc34-afaf-475b-b0b7-27eadb2ab3f3",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "5f890e0d-544b-4126-a371-0045507ec6c6",
+              "sequence": 2,
+              "distanceFromPrevious": 9,
+              "distanceKm": 9,
+              "fastTime": 10,
+              "slowTime": 12,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "f77213f6-8ed4-4771-94e0-0e56fc011bb4",
+              "sequence": 3,
+              "distanceFromPrevious": 8,
+              "distanceKm": 17,
+              "fastTime": 8,
+              "slowTime": 8,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "1e6de983-6043-421c-932c-4625088d3a8b",
+              "sequence": 4,
+              "distanceFromPrevious": 18,
+              "distanceKm": 35,
+              "fastTime": 19,
+              "slowTime": 23,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "cdafff75-6941-46c1-a517-b76675408b6f",
+              "sequence": 5,
+              "distanceFromPrevious": 26,
+              "distanceKm": 61,
+              "fastTime": 29,
+              "slowTime": 31,
+              "defaultDwellTime": 2
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T08:28:39.673Z",
+      "updatedAt": "2025-12-31T08:28:39.673Z"
+    },
+    {
+      "id": "57dffad1-f2a8-45cc-9009-020e075a3022",
+      "name": "330 Přerov - Břeclav",
+      "description": "",
+      "paths": [
+        {
+          "id": "50618a8f-3fea-4ce7-89ea-7a076bbf7237",
+          "name": "Přerov -> Břeclav",
+          "stops": [
+            {
+              "stationId": "d5a6ba79-7a44-48dc-912f-4df004dbeba3",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "f77213f6-8ed4-4771-94e0-0e56fc011bb4",
+              "sequence": 2,
+              "distanceFromPrevious": 15,
+              "distanceKm": 15,
+              "fastTime": 9,
+              "slowTime": 14,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "935184bb-4f3d-4e9e-b182-31c2be2de847",
+              "sequence": 3,
+              "distanceFromPrevious": 13,
+              "distanceKm": 28,
+              "fastTime": 8,
+              "slowTime": 11,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "58df0937-8bdb-42fe-88d7-6f291ca8f1dd",
+              "sequence": 4,
+              "distanceFromPrevious": 18,
+              "distanceKm": 46,
+              "fastTime": 10,
+              "slowTime": 16,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "69c72162-f429-40eb-99a6-1ffe836e80ac",
+              "sequence": 5,
+              "distanceFromPrevious": 14,
+              "distanceKm": 60,
+              "fastTime": 7,
+              "slowTime": 12,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "3d06dbfb-6245-4626-bfc8-9ab77eb48d50",
+              "sequence": 6,
+              "distanceFromPrevious": 13,
+              "distanceKm": 73,
+              "fastTime": 7,
+              "slowTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "364ef0e0-5a66-4997-ac48-18b8e6e0200b",
+              "sequence": 7,
+              "distanceFromPrevious": 8,
+              "distanceKm": 81,
+              "fastTime": 4,
+              "slowTime": 6,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "be869dec-a9e8-4115-b002-9c728e869000",
+              "sequence": 8,
+              "distanceFromPrevious": 20,
+              "distanceKm": 101,
+              "fastTime": 12,
+              "slowTime": 15,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T08:37:32.868Z",
+      "updatedAt": "2025-12-31T08:37:32.868Z"
+    },
+    {
+      "id": "a65ababf-e3d7-4778-aa7f-96efb38fcb00",
+      "name": "331 Otrokovice - Vizovice",
+      "description": "",
+      "paths": [
+        {
+          "id": "b7b95de8-ceba-47b8-8732-4603b9a39fd9",
+          "name": "Otrokovice -> Vizovice",
+          "stops": [
+            {
+              "stationId": "935184bb-4f3d-4e9e-b182-31c2be2de847",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "e0e16d4c-1ce5-40b2-ba14-88abacc0727e",
+              "sequence": 2,
+              "distanceFromPrevious": 11,
+              "distanceKm": 11,
+              "fastTime": 13,
+              "slowTime": 17,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "9daf7dcc-32f2-4c6c-9dd9-26480fd774de",
+              "sequence": 3,
+              "distanceFromPrevious": 14,
+              "distanceKm": 25,
+              "slowTime": 24,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T08:39:34.022Z",
+      "updatedAt": "2025-12-31T08:39:34.022Z"
+    },
+    {
+      "id": "cbe2a1d4-3e82-42d5-89b0-bd801c637a55",
+      "name": "340 Brno - Uherské Hradiště",
+      "description": "",
+      "paths": [
+        {
+          "id": "0b1f5974-13cd-4404-a370-2ddfd758b983",
+          "name": "Brno -> Uherské Hradiště (přes Černovice)",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "61129a88-a563-4f74-92d8-056d2869e768",
+              "sequence": 2,
+              "distanceFromPrevious": 6,
+              "distanceKm": 6,
+              "fastTime": 5,
+              "slowTime": 8,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "01d3af4c-8c6a-48ce-b4f5-da0052473d50",
+              "sequence": 3,
+              "distanceFromPrevious": 4,
+              "distanceKm": 10,
+              "slowTime": 6,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "2a56d8a4-5e65-410d-bdc1-0e63e0da434c",
+              "sequence": 4,
+              "distanceFromPrevious": 6,
+              "distanceKm": 16,
+              "slowTime": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "dd624341-6e95-4cc2-89b1-95ac66a6f23a",
+              "sequence": 5,
+              "distanceFromPrevious": 7,
+              "distanceKm": 23,
+              "fastTime": 13,
+              "slowTime": 7,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "eb78811d-949c-45ec-97d2-22931842615d",
+              "sequence": 6,
+              "distanceFromPrevious": 10,
+              "distanceKm": 33,
+              "fastTime": 9,
+              "slowTime": 13,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "488b64d3-4413-4fee-96ba-43d287aba1fb",
+              "sequence": 7,
+              "distanceFromPrevious": 30,
+              "distanceKm": 63,
+              "fastTime": 29,
+              "slowTime": 33,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "597067e0-7f1f-4727-a5a6-69972536a8e9",
+              "sequence": 8,
+              "distanceFromPrevious": 13,
+              "distanceKm": 76,
+              "fastTime": 16,
+              "slowTime": 17,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "cee13f48-050e-457b-9f71-45023934abd5",
+              "sequence": 9,
+              "distanceFromPrevious": 10,
+              "distanceKm": 86,
+              "fastTime": 7,
+              "slowTime": 8,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "8086a0b8-3b5e-4581-a687-e47864ecc67b",
+              "sequence": 10,
+              "distanceFromPrevious": 8,
+              "distanceKm": 94,
+              "fastTime": 9,
+              "slowTime": 12,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "d0b054d4-33e9-466d-891e-bbd042a1b4b8",
+              "sequence": 11,
+              "distanceFromPrevious": 4,
+              "distanceKm": 98,
+              "fastTime": 4,
+              "slowTime": 4,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "036e32f4-333e-470e-b9ac-06a0d2da84b1",
+              "sequence": 12,
+              "distanceFromPrevious": 4,
+              "distanceKm": 102,
+              "fastTime": 4,
+              "slowTime": 3,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "56ba08fc-8d63-4901-b082-2981153aa036",
+          "name": "Kunovice zastávka -> Kunovice",
+          "stops": [
+            {
+              "stationId": "d0b054d4-33e9-466d-891e-bbd042a1b4b8",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "552199af-96ca-488e-a9a7-8da660ee47cb",
+              "sequence": 2,
+              "distanceFromPrevious": 10,
+              "distanceKm": 10,
+              "vrtTime": 3,
+              "slowTime": 3,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "00a1e02a-8b83-428e-b07d-d7383f28e5db",
+          "name": "Kunovice -> Uherské Hradiště",
+          "stops": [
+            {
+              "stationId": "552199af-96ca-488e-a9a7-8da660ee47cb",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "036e32f4-333e-470e-b9ac-06a0d2da84b1",
+              "sequence": 2,
+              "distanceFromPrevious": 2,
+              "distanceKm": 2,
+              "fastTime": 3,
+              "slowTime": 3,
+              "defaultDwellTime": 2
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T08:51:03.502Z",
+      "updatedAt": "2025-12-31T08:51:03.502Z"
     }
   ]
 }

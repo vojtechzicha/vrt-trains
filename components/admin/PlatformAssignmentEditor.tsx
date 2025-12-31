@@ -14,7 +14,7 @@ import {
 import { Badge, Button } from '@/components/ui';
 import { DraggableLineBadge } from './DraggableLineBadge';
 import { PlatformDropZone } from './PlatformDropZone';
-import { Direction } from '@/types';
+import { Direction, Platform } from '@/types';
 
 interface VariantInfo {
   id: string;
@@ -37,7 +37,7 @@ interface LineInfo {
 interface PlatformAssignmentEditorProps {
   stationId: string;
   stationName: string;
-  platformCount: number;
+  platforms: Platform[];
   variants: VariantInfo[];
   lines: LineInfo[];
   onSave: (assignments: { variantId: string; platform: string }[]) => Promise<void>;
@@ -50,7 +50,7 @@ interface AssignmentState {
 export function PlatformAssignmentEditor({
   stationId,
   stationName,
-  platformCount,
+  platforms,
   variants,
   lines,
   onSave,
@@ -271,7 +271,8 @@ export function PlatformAssignmentEditor({
   // Check if there are unsaved changes
   const hasChanges = variants.some((v) => (v.platform || '') !== (assignments[v.id] || ''));
 
-  const allPlatforms = Array.from({ length: platformCount }, (_, i) => String(i + 1));
+  // Create a map for platform metadata lookup
+  const platformMetaMap = new Map(platforms.map((p) => [p.code, p]));
   const unassignedItems = getUnassignedItems();
 
   // Get active item for drag overlay
@@ -332,11 +333,13 @@ export function PlatformAssignmentEditor({
 
         {/* Platforms grid */}
         <div className="grid gap-4 md:grid-cols-2">
-          {allPlatforms.map((platformNumber) => (
+          {platforms.map((platform) => (
             <PlatformDropZone
-              key={platformNumber}
-              platformNumber={platformNumber}
-              items={getPlatformItems(platformNumber)}
+              key={platform.code}
+              platformNumber={platform.code}
+              platformName={platform.name}
+              isBay={platform.isBay}
+              items={getPlatformItems(platform.code)}
               showVariantMode={variantMode}
               onRemove={handleRemove}
             />

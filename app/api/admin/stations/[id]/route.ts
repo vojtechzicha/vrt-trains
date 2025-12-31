@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getStation, getStations, updateStation, deleteStation } from '@/lib/data';
+import { validatePlatformCodes } from '@/lib/platforms/helpers';
 
 export async function GET(
   request: NextRequest,
@@ -34,6 +35,14 @@ export async function PUT(
           { error: `Station code "${data.code}" is already used by "${existing.name}"` },
           { status: 400 }
         );
+      }
+    }
+
+    // Validate platforms if provided
+    if (data.platforms && Array.isArray(data.platforms)) {
+      const validationError = validatePlatformCodes(data.platforms);
+      if (validationError) {
+        return NextResponse.json({ error: validationError }, { status: 400 });
       }
     }
 

@@ -5,7 +5,88 @@
       "code": "PHN",
       "name": "Praha hlavní nádraží",
       "type": "hub",
-      "platforms": 16,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "9",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "10",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "11",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "12",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "13",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "14",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "15",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "16",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false
     },
     {
@@ -13,7 +94,28 @@
       "code": "BVV",
       "name": "Brno Vídeňská VRT",
       "type": "hub",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false
     },
     {
@@ -21,7 +123,48 @@
       "code": "OSS",
       "name": "Ostrava-Svinov",
       "type": "hub",
-      "platforms": 8,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false
     },
     {
@@ -29,7 +172,48 @@
       "code": "OHN",
       "name": "Ostrava hlavní nádraží",
       "type": "hub",
-      "platforms": 8,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false
     },
     {
@@ -37,7 +221,18 @@
       "code": "OST",
       "name": "Ostrava-Stodolní",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false
     },
     {
@@ -45,23 +240,82 @@
       "code": "OSK",
       "name": "Ostrava-Kunčice",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false
     },
     {
       "id": "333443",
       "code": "FRM",
       "name": "Frýdek-Místek",
-      "type": "terminal",
-      "platforms": 5,
-      "isTerminal": false
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "85699259-4aec-4cd1-874e-4f55665f44a5",
       "code": "DBH",
       "name": "Berlin Hbf (tief)",
       "type": "terminal",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Germany"
     },
@@ -70,7 +324,13 @@
       "code": "BSK",
       "name": "Berlin Südkreuz",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Germany"
     },
@@ -79,7 +339,13 @@
       "code": "DDN",
       "name": "Dresden-Neustadt",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Germany"
     },
@@ -88,7 +354,13 @@
       "code": "DDH",
       "name": "Dresden Hbf",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Germany"
     },
@@ -97,7 +369,13 @@
       "code": "BDS",
       "name": "Bad Schandau",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Germany"
     },
@@ -106,7 +384,13 @@
       "code": "AWH",
       "name": "Wien Hbf",
       "type": "hub",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Austria"
     },
@@ -115,7 +399,13 @@
       "code": "HHE",
       "name": "Hegyeshalom",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Hungary"
     },
@@ -124,7 +414,13 @@
       "code": "HMO",
       "name": "Mosonmagyarovar",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Hungary"
     },
@@ -133,7 +429,13 @@
       "code": "HGY",
       "name": "Györ",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Hungary"
     },
@@ -142,7 +444,13 @@
       "code": "HBK",
       "name": "Budapest-Kelenföld",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Hungary"
     },
@@ -151,7 +459,13 @@
       "code": "HBD",
       "name": "Budapest-Deli pu",
       "type": "terminal",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": true,
       "country": "Hungary"
     },
@@ -160,7 +474,13 @@
       "code": "SKU",
       "name": "Kúty",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -169,7 +489,13 @@
       "code": "SBH",
       "name": "Bratislava hlavná stanica",
       "type": "hub",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -178,7 +504,13 @@
       "code": "SNZ",
       "name": "Nové Zámky",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -187,7 +519,13 @@
       "code": "STU",
       "name": "Štúrovo",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -196,7 +534,13 @@
       "code": "HSZ",
       "name": "Szob",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Hungary"
     },
@@ -205,7 +549,13 @@
       "code": "HNV",
       "name": "Nagymaros-Visegrad",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Hungary"
     },
@@ -214,7 +564,13 @@
       "code": "HVA",
       "name": "Vac",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Hungary"
     },
@@ -223,7 +579,13 @@
       "code": "HBN",
       "name": "Budapest-Nyugati pu",
       "type": "terminal",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": true,
       "country": "Hungary"
     },
@@ -232,15 +594,87 @@
       "code": "PHV",
       "name": "Praha východ VRT",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false
     },
     {
       "id": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
       "code": "BHN",
       "name": "Brno hlavní nádraží",
-      "type": "terminal",
-      "platforms": 10,
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "9",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "10",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -249,7 +683,53 @@
       "code": "BOH",
       "name": "Bohumín",
       "type": "hub",
-      "platforms": 9,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "9",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false
     },
     {
@@ -257,7 +737,13 @@
       "code": "PZE",
       "name": "Zebrzydowice",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -266,7 +752,13 @@
       "code": "PPS",
       "name": "Pszczyna",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -275,7 +767,13 @@
       "code": "PTY",
       "name": "Tychy",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -284,7 +782,13 @@
       "code": "PKA",
       "name": "Katowice",
       "type": "hub",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -293,7 +797,13 @@
       "code": "PSG",
       "name": "Sosnowiec Glowny",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -302,7 +812,13 @@
       "code": "PDG",
       "name": "Dabrowa Gornicza",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -311,7 +827,13 @@
       "code": "PZA",
       "name": "Zawiercie",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -320,7 +842,13 @@
       "code": "PWP",
       "name": "Wloszczowa Polnoc",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -329,7 +857,13 @@
       "code": "POP",
       "name": "Opoczno Poludnie",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -338,7 +872,13 @@
       "code": "PWZ",
       "name": "Warszawa Zachodnia",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -347,7 +887,13 @@
       "code": "PWC",
       "name": "Warszawa Centralna",
       "type": "hub",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -356,7 +902,13 @@
       "code": "PWW",
       "name": "Warszawa Wschodnia",
       "type": "terminal",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -365,7 +917,7 @@
       "code": "BRN",
       "name": "Brno",
       "type": "hub",
-      "platforms": 0,
+      "platforms": [],
       "isTerminal": false,
       "isVirtual": true,
       "memberStationIds": [
@@ -378,7 +930,7 @@
       "code": "BUD",
       "name": "Budapest",
       "type": "hub",
-      "platforms": 0,
+      "platforms": [],
       "isTerminal": false,
       "isVirtual": true,
       "memberStationIds": [
@@ -391,7 +943,33 @@
       "code": "KHN",
       "name": "Karviná hlavní nádraží",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false
     },
     {
@@ -399,31 +977,103 @@
       "code": "CTE",
       "name": "Český Těšín (Czeski Cieszyn)",
       "type": "hub",
-      "platforms": 6,
-      "isTerminal": false
+      "platforms": [
+        {
+          "code": "1/6",
+          "name": "směr Cieszyn",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
+          "name": "směr Havířov",
+          "isBay": false
+        },
+        {
+          "code": "2/2",
+          "name": "směr Karviná",
+          "isBay": false
+        },
+        {
+          "code": "3/1",
+          "name": "směr Třinec",
+          "isBay": false
+        },
+        {
+          "code": "3/3",
+          "name": "směr Třinec",
+          "isBay": false
+        },
+        {
+          "code": "4/5",
+          "name": "osobní",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "u pošty",
+          "isBay": true
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "29e30bf0-264b-4427-b0e8-6cf792655674",
       "code": "TCE",
       "name": "Třinec centrum (Trzyniec centrum)",
       "type": "regular",
-      "platforms": 4,
-      "isTerminal": false
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Jablunkov",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Český Těšín",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "2b7bd42a-c26b-470c-9857-ada706cda926",
       "code": "NAV",
       "name": "Návsí (Nawsie)",
       "type": "regular",
-      "platforms": 3,
-      "isTerminal": false
+      "platforms": [
+        {
+          "code": "1/4",
+          "name": "směr Třinec",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr SK",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "63583d19-02e9-403a-9fba-98073026b135",
       "code": "SCA",
       "name": "Čadca",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -432,7 +1082,13 @@
       "code": "SZI",
       "name": "Žilina",
       "type": "hub",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -441,7 +1097,13 @@
       "code": "SVR",
       "name": "Vrútky",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -450,7 +1112,13 @@
       "code": "SKR",
       "name": "Kraľovany",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -459,7 +1127,13 @@
       "code": "SRU",
       "name": "Ružomberok",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -468,7 +1142,13 @@
       "code": "SLM",
       "name": "Liptovský Mikuláš",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -477,7 +1157,13 @@
       "code": "STB",
       "name": "Štrba",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -486,7 +1172,13 @@
       "code": "SPT",
       "name": "Poprad-Tatry",
       "type": "hub",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -495,7 +1187,13 @@
       "code": "SSN",
       "name": "Spišská Nová Ves",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -504,7 +1202,13 @@
       "code": "SKY",
       "name": "Kysak",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -513,7 +1217,13 @@
       "code": "SKO",
       "name": "Košice",
       "type": "terminal",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -522,7 +1232,43 @@
       "code": "CHE",
       "name": "Cheb",
       "type": "terminal",
-      "platforms": 7,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -531,7 +1277,23 @@
       "code": "MLA",
       "name": "Mariánské lázně",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -540,7 +1302,23 @@
       "code": "PML",
       "name": "Planá u Mariánských Lázní",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -549,7 +1327,18 @@
       "code": "STR",
       "name": "Stříbro",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -558,7 +1347,28 @@
       "code": "PJP",
       "name": "Plzeň-Jižní Předměstí",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -567,7 +1377,58 @@
       "code": "PLH",
       "name": "Plzeň hlavní nádraží",
       "type": "hub",
-      "platforms": 10,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "9",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "10",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -576,7 +1437,38 @@
       "code": "PSM",
       "name": "Praha-Smíchov",
       "type": "hub",
-      "platforms": 6,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -585,7 +1477,63 @@
       "code": "PDB",
       "name": "Pardubice hlavní nádraží",
       "type": "hub",
-      "platforms": 11,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "9",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "10",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "11",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -594,7 +1542,33 @@
       "code": "UNO",
       "name": "Ústí nad Orlicí",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -603,7 +1577,33 @@
       "code": "ZNM",
       "name": "Zábřeh na Moravě",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -612,7 +1612,58 @@
       "code": "OLH",
       "name": "Olomouc hlavní nádraží",
       "type": "hub",
-      "platforms": 10,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "9",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "10",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -621,7 +1672,33 @@
       "code": "HNM",
       "name": "Hranice na Moravě",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -630,7 +1707,33 @@
       "code": "VME",
       "name": "Valašské Meziříčí",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -639,7 +1742,23 @@
       "code": "VSE",
       "name": "Vsetín",
       "type": "hub",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -648,7 +1767,23 @@
       "code": "HLI",
       "name": "Horní Lideč",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -657,7 +1792,23 @@
       "code": "SPC",
       "name": "Púchov",
       "type": "hub",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -666,7 +1817,18 @@
       "code": "SPB",
       "name": "Považská Bystrica",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -675,7 +1837,23 @@
       "code": "OVI",
       "name": "Ostrava-Vítkovice",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -684,7 +1862,7 @@
       "code": "OSV",
       "name": "Ostrava",
       "type": "hub",
-      "platforms": 0,
+      "platforms": [],
       "isTerminal": false,
       "isVirtual": true,
       "memberStationIds": [
@@ -697,7 +1875,33 @@
       "code": "HAV",
       "name": "Havířov",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -706,7 +1910,38 @@
       "code": "PLI",
       "name": "Praha-Libeň",
       "type": "regular",
-      "platforms": 6,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -715,7 +1950,23 @@
       "code": "LVH",
       "name": "Letiště Václava Havla",
       "type": "airport",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -724,7 +1975,33 @@
       "code": "KLA",
       "name": "Kladno",
       "type": "hub",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -733,7 +2010,18 @@
       "code": "KLM",
       "name": "Kladno město",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -742,7 +2030,58 @@
       "code": "KOL",
       "name": "Kolín",
       "type": "hub",
-      "platforms": 10,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "9",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "10",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -751,7 +2090,28 @@
       "code": "PRC",
       "name": "Přelouč",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -760,7 +2120,28 @@
       "code": "CHO",
       "name": "Choceň",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -769,7 +2150,43 @@
       "code": "CTR",
       "name": "Česká Třebová",
       "type": "hub",
-      "platforms": 7,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -778,7 +2195,28 @@
       "code": "MOH",
       "name": "Mohelnice",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -787,7 +2225,28 @@
       "code": "CER",
       "name": "Červenka",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -796,7 +2255,63 @@
       "code": "PRE",
       "name": "Přerov",
       "type": "hub",
-      "platforms": 11,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "9",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "10",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "11",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -805,7 +2320,28 @@
       "code": "LNB",
       "name": "Lipník nad Bečvou",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -814,7 +2350,33 @@
       "code": "SNO",
       "name": "Suchdol nad Odrou",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -823,7 +2385,38 @@
       "code": "SDK",
       "name": "Studénka",
       "type": "regular",
-      "platforms": 6,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -832,7 +2425,33 @@
       "code": "KRN",
       "name": "Krnov",
       "type": "hub",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -841,7 +2460,13 @@
       "code": "KRC",
       "name": "Krnov-Cvilín",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -850,7 +2475,18 @@
       "code": "OPZ",
       "name": "Opava západ",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -859,7 +2495,33 @@
       "code": "OPV",
       "name": "Opava východ",
       "type": "hub",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -868,7 +2530,23 @@
       "code": "OSD",
       "name": "Ostrava střed",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -877,7 +2555,13 @@
       "code": "HMU",
       "name": "Hlubočky-Mariánské údolí",
       "type": "request",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -886,7 +2570,18 @@
       "code": "DNB",
       "name": "Domašov nad Bystřicí",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -895,7 +2590,18 @@
       "code": "MBE",
       "name": "Moravský Beroun",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -904,7 +2610,18 @@
       "code": "DEB",
       "name": "Dětřichov nad Bystřicí",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -913,7 +2630,23 @@
       "code": "BRU",
       "name": "Bruntál",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -922,7 +2655,23 @@
       "code": "MNO",
       "name": "Milotice nad Opavou",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -931,7 +2680,33 @@
       "code": "ZNO",
       "name": "Znojmo",
       "type": "hub",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -940,7 +2715,18 @@
       "code": "POD",
       "name": "Podyjí",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -949,7 +2735,28 @@
       "code": "VNM",
       "name": "Vyškov na Moravě",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -958,7 +2765,33 @@
       "code": "KOJ",
       "name": "Kojetín",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -967,7 +2800,28 @@
       "code": "PZM",
       "name": "Praha-Zahradní Město",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -976,7 +2830,23 @@
       "code": "KRO",
       "name": "Kroměříž",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -985,7 +2855,23 @@
       "code": "OTR",
       "name": "Otrokovice",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -994,7 +2880,23 @@
       "code": "ZST",
       "name": "Zlín střed",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1003,7 +2905,28 @@
       "code": "SUH",
       "name": "Staré Město u Uherského Hradiště",
       "type": "hub",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1012,7 +2935,23 @@
       "code": "UHR",
       "name": "Uherské Hradiště",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1021,7 +2960,18 @@
       "code": "UBR",
       "name": "Uherský Brod",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1030,7 +2980,13 @@
       "code": "LUH",
       "name": "Luhačovice",
       "type": "terminal",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": true,
       "country": "Czech"
     },
@@ -1039,7 +2995,43 @@
       "code": "POR",
       "name": "Poříčany",
       "type": "regular",
-      "platforms": 7,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1048,7 +3040,33 @@
       "code": "PEC",
       "name": "Pečky",
       "type": "regular",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1057,7 +3075,38 @@
       "code": "JVR",
       "name": "Jihlava VRT",
       "type": "hub",
-      "platforms": 6,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1066,7 +3115,43 @@
       "code": "PVR",
       "name": "Praha-Vršovice",
       "type": "regular",
-      "platforms": 7,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1075,7 +3160,18 @@
       "code": "KBV",
       "name": "Kořenice-Bečváry VRT",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1084,7 +3180,23 @@
       "code": "JIM",
       "name": "Jihlava město",
       "type": "hub",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1093,7 +3205,43 @@
       "code": "JIH",
       "name": "Jihlava",
       "type": "hub",
-      "platforms": 7,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1102,7 +3250,7 @@
       "code": "JIA",
       "name": "Jihlava",
       "type": "hub",
-      "platforms": 0,
+      "platforms": [],
       "isTerminal": false,
       "isVirtual": true,
       "memberStationIds": [
@@ -1116,7 +3264,18 @@
       "code": "VBI",
       "name": "Velká Bíteš",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1125,7 +3284,18 @@
       "code": "OBI",
       "name": "Osová Bitýška",
       "type": "request",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1134,7 +3304,33 @@
       "code": "SNS",
       "name": "Světlá nad Sázavou",
       "type": "hub",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1143,7 +3339,48 @@
       "code": "NYH",
       "name": "Nymburk hlavní nádraží",
       "type": "hub",
-      "platforms": 8,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1152,7 +3389,23 @@
       "code": "NYM",
       "name": "Nymburk město",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1161,7 +3414,7 @@
       "code": "NYB",
       "name": "Nymburk",
       "type": "hub",
-      "platforms": 0,
+      "platforms": [],
       "isTerminal": false,
       "isVirtual": true,
       "memberStationIds": [
@@ -1174,7 +3427,23 @@
       "code": "NZM",
       "name": "Nezamyslice",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1183,7 +3452,13 @@
       "code": "PCH",
       "name": "Chałupki",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Poland"
     },
@@ -1192,7 +3467,23 @@
       "code": "VER",
       "name": "Veřovice",
       "type": "hub",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1201,7 +3492,23 @@
       "code": "SBK",
       "name": "Štramberk",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1210,7 +3517,23 @@
       "code": "KOP",
       "name": "Kopřivnice",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1219,7 +3542,18 @@
       "code": "PRI",
       "name": "Příbor",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1228,7 +3562,18 @@
       "code": "MOA",
       "name": "Mošnov, Ostrava Airport",
       "type": "airport",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1237,7 +3582,18 @@
       "code": "HAS",
       "name": "Havířov střed",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1246,7 +3602,18 @@
       "code": "HSU",
       "name": "Havířov-Suchá",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1255,7 +3622,18 @@
       "code": "HRS",
       "name": "Horní Suchá",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1264,7 +3642,18 @@
       "code": "ACT",
       "name": "Albrechtice u Českého Těšína",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Havířov",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Český Těšín",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1273,7 +3662,28 @@
       "code": "FNO",
       "name": "Frýdlant nad Ostravicí",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1282,7 +3692,13 @@
       "code": "OSI",
       "name": "Ostravice",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": true,
       "country": "Czech"
     },
@@ -1291,7 +3707,23 @@
       "code": "FPR",
       "name": "Frenštát pod Radhoštěm",
       "type": "hub",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1300,7 +3732,13 @@
       "code": "FRE",
       "name": "Frenštát pod Radhoštěm město",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1309,7 +3747,18 @@
       "code": "TKO",
       "name": "Třinec-Konská (Trzyniec-Końska)",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1318,7 +3767,28 @@
       "code": "TRI",
       "name": "Třinec (Trzyniec)",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1/4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "1/2",
+          "name": "směr Český Těšín",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr Jablunkov",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1327,7 +3797,18 @@
       "code": "VEN",
       "name": "Vendryně (Wędrynia)",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1336,7 +3817,23 @@
       "code": "BYS",
       "name": "Bystřice (Bystrzyca)",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1/4",
+          "name": "směr Třinec",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr Jablunkov",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1345,7 +3842,18 @@
       "code": "HRA",
       "name": "Hrádek (Gródek)",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1354,7 +3862,28 @@
       "code": "MUJ",
       "name": "Mosty u Jablunkova",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1/4",
+          "name": "u budovy",
+          "isBay": false
+        },
+        {
+          "code": "2/2",
+          "name": "směr Jablunkova",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr SK",
+          "isBay": false
+        },
+        {
+          "code": "3/3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1363,7 +3892,13 @@
       "code": "SST",
       "name": "Střelná",
       "type": "request",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Slovakia"
     },
@@ -1372,7 +3907,28 @@
       "code": "RVC",
       "name": "Rudoltice v Čechách",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1381,7 +3937,13 @@
       "code": "LAN",
       "name": "Lanškroun",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": true,
       "country": "Czech"
     },
@@ -1390,7 +3952,18 @@
       "code": "PCE",
       "name": "Pardubice centrum",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": true,
       "country": "Czech"
     },
@@ -1399,7 +3972,38 @@
       "code": "MOR",
       "name": "Moravany",
       "type": "regular",
-      "platforms": 6,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1408,7 +4012,18 @@
       "code": "UNM",
       "name": "Ústí nad Orlicí město",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1417,7 +4032,43 @@
       "code": "BER",
       "name": "Beroun",
       "type": "hub",
-      "platforms": 7,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1426,7 +4077,23 @@
       "code": "ZDI",
       "name": "Zdice",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1435,7 +4102,23 @@
       "code": "HOR",
       "name": "Hořovice",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1444,7 +4127,18 @@
       "code": "KAR",
       "name": "Kařez",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1453,7 +4147,18 @@
       "code": "ROK",
       "name": "Rokycany",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1462,7 +4167,23 @@
       "code": "EJP",
       "name": "Ejpovice",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1471,7 +4192,13 @@
       "code": "PLZ",
       "name": "Plzeň zastávka",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1480,7 +4207,18 @@
       "code": "DOB",
       "name": "Dobřany",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1489,7 +4227,13 @@
       "code": "CHL",
       "name": "Chlumčany u Dobřan",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1498,7 +4242,18 @@
       "code": "PRS",
       "name": "Přeštice",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1507,7 +4262,13 @@
       "code": "LUZ",
       "name": "Lužany",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1516,7 +4277,13 @@
       "code": "BOR",
       "name": "Borovy",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1525,7 +4292,13 @@
       "code": "SUK",
       "name": "Švihov u Klatov",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1534,7 +4307,33 @@
       "code": "KLV",
       "name": "Klatovy",
       "type": "hub",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1543,7 +4342,33 @@
       "code": "HRK",
       "name": "Hradec Králové hlavní nádraží",
       "type": "hub",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1552,7 +4377,43 @@
       "code": "PMN",
       "name": "Praha Masarykovo nádraží",
       "type": "terminal",
-      "platforms": 7,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": true,
       "country": "Czech"
     },
@@ -1561,7 +4422,28 @@
       "code": "PBU",
       "name": "Praha-Bubny",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1570,7 +4452,23 @@
       "code": "PDE",
       "name": "Praha-Dejvice",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1579,7 +4477,18 @@
       "code": "PVE",
       "name": "Praha-Veleslavín",
       "type": "hub",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1588,7 +4497,28 @@
       "code": "HOS",
       "name": "Hostivice",
       "type": "regular",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1597,7 +4527,18 @@
       "code": "PRU",
       "name": "Praha-Ruzyně",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1606,7 +4547,18 @@
       "code": "JEN",
       "name": "Jeneč",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1615,7 +4567,13 @@
       "code": "KAC",
       "name": "Kačice",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1624,7 +4582,18 @@
       "code": "STO",
       "name": "Stochov",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1633,7 +4602,18 @@
       "code": "NST",
       "name": "Nové Strašecí",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1642,7 +4622,28 @@
       "code": "LUR",
       "name": "Lužná u Rakovníka",
       "type": "hub",
-      "platforms": 4,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1651,7 +4652,33 @@
       "code": "RAK",
       "name": "Rakovník",
       "type": "terminal",
-      "platforms": 5,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1660,7 +4687,18 @@
       "code": "PZL",
       "name": "Praha-Zličín",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1669,7 +4707,23 @@
       "code": "RUP",
       "name": "Rudná u Prahy",
       "type": "hub",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1678,7 +4732,13 @@
       "code": "RYM",
       "name": "Rýmařov",
       "type": "terminal",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": true,
       "country": "Czech"
     },
@@ -1687,7 +4747,13 @@
       "code": "LRY",
       "name": "Lumnice u Rýmařova",
       "type": "regular",
-      "platforms": 1,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1696,7 +4762,23 @@
       "code": "VAL",
       "name": "Valšov",
       "type": "regular",
-      "platforms": 3,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1705,7 +4787,18 @@
       "code": "STI",
       "name": "Štítina",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     },
@@ -1714,7 +4807,1023 @@
       "code": "HVS",
       "name": "Háj ve Slezsku",
       "type": "regular",
-      "platforms": 2,
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "e0ac6ef6-3ffb-4811-b128-9ef8efc1bc7a",
+      "code": "SVI",
+      "name": "Svitavy",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "9356d425-18f3-424c-955c-455b2485826f",
+      "code": "BNS",
+      "name": "Březová nad Svitavou",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a06cb237-3bcf-4479-b259-cc837093ab09",
+      "code": "LET",
+      "name": "Letovice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "4d5912ee-d650-492a-9a73-0e56480261e5",
+      "code": "SKS",
+      "name": "Skalice nad Svitavou",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "76faf553-379d-4835-a1ac-a4ea1d477609",
+      "code": "RJE",
+      "name": "Rájec-Jestřábí",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "3f91b1de-7311-4a36-8f5a-f771b713243c",
+      "code": "BME",
+      "name": "Blansko město",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "6f5b8a70-6eb5-4e4a-b59a-ea68c2756275",
+      "code": "BLA",
+      "name": "Blansko",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "36fb86c3-0d87-471f-b713-1ffba9d2839e",
+      "code": "BZI",
+      "name": "Brno-Židenice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "8c3cb3a8-9a6a-47ca-aba4-9c1a9bd48231",
+      "code": "BCH",
+      "name": "Brno-Chrlice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "d5d93680-ef06-4c8c-9cc6-4b897fbc565c",
+      "code": "STE",
+      "name": "Sokolnice-Telnice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "6fcec931-7791-43c5-aec5-c76a10eaa71d",
+      "code": "KHO",
+      "name": "Křenovice horní nádraží",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "80a281c1-476a-408b-a941-b9018cc93aea",
+      "code": "HOL",
+      "name": "Holubice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "4a2b896f-cc56-47ca-87e1-6a5e15783301",
+      "code": "UVA",
+      "name": "Úvaly",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "edc8a42d-566c-4355-898b-01f1505afc8b",
+      "code": "CBR",
+      "name": "Český Brod",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "61129a88-a563-4f74-92d8-056d2869e768",
+      "code": "BSL",
+      "name": "Brno-Slatina",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "2a56d8a4-5e65-410d-bdc1-0e63e0da434c",
+      "code": "BLZ",
+      "name": "Blažovice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a990304f-6d9c-4feb-ac66-a0b37874db5f",
+      "code": "LUL",
+      "name": "Luleč",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "1300e5ce-2fda-4906-81ea-e9481e63f747",
+      "code": "INH",
+      "name": "Ivanovice na Hané",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "99acea1d-3340-40c4-9e05-7fa80e358445",
+      "code": "CHR",
+      "name": "Chropyně",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "f77213f6-8ed4-4771-94e0-0e56fc011bb4",
+      "code": "HUL",
+      "name": "Hulín",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "1e6de983-6043-421c-932c-4625088d3a8b",
+      "code": "BPH",
+      "name": "Bystřice pod Hostýnem",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "69c72162-f429-40eb-99a6-1ffe836e80ac",
+      "code": "MPI",
+      "name": "Moravský Písek",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "3d06dbfb-6245-4626-bfc8-9ab77eb48d50",
+      "code": "ROH",
+      "name": "Rohatec",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "364ef0e0-5a66-4997-ac48-18b8e6e0200b",
+      "code": "HOD",
+      "name": "Hodonín",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "be869dec-a9e8-4115-b002-9c728e869000",
+      "code": "BRE",
+      "name": "Břeclav",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "7",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "8",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "9",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "9daf7dcc-32f2-4c6c-9dd9-26480fd774de",
+      "code": "VIZ",
+      "name": "Vizovice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": true,
+      "country": "Czech"
+    },
+    {
+      "id": "dd624341-6e95-4cc2-89b1-95ac66a6f23a",
+      "code": "SUB",
+      "name": "Slavkov u Brna",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "eb78811d-949c-45ec-97d2-22931842615d",
+      "code": "BUC",
+      "name": "Bučovice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "488b64d3-4413-4fee-96ba-43d287aba1fb",
+      "code": "KYJ",
+      "name": "Kyjov",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "597067e0-7f1f-4727-a5a6-69972536a8e9",
+      "code": "BZE",
+      "name": "Bzenec",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "cee13f48-050e-457b-9f71-45023934abd5",
+      "code": "VEM",
+      "name": "Veselí nad Moravou",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "8086a0b8-3b5e-4581-a687-e47864ecc67b",
+      "code": "ONV",
+      "name": "Ostrožská Nová Ves",
+      "type": "request",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "d0b054d4-33e9-466d-891e-bbd042a1b4b8",
+      "code": "KNZ",
+      "name": "Kunovice zastávka",
+      "type": "request",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "552199af-96ca-488e-a9a7-8da660ee47cb",
+      "code": "KUN",
+      "name": "Kunovice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "01d3af4c-8c6a-48ce-b4f5-da0052473d50",
+      "code": "SLA",
+      "name": "Šlapanice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "1d414a37-8721-4a34-a9d3-663a4903d950",
+      "code": "UUL",
+      "name": "Újezdec u Luhačovic",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "1cc7a506-6a82-47eb-9e82-cc8d79fdc423",
+      "code": "BOJ",
+      "name": "Bojkovice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "30a3f129-527d-48b4-a185-8858740057a8",
+      "code": "SLV",
+      "name": "Slavičín",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "454e16ff-e533-4646-818a-ac1d5e47b815",
+      "code": "BYL",
+      "name": "Bylnice",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "236539c1-384c-42b4-adf6-83b1236e7cf4",
+      "code": "VPR",
+      "name": "Vlárský průsmyk",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
       "isTerminal": false,
       "country": "Czech"
     }

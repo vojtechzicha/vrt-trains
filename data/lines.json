@@ -4,25 +4,25 @@
       "id": "bb818b68-0222-4fd8-9b00-23de68fb431f",
       "identifier": "Ex15",
       "name": "Ex15 Brno -> Olomouc",
-      "color": "#E31E24",
-      "textColor": "#FFFFFF",
+      "color": "#ECAAA8",
+      "textColor": "#000000",
       "type": "intercity",
       "variants": []
     },
     {
       "id": "51eec4f5-6f69-4696-a784-248d0ce50a1f",
       "identifier": "Ex11",
-      "name": "Kladno -> Letiště -> Praha -> Pardubice -> Ostrava -> Havířov",
-      "color": "#E31E24",
-      "textColor": "#FFFFFF",
+      "name": "Ex11 Kladno -> Letiště -> Praha -> Pardubice -> Ostrava -> Havířov",
+      "color": "#FFE100",
+      "textColor": "#000000",
       "type": "intercity",
       "variants": []
     },
     {
       "id": "535a3171-84fb-4265-8f1c-ab05cd5ec922",
       "identifier": "Ex2",
-      "name": "Ex2 Cheb -> Praha -> Pardubice -> Vsetín -> Žilina",
-      "color": "#E31E24",
+      "name": "Ex2 Cheb -> Plzeň -> Praha -> Pardubice -> Vsetín -> Žilina",
+      "color": "#98598D",
       "textColor": "#FFFFFF",
       "type": "intercity",
       "variants": []
@@ -30,8 +30,413 @@
     {
       "id": "3431498e-10e8-4af9-b11f-337bde7e0b0e",
       "identifier": "Ex1",
-      "name": "Praha -> Brno -> Ostrava -> Polsko/Slovensko",
-      "color": "#E31E24",
+      "name": "Ex1 Praha -> Brno -> Ostrava -> Polsko/Slovensko",
+      "color": "#FF0000",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "8b82a70f-1c80-40b2-857a-b9f02d8f3bdc",
+      "identifier": "R18",
+      "name": "R18 Praha -> Pardubice -> Ostrava",
+      "color": "#2A5DB3",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "9ead5be2-24b5-4dea-94ef-b923079fca1f",
+      "identifier": "R60",
+      "name": "ODIS R60 Krnov -> Návsí",
+      "color": "#FFAA01",
+      "textColor": "#000000",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "c40f1107-6ae5-4e26-8c36-05b3f9c51571",
+      "identifier": "R27",
+      "name": "R27 Olomouc -> Krnov -> Ostrava",
+      "color": "#009799",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "b8d6b0e7-f570-4809-b0f2-e7133e1c1b60",
+      "identifier": "Spr1",
+      "name": "RJ Sprinter Praha -> Brno -> Ostrava -> Frýdek-Místek",
+      "color": "#D7489A",
+      "textColor": "#FFFFFF",
+      "type": "express",
+      "variants": []
+    },
+    {
+      "id": "b40f0c80-3efa-4456-a1e1-335439d04d9b",
+      "identifier": "Spr3",
+      "name": "LE Sprinter Berlin -> Praha -> Brno -> Wien -> Budapest",
+      "color": "#49413F",
+      "textColor": "#FFFFFF",
+      "type": "express",
+      "variants": []
+    },
+    {
+      "id": "2075c82d-15e6-4402-87aa-9c3fd2714139",
+      "identifier": "Spr5",
+      "name": "LE Sprinter Praha -> Brno -> Bratislava -> Budapest",
+      "color": "#49413F",
+      "textColor": "#FFFFFF",
+      "type": "express",
+      "variants": []
+    },
+    {
+      "id": "9b91a4ed-9be6-4e0c-8b13-5b84d3021d8d",
+      "identifier": "Ex4",
+      "name": "Ex4 Polsko -> Ostrava -> Brno -> Wien / Bratislava / Budapest",
+      "color": "#D9AA21",
+      "textColor": "#000000",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "36d3656a-d1aa-4fc6-bcff-657df4d023b6",
+      "identifier": "R44",
+      "name": "R44 Krakow -> Ostrava -> Břeclav -> Bratislava",
+      "color": "#347E2C",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "c43a086c-6315-4ea1-aec3-a5776d0b2974",
+      "identifier": "R28",
+      "name": "R28 Opava -> Ostrava -> Brno -> Znojmo",
+      "color": "#8FB640",
+      "textColor": "#000000",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "3cf3c366-218d-4800-b64c-593abcd89d53",
+      "identifier": "Rex84",
+      "name": "ODIS R84 Vsetín -> Ostrava",
+      "color": "#5CA5E4",
+      "textColor": "#000000",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "7fd3d804-b451-4d3d-b9ef-a6397f712e11",
+      "identifier": "Ex22",
+      "name": "Ex22 Praha -> Brno -> Zlín/Luhačovice",
+      "color": "#C28C73",
+      "textColor": "#000000",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "2bf5c9c9-f5dc-40bf-b424-141539a5f74f",
+      "identifier": "R13",
+      "name": "R13 Olomouc -> Břeclav -> Brno",
+      "color": "#009DB4",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "9a844396-bfe4-4f3d-bda7-347240742a6d",
+      "identifier": "R12",
+      "name": "R12 Brno -> Prostějov -> Olomouc -> Šumperk",
+      "color": "#008F6B",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "1b4fc260-f42c-4b9a-bd96-7db17e421141",
+      "identifier": "R19",
+      "name": "R19 Praha -> Pardubice -> Brno",
+      "color": "#60AE58",
+      "textColor": "#000000",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "04129a46-99b8-4c09-90df-d9db987f8563",
+      "identifier": "Ex9",
+      "name": "Ex9 Svoboda n/Ú -> Hradec Králové -> Pardubice -> Brno",
+      "color": "#FF0000",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "0a3595bc-7c62-40bf-92b4-251c53fd5a7a",
+      "identifier": "Ex3",
+      "name": "Ex3 Berlin -> Praha -> Brno -> Wien -> Villach",
+      "color": "#FF5500",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "57871f26-efab-4cf0-bf7c-ff8e9cfff34c",
+      "identifier": "Ex5",
+      "name": "Ex5 Berlin -> Praha -> Brno -> Bratislava -> Budapest",
+      "color": "#80225F",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "005e017d-93b6-423c-8f30-2ca349c0a304",
+      "identifier": "R34",
+      "name": "R34 Brno -> Havlíčkův Brod -> Praha -> Litoměřice -> Děčín",
+      "color": "#6472B6",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "c4fa8ef8-ab1d-422b-80c9-51dc01d4a748",
+      "identifier": "Rex43",
+      "name": "IDS JMK R43 Brno -> Velké Meziříčí",
+      "color": "#FFAA00",
+      "textColor": "#000000",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "41ba2067-214c-4a9f-b9e2-8bfc17bfb100",
+      "identifier": "R11",
+      "name": "R11 Brno -> Jihlava -> České Budějovice",
+      "color": "#23A698",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "11586dfa-309a-4a0f-8e21-9dc5523a22f9",
+      "identifier": "R33",
+      "name": "R33 Brno -> Třebíč -> Jihlava -> Praha",
+      "color": "#55B8CC",
+      "textColor": "#000000",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "74d878d7-b034-4c30-80d3-0268a79120c6",
+      "identifier": "R37",
+      "name": "R37 Praha -> Kolín -> Jihlava",
+      "color": "#30479D",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "60c3d037-387a-492e-8b14-ba687eec9b41",
+      "identifier": "Ex7",
+      "name": "Ex7 Liberec -> Praha -> České Budějovice -> Český Krumlov/Linz Hbf",
+      "color": "#AE6B34",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "3dc71558-ed25-4b36-b12d-4e27c2978ef1",
+      "identifier": "R17",
+      "name": "R17 Praha -> Tábor -> České Budějovice/České Velenice/Wien",
+      "color": "#37784D",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "a19a64d7-291e-4c08-8010-53665575184d",
+      "identifier": "R49",
+      "name": "PID R49 Praha -> Tábor",
+      "color": "#344B9F",
+      "textColor": "#FFFFFF",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "735cc20e-aad6-40dc-bb9f-78ddd37dec1a",
+      "identifier": "R31",
+      "name": "R31 Plzeň -> České Budějovice",
+      "color": "#006FBF",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "748eabb5-ee9c-406b-8c6c-897e599ddef5",
+      "identifier": "R38",
+      "name": "R38 Příbram -> České Budějovice",
+      "color": "#DC3F42",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "8ee49405-3321-4367-ba17-8d9714fd4a6d",
+      "identifier": "R30",
+      "name": "R30 Klatovy -> Plzeň -> Praha -> Hradec Králové",
+      "color": "#3BC2A1",
+      "textColor": "#000000",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "7b66e519-580f-4b66-8ddc-68e61c9158b5",
+      "identifier": "Ex6",
+      "name": "Ex6 Praha -> Plzeň -> Nürnberg/München",
+      "color": "#F65B3B",
+      "textColor": "#000000",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "fd8b0564-7efe-4784-b245-522891f786c7",
+      "identifier": "R25",
+      "name": "R25 Plzeň -> Most",
+      "color": "#4763BB",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "e9fd03e3-6e36-4966-84a4-8849d09af63c",
+      "identifier": "R29",
+      "name": "R29 Cheb -> Nürnberg",
+      "color": "#006FBF",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "a1fc7e74-0310-47b5-a659-e0881baf4b9a",
+      "identifier": "Ex52",
+      "name": "Ex52 Cheb -> Most -> Praha",
+      "color": "#80225F",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "56577fae-a9e8-4dea-bb6b-ca640e820fd1",
+      "identifier": "R35",
+      "name": "R35 Cheb -> Most -> Ústí nad Labem",
+      "color": "#008477",
+      "textColor": "#FFFFFF",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "5fe0b19b-4320-4c9b-8374-ea06f1a94e4c",
+      "identifier": "R36",
+      "name": "R36 Most -> Dresden",
+      "color": "#8C3F6E",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "a554aa12-eb92-49c6-9e7f-ffc541851b69",
+      "identifier": "Ex55",
+      "name": "Ex55 Praha -> Ústí nad Labem -> Litvínov",
+      "color": "#54B9D2",
+      "textColor": "#000000",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "b9c79d8b-2f0c-4e77-bc94-cdaa38d23fc9",
+      "identifier": "R14",
+      "name": "R14 Ústí nad Labem -> Děčín -> Liberec -> Hradec Králové",
+      "color": "#1184D1",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "641a186f-251e-4cab-b7c9-f15052a495a8",
+      "identifier": "R20",
+      "name": "R20 Praha -> Ústí nad Labem -> Děčín",
+      "color": "#127271",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "d961be53-aa3d-4808-bf85-47337c369e13",
+      "identifier": "R24",
+      "name": "R24 Praha -> Kladno -> Rakovník",
+      "color": "#00BBE8",
+      "textColor": "#000000",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "0a32b491-46c0-4fe0-80ab-103d5378f4aa",
+      "identifier": "R51",
+      "name": "R51 Praha -> Žatec",
+      "color": "#70A800",
+      "textColor": "#000000",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "899837c5-7f3d-4d27-b083-c165bf050c87",
+      "identifier": "R23",
+      "name": "R23 Kolín -> Nymburk -> Litoměřice -> Ústí n/L",
+      "color": "#Dc3F42",
+      "textColor": "#FFFFFF",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "bbc8e8d8-bd86-4ca1-80a8-eeff7e567d2b",
+      "identifier": "R21",
+      "name": "R21 Praha -> Mladá Boleslav -> Nový Bor/Tanvald",
+      "color": "#82BC00",
+      "textColor": "#000000",
+      "type": "regional",
+      "variants": []
+    },
+    {
+      "id": "a6544ed4-7d36-49d3-91a4-5a64ba50533e",
+      "identifier": "R22",
+      "name": "R22 Kolín -> Mladá Boleslav -> Nový Bor/Liberec",
+      "color": "#FFAA01",
+      "textColor": "#000000",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "c66ee407-55ac-4ce4-9ca5-3080399b56ea",
+      "identifier": "R26",
+      "name": "R26 Příbram -> Praha -> Nymburk -> Jičín",
+      "color": "#008787",
+      "textColor": "#FFFFFF",
+      "type": "suburban",
+      "variants": []
+    },
+    {
+      "id": "1d823dca-67dc-474a-9f26-bf4af72eb425",
+      "identifier": "Ex10",
+      "name": "Ex10 Praha -> Hradec Králové -> Svoboda n/Ú",
+      "color": "#63464A",
+      "textColor": "#FFFFFF",
+      "type": "intercity",
+      "variants": []
+    },
+    {
+      "id": "836ae9d5-d5b1-46f7-aa0e-0c25cabc86d9",
+      "identifier": "Ex16",
+      "name": "Ex16 Praha -> Hradec Králové -> Wrocław -> Gdynia Główna",
+      "color": "#373F94",
       "textColor": "#FFFFFF",
       "type": "intercity",
       "variants": []

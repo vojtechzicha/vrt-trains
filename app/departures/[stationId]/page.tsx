@@ -141,7 +141,7 @@ export default async function DepartureBoardPage({ params }: DepartureBoardPageP
       <DepartureBoardWithTabs
         stationName={station.name}
         departures={departures}
-        platformCount={station.platforms}
+        platforms={station.platforms}
         isVirtual={station.isVirtual || false}
       />
     </div>

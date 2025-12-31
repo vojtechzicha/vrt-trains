@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardHeader, CardBody } from '@/components/ui';
 import { PlatformAssignmentEditor } from '@/components/admin/PlatformAssignmentEditor';
-import { Direction } from '@/types';
+import { Direction, Platform } from '@/types';
 
 interface VariantInfo {
   id: string;
@@ -29,7 +29,7 @@ interface StationInfo {
   id: string;
   code: string;
   name: string;
-  platforms: number;
+  platforms: Platform[];
 }
 
 interface PlatformDataResponse {
@@ -112,7 +112,7 @@ export default function PlatformAssignmentPage({ params }: { params: Promise<{ i
           <div>
             <h1 className="text-xl font-bold">Platform Assignment</h1>
             <p className="text-sm text-gray-500 mt-1">
-              {data.station.name} ({data.station.code}) - {data.station.platforms} platforms
+              {data.station.name} ({data.station.code}) - {data.station.platforms.length} platforms
             </p>
           </div>
         </CardHeader>
@@ -123,7 +123,7 @@ export default function PlatformAssignmentPage({ params }: { params: Promise<{ i
             <PlatformAssignmentEditor
               stationId={id}
               stationName={data.station.name}
-              platformCount={data.station.platforms}
+              platforms={data.station.platforms}
               variants={data.variants}
               lines={data.lines}
               onSave={handleSave}

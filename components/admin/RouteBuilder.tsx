@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, KeyboardEvent } from 'react';
-import { Station, StopType, Variant, RouteCorridor } from '@/types';
+import { Station, StopType, Variant, RouteCorridor, Platform } from '@/types';
 import { StationSelector } from './StationSelector';
 
 // Exported so other components can use this interface
@@ -217,7 +217,7 @@ export function RouteBuilder({
         <span className="w-14 text-center">Dwell</span>
         <span className="w-12 text-center">Arr</span>
         <span className="w-12 text-center">Dep</span>
-        <span className="w-14 text-center">Plt</span>
+        <span className="w-20 text-center">Plt</span>
         <span className="w-20 text-center">Type</span>
         <span className="w-8"></span>
       </div>
@@ -306,16 +306,36 @@ export function RouteBuilder({
             </div>
 
             {/* Platform */}
-            <div className="w-14">
-              <input
-                ref={(el) => { platformRefs.current[index] = el; }}
-                type="text"
-                value={stop.platform}
-                onChange={(e) => handleUpdateStop(index, { platform: e.target.value })}
-                onKeyDown={(e) => handleKeyDown(e, index, 'platform')}
-                placeholder="Plt"
-                className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
+            <div className="w-20">
+              {station?.platforms && station.platforms.length > 0 ? (
+                <select
+                  value={stop.platform}
+                  onChange={(e) => handleUpdateStop(index, { platform: e.target.value })}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Tab' && !e.shiftKey) {
+                      handleKeyDown(e as unknown as KeyboardEvent<HTMLInputElement>, index, 'platform');
+                    }
+                  }}
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                >
+                  <option value="">-</option>
+                  {station.platforms.map((p: Platform) => (
+                    <option key={p.code} value={p.code}>
+                      {p.name ? `${p.code} - ${p.name}` : p.code}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  ref={(el) => { platformRefs.current[index] = el; }}
+                  type="text"
+                  value={stop.platform}
+                  onChange={(e) => handleUpdateStop(index, { platform: e.target.value })}
+                  onKeyDown={(e) => handleKeyDown(e, index, 'platform')}
+                  placeholder="Plt"
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                />
+              )}
             </div>
 
             {/* Stop type */}

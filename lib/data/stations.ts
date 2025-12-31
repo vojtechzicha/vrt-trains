@@ -1,7 +1,9 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { Station } from '@/types';
+import { Station, Platform } from '@/types';
 import { generateId } from './helpers';
+import { getVariantsByStation, updateMultipleVariantPlatforms } from './variants';
+import { getPlatformCodes } from '../platforms/helpers';
 
 const dataPath = path.join(process.cwd(), 'data', 'stations.json');
 
@@ -50,7 +52,42 @@ export async function updateStation(id: string, updates: Partial<Omit<Station, '
   if (index === -1) {
     throw new Error(`Station with id ${id} not found`);
   }
-  file.stations[index] = { ...file.stations[index], ...updates };
+
+  const oldStation = file.stations[index];
+
+  // Handle platform deletion cascade - clear assignments for removed platforms
+  if (updates.platforms && Array.isArray(updates.platforms)) {
+    const newCodes = new Set(getPlatformCodes(updates.platforms));
+    const oldCodes = new Set(getPlatformCodes(oldStation.platforms || []));
+
+    // Find removed platform codes
+    const removedCodes = [...oldCodes].filter((code) => !newCodes.has(code));
+
+    if (removedCodes.length > 0) {
+      // Get all variants that serve this station
+      const variants = await getVariantsByStation(id);
+
+      // Find variants with assignments to removed platforms and clear them
+      const platformUpdates: { variantId: string; stationId: string; platform: string }[] = [];
+
+      for (const variant of variants) {
+        const stop = variant.stations.find((s) => s.stationId === id);
+        if (stop && removedCodes.includes(stop.platform)) {
+          platformUpdates.push({
+            variantId: variant.id,
+            stationId: id,
+            platform: '', // Clear the assignment
+          });
+        }
+      }
+
+      if (platformUpdates.length > 0) {
+        await updateMultipleVariantPlatforms(platformUpdates);
+      }
+    }
+  }
+
+  file.stations[index] = { ...oldStation, ...updates };
   await writeStationsFile(file);
   return file.stations[index];
 }

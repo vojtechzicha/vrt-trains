@@ -1,44 +1,53 @@
 import Link from 'next/link';
 import { LineBadge } from '@/components/lines';
 import { PlatformData } from '@/lib/platforms';
+import { Platform } from '@/types';
 
 interface PlatformDiagramProps {
   platforms: PlatformData[];
-  stationPlatformCount: number;
+  stationPlatforms: Platform[];
 }
 
-export function PlatformDiagram({ platforms, stationPlatformCount }: PlatformDiagramProps) {
-  if (stationPlatformCount === 0) {
+export function PlatformDiagram({ platforms, stationPlatforms }: PlatformDiagramProps) {
+  if (stationPlatforms.length === 0) {
     return (
       <p className="text-gray-500">This station has no platforms</p>
     );
   }
 
-  // Create array of all platform numbers (1 to platformCount)
-  const allPlatforms = Array.from({ length: stationPlatformCount }, (_, i) => String(i + 1));
-
-  // Create a map for quick lookup of platform data
+  // Create a map for quick lookup of platform data (line assignments)
   const platformDataMap = new Map(platforms.map((p) => [p.platform, p]));
 
   return (
     <div className="space-y-4">
-      {allPlatforms.map((platformNumber) => {
-        const platformData = platformDataMap.get(platformNumber);
+      {stationPlatforms.map((platform) => {
+        const platformData = platformDataMap.get(platform.code);
         const hasLines = platformData && platformData.lines.length > 0;
 
         return (
-          <div key={platformNumber} className="relative">
-            {/* Platform label */}
+          <div key={platform.code} className="relative">
+            {/* Platform label and track */}
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-sm font-medium text-gray-600 w-20">
-                Platform {platformNumber}
-              </span>
+              <div className="w-28">
+                <span className="text-sm font-medium text-gray-600">
+                  Platform {platform.code}
+                </span>
+                {platform.name && (
+                  <span className="block text-xs text-gray-400">
+                    {platform.name}
+                  </span>
+                )}
+              </div>
               {/* Platform track line */}
-              <div className="flex-1 h-1 bg-gray-300 rounded" />
+              <div className={`flex-1 h-1 rounded ${platform.isBay ? 'bg-amber-300' : 'bg-gray-300'}`} />
+              {/* Bay platform terminus indicator */}
+              {platform.isBay && (
+                <div className="w-3 h-3 bg-amber-400 rounded-full" title="Bay platform (terminus)" />
+              )}
             </div>
 
             {/* Lines on this platform */}
-            <div className="ml-20 pl-3">
+            <div className="ml-28 pl-3">
               {hasLines ? (
                 <div className="flex flex-wrap gap-2">
                   {platformData.lines.map((line) => {

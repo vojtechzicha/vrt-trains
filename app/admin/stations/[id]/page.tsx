@@ -3,8 +3,9 @@
 import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Station, StationType } from '@/types';
-import { Card, CardHeader, CardBody, Button, Input, Select, NumberInput } from '@/components/ui';
+import { Station, StationType, Platform } from '@/types';
+import { Card, CardHeader, CardBody, Button, Input, Select } from '@/components/ui';
+import { PlatformEditor } from '@/components/admin/PlatformEditor';
 
 const stationTypes: { value: StationType; label: string }[] = [
   { value: 'hub', label: 'Hub' },
@@ -29,11 +30,12 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [redirectToAssign, setRedirectToAssign] = useState(false);
 
   const [code, setCode] = useState('');
   const [name, setName] = useState('');
   const [type, setType] = useState<StationType>('regular');
-  const [platforms, setPlatforms] = useState(2);
+  const [platforms, setPlatforms] = useState<Platform[]>([]);
   const [isTerminal, setIsTerminal] = useState(false);
   const [country, setCountry] = useState('Czech');
 
@@ -52,7 +54,7 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
       setCode(station.code);
       setName(station.name);
       setType(station.type);
-      setPlatforms(station.platforms);
+      setPlatforms(station.platforms || []);
       setIsTerminal(station.isTerminal);
       setCountry(station.country || 'Czech');
     } catch (error) {
@@ -62,9 +64,10 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
     }
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent, goToAssign = false) {
     e.preventDefault();
     setSaving(true);
+    setRedirectToAssign(goToAssign);
     setError(null);
 
     try {
@@ -75,7 +78,11 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
       });
 
       if (res.ok) {
-        router.push('/admin/stations');
+        if (goToAssign) {
+          router.push(`/admin/stations/${id}/platforms`);
+        } else {
+          router.push('/admin/stations');
+        }
       } else {
         const data = await res.json();
         setError(data.error || 'Failed to update station');
@@ -85,6 +92,7 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
       setError('Failed to update station');
     } finally {
       setSaving(false);
+      setRedirectToAssign(false);
     }
   }
 
@@ -127,7 +135,7 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
                 required
               />
             </div>
-            <div className="grid gap-4 md:grid-cols-4">
+            <div className="grid gap-4 md:grid-cols-3">
               <Select
                 label="Type"
                 options={stationTypes}
@@ -139,13 +147,6 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
                 options={countries}
                 value={country}
                 onChange={(v) => setCountry(v)}
-              />
-              <NumberInput
-                label="Platforms"
-                value={platforms}
-                onChange={setPlatforms}
-                min={1}
-                max={50}
               />
               <div className="flex items-end pb-2">
                 <label className="flex items-center gap-2 cursor-pointer">
@@ -159,21 +160,24 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
                 </label>
               </div>
             </div>
-            <div className="flex gap-2 pt-4">
+            <div className="border-t pt-4 mt-2">
+              <PlatformEditor platforms={platforms} onChange={setPlatforms} />
+            </div>
+            <div className="flex flex-wrap gap-2 pt-4">
               <Button type="submit" disabled={saving}>
-                {saving ? 'Saving...' : 'Save Changes'}
+                {saving && !redirectToAssign ? 'Saving...' : 'Save Changes'}
+              </Button>
+              <Button
+                type="button"
+                variant="secondary"
+                disabled={saving}
+                onClick={(e) => handleSubmit(e as unknown as React.FormEvent, true)}
+              >
+                {saving && redirectToAssign ? 'Saving...' : 'Save & Assign Platforms'}
               </Button>
               <Button type="button" variant="secondary" onClick={() => router.push('/admin/stations')}>
                 Cancel
               </Button>
-            </div>
-            <div className="border-t pt-4 mt-6">
-              <Link
-                href={`/admin/stations/${id}/platforms`}
-                className="text-blue-600 hover:underline text-sm"
-              >
-                Manage Platform Assignments &rarr;
-              </Link>
             </div>
           </form>
         </CardBody>

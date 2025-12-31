@@ -81,7 +81,7 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
   // Aggregate platform data for the diagram (only for physical stations)
   const platformData = station.isVirtual
     ? []
-    : aggregatePlatformData(stationId, uniqueVariants, lines);
+    : aggregatePlatformData(stationId, uniqueVariants, lines, station.platforms);
 
   // Get departures from this station (or member stations)
   type DepartureInfo = {
@@ -220,7 +220,7 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
             <p className="text-gray-500">
               {station.isVirtual ? 'City Station' : typeLabels[station.type]}
               {station.country && ` · ${countryNames[station.country] || station.country}`}
-              {!station.isVirtual && ` · ${station.platforms} platform${station.platforms !== 1 ? 's' : ''}`}
+              {!station.isVirtual && ` · ${station.platforms.length} platform${station.platforms.length !== 1 ? 's' : ''}`}
               {station.isVirtual && memberStations.length > 0 && ` · ${memberStations.length} station${memberStations.length !== 1 ? 's' : ''}`}
             </p>
           </div>
@@ -342,7 +342,7 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
                             {memberStation.name}
                           </span>
                           <p className="text-xs text-gray-500">
-                            {typeLabels[memberStation.type]} · {memberStation.platforms} platform{memberStation.platforms !== 1 ? 's' : ''}
+                            {typeLabels[memberStation.type]} · {memberStation.platforms.length} platform{memberStation.platforms.length !== 1 ? 's' : ''}
                           </p>
                         </div>
                       </div>
@@ -361,7 +361,7 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
               <h2 className="text-lg font-semibold">Platforms</h2>
             </CardHeader>
             <CardBody>
-              <PlatformDiagram platforms={platformData} stationPlatformCount={station.platforms} />
+              <PlatformDiagram platforms={platformData} stationPlatforms={station.platforms} />
             </CardBody>
           </Card>
         )}

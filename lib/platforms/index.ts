@@ -1,4 +1,4 @@
-import { Variant, Line, Direction } from '@/types';
+import { Variant, Line, Direction, Platform } from '@/types';
 
 export interface PlatformVariantInfo {
   variantId: string;
@@ -17,6 +17,8 @@ export interface PlatformLineInfo {
 
 export interface PlatformData {
   platform: string;
+  platformName?: string;
+  isBay?: boolean;
   lines: PlatformLineInfo[];
 }
 
@@ -27,8 +29,13 @@ export interface PlatformData {
 export function aggregatePlatformData(
   stationId: string,
   variants: Variant[],
-  lines: Line[]
+  lines: Line[],
+  stationPlatforms?: Platform[]
 ): PlatformData[] {
+  // Create a map for platform metadata lookup
+  const platformMetaMap = new Map(
+    (stationPlatforms || []).map((p) => [p.code, p])
+  );
   // Create a line lookup map
   const lineMap = new Map(lines.map((l) => [l.id, l]));
 
@@ -98,8 +105,13 @@ export function aggregatePlatformData(
     // Sort lines by identifier
     platformLines.sort((a, b) => a.lineIdentifier.localeCompare(b.lineIdentifier));
 
+    // Get platform metadata
+    const platformMeta = platformMetaMap.get(platform);
+
     platforms.push({
       platform,
+      platformName: platformMeta?.name || undefined,
+      isBay: platformMeta?.isBay || undefined,
       lines: platformLines,
     });
   }

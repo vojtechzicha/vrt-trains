@@ -58,7 +58,7 @@ export function StationCard({ station, memberCount, showCountry }: StationCardPr
               <span className="text-sm text-gray-500">
                 {isVirtual && memberCount !== undefined
                   ? `${memberCount} station${memberCount !== 1 ? 's' : ''}`
-                  : `${station.platforms} platform${station.platforms !== 1 ? 's' : ''}`}
+                  : `${station.platforms.length} platform${station.platforms.length !== 1 ? 's' : ''}`}
               </span>
             </div>
           </div>
