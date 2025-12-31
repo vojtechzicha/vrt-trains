@@ -63,12 +63,8 @@ export function RouteSequenceBuilder({
 
     let stops = [...path.stops].sort((a, b) => a.sequence - b.sequence);
 
-    // Apply segment's reversed flag
-    if (segment.reversed) {
-      stops = [...stops].reverse();
-    }
-
-    // Apply start/end subset
+    // Apply start/end subset BEFORE reversing
+    // (startStationId/endStationId are defined in forward path order)
     if (segment.startStationId) {
       const startIndex = stops.findIndex((s) => s.stationId === segment.startStationId);
       if (startIndex > 0) {
@@ -81,6 +77,11 @@ export function RouteSequenceBuilder({
       if (endIndex >= 0 && endIndex < stops.length - 1) {
         stops = stops.slice(0, endIndex + 1);
       }
+    }
+
+    // Now apply segment's reversed flag
+    if (segment.reversed) {
+      stops = [...stops].reverse();
     }
 
     return stops;
@@ -559,10 +560,9 @@ export function segmentsToRouteRefs(
   return segments.map((seg) => ({
     routeId: seg.routeId,
     pathId: seg.pathId,
-    // If segment is reversed, flip the direction
-    direction: seg.reversed
-      ? (baseDirection === 'outbound' ? 'inbound' : 'outbound')
-      : baseDirection,
+    // Direction indicates how the path is traversed (outbound=forward, inbound=reversed)
+    // This is independent of the variant's baseDirection label
+    direction: seg.reversed ? 'inbound' : 'outbound',
     speedCategory: seg.speedCategory || 'vrt',
     startStationId: seg.startStationId,
     endStationId: seg.endStationId,
@@ -588,12 +588,8 @@ export function segmentsToVariantStops(
 
     let stops = [...path.stops].sort((a, b) => a.sequence - b.sequence);
 
-    // Apply segment's reversed flag
-    if (segment.reversed) {
-      stops = [...stops].reverse();
-    }
-
-    // Apply start/end subset
+    // Apply start/end subset BEFORE reversing
+    // (startStationId/endStationId are defined in forward path order)
     if (segment.startStationId) {
       const startIndex = stops.findIndex((s) => s.stationId === segment.startStationId);
       if (startIndex > 0) {
@@ -606,6 +602,11 @@ export function segmentsToVariantStops(
       if (endIndex >= 0 && endIndex < stops.length - 1) {
         stops = stops.slice(0, endIndex + 1);
       }
+    }
+
+    // Now apply segment's reversed flag
+    if (segment.reversed) {
+      stops = [...stops].reverse();
     }
 
     for (const stop of stops) {
@@ -646,12 +647,8 @@ export function segmentsToRouteStops(
 
     let stops = [...path.stops].sort((a, b) => a.sequence - b.sequence);
 
-    // Apply segment's reversed flag
-    if (segment.reversed) {
-      stops = [...stops].reverse();
-    }
-
-    // Apply start/end subset
+    // Apply start/end subset BEFORE reversing
+    // (startStationId/endStationId are defined in forward path order)
     if (segment.startStationId) {
       const startIndex = stops.findIndex((s) => s.stationId === segment.startStationId);
       if (startIndex > 0) {
@@ -664,6 +661,11 @@ export function segmentsToRouteStops(
       if (endIndex >= 0 && endIndex < stops.length - 1) {
         stops = stops.slice(0, endIndex + 1);
       }
+    }
+
+    // Now apply segment's reversed flag
+    if (segment.reversed) {
+      stops = [...stops].reverse();
     }
 
     for (let i = 0; i < stops.length; i++) {
@@ -806,11 +808,8 @@ export function validateSegmentJunctions(
 
     let stops = [...path.stops].sort((a, b) => a.sequence - b.sequence);
 
-    if (segment.reversed) {
-      stops = [...stops].reverse();
-    }
-
-    // Apply start/end subset
+    // Apply start/end subset BEFORE reversing
+    // (startStationId/endStationId are defined in forward path order)
     let stationIds = stops.map((s) => s.stationId);
 
     if (segment.startStationId) {
@@ -825,6 +824,11 @@ export function validateSegmentJunctions(
       if (endIndex >= 0 && endIndex < stationIds.length - 1) {
         stationIds = stationIds.slice(0, endIndex + 1);
       }
+    }
+
+    // Now apply reversed flag
+    if (segment.reversed) {
+      stationIds = [...stationIds].reverse();
     }
 
     return stationIds;

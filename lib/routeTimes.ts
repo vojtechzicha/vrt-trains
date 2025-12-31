@@ -92,15 +92,12 @@ export function buildCumulativeTimeLookup(
     const path = route.paths.find((p) => p.id === ref.pathId);
     if (!path) continue;
 
-    // Get stops in order
+    // Get stops in forward order first
     let stops = [...path.stops].sort((a, b) => a.sequence - b.sequence);
     const reversed = ref.direction === 'inbound';
 
-    if (reversed) {
-      stops = [...stops].reverse();
-    }
-
-    // Apply start/end subset if specified
+    // Apply start/end subset BEFORE reversing
+    // (startStationId/endStationId are defined in forward path order)
     let startIdx = 0;
     let endIdx = stops.length - 1;
 
@@ -114,6 +111,11 @@ export function buildCumulativeTimeLookup(
     }
 
     stops = stops.slice(startIdx, endIdx + 1);
+
+    // Now reverse if direction is inbound
+    if (reversed) {
+      stops = [...stops].reverse();
+    }
 
     // Build cumulative times for each stop
     for (let i = 0; i < stops.length; i++) {
@@ -172,15 +174,12 @@ export function buildSegmentTimeLookup(
     const path = route.paths.find((p) => p.id === ref.pathId);
     if (!path) continue;
 
-    // Get stops in order
+    // Get stops in forward order first
     let stops = [...path.stops].sort((a, b) => a.sequence - b.sequence);
     const reversed = ref.direction === 'inbound';
 
-    if (reversed) {
-      stops = [...stops].reverse();
-    }
-
-    // Apply start/end subset if specified
+    // Apply start/end subset BEFORE reversing
+    // (startStationId/endStationId are defined in forward path order)
     let startIdx = 0;
     let endIdx = stops.length - 1;
 
@@ -194,6 +193,11 @@ export function buildSegmentTimeLookup(
     }
 
     stops = stops.slice(startIdx, endIdx + 1);
+
+    // Now reverse if direction is inbound
+    if (reversed) {
+      stops = [...stops].reverse();
+    }
 
     // Build lookup for each stop
     for (let i = 0; i < stops.length; i++) {
@@ -314,15 +318,12 @@ export function getStationsFromRouteRefs(
     const path = route.paths.find((p) => p.id === ref.pathId);
     if (!path) continue;
 
-    // Get stops in order
+    // Get stops in forward order first
     let stops = [...path.stops].sort((a, b) => a.sequence - b.sequence);
     const reversed = ref.direction === 'inbound';
 
-    if (reversed) {
-      stops = [...stops].reverse();
-    }
-
-    // Apply start/end subset
+    // Apply start/end subset BEFORE reversing
+    // (startStationId/endStationId are defined in forward path order)
     let startIdx = 0;
     let endIdx = stops.length - 1;
 
@@ -336,6 +337,11 @@ export function getStationsFromRouteRefs(
     }
 
     stops = stops.slice(startIdx, endIdx + 1);
+
+    // Now reverse if direction is inbound
+    if (reversed) {
+      stops = [...stops].reverse();
+    }
 
     for (let i = 0; i < stops.length; i++) {
       const stop = stops[i];
@@ -351,9 +357,19 @@ export function getStationsFromRouteRefs(
         ? path.reverseTimeAdjustments?.find((adj) => adj.stationId === stop.stationId)
         : undefined;
 
-      const travelTime = i === 0 && result.length === 0
-        ? 0  // First station overall
-        : getSegmentTime(stop, ref.speedCategory, reverseAdj);
+      // For reversed paths, the travel time to stops[i] is stored on stops[i-1]
+      // (because times are stored as "time from previous station in FORWARD direction")
+      let travelTime: number;
+      if (i === 0) {
+        travelTime = 0;  // First station of segment
+      } else {
+        const timeSource = reversed ? stops[i - 1] : stop;
+        if (reverseAdj) {
+          travelTime = getSegmentTime(stop, ref.speedCategory, reverseAdj);
+        } else {
+          travelTime = getSegmentTime(timeSource, ref.speedCategory);
+        }
+      }
 
       result.push({
         stationId: stop.stationId,
