@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Station, StationType, Platform } from '@/types';
 import { Card, CardHeader, CardBody, Button, Input, Select, NumberInput } from '@/components/ui';
 import { generateDefaultPlatforms } from '@/lib/platforms/helpers';
+import { smartMatchStation } from '@/lib/search/smartSearch';
 
 const stationTypes: { value: StationType; label: string }[] = [
   { value: 'hub', label: 'Hub' },
@@ -47,6 +48,9 @@ export default function StationsAdminPage() {
 
   // Error state
   const [error, setError] = useState<string | null>(null);
+
+  // Search state
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     fetchStations();
@@ -179,26 +183,45 @@ export default function StationsAdminPage() {
   const physicalStations = stations.filter((s) => !s.isVirtual);
   const virtualStations = stations.filter((s) => s.isVirtual);
 
+  // Filter stations by search
+  const filteredPhysicalStations = useMemo(
+    () => physicalStations.filter((s) => smartMatchStation(search, s)),
+    [physicalStations, search]
+  );
+  const filteredVirtualStations = useMemo(
+    () => virtualStations.filter((s) => smartMatchStation(search, s)),
+    [virtualStations, search]
+  );
+
   if (loading) {
     return <div className="flex items-center justify-center py-12">Loading...</div>;
   }
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <h1 className="text-2xl font-bold text-gray-900">Stations</h1>
-        <div className="flex gap-2">
-          <Button
-            variant={showForm === 'virtual' ? 'primary' : 'secondary'}
-            onClick={() => setShowForm(showForm === 'virtual' ? null : 'virtual')}
-          >
-            {showForm === 'virtual' ? 'Cancel' : '+ Virtual Station'}
-          </Button>
-          <Button
-            onClick={() => setShowForm(showForm === 'physical' ? null : 'physical')}
-          >
-            {showForm === 'physical' ? 'Cancel' : '+ Add Station'}
-          </Button>
+        <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search stations..."
+            className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent sm:w-64"
+          />
+          <div className="flex gap-2">
+            <Button
+              variant={showForm === 'virtual' ? 'primary' : 'secondary'}
+              onClick={() => setShowForm(showForm === 'virtual' ? null : 'virtual')}
+            >
+              {showForm === 'virtual' ? 'Cancel' : '+ Virtual Station'}
+            </Button>
+            <Button
+              onClick={() => setShowForm(showForm === 'physical' ? null : 'physical')}
+            >
+              {showForm === 'physical' ? 'Cancel' : '+ Add Station'}
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -325,11 +348,7 @@ export default function StationsAdminPage() {
                 <div className="border rounded-lg p-4 max-h-64 overflow-y-auto bg-gray-50">
                   <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
                     {physicalStations
-                      .filter((station) =>
-                        memberFilter === '' ||
-                        station.name.toLowerCase().includes(memberFilter.toLowerCase()) ||
-                        station.code.toLowerCase().includes(memberFilter.toLowerCase())
-                      )
+                      .filter((station) => smartMatchStation(memberFilter, station))
                       .map((station) => (
                       <label
                         key={station.id}
@@ -374,7 +393,7 @@ export default function StationsAdminPage() {
       )}
 
       {/* Virtual Stations Table */}
-      {virtualStations.length > 0 && (
+      {filteredVirtualStations.length > 0 && (
         <Card className="mb-6">
           <CardHeader className="bg-amber-50">
             <h2 className="text-lg font-semibold flex items-center gap-2">
@@ -393,7 +412,7 @@ export default function StationsAdminPage() {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {virtualStations.map((station) => (
+                {filteredVirtualStations.map((station) => (
                   <tr key={station.id} className="hover:bg-amber-50">
                     <td className="px-4 py-3 text-sm font-mono font-medium">{station.code}</td>
                     <td className="px-4 py-3 text-sm">{station.name}</td>
@@ -442,7 +461,7 @@ export default function StationsAdminPage() {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {physicalStations.map((station) => (
+              {filteredPhysicalStations.map((station) => (
                 <tr key={station.id} className="hover:bg-gray-50">
                   <td className="px-4 py-3 text-sm font-mono font-medium">{station.code}</td>
                   <td className="px-4 py-3 text-sm">{station.name}</td>
@@ -464,10 +483,10 @@ export default function StationsAdminPage() {
                   </td>
                 </tr>
               ))}
-              {physicalStations.length === 0 && (
+              {filteredPhysicalStations.length === 0 && (
                 <tr>
                   <td colSpan={5} className="px-4 py-8 text-center text-gray-500">
-                    No stations yet. Add your first station above.
+                    {search ? 'No stations match your search.' : 'No stations yet. Add your first station above.'}
                   </td>
                 </tr>
               )}
