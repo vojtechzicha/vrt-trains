@@ -362,10 +362,12 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
         setReverseName(name);
         setReverseStops(reversed);
 
-        // Update route refs for reverse direction
-        const revRefs = routeRefs.map(ref => ({
+        // Update route refs for reverse direction:
+        // 1. Reverse the array order (first routeRef becomes last)
+        // 2. Flip each individual direction (outbound↔inbound)
+        const revRefs = [...routeRefs].reverse().map(ref => ({
           ...ref,
-          direction: reverseDir,
+          direction: ref.direction === 'outbound' ? 'inbound' : 'outbound',
         }));
         setReverseRefs(revRefs);
 

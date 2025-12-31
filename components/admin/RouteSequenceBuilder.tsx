@@ -561,8 +561,10 @@ export function segmentsToRouteRefs(
     routeId: seg.routeId,
     pathId: seg.pathId,
     // Direction indicates how the path is traversed (outbound=forward, inbound=reversed)
-    // This is independent of the variant's baseDirection label
-    direction: seg.reversed ? 'inbound' : 'outbound',
+    // Must be symmetric with segment reconstruction: reversed = (ref.direction !== variant.direction)
+    direction: seg.reversed
+      ? (baseDirection === 'outbound' ? 'inbound' : 'outbound')
+      : baseDirection,
     speedCategory: seg.speedCategory || 'vrt',
     startStationId: seg.startStationId,
     endStationId: seg.endStationId,
