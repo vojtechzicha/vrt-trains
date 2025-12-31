@@ -331,10 +331,11 @@ export function RouteSequenceBuilder({
                     Start Station (optional)
                   </label>
                   <select
-                    value={segment.startStationId || ''}
-                    onChange={(e) => handleUpdateSegment(index, {
-                      startStationId: e.target.value || undefined,
-                    })}
+                    value={segment.reversed ? segment.endStationId || '' : segment.startStationId || ''}
+                    onChange={(e) => handleUpdateSegment(index, segment.reversed
+                      ? { endStationId: e.target.value || undefined }
+                      : { startStationId: e.target.value || undefined }
+                    )}
                     disabled={!segment.pathId}
                     className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
                   >
@@ -356,10 +357,11 @@ export function RouteSequenceBuilder({
                     End Station (optional)
                   </label>
                   <select
-                    value={segment.endStationId || ''}
-                    onChange={(e) => handleUpdateSegment(index, {
-                      endStationId: e.target.value || undefined,
-                    })}
+                    value={segment.reversed ? segment.startStationId || '' : segment.endStationId || ''}
+                    onChange={(e) => handleUpdateSegment(index, segment.reversed
+                      ? { startStationId: e.target.value || undefined }
+                      : { endStationId: e.target.value || undefined }
+                    )}
                     disabled={!segment.pathId}
                     className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
                   >

@@ -367,7 +367,7 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
         // 2. Flip each individual direction (outbound↔inbound)
         const revRefs = [...routeRefs].reverse().map(ref => ({
           ...ref,
-          direction: ref.direction === 'outbound' ? 'inbound' : 'outbound',
+          direction: (ref.direction === 'outbound' ? 'inbound' : 'outbound') as Direction,
         }));
         setReverseRefs(revRefs);
 
