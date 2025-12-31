@@ -166,6 +166,7 @@ function createEntry(
     sortTime: '99:99',
     firstStationIdx: -1,
     lastStationIdx: -1,
+    operatingDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   };
 }
 

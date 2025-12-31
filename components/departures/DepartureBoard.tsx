@@ -24,6 +24,35 @@ function isWithinMinutes(departureTime: string, currentTime: string, minutes: nu
   return diff >= 0 && diff <= minutes;
 }
 
+// Check if train runs on a specific day
+function runsOnDay(operatingDays: string[], dayOfWeek: number): boolean {
+  // dayOfWeek: 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+  const dayMap: Record<number, string[]> = {
+    0: ['Sun', 'sunday'],
+    1: ['Mon', 'monday'],
+    2: ['Tue', 'tuesday'],
+    3: ['Wed', 'wednesday'],
+    4: ['Thu', 'thursday'],
+    5: ['Fri', 'friday'],
+    6: ['Sat', 'saturday'],
+  };
+
+  const todayNames = dayMap[dayOfWeek];
+  const isWeekday = dayOfWeek >= 1 && dayOfWeek <= 5;
+  const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+
+  for (const day of operatingDays) {
+    // Check direct day match
+    if (todayNames.includes(day)) return true;
+    // Check weekdays keyword
+    if (day === 'weekdays' && isWeekday) return true;
+    // Check weekends keyword
+    if (day === 'weekends' && isWeekend) return true;
+  }
+
+  return false;
+}
+
 export function DepartureBoard({ stationName, departures }: DepartureBoardProps) {
   const [currentTime, setCurrentTime] = useState(() => getCurrentTimeString());
   const [showPast, setShowPast] = useState(false);
@@ -46,8 +75,12 @@ export function DepartureBoard({ stationName, departures }: DepartureBoardProps)
 
   const headerLabels = ['Line', 'Line', 'Train'];
 
-  const pastDepartures = departures.filter((d) => d.time < currentTime);
-  const upcomingDepartures = departures.filter((d) => d.time >= currentTime);
+  // Filter departures by current day of week
+  const today = new Date().getDay();
+  const todaysDepartures = departures.filter((d) => runsOnDay(d.operatingDays, today));
+
+  const pastDepartures = todaysDepartures.filter((d) => d.time < currentTime);
+  const upcomingDepartures = todaysDepartures.filter((d) => d.time >= currentTime);
 
   return (
     <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl">

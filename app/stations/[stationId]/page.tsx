@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getStation, getVariantsByStation, getLines, getTimetables, getStations, getRoutes, getMemberStations } from '@/lib/data';
 import { PlatformDiagram, DirectConnections, StationRoutes } from '@/components/stations';
-import { Card, CardHeader, CardBody } from '@/components/ui';
+import { Card, CardHeader, CardBody, OperatingDaysBadge } from '@/components/ui';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui';
 import { LineBadge } from '@/components/lines';
 import { compareTime } from '@/lib/utils';
@@ -197,10 +197,6 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
     directConnections = [...allConnections.values()];
   }
 
-  // Check if train runs daily
-  const allDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  const isDaily = (days: string[]) => allDays.every((d) => days.includes(d));
-
   return (
     <div>
       <div className="mb-6">
@@ -290,11 +286,7 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
                       </TableCell>
                       <TableCell>
                         <span className="font-medium">{dep.destination}</span>
-                        {!isDaily(dep.operatingDays) && (
-                          <span className="ml-2 text-xs text-gray-400">
-                            ({dep.operatingDays.join(', ')})
-                          </span>
-                        )}
+                        <OperatingDaysBadge days={dep.operatingDays} className="ml-2" />
                       </TableCell>
                       <TableCell className="hidden md:table-cell text-gray-500 text-sm">
                         {dep.viaStations.length > 0 ? dep.viaStations.join(', ') : '—'}

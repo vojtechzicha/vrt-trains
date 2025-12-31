@@ -4,7 +4,7 @@ import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Variant, Station, Line, Timetable, OperatingDay, RouteCorridor, CalculatedVariantStop } from '@/types';
-import { Card, CardHeader, CardBody, Button } from '@/components/ui';
+import { Card, CardHeader, CardBody, Button, OperatingDaysBadge } from '@/components/ui';
 import { LineBadge } from '@/components/lines';
 import { TimetableGenerator } from '@/components/admin/TimetableGenerator';
 import { OperatingDaysSelector } from '@/components/admin/OperatingDaysSelector';
@@ -237,30 +237,6 @@ export default function TimetableEditorPage({
     return stations.find((s) => s.id === stationId)?.name || 'Unknown';
   }
 
-  function formatOperatingDays(days: OperatingDay[]): string {
-    const allDays = [
-      'monday',
-      'tuesday',
-      'wednesday',
-      'thursday',
-      'friday',
-      'saturday',
-      'sunday',
-    ];
-    if (days.length === 7 && allDays.every((d) => days.includes(d as OperatingDay))) {
-      return 'Daily';
-    }
-    const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-    if (days.length === 5 && weekdays.every((d) => days.includes(d as OperatingDay))) {
-      return 'Weekdays';
-    }
-    const weekends = ['saturday', 'sunday'];
-    if (days.length === 2 && weekends.every((d) => days.includes(d as OperatingDay))) {
-      return 'Weekends';
-    }
-    return days.map((d) => d.substring(0, 3)).join(', ');
-  }
-
   if (loading) {
     return <div className="flex items-center justify-center py-12">Loading...</div>;
   }
@@ -388,9 +364,7 @@ export default function TimetableEditorPage({
                           {timetable.departures[timetable.departures.length - 1]?.arrival ||
                             '--:--'}
                         </span>
-                        <span className="text-xs text-gray-400 bg-gray-200 px-2 py-0.5 rounded">
-                          {formatOperatingDays(timetable.operatingDays)}
-                        </span>
+                        <OperatingDaysBadge days={timetable.operatingDays} />
                       </div>
                       <div className="flex gap-2">
                         <button

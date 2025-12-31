@@ -8,3 +8,4 @@ export { NumberInput } from './NumberInput';
 export { ColorPicker } from './ColorPicker';
 export { ToggleGroup } from './ToggleGroup';
 export { ScrollableContainer } from './ScrollableContainer';
+export { OperatingDaysBadge } from './OperatingDaysBadge';

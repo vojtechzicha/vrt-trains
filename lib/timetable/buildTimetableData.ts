@@ -8,6 +8,7 @@ export interface TimetableEntry {
   sortTime: string;
   firstStationIdx: number;
   lastStationIdx: number;
+  operatingDays: string[];
 }
 
 export interface BuildTimetableResult {
@@ -413,6 +414,7 @@ export function buildTimetableEntries(
       sortTime: '99:99', // Will be set during sorting
       firstStationIdx: -1,
       lastStationIdx: -1,
+      operatingDays: tt.operatingDays,
     };
   });
 

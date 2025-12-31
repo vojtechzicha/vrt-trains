@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { OperatingPattern } from '@/types';
-import { Card, CardHeader, CardBody, Button } from '@/components/ui';
+import { Card, CardHeader, CardBody, Button, OperatingDaysBadge } from '@/components/ui';
 
 export default function PatternsPage() {
   const [patterns, setPatterns] = useState<OperatingPattern[]>([]);
@@ -59,14 +59,6 @@ export default function PatternsPage() {
       .join(', ');
   }
 
-  function formatOperatingDays(days: string[]): string {
-    if (days.includes('weekdays') && days.includes('weekends')) return 'Daily';
-    if (days.includes('weekdays')) return 'Weekdays';
-    if (days.includes('weekends')) return 'Weekends';
-    if (days.length === 7) return 'Daily';
-    return days.map((d) => d.slice(0, 3)).join(', ');
-  }
-
   if (loading) {
     return <div className="flex items-center justify-center py-12">Loading...</div>;
   }
@@ -102,9 +94,7 @@ export default function PatternsPage() {
                     <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600">
                       {pattern.periods.length} period{pattern.periods.length > 1 ? 's' : ''}
                     </span>
-                    <span className="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-700">
-                      {formatOperatingDays(pattern.operatingDays)}
-                    </span>
+                    <OperatingDaysBadge days={pattern.operatingDays} />
                   </div>
                   <p className="text-sm text-gray-500">{formatPeriodSummary(pattern)}</p>
                 </div>

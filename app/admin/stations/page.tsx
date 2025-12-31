@@ -88,9 +88,8 @@ export default function StationsAdminPage() {
       });
 
       if (res.ok) {
-        await fetchStations();
-        resetForm();
-        setShowForm(null);
+        const newStation = await res.json();
+        router.push(`/admin/stations/${newStation.id}`);
       } else {
         const data = await res.json();
         setError(data.error || 'Failed to create station');
@@ -128,9 +127,8 @@ export default function StationsAdminPage() {
       });
 
       if (res.ok) {
-        await fetchStations();
-        resetVirtualForm();
-        setShowForm(null);
+        const newStation = await res.json();
+        router.push(`/admin/stations/${newStation.id}`);
       } else {
         const data = await res.json();
         setError(data.error || 'Failed to create virtual station');

@@ -1,5 +1,5 @@
 import { RouteCorridor, Variant, Timetable, Station, Line } from '@/types';
-import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell, Card, CardHeader, CardBody, ScrollableContainer } from '@/components/ui';
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell, Card, CardHeader, CardBody, ScrollableContainer, OperatingDaysBadge } from '@/components/ui';
 import { formatTime } from '@/lib/utils';
 import { buildRouteTimetableData, RouteTimetableEntry } from '@/lib/timetable';
 import { LineBadge } from '@/components/lines';
@@ -49,16 +49,19 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
           <TableRow>
             <TableHead className="sticky left-0 bg-gray-50 z-10">Station</TableHead>
             {entries.map((entry) => (
-              <TableHead key={entry.trainNumber} className="text-center min-w-[80px]">
-                <div className="flex flex-col items-center gap-1">
+              <TableHead key={entry.trainNumber} className="text-center min-w-[80px] !normal-case">
+                <div className="flex flex-col items-center gap-0.5">
                   <LineBadge
                     identifier={entry.lineIdentifier}
                     color={entry.lineColor}
                     textColor={entry.lineTextColor}
                     className="text-xs px-1.5 py-0.5"
                   />
-                  <div className="text-xs text-gray-500">{entry.variantCode}</div>
-                  <div className="font-medium">{entry.trainNumber}</div>
+                  <div className="flex items-center gap-1 text-xs text-gray-500">
+                    <span>{entry.variantCode}</span>
+                    <OperatingDaysBadge days={entry.operatingDays} />
+                  </div>
+                  <div className="font-medium font-mono">{entry.trainNumber}</div>
                 </div>
               </TableHead>
             ))}

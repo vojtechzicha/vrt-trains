@@ -1,5 +1,5 @@
 import { Timetable, Variant, Station } from '@/types';
-import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui';
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell, OperatingDaysBadge } from '@/components/ui';
 import { formatTime } from '@/lib/utils';
 import { buildTimetableData } from '@/lib/timetable';
 
@@ -43,9 +43,12 @@ export function LineTimetable({ variants, timetables, stations }: LineTimetableP
         <TableRow>
           <TableHead className="sticky left-0 bg-gray-50 z-10">Station</TableHead>
           {entries.map((entry) => (
-            <TableHead key={entry.trainNumber} className="text-center min-w-[80px]">
-              <div className="text-xs text-gray-400">{entry.variantCode}</div>
-              <div>{entry.trainNumber}</div>
+            <TableHead key={entry.trainNumber} className="text-center min-w-[80px] !normal-case">
+              <div className="flex items-center justify-center gap-1 text-xs text-gray-400">
+                <span>{entry.variantCode}</span>
+                <OperatingDaysBadge days={entry.operatingDays} />
+              </div>
+              <div className="font-mono">{entry.trainNumber}</div>
             </TableHead>
           ))}
         </TableRow>

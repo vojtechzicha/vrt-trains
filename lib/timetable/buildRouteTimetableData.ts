@@ -358,6 +358,7 @@ export function buildRouteTimetableData(
       sortTime: '99:99',
       firstStationIdx: -1,
       lastStationIdx: -1,
+      operatingDays: tt.operatingDays,
       originStationId: origin?.id,
       originStationName: origin?.name,
       destinationStationId: destination?.id,
