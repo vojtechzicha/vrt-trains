@@ -188,6 +188,24 @@ export async function getOutOfSyncVariants(): Promise<Variant[]> {
   return variantsData.variants.filter((v) => v.outOfSync === true);
 }
 
+export async function clearAllOutOfSync(): Promise<number> {
+  const variantsData = await readVariantsFile();
+  let clearedCount = 0;
+
+  for (const variant of variantsData.variants) {
+    if (variant.outOfSync) {
+      variant.outOfSync = false;
+      clearedCount++;
+    }
+  }
+
+  if (clearedCount > 0) {
+    await writeVariantsFile(variantsData);
+  }
+
+  return clearedCount;
+}
+
 // Path lock checking (structural changes)
 
 export async function isPathLocked(routeId: string, pathId: string): Promise<boolean> {

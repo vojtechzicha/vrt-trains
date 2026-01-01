@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getStations, getLines, getVariants, getTimetables, getRoutes, getOutOfSyncVariants } from '@/lib/data';
 import { Card, CardBody } from '@/components/ui';
+import { OutOfSyncWarning } from '@/components/admin/OutOfSyncWarning';
 
 export default async function AdminDashboard() {
   const stations = await getStations();
@@ -9,9 +10,6 @@ export default async function AdminDashboard() {
   const timetables = await getTimetables();
   const routes = await getRoutes();
   const outOfSyncVariants = await getOutOfSyncVariants();
-
-  // Create a map of line IDs to lines for display
-  const lineMap = new Map(lines.map((l) => [l.id, l]));
 
   const quickLinks = [
     { href: '/admin/stations', label: 'Manage Stations', icon: '◉', count: stations.length },
@@ -24,41 +22,7 @@ export default async function AdminDashboard() {
       <h1 className="text-2xl font-bold text-gray-900 mb-6">Admin Dashboard</h1>
 
       {/* Out of sync warning */}
-      {outOfSyncVariants.length > 0 && (
-        <div className="mb-6 p-4 bg-yellow-50 border border-yellow-300 rounded-lg">
-          <div className="flex items-start gap-3">
-            <span className="text-yellow-600 text-xl">⚠</span>
-            <div className="flex-1">
-              <p className="font-medium text-yellow-800">
-                {outOfSyncVariants.length} variant{outOfSyncVariants.length > 1 ? 's' : ''} need{outOfSyncVariants.length === 1 ? 's' : ''} review
-              </p>
-              <p className="text-sm text-yellow-700 mt-1">
-                These variants are out of sync with their source routes and may need to be updated.
-              </p>
-              <ul className="mt-2 space-y-1">
-                {outOfSyncVariants.slice(0, 5).map((variant) => {
-                  const line = lineMap.get(variant.lineId);
-                  return (
-                    <li key={variant.id} className="text-sm">
-                      <Link
-                        href={`/admin/lines/${variant.lineId}/variants/${variant.id}`}
-                        className="text-yellow-800 hover:underline font-medium"
-                      >
-                        {line?.identifier || 'Unknown'} - {variant.code}: {variant.name}
-                      </Link>
-                    </li>
-                  );
-                })}
-                {outOfSyncVariants.length > 5 && (
-                  <li className="text-sm text-yellow-700">
-                    ... and {outOfSyncVariants.length - 5} more
-                  </li>
-                )}
-              </ul>
-            </div>
-          </div>
-        </div>
-      )}
+      <OutOfSyncWarning variants={outOfSyncVariants} lines={lines} />
 
       <div className="grid gap-4 md:grid-cols-5 mb-8">
         <Card>
