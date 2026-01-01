@@ -44,6 +44,20 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
     onChange(newPlatforms);
   };
 
+  const handleMoveUp = (index: number) => {
+    if (index === 0) return;
+    const newPlatforms = [...platforms];
+    [newPlatforms[index - 1], newPlatforms[index]] = [newPlatforms[index], newPlatforms[index - 1]];
+    onChange(newPlatforms);
+  };
+
+  const handleMoveDown = (index: number) => {
+    if (index === platforms.length - 1) return;
+    const newPlatforms = [...platforms];
+    [newPlatforms[index], newPlatforms[index + 1]] = [newPlatforms[index + 1], newPlatforms[index]];
+    onChange(newPlatforms);
+  };
+
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
@@ -65,7 +79,7 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
         {platforms.map((platform, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+            className="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
           >
             {/* Code input */}
             <div className="w-16">
@@ -111,6 +125,28 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
               />
               <span className="text-sm text-gray-600">Bay</span>
             </label>
+
+            {/* Reorder buttons */}
+            <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button
+                type="button"
+                onClick={() => handleMoveUp(index)}
+                disabled={index === 0}
+                className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed"
+                title="Move up"
+              >
+                ↑
+              </button>
+              <button
+                type="button"
+                onClick={() => handleMoveDown(index)}
+                disabled={index === platforms.length - 1}
+                className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed"
+                title="Move down"
+              >
+                ↓
+              </button>
+            </div>
 
             {/* Remove button */}
             <button

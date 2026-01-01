@@ -27,24 +27,21 @@ export function DepartureBoardWithTabs({
   }, [platforms]);
   const [selectedPlatform, setSelectedPlatform] = useState<string | null>(null);
 
-  // Get unique platforms that have departures
+  // Get platforms that have departures, preserving station-defined order
   const platformsWithDepartures = useMemo(() => {
-    const platforms = new Set<string>();
+    // Collect platforms that have departures
+    const platformsInUse = new Set<string>();
     departures.forEach((d) => {
       if (d.platform) {
-        platforms.add(d.platform);
+        platformsInUse.add(d.platform);
       }
     });
-    // Sort numerically
-    return [...platforms].sort((a, b) => {
-      const numA = parseInt(a, 10);
-      const numB = parseInt(b, 10);
-      if (!isNaN(numA) && !isNaN(numB)) {
-        return numA - numB;
-      }
-      return a.localeCompare(b);
-    });
-  }, [departures]);
+
+    // Return station platforms in their defined order, filtered to those with departures
+    return platforms
+      .map((p) => p.code)
+      .filter((code) => platformsInUse.has(code));
+  }, [departures, platforms]);
 
   // Determine if we should show tabs
   const showTabs = !isVirtual && platformsWithDepartures.length > 1;

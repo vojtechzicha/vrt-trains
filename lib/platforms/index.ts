@@ -71,20 +71,41 @@ export function aggregatePlatformData(
   // Convert to PlatformData array
   const platforms: PlatformData[] = [];
 
-  // Sort platforms numerically (handle both numeric and string platforms)
-  const sortedPlatforms = [...platformLineMap.keys()].sort((a, b) => {
-    const numA = parseInt(a, 10);
-    const numB = parseInt(b, 10);
-    if (!isNaN(numA) && !isNaN(numB)) {
-      return numA - numB;
-    }
-    // Put 'unassigned' at the end
-    if (a === 'unassigned') return 1;
-    if (b === 'unassigned') return -1;
-    return a.localeCompare(b);
-  });
+  // Order platforms by station-defined order, with unassigned at the end
+  const platformsInUse = [...platformLineMap.keys()];
+  let orderedPlatforms: string[];
 
-  for (const platform of sortedPlatforms) {
+  if (stationPlatforms && stationPlatforms.length > 0) {
+    // Use station-defined order for known platforms
+    const stationOrder = stationPlatforms.map((p) => p.code);
+    orderedPlatforms = stationOrder.filter((code) => platformsInUse.includes(code));
+
+    // Add any platforms not in station definition (shouldn't happen normally)
+    const knownCodes = new Set(stationOrder);
+    const unknownPlatforms = platformsInUse.filter(
+      (p) => !knownCodes.has(p) && p !== 'unassigned'
+    );
+    orderedPlatforms.push(...unknownPlatforms);
+
+    // Add unassigned at the end if present
+    if (platformsInUse.includes('unassigned')) {
+      orderedPlatforms.push('unassigned');
+    }
+  } else {
+    // Fallback: sort numerically if no station platforms defined
+    orderedPlatforms = platformsInUse.sort((a, b) => {
+      const numA = parseInt(a, 10);
+      const numB = parseInt(b, 10);
+      if (!isNaN(numA) && !isNaN(numB)) {
+        return numA - numB;
+      }
+      if (a === 'unassigned') return 1;
+      if (b === 'unassigned') return -1;
+      return a.localeCompare(b);
+    });
+  }
+
+  for (const platform of orderedPlatforms) {
     const lineVariantsMap = platformLineMap.get(platform)!;
     const platformLines: PlatformLineInfo[] = [];
 
