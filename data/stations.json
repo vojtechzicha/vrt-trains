@@ -7,87 +7,88 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1A/11",
+          "name": "jižní obratová - směr Zličín",
+          "isBay": true
+        },
+        {
+          "code": "1A/9",
+          "name": "jižní obratová - směr Radotín",
+          "isBay": true
+        },
+        {
+          "code": "1B/7",
+          "name": "severní obratová",
+          "isBay": true
+        },
+        {
+          "code": "1/5",
+          "name": "směr Smíchov - obraty",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/3",
+          "name": "odjezd Smíchov",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/1",
+          "name": "příjezd Smíchov",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/2",
+          "name": "směr Vršovice západ - osobní",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "3/4",
+          "name": "směr Vršovice západ - dálkové",
           "isBay": false
         },
         {
-          "code": "6",
-          "name": "",
+          "code": "4/6",
+          "name": "obraty - ze severu",
           "isBay": false
         },
         {
-          "code": "7",
-          "name": "",
+          "code": "4/8",
+          "name": "obraty - z jihu",
           "isBay": false
         },
         {
-          "code": "8",
-          "name": "",
+          "code": "5/10",
+          "name": "směr Libeň - osobní",
           "isBay": false
         },
         {
-          "code": "9",
-          "name": "",
+          "code": "5/12",
+          "name": "směr Libeň - dálkové",
           "isBay": false
         },
         {
-          "code": "10",
-          "name": "",
+          "code": "6/16",
+          "name": "směr Vysočany - osobní",
           "isBay": false
         },
         {
-          "code": "11",
-          "name": "",
+          "code": "6/18",
+          "name": "směr Vysočany - dálkové",
           "isBay": false
         },
         {
-          "code": "12",
-          "name": "",
+          "code": "7/20",
+          "name": "směr Vršovice východ - osobní",
           "isBay": false
         },
         {
-          "code": "13",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "14",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "15",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "16",
-          "name": "",
+          "code": "7/22",
+          "name": "směr Vršovice západ - dálkové",
           "isBay": false
         }
       ],
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "01",
@@ -97,26 +98,37 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Praha z hl.n.",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Praha z Břeclav",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr hlavní nádraží",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
+          "name": "směr Břeclav",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "240 směr Zastávka",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "240 směr hl.n./Břeclav",
           "isBay": false
         }
       ],
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "344341",
@@ -125,47 +137,48 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/14",
+          "name": "Opavské odstavy",
+          "isBay": true
+        },
+        {
+          "code": "1/12",
+          "name": "Opavské směr Opava",
+          "isBay": true
+        },
+        {
+          "code": "2/8",
+          "name": "směr Vítkovice",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/6",
+          "name": "směr Opava",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "3/4",
+          "name": "obraty směr centrum",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/2",
+          "name": "směr Hranice",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "4/1",
+          "name": "směr Bohumín",
           "isBay": false
         },
         {
-          "code": "6",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "7",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "8",
+          "code": "4/3",
           "name": "",
           "isBay": false
         }
       ],
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "343640",
@@ -174,47 +187,48 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
+          "code": "1/3",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
+          "code": "1/1",
+          "name": "Bohumínské - směr Bohumín",
+          "isBay": false
+        },
+        {
+          "code": "2/2",
+          "name": "Bohumínské - směr Svinov",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
           "name": "",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "4/1",
+          "name": "Frýdlantské - směr Svinov",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "4/2",
+          "name": "Frýdlantské - směr Kunčice",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "5/3",
+          "name": "Frýdlantské - obraty směr Svinov",
           "isBay": false
         },
         {
-          "code": "6",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "7",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "8",
-          "name": "",
+          "code": "5/6",
+          "name": "Frýdlantské - obraty směr Kunčice",
           "isBay": false
         }
       ],
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "343939",
@@ -223,17 +237,18 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/1",
+          "name": "směr hlavní nádraží",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "1/2",
+          "name": "směr střed",
           "isBay": false
         }
       ],
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "344143",
@@ -242,32 +257,33 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/1",
+          "name": "u budovy",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/3",
+          "name": "směr Frýdek",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/4",
+          "name": "směr Havířov",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/5",
+          "name": "směr střed",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "3/6",
+          "name": "směr Vítkovice",
           "isBay": false
         }
       ],
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "333443",
@@ -276,28 +292,18 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/1",
+          "name": "směr Český Těšín",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/2",
+          "name": "směr Ostrava",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "4",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "5",
-          "name": "",
+          "code": "2/3",
+          "name": "směr Frýdlant",
           "isBay": false
         }
       ],
@@ -308,7 +314,7 @@
       "id": "85699259-4aec-4cd1-874e-4f55665f44a5",
       "code": "DBH",
       "name": "Berlin Hbf (tief)",
-      "type": "terminal",
+      "type": "hub",
       "platforms": [
         {
           "code": "1",
@@ -353,7 +359,7 @@
       "id": "82c5ed84-cc36-4462-8772-bcc6bad24eab",
       "code": "DDH",
       "name": "Dresden Hbf",
-      "type": "regular",
+      "type": "hub",
       "platforms": [
         {
           "code": "1",
@@ -597,26 +603,27 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "Střední Čechy - směr Jihlava",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "Střední Čechy - směr Praha",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "Polabí - směr Hradec",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
+          "name": "Polabí - směr Praha",
           "isBay": false
         }
       ],
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
@@ -626,52 +633,37 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Jihlava/Praha",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Zastávka",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Břeclav",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
+          "name": "směr Královo Pole",
           "isBay": false
         },
         {
           "code": "5",
-          "name": "",
+          "name": "směr Blansko",
           "isBay": false
         },
         {
           "code": "6",
-          "name": "",
+          "name": "směr Ostrava",
           "isBay": false
         },
         {
           "code": "7",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "8",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "9",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "10",
-          "name": "",
+          "name": "směr Vyškov/Slavkov",
           "isBay": false
         }
       ],
@@ -685,52 +677,48 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
+          "code": "1A",
+          "name": "směr Chalupky",
+          "isBay": true
+        },
+        {
+          "code": "1/6",
+          "name": "směr Ostrava z Chalupky",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/2",
+          "name": "směr Ostrava z Dětmarovic",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "3/1",
+          "name": "směr Petrovice",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/3",
+          "name": "směr Karviná",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "4/5",
+          "name": "směr Karviná",
           "isBay": false
         },
         {
-          "code": "6",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "7",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "8",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "9",
-          "name": "",
+          "code": "4/7",
+          "name": "obraty",
           "isBay": false
         }
       ],
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "0f7d1240-94a0-406e-8a71-5cd39b889977",
@@ -945,32 +933,33 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
+          "code": "1/6",
+          "name": "u budovy",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/2",
+          "name": "směr Bohumín",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "3/1",
+          "name": "směr Český Těšín",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "5",
+          "code": "3/3",
           "name": "",
           "isBay": false
         }
       ],
-      "isTerminal": false
+      "isTerminal": false,
+      "country": "Czech"
     },
     {
       "id": "77fd513e-923a-42c3-bf25-c64313a8621f",
@@ -1480,57 +1469,57 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
-          "isBay": false
+          "name": "Hradecké",
+          "isBay": true
         },
         {
           "code": "2",
-          "name": "",
-          "isBay": false
+          "name": "Hradecké",
+          "isBay": true
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Rosice - obraty",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
+          "name": "směr Rosice",
           "isBay": false
         },
         {
           "code": "5",
-          "name": "",
+          "name": "směr centrum",
           "isBay": false
         },
         {
           "code": "6",
-          "name": "",
+          "name": "směr Rosice (z Třebové)",
           "isBay": false
         },
         {
           "code": "7",
-          "name": "",
+          "name": "směr Kolín (dálkové)",
           "isBay": false
         },
         {
           "code": "8",
-          "name": "",
+          "name": "směr Česká Třebová (dálkové - Olomouc)",
           "isBay": false
         },
         {
           "code": "9",
-          "name": "",
+          "name": "směr Česká Třebová (dálkové - Brno)",
           "isBay": false
         },
         {
           "code": "10",
-          "name": "",
+          "name": "směr Kolín (osobní)",
           "isBay": false
         },
         {
           "code": "11",
-          "name": "",
+          "name": "směr Česká Třebová (osobní)",
           "isBay": false
         }
       ],
@@ -1544,28 +1533,28 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
+          "code": "1/3",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "1/1",
+          "name": "směr Česká Třebová",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/2",
+          "name": "směr Pardubice z Třebové",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "2/4a",
+          "name": "směr Letohrad",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "3/12",
+          "name": "směr Pardubice z Letohradu",
           "isBay": false
         }
       ],
@@ -1579,27 +1568,27 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/5",
+          "name": "obraty",
+          "isBay": true
+        },
+        {
+          "code": "2/3",
+          "name": "směr Šumperk",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/1",
+          "name": "směr Česká Třebová",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "3/2",
+          "name": "směr Olomouc",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "5",
+          "code": "3/4",
           "name": "",
           "isBay": false
         }
@@ -1614,53 +1603,53 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
+          "code": "1A/7",
+          "name": "zadní",
+          "isBay": true
+        },
+        {
+          "code": "1/5",
+          "name": "směr Prostějov",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
+          "name": "směr Přerov / Brno",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr Hranice / Ostrava",
+          "isBay": false
+        },
+        {
+          "code": "3/2",
+          "name": "směr Zábřeh",
+          "isBay": false
+        },
+        {
+          "code": "3/4",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "4/5",
+          "name": "směr Uničov",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "4/7",
+          "name": "směr Přerov / Hranice (obratová)",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "5/9",
+          "name": "směr Zábřeh (obratová)",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "6",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "7",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "8",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "9",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "10",
-          "name": "",
+          "code": "5/11",
+          "name": "směr Moravský Beroun",
           "isBay": false
         }
       ],
@@ -1675,12 +1664,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "Vsetínské - směr Valašské Meziříčí",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "Vsetínské - směr Olomouc/Přerov",
           "isBay": false
         },
         {
@@ -1690,11 +1679,16 @@
         },
         {
           "code": "4",
-          "name": "",
+          "name": "směr Ostrava",
           "isBay": false
         },
         {
           "code": "5",
+          "name": "směr Olomouc/Přerov",
+          "isBay": false
+        },
+        {
+          "code": "6",
           "name": "",
           "isBay": false
         }
@@ -1709,28 +1703,28 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/1",
+          "name": "směr Rožnov",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/2",
+          "name": "směr Frenštát",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/3",
+          "name": "směr Holešov",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/4",
+          "name": "směr Hranice",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "3/5",
+          "name": "směr Vsetín",
           "isBay": false
         }
       ],
@@ -1770,17 +1764,22 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "u budovy",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Bylnice",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Púchov",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "směr Vsetín",
           "isBay": false
         }
       ],
@@ -1795,16 +1794,6 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "2",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "3",
           "name": "",
           "isBay": false
         }
@@ -1839,18 +1828,18 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/1",
+          "name": "u budovy",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/2",
+          "name": "směr Kunčice",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/3",
+          "name": "směr Svinov/Hranice",
           "isBay": false
         }
       ],
@@ -1878,7 +1867,7 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "obraty",
           "isBay": false
         },
         {
@@ -1888,12 +1877,12 @@
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Český Těšín",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
+          "name": "směr Ostrava",
           "isBay": false
         },
         {
@@ -1912,33 +1901,33 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/7",
+          "name": "směr Holešovice",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "1/5",
+          "name": "směr Hostivař",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/3",
+          "name": "směr Masarykovo nádraží",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "2/1",
+          "name": "směr hlavní nádraží",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "3/2",
+          "name": "směr Běchovice z hl.n.",
           "isBay": false
         },
         {
-          "code": "6",
-          "name": "",
+          "code": "3/4",
+          "name": "směr Běchovice z Mas.n.",
           "isBay": false
         }
       ],
@@ -2032,53 +2021,58 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1A/14",
+          "name": "Pražské",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "1A/13",
+          "name": "Pražské",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "1/1",
+          "name": "lokálka",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "2/3",
+          "name": "směr Pardubice",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "2/4",
+          "name": "směr Pardubice (obraty)",
           "isBay": false
         },
         {
-          "code": "6",
-          "name": "",
+          "code": "3/5",
+          "name": "směr Praha (dálkové)",
           "isBay": false
         },
         {
-          "code": "7",
-          "name": "",
+          "code": "3/6",
+          "name": "směr Praha",
           "isBay": false
         },
         {
-          "code": "8",
-          "name": "",
+          "code": "4/9",
+          "name": "směr Kutná Hora",
           "isBay": false
         },
         {
-          "code": "9",
-          "name": "",
+          "code": "4/10",
+          "name": "obraty ze západu",
           "isBay": false
         },
         {
-          "code": "10",
-          "name": "",
+          "code": "5/11",
+          "name": "obraty z východu",
+          "isBay": false
+        },
+        {
+          "code": "5/12",
+          "name": "směr Praha / Nymburk",
           "isBay": false
         }
       ],
@@ -2093,7 +2087,7 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "lokálka",
           "isBay": false
         },
         {
@@ -2103,11 +2097,16 @@
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Pardubice",
           "isBay": false
         },
         {
           "code": "4",
+          "name": "směr Kolín",
+          "isBay": false
+        },
+        {
+          "code": "5",
           "name": "",
           "isBay": false
         }
@@ -2122,23 +2121,43 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
+          "code": "1a/8",
+          "name": "směr Vysoké Mýto",
+          "isBay": false
+        },
+        {
+          "code": "1a/6",
+          "name": "směr Vysoké Mýto - rychlé",
+          "isBay": false
+        },
+        {
+          "code": "1/4",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
+          "code": "1/2",
+          "name": "směr Česká Třebová",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr Pardubice",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
           "name": "",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "3/7",
+          "name": "směr Týniště - rychlé",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/9",
+          "name": "směr Týniště",
           "isBay": false
         }
       ],
@@ -2152,38 +2171,43 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/3",
+          "name": "z Olomouc směr Praha",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/2",
+          "name": "z Praha směr Olomouc",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/4",
+          "name": "osobní směr Třebovice",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/6",
+          "name": "obraty ze zpadu",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "3/8",
+          "name": "obraty z východu",
           "isBay": false
         },
         {
-          "code": "6",
-          "name": "",
+          "code": "4/10",
+          "name": "z Brno směr Praha",
           "isBay": false
         },
         {
-          "code": "7",
-          "name": "",
+          "code": "4/12",
+          "name": "z Praha směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "5/14",
+          "name": "dočasné",
           "isBay": false
         }
       ],
@@ -2197,22 +2221,22 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
+          "code": "1/3",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "1/1",
+          "name": "směr Olomouc",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/2",
+          "name": "směr Zábřeh",
           "isBay": false
         },
         {
-          "code": "4",
+          "code": "2/4",
           "name": "",
           "isBay": false
         }
@@ -2228,7 +2252,7 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Litovel",
           "isBay": false
         },
         {
@@ -2238,11 +2262,16 @@
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Olomouc",
           "isBay": false
         },
         {
           "code": "4",
+          "name": "směr Zábřeh",
+          "isBay": false
+        },
+        {
+          "code": "5",
           "name": "",
           "isBay": false
         }
@@ -2257,58 +2286,48 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
+          "code": "1B/8",
           "name": "",
+          "isBay": true
+        },
+        {
+          "code": "1A/6",
+          "name": "",
+          "isBay": true
+        },
+        {
+          "code": "1/4",
+          "name": "směr Hranice z Otrokovic",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/3",
+          "name": "směr Olomouc",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/5",
+          "name": "směr Olomouc/Otrokovice (obraty)",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/7",
+          "name": "směr Kojetín/Brno/Hranice (obraty)",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "3/9",
+          "name": "směr Otrokovice",
           "isBay": false
         },
         {
-          "code": "6",
-          "name": "",
+          "code": "4/11",
+          "name": "směr Hranice z Kojetína",
           "isBay": false
         },
         {
-          "code": "7",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "8",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "9",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "10",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "11",
-          "name": "",
+          "code": "4/13",
+          "name": "směr Kojetín",
           "isBay": false
         }
       ],
@@ -2328,12 +2347,12 @@
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Hranice",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Přerov",
           "isBay": false
         },
         {
@@ -2352,29 +2371,44 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
+          "code": "1/4",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
+          "code": "2/2",
+          "name": "směr Hranice",
+          "isBay": false
+        },
+        {
+          "code": "3/1",
+          "name": "směr Studénka",
+          "isBay": false
+        },
+        {
+          "code": "3/3",
           "name": "",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "1O",
+          "name": "Oderské - směr Hranice",
+          "isBay": false
+        },
+        {
+          "code": "2O",
+          "name": "Oderské - směr Odry",
+          "isBay": false
+        },
+        {
+          "code": "3O",
+          "name": "Oderské - směr Fulnek",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "5",
-          "name": "",
-          "isBay": false
+          "name": "Novojičínské",
+          "isBay": true
         }
       ],
       "isTerminal": false,
@@ -2387,33 +2421,33 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
+          "code": "1/3",
+          "name": "směr letiště/Kopřivnice",
+          "isBay": false
+        },
+        {
+          "code": "1/1",
+          "name": "směr Ostrava",
+          "isBay": false
+        },
+        {
+          "code": "2/2",
+          "name": "směr Hranice",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "3/10",
+          "name": "Bílovecké",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "4",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "5",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "6",
-          "name": "",
+          "code": "4/9",
+          "name": "Veřovické",
           "isBay": false
         }
       ],
@@ -2428,27 +2462,27 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "u budovy",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Opava",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Bruntál",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
+          "name": "obrat z Gluchowic",
           "isBay": false
         },
         {
           "code": "5",
-          "name": "",
+          "name": "směr Gluchowice",
           "isBay": false
         }
       ],
@@ -2478,12 +2512,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Opava",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Krnov",
           "isBay": false
         }
       ],
@@ -2498,31 +2532,31 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
-          "isBay": false
+          "name": "směr Ostrava (dálkové)",
+          "isBay": true
         },
         {
           "code": "2",
-          "name": "",
-          "isBay": false
+          "name": "směr Ostrava (osobní)",
+          "isBay": true
         },
         {
           "code": "3",
-          "name": "",
-          "isBay": false
+          "name": "směr Hlučín",
+          "isBay": true
         },
         {
           "code": "4",
-          "name": "",
-          "isBay": false
+          "name": "směr Krnov",
+          "isBay": true
         },
         {
           "code": "5",
-          "name": "",
-          "isBay": false
+          "name": "směr Hradec",
+          "isBay": true
         }
       ],
-      "isTerminal": false,
+      "isTerminal": true,
       "country": "Czech"
     },
     {
@@ -2532,18 +2566,18 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/1",
+          "name": "směr Kunčice",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/2",
+          "name": "odstavy",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/3",
+          "name": "směr hlavní nádraží",
           "isBay": false
         }
       ],
@@ -2573,12 +2607,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Bruntál",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Olomouc",
           "isBay": false
         }
       ],
@@ -2593,12 +2627,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "u budovy",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Olomouc",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "směr Bruntál",
           "isBay": false
         }
       ],
@@ -2613,12 +2652,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Olomouc",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Bruntál",
           "isBay": false
         }
       ],
@@ -2633,17 +2672,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "u budovy",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Olomouc",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Krnov",
           "isBay": false
         }
       ],
@@ -2658,17 +2697,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Vrbno",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Bruntál",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Krnov",
           "isBay": false
         }
       ],
@@ -2743,12 +2782,12 @@
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Nezamyslice",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Brno",
           "isBay": false
         },
         {
@@ -2768,27 +2807,22 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
-          "isBay": false
+          "name": "obraty",
+          "isBay": true
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Nezamyslice",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Přerov",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "5",
-          "name": "",
+          "name": "směr Kroměříž",
           "isBay": false
         }
       ],
@@ -2803,22 +2837,32 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "VRT směr Praha",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "VRT směr Polabí",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "Benešovská směr Vršovice",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
+          "name": "Benešovská směr Hostivař",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "Táborská směr Vršovice",
+          "isBay": false
+        },
+        {
+          "code": "6",
+          "name": "Táborská směr Běchovice/Tábor",
           "isBay": false
         }
       ],
@@ -2833,17 +2877,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "lokálka",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Kojetín",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Hulín",
           "isBay": false
         }
       ],
@@ -2857,17 +2901,27 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/1",
+          "name": "obraty směr Zlín",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "1/2",
+          "name": "směr Zlín",
           "isBay": false
         },
         {
-          "code": "3",
+          "code": "1/3",
+          "name": "směr Přerov",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
+          "name": "směr Břeclav",
+          "isBay": false
+        },
+        {
+          "code": "2/5",
           "name": "",
           "isBay": false
         }
@@ -2883,17 +2937,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "u budovy",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Otrokovice",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Vizovice",
           "isBay": false
         }
       ],
@@ -2907,23 +2961,33 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
+          "code": "1/1",
+          "name": "obraty směr Uherské Hradiště",
+          "isBay": false
+        },
+        {
+          "code": "1/2",
+          "name": "směr Uherské Hradiště",
+          "isBay": false
+        },
+        {
+          "code": "1/3",
+          "name": "směr Přerov",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
+          "name": "směr Břeclav",
+          "isBay": false
+        },
+        {
+          "code": "2/5",
           "name": "",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "3",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "4",
-          "name": "",
+          "code": "H",
+          "name": "vzadu",
           "isBay": false
         }
       ],
@@ -2938,17 +3002,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Staré Město",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Kunovice",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Veselí nad Moravou",
           "isBay": false
         }
       ],
@@ -2963,12 +3027,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Bylnice / Luhačovice",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Kunovice",
           "isBay": false
         }
       ],
@@ -3077,33 +3141,33 @@
       "type": "hub",
       "platforms": [
         {
+          "code": "V1",
+          "name": "VRT směr Praha (boční)",
+          "isBay": false
+        },
+        {
+          "code": "V2",
+          "name": "VRT směr Praha",
+          "isBay": false
+        },
+        {
+          "code": "V3",
+          "name": "VRT směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "V4",
+          "name": "VRT směr Brno (boční)",
+          "isBay": false
+        },
+        {
           "code": "1",
-          "name": "",
+          "name": "225 směr Havlíčkův Brod",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "3",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "4",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "5",
-          "name": "",
-          "isBay": false
-        },
-        {
-          "code": "6",
-          "name": "",
+          "name": "225 směr Jihlava",
           "isBay": false
         }
       ],
@@ -3430,17 +3494,27 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "u budovy",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr VRT",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Vyškov",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "směr Prostějov",
+          "isBay": false
+        },
+        {
+          "code": "5",
+          "name": "směr Kojetín",
           "isBay": false
         }
       ],
@@ -3565,12 +3639,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "osobní",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "dálkové",
           "isBay": false
         }
       ],
@@ -3605,12 +3679,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Český Těšín",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Ostrava",
           "isBay": false
         }
       ],
@@ -3625,12 +3699,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Český Těšín",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Ostrava",
           "isBay": false
         }
       ],
@@ -3750,12 +3824,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Český Těšín",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Jablunkov",
           "isBay": false
         }
       ],
@@ -3895,7 +3969,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Púchov",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Vsetín",
           "isBay": false
         }
       ],
@@ -3910,17 +3989,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Lanškroun",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Česká Třebová",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Zábřeh",
           "isBay": false
         },
         {
@@ -4015,12 +4094,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Pardubice",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Česká Třebová",
           "isBay": false
         }
       ],
@@ -4380,38 +4459,38 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
-          "isBay": false
+          "name": "směr Běchovice",
+          "isBay": true
         },
         {
           "code": "2",
-          "name": "",
-          "isBay": false
+          "name": "směr Vysočany",
+          "isBay": true
         },
         {
           "code": "3",
-          "name": "",
-          "isBay": false
+          "name": "směr Vysočany (spěšný)",
+          "isBay": true
         },
         {
           "code": "4",
-          "name": "",
-          "isBay": false
+          "name": "směr Podbaba",
+          "isBay": true
         },
         {
           "code": "5",
-          "name": "",
-          "isBay": false
+          "name": "směr Dejvice",
+          "isBay": true
         },
         {
           "code": "6",
-          "name": "",
-          "isBay": false
+          "name": "směr Dejvice (spěšný)",
+          "isBay": true
         },
         {
           "code": "7",
-          "name": "",
-          "isBay": false
+          "name": "směr letiště",
+          "isBay": true
         }
       ],
       "isTerminal": true,
@@ -4765,17 +4844,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Rýmařov",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Olomouc",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Bruntál",
           "isBay": false
         }
       ],
@@ -4790,12 +4869,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Opava",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Ostrava",
           "isBay": false
         }
       ],
@@ -4810,12 +4889,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Opava",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Ostrava",
           "isBay": false
         }
       ],
@@ -5014,28 +5093,28 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/8",
+          "name": "u budovy",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/4",
+          "name": "směr Blansko",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/2",
+          "name": "směr Královo Pole",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/1",
+          "name": "z Blanska",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "3/3",
+          "name": "z Králova Pole",
           "isBay": false
         }
       ],
@@ -5050,12 +5129,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Sokolnice",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Brno",
           "isBay": false
         }
       ],
@@ -5200,27 +5279,27 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "u budovy",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "Přerovské - směr Brno",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "Přerovské - směr Přerov",
           "isBay": false
         },
         {
           "code": "4",
-          "name": "",
+          "name": "směr Brno",
           "isBay": false
         },
         {
           "code": "5",
-          "name": "",
+          "name": "směr Slavkov",
           "isBay": false
         }
       ],
@@ -5290,12 +5369,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Vyškov",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Přerov/Olomouc",
           "isBay": false
         }
       ],
@@ -5334,28 +5413,28 @@
       "type": "regular",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/1",
+          "name": "Přerovské - směr Přerov",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/2",
+          "name": "Přerovské - směr Otrokovice (dálkové)",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "2/4",
+          "name": "Přerovské - směr Otrokovice (osobní)",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "1K/1",
+          "name": "Kojetínské - směr Kojetín",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "1K/2",
+          "name": "Kojetínské - směr Holešov/Otrokovice",
           "isBay": false
         }
       ],
@@ -5390,17 +5469,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Bzenec",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Hodonín",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Přerov",
           "isBay": false
         }
       ],
@@ -5415,17 +5494,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Veselí nad Moravou",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Břeclav",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Přerov",
           "isBay": false
         }
       ],
@@ -5439,23 +5518,23 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1/3",
+          "name": "obraty lokálka koridor / směr Bratislava",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "2/1",
+          "name": "směr Přerov",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "3/2",
+          "name": "směr Břeclav",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "3/4",
+          "name": "lokálka sever",
           "isBay": false
         }
       ],
@@ -5469,48 +5548,58 @@
       "type": "hub",
       "platforms": [
         {
-          "code": "1",
-          "name": "",
+          "code": "1A/12",
+          "name": "Znojemské",
           "isBay": false
         },
         {
-          "code": "2",
-          "name": "",
+          "code": "1A/10",
+          "name": "Znojemské",
           "isBay": false
         },
         {
-          "code": "3",
-          "name": "",
+          "code": "1B/8",
+          "name": "obraty Brno -> Hodonín",
           "isBay": false
         },
         {
-          "code": "4",
-          "name": "",
+          "code": "1/6",
+          "name": "obraty Wien",
           "isBay": false
         },
         {
-          "code": "5",
-          "name": "",
+          "code": "2/4",
+          "name": "směr Wien / Znojmo",
           "isBay": false
         },
         {
-          "code": "6",
-          "name": "",
+          "code": "2/2",
+          "name": "směr Bratislava",
           "isBay": false
         },
         {
-          "code": "7",
-          "name": "",
+          "code": "3/1",
+          "name": "směr Brno z Wien",
           "isBay": false
         },
         {
-          "code": "8",
-          "name": "",
+          "code": "3A/3",
+          "name": "obraty Hodonín -> Brno",
           "isBay": false
         },
         {
-          "code": "9",
-          "name": "",
+          "code": "3/5",
+          "name": "směr Brno z Bratislava",
+          "isBay": false
+        },
+        {
+          "code": "4/7",
+          "name": "obraty Hodonín",
+          "isBay": false
+        },
+        {
+          "code": "4/9",
+          "name": "směr Hodonín",
           "isBay": false
         }
       ],
@@ -5695,12 +5784,12 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Uherský Brod",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Veselí nad Moravou / Uherské Hradiště",
           "isBay": false
         }
       ],
@@ -5735,17 +5824,17 @@
       "platforms": [
         {
           "code": "1",
-          "name": "",
+          "name": "směr Luhačovice",
           "isBay": false
         },
         {
           "code": "2",
-          "name": "",
+          "name": "směr Uherský Brod",
           "isBay": false
         },
         {
           "code": "3",
-          "name": "",
+          "name": "směr Bylnice",
           "isBay": false
         }
       ],
@@ -5825,6 +5914,1060 @@
         }
       ],
       "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "89272ea3-0df5-4c16-8b31-49e599883b6d",
+      "code": "TIS",
+      "name": "Tišnov",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "2/3",
+          "name": "směr stará Tišnovka",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr Havlíčkův Brod",
+          "isBay": false
+        },
+        {
+          "code": "3/2",
+          "name": "směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "3/44",
+          "name": "směr Brno (obraty)",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "23e09942-90be-425d-b75b-04ebff923b7a",
+      "code": "KUR",
+      "name": "Kuřim",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "směr Tišnov",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "0186361c-916c-4269-aca7-73e7b212646b",
+      "code": "BKP",
+      "name": "Brno-Královo Pole",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "2/2",
+          "name": "směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
+          "name": "směr Tišnov",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "b5d428ed-309e-4c6a-ad3c-cae5200d54e2",
+      "code": "MOD",
+      "name": "Modřice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "251 směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "251 směr Břeclav",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "VRT směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "VRT směr Břeclav",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "ce9c23a2-2bae-4d26-aea6-6c4e34143d91",
+      "code": "HUB",
+      "name": "Hrušovany u Brna",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1/5",
+          "name": "směr Židlichovice",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
+          "name": "směr Brno z Židlí",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "3/2",
+          "name": "směr Břeclav",
+          "isBay": false
+        },
+        {
+          "code": "3/4",
+          "name": "směr Břeclav",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "213ce3ca-5d2a-45fd-aa08-b935729fa06e",
+      "code": "ZID",
+      "name": "Židlichovice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": true
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": true
+        }
+      ],
+      "isTerminal": true,
+      "country": "Czech"
+    },
+    {
+      "id": "a118074b-53fd-4ca0-b8f3-041d860a9399",
+      "code": "SAK",
+      "name": "Šakvice",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Brno z Hustopečí",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "směr Břeclav",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "směr Hustopeče",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "90426ef0-b85b-4e46-a5b1-562119a43c28",
+      "code": "HBR",
+      "name": "Hustopeče u Brna",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": true,
+      "country": "Czech"
+    },
+    {
+      "id": "8a19e189-21a1-4495-abb2-15362f424f85",
+      "code": "ZAJ",
+      "name": "Zaječí",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1/3",
+          "name": "směr Břeclav (u budovy)",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr Břeclav",
+          "isBay": false
+        },
+        {
+          "code": "3/2",
+          "name": "směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "3/4",
+          "name": "směr Velké Pavlovice",
+          "isBay": false
+        },
+        {
+          "code": "4/8",
+          "name": "směr Velké Palvovice (vzadu)",
+          "isBay": true
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "82f85a57-c087-4d34-9995-a2bcad403062",
+      "code": "POV",
+      "name": "Podivín",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Břeclav",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "směr Brno",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "54247a3c-af05-4ec7-a5c5-46cfa2df11ef",
+      "code": "PRN",
+      "name": "Prostějov hlavní nádraží",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1/1",
+          "name": "lokálky",
+          "isBay": false
+        },
+        {
+          "code": "1/2",
+          "name": "obratová",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
+          "name": "směr Nezamyslice",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
+          "name": "směr Olomouc",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "bdade9e0-d749-4d92-8576-dcbcd8a9a369",
+      "code": "POS",
+      "name": "Postřelmov",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Zábřeh",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Jeseník/Šumperk",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "242d36c9-dfe6-4c6a-b21a-aa5e76d4019f",
+      "code": "BLU",
+      "name": "Bludov",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Zábřeh",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Jeseník",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "směr Šumperk",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "5caf03cc-968b-4f0a-a372-b592e9fc6088",
+      "code": "SUM",
+      "name": "Šumperk",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1A/1",
+          "name": "směr Kouty (obraty, vedlejší)",
+          "isBay": false
+        },
+        {
+          "code": "2A/2",
+          "name": "směr Šumperk",
+          "isBay": false
+        },
+        {
+          "code": "2B/2",
+          "name": "směr Šumperk (zadní)",
+          "isBay": false
+        },
+        {
+          "code": "2A/3",
+          "name": "směr Šumperk (obraty)",
+          "isBay": false
+        },
+        {
+          "code": "2B/3",
+          "name": "směr Kouty (obraty)",
+          "isBay": false
+        },
+        {
+          "code": "3A/4",
+          "name": "směr Uničov (zadní)",
+          "isBay": false
+        },
+        {
+          "code": "3B/4",
+          "name": "směr  Uničov",
+          "isBay": false
+        },
+        {
+          "code": "3/5",
+          "name": "směr Kouty",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "5a6dc4e8-14bb-4e02-88eb-e0883739a442",
+      "code": "PND",
+      "name": "Petrov nad Desnou",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "4d435907-dc88-4a59-8974-5936bfc821dd",
+      "code": "SOB",
+      "name": "Sobotín",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "cb9920ba-4427-46f2-ad87-6953afe1fd3b",
+      "code": "VLO",
+      "name": "Velké Losiny",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "fa59c31b-402d-45e2-a77a-9d42aae77656",
+      "code": "KND",
+      "name": "Kouty nad Desnou",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "1d7c5413-ba12-4fb6-8f4b-74d052610f27",
+      "code": "PSV",
+      "name": "Praha sever VRT",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Roudnice nad Labem",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Praha",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "e01cc9fe-5ca2-40e6-bd63-42d6d9d25c6a",
+      "code": "RNV",
+      "name": "Roudnice nad Labem VRT",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Ústí nad Labem",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Praha",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "d18daa9f-8ac0-49ff-a0ba-26c193173c34",
+      "code": "LOU",
+      "name": "Louny",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Praha",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Zlonice / Libochovice",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "směr Žatec / Rakovník",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "směr Most",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "5c0d960b-60d6-43d6-8d30-3a102d9b850d",
+      "code": "MOS",
+      "name": "Most",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1B/14",
+          "name": "obraty západ (zadní)",
+          "isBay": true
+        },
+        {
+          "code": "1B/12",
+          "name": "obraty západ",
+          "isBay": true
+        },
+        {
+          "code": "1A/10",
+          "name": "obraty východ",
+          "isBay": true
+        },
+        {
+          "code": "1/8",
+          "name": "směr Postoloprty",
+          "isBay": false
+        },
+        {
+          "code": "2/6",
+          "name": "směr Louny",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
+          "name": "směr Praha",
+          "isBay": false
+        },
+        {
+          "code": "3/1",
+          "name": "směr Ústí nad Labem",
+          "isBay": false
+        },
+        {
+          "code": "3/2",
+          "name": "směr Chomutov",
+          "isBay": false
+        },
+        {
+          "code": "4/4",
+          "name": "směr Litvínov",
+          "isBay": false
+        },
+        {
+          "code": "4/6",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "f8cc1eb1-b821-4dfc-ad69-318dfddfcb37",
+      "code": "BNO",
+      "name": "Bohušovice nad Odří",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1/3",
+          "name": "směr Lovosice (VRT)",
+          "isBay": false
+        },
+        {
+          "code": "2/1",
+          "name": "směr Lovosice (090)",
+          "isBay": false
+        },
+        {
+          "code": "3/2",
+          "name": "směr Praha",
+          "isBay": false
+        },
+        {
+          "code": "3/4",
+          "name": "směr VRT",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "31b312cc-6c9a-46e0-8339-6e9b78af0e75",
+      "code": "LIM",
+      "name": "Litoměřice město",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Ústí nad  Labem",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Praha / Štětí",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "9c6deb02-ba9c-442f-815b-5f8279ed474c",
+      "code": "UNC",
+      "name": "Ústí nad Labem centrum",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "V1",
+          "name": "VRT obraty",
+          "isBay": false
+        },
+        {
+          "code": "V2",
+          "name": "VRT směr Dresden",
+          "isBay": false
+        },
+        {
+          "code": "V3",
+          "name": "VRT směr Praha",
+          "isBay": false
+        },
+        {
+          "code": "L1",
+          "name": "směr Dresden",
+          "isBay": false
+        },
+        {
+          "code": "L2",
+          "name": "směr Teplice z hl.n.",
+          "isBay": false
+        },
+        {
+          "code": "L3",
+          "name": "směr hl.n./Děčín",
+          "isBay": false
+        },
+        {
+          "code": "L4",
+          "name": "směr Teplice z hl.n.",
+          "isBay": false
+        },
+        {
+          "code": "L5",
+          "name": "směr Lovosice/Střekov",
+          "isBay": false
+        },
+        {
+          "code": "L5A",
+          "name": "obraty směr Teplice",
+          "isBay": true
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "ee8fff1e-1c8d-419f-b011-1e39d96073ca",
+      "code": "UNH",
+      "name": "Ústí nad Labem hlavní nádraží",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1A/1",
+          "name": "obrat směr centrum/Lovosice (krátký)",
+          "isBay": true
+        },
+        {
+          "code": "1/2",
+          "name": "obrat směr centrum/Lovosice",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
+          "name": "směr centrum",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
+          "name": "směr Lovosice (rychlík)",
+          "isBay": false
+        },
+        {
+          "code": "3/5",
+          "name": "směr Děčín (osobní)",
+          "isBay": false
+        },
+        {
+          "code": "3/6",
+          "name": "směr Děčín (rychlík)",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "3abbb6f2-5890-4c79-acf3-77d0aefc310f",
+      "code": "UNL",
+      "name": "Ústí nad Labem",
+      "type": "hub",
+      "platforms": [],
+      "isTerminal": false,
+      "isVirtual": true,
+      "memberStationIds": [
+        "9c6deb02-ba9c-442f-815b-5f8279ed474c",
+        "ee8fff1e-1c8d-419f-b011-1e39d96073ca"
+      ],
+      "country": "Czech"
+    },
+    {
+      "id": "73ee92a6-9ffb-42ee-b04b-58cd5b5dc663",
+      "code": "KBO",
+      "name": "Krupka-Bohosudov",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Teplice",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Ústí / Dresden",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "00a0e0ed-e491-449a-a6fd-5e4169ebf291",
+      "code": "AWM",
+      "name": "Wien Meidling",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "fa24c963-de49-4b34-af40-72776aaad7d3",
+      "code": "DHN",
+      "name": "Děčín hlavní nádraží",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1B",
+          "name": "směr východ (obraty)",
+          "isBay": true
+        },
+        {
+          "code": "1/1",
+          "name": "směr východ",
+          "isBay": false
+        },
+        {
+          "code": "2/2",
+          "name": "směr Střekov (obraty)",
+          "isBay": false
+        },
+        {
+          "code": "2/3",
+          "name": "směr Dresden",
+          "isBay": false
+        },
+        {
+          "code": "3/4",
+          "name": "směr Ústí/Praha",
+          "isBay": false
+        },
+        {
+          "code": "3/5",
+          "name": "směr Ústí/Praha (obraty)",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "244a4e5d-4628-46d0-addc-d8453fec3ba0",
+      "code": "TVC",
+      "name": "Teplice v Čechách",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "u budovy",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Ústí",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "směr Most",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "fb7677e9-7bbf-4c6c-bc2b-65b6a69704b5",
+      "code": "BIL",
+      "name": "Bílina",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1/3",
+          "name": "směr Teplice (boční)",
+          "isBay": false
+        },
+        {
+          "code": "1/1",
+          "name": "směr Teplice",
+          "isBay": false
+        },
+        {
+          "code": "2/2",
+          "name": "směr Most",
+          "isBay": false
+        },
+        {
+          "code": "2/4",
+          "name": "směr Most (boční)",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "db61e3eb-4439-4a6a-b016-4cdfc57e42e6",
+      "code": "JZA",
+      "name": "Jirkov zastávka",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Karlovy Vary",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Most",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "c957c32b-e395-48bb-8095-0d53fc8a1874",
+      "code": "CHM",
+      "name": "Chomutov město",
+      "type": "hub",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Karlovy Vary / Žatec",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Most",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "620cc6e9-6e61-45f8-97fb-5da9fb4137e7",
+      "code": "KPR",
+      "name": "Kadaň-Prunéřov",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Kadaň",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Karlovy Vary",
+          "isBay": false
+        },
+        {
+          "code": "3",
+          "name": "směr Most",
+          "isBay": false
+        },
+        {
+          "code": "4",
+          "name": "příjezd z Kadaně",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "82923123-bab9-4815-a91d-7b78c9c5edd2",
+      "code": "KAD",
+      "name": "Kadaň",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1A",
+          "name": "obraty sever",
+          "isBay": true
+        },
+        {
+          "code": "1",
+          "name": "průjezdné",
+          "isBay": false
+        },
+        {
+          "code": "1B",
+          "name": "obraty jih",
+          "isBay": true
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "a9c55fef-21c1-4953-b4c1-bd3f0a447128",
+      "code": "KPE",
+      "name": "Kadaň předměstí",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1A",
+          "name": "obraty sever",
+          "isBay": true
+        },
+        {
+          "code": "1",
+          "name": "průjezdné",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "3f0a9072-1af8-4f16-88a4-1b014e0658bd",
+      "code": "JOL",
+      "name": "Jeníkov-Oldřichov",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Most/Litvínov",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Teplice",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "cd6f5c5b-f781-462c-875b-fd413ecb01e2",
+      "code": "LLI",
+      "name": "Louka u Litvínova",
+      "type": "regular",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "směr Litvínov/Most",
+          "isBay": false
+        },
+        {
+          "code": "2",
+          "name": "směr Teplice",
+          "isBay": false
+        }
+      ],
+      "isTerminal": false,
+      "country": "Czech"
+    },
+    {
+      "id": "21155c55-fb02-4195-b4bb-726721ff553f",
+      "code": "LIT",
+      "name": "Litvínov",
+      "type": "terminal",
+      "platforms": [
+        {
+          "code": "1",
+          "name": "",
+          "isBay": false
+        }
+      ],
+      "isTerminal": true,
       "country": "Czech"
     }
   ]

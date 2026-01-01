@@ -111,7 +111,7 @@
     {
       "id": "c43a086c-6315-4ea1-aec3-a5776d0b2974",
       "identifier": "R28",
-      "name": "R28 Opava -> Ostrava -> Brno -> Znojmo",
+      "name": "R28 Opava -> Ostrava -> Brno (-> Znojmo)",
       "color": "#8FB640",
       "textColor": "#000000",
       "type": "regional",
@@ -174,7 +174,7 @@
     {
       "id": "0a3595bc-7c62-40bf-92b4-251c53fd5a7a",
       "identifier": "Ex3",
-      "name": "Ex3 Berlin -> Praha -> Brno -> Wien -> Villach",
+      "name": "Ex3 Berlin -> Praha -> Brno -> Wien",
       "color": "#FF5500",
       "textColor": "#FFFFFF",
       "type": "intercity",

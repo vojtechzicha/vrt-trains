@@ -3550,6 +3550,1144 @@
       ],
       "createdAt": "2025-12-31T08:51:03.502Z",
       "updatedAt": "2025-12-31T08:51:03.502Z"
+    },
+    {
+      "id": "852d91e5-fc5c-46c8-9139-a7c0284a80f6",
+      "name": "341 Staré Město u Uh. Hradiště - Vlárský průsmyk, Újezdec u Luhačovic - Luhačovice",
+      "description": "",
+      "paths": [
+        {
+          "id": "089aa102-0c7e-4b55-a59d-035044288bde",
+          "name": "Staré Město u UH -> Vlárský průsmyk",
+          "stops": [
+            {
+              "stationId": "58df0937-8bdb-42fe-88d7-6f291ca8f1dd",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "036e32f4-333e-470e-b9ac-06a0d2da84b1",
+              "sequence": 2,
+              "distanceFromPrevious": 5,
+              "distanceKm": 5,
+              "fastTime": 6,
+              "slowTime": 6,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "552199af-96ca-488e-a9a7-8da660ee47cb",
+              "sequence": 3,
+              "distanceFromPrevious": 2,
+              "distanceKm": 7,
+              "fastTime": 3,
+              "slowTime": 3,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "9d378c18-cd6e-4698-8425-bd79a7461f63",
+              "sequence": 4,
+              "distanceFromPrevious": 15,
+              "distanceKm": 22,
+              "fastTime": 14,
+              "slowTime": 19,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "1d414a37-8721-4a34-a9d3-663a4903d950",
+              "sequence": 5,
+              "distanceFromPrevious": 4,
+              "distanceKm": 26,
+              "fastTime": 3,
+              "slowTime": 3,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "1cc7a506-6a82-47eb-9e82-cc8d79fdc423",
+              "sequence": 6,
+              "distanceFromPrevious": 9,
+              "distanceKm": 35,
+              "slowTime": 12,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "30a3f129-527d-48b4-a185-8858740057a8",
+              "sequence": 7,
+              "distanceFromPrevious": 15,
+              "distanceKm": 50,
+              "slowTime": 20,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "454e16ff-e533-4646-818a-ac1d5e47b815",
+              "sequence": 8,
+              "distanceFromPrevious": 28,
+              "distanceKm": 78,
+              "slowTime": 17,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "236539c1-384c-42b4-adf6-83b1236e7cf4",
+              "sequence": 9,
+              "distanceFromPrevious": 5,
+              "distanceKm": 83,
+              "slowTime": 6,
+              "defaultDwellTime": 0
+            }
+          ]
+        },
+        {
+          "id": "2693ae88-7496-4e18-86bc-19c11d2ae694",
+          "name": "Újezdec u Luhačovic -> Luhačovice",
+          "stops": [
+            {
+              "stationId": "1d414a37-8721-4a34-a9d3-663a4903d950",
+              "sequence": 1,
+              "distanceFromPrevious": 10,
+              "distanceKm": 0,
+              "vrtTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "8aa825e2-677d-46ab-a039-96c6f5ba376e",
+              "sequence": 2,
+              "distanceFromPrevious": 10,
+              "distanceKm": 10,
+              "fastTime": 13,
+              "slowTime": 14,
+              "defaultDwellTime": 5
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T10:16:12.074Z",
+      "updatedAt": "2025-12-31T10:17:26.433Z"
+    },
+    {
+      "id": "7d6fac81-0f5f-46b6-a00a-0890b816a02f",
+      "name": "251 Tišnov - Brno - Hustopeče u Brna, Hrušovany u Brna - Židlochovice",
+      "description": "",
+      "paths": [
+        {
+          "id": "609eeab8-272c-4b4d-80ab-4156bcead143",
+          "name": "Tišnov -> Brno hl.n.",
+          "stops": [
+            {
+              "stationId": "89272ea3-0df5-4c16-8b31-49e599883b6d",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "23e09942-90be-425d-b75b-04ebff923b7a",
+              "sequence": 2,
+              "distanceFromPrevious": 11,
+              "distanceKm": 11,
+              "fastTime": 8,
+              "slowTime": 12,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "0186361c-916c-4269-aca7-73e7b212646b",
+              "sequence": 3,
+              "distanceFromPrevious": 10,
+              "distanceKm": 21,
+              "fastTime": 7,
+              "slowTime": 10,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "36fb86c3-0d87-471f-b713-1ffba9d2839e",
+              "sequence": 4,
+              "distanceFromPrevious": 9,
+              "distanceKm": 30,
+              "fastTime": 8,
+              "slowTime": 9,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 5,
+              "distanceFromPrevious": 2,
+              "distanceKm": 32,
+              "fastTime": 5,
+              "slowTime": 5,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "566e85db-d2e1-4a1b-b543-d7c00a373022",
+          "name": "Brno hl.n. -> Hustopeče u Brna",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 2,
+              "distanceKm": 0,
+              "fastTime": 5,
+              "slowTime": 5,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "b5d428ed-309e-4c6a-ad3c-cae5200d54e2",
+              "sequence": 2,
+              "distanceFromPrevious": 7,
+              "distanceKm": 7,
+              "vrtTime": 5,
+              "fastTime": 6,
+              "slowTime": 6,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "ce9c23a2-2bae-4d26-aea6-6c4e34143d91",
+              "sequence": 3,
+              "distanceFromPrevious": 10,
+              "distanceKm": 17,
+              "fastTime": 5,
+              "slowTime": 44,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "a118074b-53fd-4ca0-b8f3-041d860a9399",
+              "sequence": 4,
+              "distanceFromPrevious": 17,
+              "distanceKm": 34,
+              "fastTime": 8,
+              "slowTime": 17,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "90426ef0-b85b-4e46-a5b1-562119a43c28",
+              "sequence": 5,
+              "distanceFromPrevious": 7,
+              "distanceKm": 41,
+              "slowTime": 7,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "74dd0e96-dc49-47a2-aafb-ed00182dc088",
+          "name": "Hrušovany u Brna -> Židlichovice",
+          "stops": [
+            {
+              "stationId": "ce9c23a2-2bae-4d26-aea6-6c4e34143d91",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "213ce3ca-5d2a-45fd-aa08-b935729fa06e",
+              "sequence": 2,
+              "distanceFromPrevious": 3,
+              "distanceKm": 3,
+              "slowTime": 4,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T13:51:26.503Z",
+      "updatedAt": "2025-12-31T13:51:26.503Z"
+    },
+    {
+      "id": "1602b7a6-2bdb-4ba7-af27-c5da1eea316c",
+      "name": "252 Šakvice - Břeclav",
+      "description": "",
+      "paths": [
+        {
+          "id": "3696446f-2af0-4f14-9971-2f5419f93c3c",
+          "name": "Šakvice -> Břeclav",
+          "stops": [
+            {
+              "stationId": "a118074b-53fd-4ca0-b8f3-041d860a9399",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "8a19e189-21a1-4495-abb2-15362f424f85",
+              "sequence": 2,
+              "distanceFromPrevious": 6,
+              "distanceKm": 6,
+              "fastTime": 4,
+              "slowTime": 4,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "82f85a57-c087-4d34-9995-a2bcad403062",
+              "sequence": 3,
+              "distanceFromPrevious": 8,
+              "distanceKm": 14,
+              "fastTime": 7,
+              "slowTime": 8,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "be869dec-a9e8-4115-b002-9c728e869000",
+              "sequence": 4,
+              "distanceFromPrevious": 11,
+              "distanceKm": 25,
+              "fastTime": 7,
+              "slowTime": 9,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T13:52:44.760Z",
+      "updatedAt": "2025-12-31T13:52:44.760Z"
+    },
+    {
+      "id": "8cf9b16b-9da2-4aa9-92d1-4fdf5c5decdd",
+      "name": "301 Nezamyslice - Prostějov - Olomouc",
+      "description": "",
+      "paths": [
+        {
+          "id": "03d27f8a-3d28-4d75-bea9-a7badc3e9f97",
+          "name": "Nezamyslice -> Olomouc",
+          "stops": [
+            {
+              "stationId": "f5405d4a-a9e8-4a72-a9fe-769f47f5018a",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "54247a3c-af05-4ec7-a5c5-46cfa2df11ef",
+              "sequence": 2,
+              "distanceFromPrevious": 19,
+              "distanceKm": 19,
+              "fastTime": 14,
+              "slowTime": 19,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "4e4dc494-2786-483f-9570-9d856b35c28c",
+              "sequence": 3,
+              "distanceFromPrevious": 20,
+              "distanceKm": 39,
+              "fastTime": 16,
+              "slowTime": 28,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T14:23:09.478Z",
+      "updatedAt": "2025-12-31T14:23:09.478Z"
+    },
+    {
+      "id": "4996fb58-fdd5-4f3e-9c52-929cd9d48ea3",
+      "name": "291 Zábřeh na Moravě - Kouty nad Desnou, Petrov nad Desnou - Sobotín",
+      "description": "",
+      "paths": [
+        {
+          "id": "2ef44b18-2492-4102-bdd1-06b231c89cc9",
+          "name": "Zábřeh na Moravě -> Kouty nad Desnou",
+          "stops": [
+            {
+              "stationId": "74bba77a-f8f8-427b-b3d9-6cc2d2c37e91",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "bdade9e0-d749-4d92-8576-dcbcd8a9a369",
+              "sequence": 2,
+              "distanceFromPrevious": 6,
+              "distanceKm": 6,
+              "fastTime": 7,
+              "slowTime": 7,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "242d36c9-dfe6-4c6a-b21a-aa5e76d4019f",
+              "sequence": 3,
+              "distanceFromPrevious": 2,
+              "distanceKm": 8,
+              "slowTime": 3,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "5caf03cc-968b-4f0a-a372-b592e9fc6088",
+              "sequence": 4,
+              "distanceFromPrevious": 5,
+              "distanceKm": 13,
+              "fastTime": 4,
+              "slowTime": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "5a6dc4e8-14bb-4e02-88eb-e0883739a442",
+              "sequence": 5,
+              "distanceFromPrevious": 6,
+              "distanceKm": 19,
+              "slowTime": 10,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "cb9920ba-4427-46f2-ad87-6953afe1fd3b",
+              "sequence": 6,
+              "distanceFromPrevious": 4,
+              "distanceKm": 23,
+              "slowTime": 10,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "fa59c31b-402d-45e2-a77a-9d42aae77656",
+              "sequence": 7,
+              "distanceFromPrevious": 7,
+              "distanceKm": 30,
+              "slowTime": 16,
+              "defaultDwellTime": 2
+            }
+          ]
+        },
+        {
+          "id": "226d366c-1525-4bdf-a4e5-60a7222967ed",
+          "name": "Petrov nad Desnou -> Sobotín",
+          "stops": [
+            {
+              "stationId": "5a6dc4e8-14bb-4e02-88eb-e0883739a442",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "4d435907-dc88-4a59-8974-5936bfc821dd",
+              "sequence": 2,
+              "distanceFromPrevious": 3,
+              "distanceKm": 3,
+              "slowTime": 6,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T14:31:39.017Z",
+      "updatedAt": "2025-12-31T14:31:39.017Z"
+    },
+    {
+      "id": "0f5fb967-efaa-4db9-a429-c37dead057f2",
+      "name": "004 RS4 Praha - Dresden, Praha - Most",
+      "description": "",
+      "paths": [
+        {
+          "id": "3f4b68b6-785f-442b-b9bb-8a5ce704402c",
+          "name": "Praha hl.n. -> Dresden Hbf",
+          "stops": [
+            {
+              "stationId": "570762",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "1d7c5413-ba12-4fb6-8f4b-74d052610f27",
+              "sequence": 2,
+              "distanceFromPrevious": 12,
+              "distanceKm": 12,
+              "vrtTime": 8,
+              "fastTime": 9,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "e01cc9fe-5ca2-40e6-bd63-42d6d9d25c6a",
+              "sequence": 3,
+              "distanceFromPrevious": 38,
+              "distanceKm": 50,
+              "vrtTime": 9,
+              "fastTime": 13,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "9c6deb02-ba9c-442f-815b-5f8279ed474c",
+              "sequence": 4,
+              "distanceFromPrevious": 33,
+              "distanceKm": 83,
+              "vrtTime": 8,
+              "fastTime": 11,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "82c5ed84-cc36-4462-8772-bcc6bad24eab",
+              "sequence": 5,
+              "distanceFromPrevious": 48,
+              "distanceKm": 131,
+              "fastTime": 26,
+              "defaultDwellTime": 3
+            }
+          ]
+        },
+        {
+          "id": "b3bb8cf1-802a-446c-8b9d-1bbea41b3164",
+          "name": "Praha Masarykovo nádraží -> Praha sever VRT",
+          "stops": [
+            {
+              "stationId": "a9716cca-c94d-46c5-be1d-888a6b96d26f",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "1d7c5413-ba12-4fb6-8f4b-74d052610f27",
+              "sequence": 2,
+              "distanceFromPrevious": 12,
+              "distanceKm": 12,
+              "vrtTime": 9,
+              "fastTime": 10,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "8e92f678-043a-40df-97e2-26b25898726b",
+          "name": "Praha-Libeň -> Praha sever VRT",
+          "stops": [
+            {
+              "stationId": "07b50bbb-fd18-41ef-baef-dd431fdae480",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "1d7c5413-ba12-4fb6-8f4b-74d052610f27",
+              "sequence": 2,
+              "distanceFromPrevious": 14,
+              "distanceKm": 14,
+              "vrtTime": 10,
+              "fastTime": 11,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "e746d2fb-a05a-401b-83b6-ee790f97c976",
+          "name": "Praha sever VRT -> Louny",
+          "stops": [
+            {
+              "stationId": "1d7c5413-ba12-4fb6-8f4b-74d052610f27",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "d18daa9f-8ac0-49ff-a0ba-26c193173c34",
+              "sequence": 2,
+              "distanceFromPrevious": 52,
+              "distanceKm": 52,
+              "vrtTime": 22,
+              "fastTime": 28,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "20176d87-06db-4ee5-a41e-a6050b255fbf",
+          "name": "Praha sever VRT -> Most",
+          "stops": [
+            {
+              "stationId": "1d7c5413-ba12-4fb6-8f4b-74d052610f27",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "5c0d960b-60d6-43d6-8d30-3a102d9b850d",
+              "sequence": 2,
+              "distanceFromPrevious": 74,
+              "distanceKm": 74,
+              "vrtTime": 35,
+              "fastTime": 45,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "a94b64f6-8bd7-48eb-9795-6ec0e387d663",
+          "name": "Roudnice nad Labem VRT -> Lovosice",
+          "stops": [
+            {
+              "stationId": "e01cc9fe-5ca2-40e6-bd63-42d6d9d25c6a",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "f8cc1eb1-b821-4dfc-ad69-318dfddfcb37",
+              "sequence": 2,
+              "distanceFromPrevious": 7,
+              "distanceKm": 7,
+              "vrtTime": 5,
+              "fastTime": 5,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "84787b1c-a0b7-4525-ba62-6caa9fe5bff5",
+          "name": "Roudnice nad Labem VRT -> Litoměřice",
+          "stops": [
+            {
+              "stationId": "e01cc9fe-5ca2-40e6-bd63-42d6d9d25c6a",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "31b312cc-6c9a-46e0-8339-6e9b78af0e75",
+              "sequence": 2,
+              "distanceFromPrevious": 12,
+              "distanceKm": 12,
+              "vrtTime": 9,
+              "fastTime": 9,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "9690fe1e-3528-4d17-a281-f639c8e3e3f2",
+          "name": "Teplice v Čechách -> Dresden Hbf",
+          "stops": [
+            {
+              "stationId": "244a4e5d-4628-46d0-addc-d8453fec3ba0",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "82c5ed84-cc36-4462-8772-bcc6bad24eab",
+              "sequence": 2,
+              "distanceFromPrevious": 58,
+              "distanceKm": 58,
+              "fastTime": 33,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T20:59:30.783Z",
+      "updatedAt": "2026-01-01T09:49:08.916Z"
+    },
+    {
+      "id": "84d9ccf4-7753-4996-803c-e729dfdd2abc",
+      "name": "D1 Berlin Hbf -> Dresden Hbf",
+      "description": "",
+      "paths": [
+        {
+          "id": "667a6ed7-889e-426d-9593-6ec0f8355c09",
+          "name": "Berlin Hbf -> Dresden Hbf",
+          "stops": [
+            {
+              "stationId": "85699259-4aec-4cd1-874e-4f55665f44a5",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 5
+            },
+            {
+              "stationId": "64f7a87f-7b0c-4a3b-8382-d5542b70ed59",
+              "sequence": 2,
+              "distanceFromPrevious": 6,
+              "distanceKm": 6,
+              "fastTime": 6,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "0d58a15a-9e72-4482-a7cb-db0d3f888df1",
+              "sequence": 3,
+              "distanceFromPrevious": 195,
+              "distanceKm": 201,
+              "fastTime": 80,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "82c5ed84-cc36-4462-8772-bcc6bad24eab",
+              "sequence": 4,
+              "distanceFromPrevious": 4,
+              "distanceKm": 205,
+              "fastTime": 5,
+              "defaultDwellTime": 3
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T21:03:18.407Z",
+      "updatedAt": "2025-12-31T21:03:18.407Z"
+    },
+    {
+      "id": "229c2d94-4745-4040-a2d4-793516e8a064",
+      "name": "002 RS2 Brno - Podivín",
+      "description": "",
+      "paths": [
+        {
+          "id": "65bfab4b-e0e8-40d6-9330-97596004292d",
+          "name": "Brno hl.n. -> Podivín",
+          "stops": [
+            {
+              "stationId": "bd714298-6633-4d19-92aa-b1f4c42f0a6b",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "82f85a57-c087-4d34-9995-a2bcad403062",
+              "sequence": 2,
+              "distanceFromPrevious": 45,
+              "distanceKm": 45,
+              "vrtTime": 17,
+              "fastTime": 21,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "e8d45c20-267f-4e69-b71b-2553108f68c4",
+          "name": "Brno Vídeňská VRT -> Podivín",
+          "stops": [
+            {
+              "stationId": "01",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "82f85a57-c087-4d34-9995-a2bcad403062",
+              "sequence": 2,
+              "distanceFromPrevious": 38,
+              "distanceKm": 38,
+              "vrtTime": 11,
+              "fastTime": 14,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T21:07:30.587Z",
+      "updatedAt": "2025-12-31T21:13:39.876Z"
+    },
+    {
+      "id": "d7691584-7d21-45cf-9e8d-b33f5b08ed8f",
+      "name": "A1 Břeclav - Wien - Budapest-Deli",
+      "description": "",
+      "paths": [
+        {
+          "id": "e5633167-0c55-4981-b1ab-f2090522778d",
+          "name": "Břeclav -> Budapest-Deli pu",
+          "stops": [
+            {
+              "stationId": "be869dec-a9e8-4115-b002-9c728e869000",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "773825f6-0162-4d1c-b73b-7d87e18ae62d",
+              "sequence": 2,
+              "distanceFromPrevious": 90,
+              "distanceKm": 90,
+              "fastTime": 61,
+              "defaultDwellTime": 6
+            },
+            {
+              "stationId": "00a0e0ed-e491-449a-a6fd-5e4169ebf291",
+              "sequence": 3,
+              "distanceFromPrevious": 3,
+              "distanceKm": 93,
+              "fastTime": 6,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "1104677f-a85f-4309-94b8-9ab6bf00427f",
+              "sequence": 4,
+              "distanceFromPrevious": 69,
+              "distanceKm": 162,
+              "fastTime": 45,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "1d4b74f8-f806-4ec4-90d7-f5f770ca7074",
+              "sequence": 5,
+              "distanceFromPrevious": 11,
+              "distanceKm": 173,
+              "fastTime": 8,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "2d19af86-2001-4fac-8802-ddf996ba1d53",
+              "sequence": 6,
+              "distanceFromPrevious": 36,
+              "distanceKm": 209,
+              "fastTime": 18,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "0f2af08b-38b5-4880-a197-60d358292995",
+              "sequence": 7,
+              "distanceFromPrevious": 127,
+              "distanceKm": 336,
+              "fastTime": 68,
+              "defaultDwellTime": 9
+            },
+            {
+              "stationId": "ec0f7222-bf9e-4925-82fb-01ca97e5a2db",
+              "sequence": 8,
+              "distanceFromPrevious": 10,
+              "distanceKm": 346,
+              "fastTime": 7,
+              "defaultDwellTime": 5
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T21:12:13.302Z",
+      "updatedAt": "2025-12-31T21:12:13.302Z"
+    },
+    {
+      "id": "20c88252-947a-40cb-9df5-ae2eb28a03ce",
+      "name": "SK3 (+H) Břeclav - Bratislava - Budapest-Nyugati",
+      "description": "",
+      "paths": [
+        {
+          "id": "5e67ebca-ec47-45eb-8fab-004e257a41da",
+          "name": "Břeclav -> Budapest-Nyugati",
+          "stops": [
+            {
+              "stationId": "be869dec-a9e8-4115-b002-9c728e869000",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "c46ea047-5670-412b-8b75-0a99915cb120",
+              "sequence": 2,
+              "distanceFromPrevious": 18,
+              "distanceKm": 18,
+              "fastTime": 13,
+              "defaultDwellTime": 4
+            },
+            {
+              "stationId": "3cf958f8-ca91-4898-b805-002575b8f0db",
+              "sequence": 3,
+              "distanceFromPrevious": 64,
+              "distanceKm": 82,
+              "fastTime": 53,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "8fb33b98-ce5f-4784-b582-2a331c7b24da",
+              "sequence": 4,
+              "distanceFromPrevious": 91,
+              "distanceKm": 173,
+              "fastTime": 52,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "ac11bfa3-1cbf-452c-8187-16e7bd8424e8",
+              "sequence": 5,
+              "distanceFromPrevious": 44,
+              "distanceKm": 217,
+              "fastTime": 25,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "749937ad-8f59-4e59-82fd-fa1683673ad9",
+              "sequence": 6,
+              "distanceFromPrevious": 15,
+              "distanceKm": 232,
+              "fastTime": 10,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "419f2e35-a31e-4b5e-bfb4-f214d9d62a03",
+              "sequence": 7,
+              "distanceFromPrevious": 13,
+              "distanceKm": 245,
+              "fastTime": 10,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "061fffc8-7ab5-40f8-ae35-755724394006",
+              "sequence": 8,
+              "distanceFromPrevious": 17,
+              "distanceKm": 262,
+              "fastTime": 13,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "6d5582a3-4bce-40c7-9206-f140d674ab3e",
+              "sequence": 9,
+              "distanceFromPrevious": 34,
+              "distanceKm": 296,
+              "fastTime": 26,
+              "defaultDwellTime": 5
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-12-31T21:30:36.441Z",
+      "updatedAt": "2025-12-31T21:30:36.441Z"
+    },
+    {
+      "id": "c04c9957-a8d5-4062-93f3-08b548e3b692",
+      "name": "130 Děčín - Kadaň předměstí",
+      "description": "",
+      "paths": [
+        {
+          "id": "44b2328e-00ce-4f56-88be-0b64f693a9fe",
+          "name": "Děčín - Kadaň předměstí",
+          "stops": [
+            {
+              "stationId": "fa24c963-de49-4b34-af40-72776aaad7d3",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "ee8fff1e-1c8d-419f-b011-1e39d96073ca",
+              "sequence": 2,
+              "distanceFromPrevious": 23,
+              "distanceKm": 23,
+              "fastTime": 15,
+              "slowTime": 27,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "9c6deb02-ba9c-442f-815b-5f8279ed474c",
+              "sequence": 3,
+              "distanceFromPrevious": 1,
+              "distanceKm": 24,
+              "fastTime": 3,
+              "slowTime": 3,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "73ee92a6-9ffb-42ee-b04b-58cd5b5dc663",
+              "sequence": 4,
+              "distanceFromPrevious": 11,
+              "distanceKm": 35,
+              "slowTime": 12,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "244a4e5d-4628-46d0-addc-d8453fec3ba0",
+              "sequence": 5,
+              "distanceFromPrevious": 5,
+              "distanceKm": 40,
+              "fastTime": 6,
+              "slowTime": 8,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "3f0a9072-1af8-4f16-88a4-1b014e0658bd",
+              "sequence": 6,
+              "distanceFromPrevious": 6,
+              "distanceKm": 46,
+              "fastTime": 4,
+              "slowTime": 5,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "fb7677e9-7bbf-4c6c-bc2b-65b6a69704b5",
+              "sequence": 7,
+              "distanceFromPrevious": 11,
+              "distanceKm": 57,
+              "fastTime": 7,
+              "slowTime": 12,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "5c0d960b-60d6-43d6-8d30-3a102d9b850d",
+              "sequence": 8,
+              "distanceFromPrevious": 12,
+              "distanceKm": 69,
+              "fastTime": 11,
+              "slowTime": 13,
+              "defaultDwellTime": 3
+            },
+            {
+              "stationId": "db61e3eb-4439-4a6a-b016-4cdfc57e42e6",
+              "sequence": 9,
+              "distanceFromPrevious": 17,
+              "distanceKm": 86,
+              "fastTime": 15,
+              "slowTime": 15,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "c957c32b-e395-48bb-8095-0d53fc8a1874",
+              "sequence": 10,
+              "distanceFromPrevious": 3,
+              "distanceKm": 89,
+              "fastTime": 5,
+              "slowTime": 5,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "620cc6e9-6e61-45f8-97fb-5da9fb4137e7",
+              "sequence": 11,
+              "distanceFromPrevious": 13,
+              "distanceKm": 102,
+              "fastTime": 12,
+              "slowTime": 13,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "82923123-bab9-4815-a91d-7b78c9c5edd2",
+              "sequence": 12,
+              "distanceFromPrevious": 2,
+              "distanceKm": 104,
+              "slowTime": 7,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "a9c55fef-21c1-4953-b4c1-bd3f0a447128",
+              "sequence": 13,
+              "distanceFromPrevious": 1,
+              "distanceKm": 105,
+              "slowTime": 1,
+              "defaultDwellTime": 1
+            }
+          ]
+        },
+        {
+          "id": "1454ed57-1575-4724-b506-7dc02e815f78",
+          "name": "Ústí nad Labem hl.n. -> Teplice v Čechách (přes VRT)",
+          "stops": [
+            {
+              "stationId": "ee8fff1e-1c8d-419f-b011-1e39d96073ca",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "9c6deb02-ba9c-442f-815b-5f8279ed474c",
+              "sequence": 2,
+              "distanceFromPrevious": 1,
+              "distanceKm": 1,
+              "vrtTime": 3,
+              "fastTime": 3,
+              "slowTime": 3,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "73ee92a6-9ffb-42ee-b04b-58cd5b5dc663",
+              "sequence": 3,
+              "distanceFromPrevious": 11,
+              "distanceKm": 12,
+              "vrtTime": 9,
+              "fastTime": 10,
+              "slowTime": 12,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "244a4e5d-4628-46d0-addc-d8453fec3ba0",
+              "sequence": 4,
+              "distanceFromPrevious": 5,
+              "distanceKm": 17,
+              "fastTime": 6,
+              "slowTime": 8,
+              "defaultDwellTime": 2
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-01-01T09:46:37.408Z",
+      "updatedAt": "2026-01-01T09:54:08.679Z"
+    },
+    {
+      "id": "e37d1312-54dd-4215-bc49-c9bf8cd594be",
+      "name": "134 Teplice v Čechách - Litvínov",
+      "description": "",
+      "paths": [
+        {
+          "id": "12561ec1-9eee-410f-9c12-e201b120938e",
+          "name": "Teplice v Čechách - Litvínov",
+          "stops": [
+            {
+              "stationId": "244a4e5d-4628-46d0-addc-d8453fec3ba0",
+              "sequence": 1,
+              "distanceFromPrevious": 0,
+              "distanceKm": 0,
+              "vrtTime": 0,
+              "defaultDwellTime": 2
+            },
+            {
+              "stationId": "3f0a9072-1af8-4f16-88a4-1b014e0658bd",
+              "sequence": 2,
+              "distanceFromPrevious": 6,
+              "distanceKm": 6,
+              "fastTime": 4,
+              "slowTime": 5,
+              "defaultDwellTime": 0
+            },
+            {
+              "stationId": "cd6f5c5b-f781-462c-875b-fd413ecb01e2",
+              "sequence": 3,
+              "distanceFromPrevious": 10,
+              "distanceKm": 16,
+              "fastTime": 7,
+              "slowTime": 8,
+              "defaultDwellTime": 1
+            },
+            {
+              "stationId": "21155c55-fb02-4195-b4bb-726721ff553f",
+              "sequence": 4,
+              "distanceFromPrevious": 2,
+              "distanceKm": 18,
+              "slowTime": 3,
+              "defaultDwellTime": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-01-01T09:55:27.803Z",
+      "updatedAt": "2026-01-01T09:55:27.803Z"
     }
   ]
 }
