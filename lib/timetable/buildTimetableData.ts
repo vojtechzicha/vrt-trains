@@ -250,6 +250,60 @@ export function findCommonStationWithSorted(
 }
 
 /**
+ * Find the BEST common station (most trains have it) between entry and sorted entries.
+ * Unlike findCommonStationWithSorted which returns the first match, this finds
+ * the station shared by the most sorted entries for better sorting accuracy.
+ */
+export function findBestCommonStationWithSorted(
+  entry: TimetableEntry,
+  sortedEntries: TimetableEntry[],
+  stationOrder: string[]
+): { stationId: string | null; sortTime: string } {
+  let bestStation: string | null = null;
+  let bestCount = 0;
+  let bestSortTime = '99:99';
+
+  for (const stationId of stationOrder) {
+    if (entry.times.has(stationId)) {
+      const count = sortedEntries.filter((sorted) => sorted.times.has(stationId)).length;
+      if (count > bestCount) {
+        bestCount = count;
+        bestStation = stationId;
+        const timeData = entry.times.get(stationId)!;
+        bestSortTime = timeData.departure || timeData.arrival || '99:99';
+      }
+    }
+  }
+
+  return { stationId: bestStation, sortTime: bestSortTime };
+}
+
+/**
+ * Get the first departure/arrival time for an entry within the given station order.
+ * If firstStationIdx is not set, calculates it on-the-fly.
+ */
+function getFirstStationTime(entry: TimetableEntry, stationOrder: string[]): string {
+  let firstIdx = entry.firstStationIdx;
+
+  // If firstStationIdx is not set, calculate it
+  if (firstIdx < 0) {
+    for (let i = 0; i < stationOrder.length; i++) {
+      if (entry.times.has(stationOrder[i])) {
+        firstIdx = i;
+        break;
+      }
+    }
+  }
+
+  if (firstIdx < 0 || firstIdx >= stationOrder.length) {
+    return '99:99';
+  }
+  const firstStation = stationOrder[firstIdx];
+  const time = entry.times.get(firstStation);
+  return time?.departure || time?.arrival || '99:99';
+}
+
+/**
  * Get the sort time for an entry at a specific station.
  */
 export function getTimeAtStation(entry: TimetableEntry, stationId: string): string {
@@ -261,10 +315,73 @@ export function getTimeAtStation(entry: TimetableEntry, stationId: string): stri
 }
 
 /**
- * Sort entries using a holistic approach:
- * 1. Find station with most trains, sort those by departure time at that station
- * 2. For each remaining train, find common station with sorted trains and insert
- * 3. If no common station, use first departure as fallback
+ * Find the first common station between two entries, following station order.
+ */
+function findPairwiseCommonStation(
+  entry1: TimetableEntry,
+  entry2: TimetableEntry,
+  stationOrder: string[]
+): string | null {
+  for (const stationId of stationOrder) {
+    if (entry1.times.has(stationId) && entry2.times.has(stationId)) {
+      return stationId;
+    }
+  }
+  return null;
+}
+
+/**
+ * Find the correct position to insert an entry into the sorted list.
+ * Uses pairwise common station comparison when available, falls back to first station time.
+ */
+function findInsertPosition(
+  entry: TimetableEntry,
+  sorted: TimetableEntry[],
+  stationOrder: string[],
+  overnightMap: Map<string, boolean>
+): number {
+  if (sorted.length === 0) return 0;
+
+  const entryIsOvernight = overnightMap.get(entry.trainNumber) || false;
+  const entryFirstTime = getFirstStationTime(entry, stationOrder);
+  const entryFirstTimePenalized = applyOvernightPenalty(entryFirstTime, entryIsOvernight);
+
+  for (let j = 0; j < sorted.length; j++) {
+    const sortedEntry = sorted[j];
+    const sortedIsOvernight = overnightMap.get(sortedEntry.trainNumber) || false;
+
+    // Find a station that BOTH this entry and the sorted entry have
+    const pairCommonStation = findPairwiseCommonStation(entry, sortedEntry, stationOrder);
+
+    if (pairCommonStation) {
+      // Both have a common station - compare at that station
+      const entryTime = getTimeAtStation(entry, pairCommonStation);
+      const entryTimePenalized = applyOvernightPenalty(entryTime, entryIsOvernight);
+      const sortedTime = getTimeAtStation(sortedEntry, pairCommonStation);
+      const sortedTimePenalized = applyOvernightPenalty(sortedTime, sortedIsOvernight);
+
+      if (compareTime(entryTimePenalized, sortedTimePenalized) <= 0) {
+        return j;
+      }
+    } else {
+      // No common station - compare first station times
+      const sortedFirstTime = getFirstStationTime(sortedEntry, stationOrder);
+      const sortedFirstTimePenalized = applyOvernightPenalty(sortedFirstTime, sortedIsOvernight);
+      if (compareTime(entryFirstTimePenalized, sortedFirstTimePenalized) <= 0) {
+        return j;
+      }
+    }
+  }
+
+  return sorted.length;
+}
+
+/**
+ * Sort entries using a multi-pass holistic approach:
+ * 1. Find station with most trains among unsorted, sort those by time at that station
+ * 2. Merge sorted group into the result list at correct positions
+ * 3. Repeat for remaining unsorted entries until no station has 2+ trains
+ * 4. For remaining single entries, sort by first appearance time
  */
 export function sortEntriesHolistically(
   entries: TimetableEntry[],
@@ -274,111 +391,63 @@ export function sortEntriesHolistically(
   if (entries.length === 0) return [];
   if (entries.length === 1) return [...entries];
 
-  // Create a map from trainNumber to timetable for fallback times
+  // Create lookup maps
   const timetableMap = new Map(timetables.map((tt) => [tt.trainNumber, tt]));
-
-  // Create a map of overnight trains for applying sort penalty
   const overnightMap = new Map(timetables.map((tt) => [tt.trainNumber, isOvernightTrain(tt)]));
 
-  // Helper to get sort time with overnight penalty applied
   const getSortTimeWithPenalty = (entry: TimetableEntry, stationId: string): string => {
     const time = getTimeAtStation(entry, stationId);
     return applyOvernightPenalty(time, overnightMap.get(entry.trainNumber) || false);
   };
 
   const sorted: TimetableEntry[] = [];
-  const unsorted = [...entries];
+  let unsorted = [...entries];
 
+  // PHASE 1: Multi-pass sorting by common stations
+  // Keep finding "best station" among unsorted trains until none has 2+ trains
   while (unsorted.length > 0) {
-    if (sorted.length === 0) {
-      // First group: find station with most trains
-      const { stationId, count } = findBestStation(unsorted, stationOrder);
+    const { stationId, count } = findBestStation(unsorted, stationOrder);
 
-      if (stationId && count > 1) {
-        // Get all entries that pass through this station
-        const atStation = unsorted.filter((e) => e.times.has(stationId));
-        const notAtStation = unsorted.filter((e) => !e.times.has(stationId));
+    if (stationId && count > 1) {
+      // Sort trains at this station
+      const atStation = unsorted.filter((e) => e.times.has(stationId));
+      const notAtStation = unsorted.filter((e) => !e.times.has(stationId));
 
-        // Sort by time at this station (with overnight penalty)
-        atStation.forEach((e) => {
-          e.sortTime = getSortTimeWithPenalty(e, stationId);
-        });
-        atStation.sort((a, b) => compareTime(a.sortTime, b.sortTime));
+      atStation.forEach((e) => {
+        e.sortTime = getSortTimeWithPenalty(e, stationId);
+      });
+      atStation.sort((a, b) => compareTime(a.sortTime, b.sortTime));
 
-        // Add to sorted list
-        sorted.push(...atStation);
-
-        // Update unsorted to only contain entries not at this station
-        unsorted.length = 0;
-        unsorted.push(...notAtStation);
-      } else {
-        // No good station found, sort all by first departure
-        unsorted.forEach((e) => {
-          const tt = timetableMap.get(e.trainNumber);
-          e.sortTime = tt ? getFirstDepartureTime(tt) : '99:99';
-        });
-        unsorted.sort((a, b) => compareTime(a.sortTime, b.sortTime));
-        sorted.push(...unsorted);
-        unsorted.length = 0;
-      }
-    } else {
-      // Subsequent groups: try to find common station with already sorted
-      let inserted = false;
-
-      for (let i = 0; i < unsorted.length; i++) {
-        const entry = unsorted[i];
-        const { stationId, sortTime } = findCommonStationWithSorted(entry, sorted, stationOrder);
-
-        if (stationId) {
-          // Apply overnight penalty to sort time
-          const isOvernight = overnightMap.get(entry.trainNumber) || false;
-          const penalizedSortTime = applyOvernightPenalty(sortTime, isOvernight);
-          entry.sortTime = penalizedSortTime;
-
-          // Find insertion position in sorted list
-          let insertIdx = sorted.length;
-          for (let j = 0; j < sorted.length; j++) {
-            const sortedTime = getSortTimeWithPenalty(sorted[j], stationId);
-            if (sortedTime !== '99:99' && compareTime(penalizedSortTime, sortedTime) <= 0) {
-              insertIdx = j;
-              break;
-            }
-          }
-
-          // Insert at the correct position
-          sorted.splice(insertIdx, 0, entry);
-          unsorted.splice(i, 1);
-          inserted = true;
-          break;
-        }
-      }
-
-      if (!inserted) {
-        // No common station found for any remaining entry
-        // Use first departure as fallback and start a new group
-        const entry = unsorted[0];
-        const tt = timetableMap.get(entry.trainNumber);
-        const isOvernight = overnightMap.get(entry.trainNumber) || false;
-        const firstDep = tt ? getFirstDepartureTime(tt) : '99:99';
-        entry.sortTime = applyOvernightPenalty(firstDep, isOvernight);
-
-        // Find insertion position based on first departure (with penalty)
-        let insertIdx = sorted.length;
-        for (let j = 0; j < sorted.length; j++) {
-          if (compareTime(entry.sortTime, sorted[j].sortTime) <= 0) {
-            insertIdx = j;
-            break;
-          }
-        }
-
+      // Merge into sorted list at correct positions
+      for (const entry of atStation) {
+        const insertIdx = findInsertPosition(entry, sorted, stationOrder, overnightMap);
         sorted.splice(insertIdx, 0, entry);
-        unsorted.shift();
       }
+
+      unsorted = notAtStation;
+    } else {
+      // No station has 2+ trains - break to fallback phase
+      break;
     }
   }
 
-  // After sorting, set sortTime to first departure for consistency
-  // (the order is determined by the holistic algorithm, sortTime is just for display/debugging)
+  // PHASE 2: Fallback - sort remaining by first appearance time
+  if (unsorted.length > 0) {
+    unsorted.forEach((e) => {
+      const isOvernight = overnightMap.get(e.trainNumber) || false;
+      const firstTime = getFirstStationTime(e, stationOrder);
+      e.sortTime = applyOvernightPenalty(firstTime, isOvernight);
+    });
+    unsorted.sort((a, b) => compareTime(a.sortTime, b.sortTime));
+
+    // Insert each into sorted list
+    for (const entry of unsorted) {
+      const insertIdx = findInsertPosition(entry, sorted, stationOrder, overnightMap);
+      sorted.splice(insertIdx, 0, entry);
+    }
+  }
+
+  // Reset sortTime to first departure for consistency
   sorted.forEach((entry) => {
     const tt = timetableMap.get(entry.trainNumber);
     entry.sortTime = tt ? getFirstDepartureTime(tt) : '99:99';

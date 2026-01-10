@@ -8,7 +8,7 @@ import {
   applyOvernightPenalty,
   getTimeAtStation,
   findBestStation,
-  findCommonStationWithSorted,
+  findBestCommonStationWithSorted,
 } from './buildTimetableData';
 
 /**
@@ -197,8 +197,98 @@ export function determineTrainContinuation(
 }
 
 /**
- * Sort route timetable entries using the holistic approach.
- * Adapted from sortEntriesHolistically but works with RouteTimetableEntry.
+ * Get the first departure/arrival time for an entry on this route.
+ * If firstStationIdx is not set, calculates it on-the-fly.
+ */
+function getFirstRouteTime(entry: RouteTimetableEntry, stationOrder: string[]): string {
+  let firstIdx = entry.firstStationIdx;
+
+  // If firstStationIdx is not set, calculate it
+  if (firstIdx < 0) {
+    for (let i = 0; i < stationOrder.length; i++) {
+      if (entry.times.has(stationOrder[i])) {
+        firstIdx = i;
+        break;
+      }
+    }
+  }
+
+  if (firstIdx < 0 || firstIdx >= stationOrder.length) {
+    return '99:99';
+  }
+  const firstStation = stationOrder[firstIdx];
+  const time = entry.times.get(firstStation);
+  return time?.departure || time?.arrival || '99:99';
+}
+
+/**
+ * Find the correct position to insert an entry into the sorted list.
+ * Uses best common station comparison when available, falls back to first route time.
+ */
+/**
+ * Find the first common station between two entries, following station order.
+ */
+function findPairwiseCommonStation(
+  entry1: RouteTimetableEntry,
+  entry2: RouteTimetableEntry,
+  stationOrder: string[]
+): string | null {
+  for (const stationId of stationOrder) {
+    if (entry1.times.has(stationId) && entry2.times.has(stationId)) {
+      return stationId;
+    }
+  }
+  return null;
+}
+
+function findRouteInsertPosition(
+  entry: RouteTimetableEntry,
+  sorted: RouteTimetableEntry[],
+  stationOrder: string[],
+  overnightMap: Map<string, boolean>
+): number {
+  if (sorted.length === 0) return 0;
+
+  const entryIsOvernight = overnightMap.get(entry.trainNumber) || false;
+  const entryFirstTime = getFirstRouteTime(entry, stationOrder);
+  const entryFirstTimePenalized = applyOvernightPenalty(entryFirstTime, entryIsOvernight);
+
+  for (let j = 0; j < sorted.length; j++) {
+    const sortedEntry = sorted[j];
+    const sortedIsOvernight = overnightMap.get(sortedEntry.trainNumber) || false;
+
+    // Find a station that BOTH this entry and the sorted entry have
+    const pairCommonStation = findPairwiseCommonStation(entry, sortedEntry, stationOrder);
+
+    if (pairCommonStation) {
+      // Both have a common station - compare at that station
+      const entryTime = getTimeAtStation(entry, pairCommonStation);
+      const entryTimePenalized = applyOvernightPenalty(entryTime, entryIsOvernight);
+      const sortedTime = getTimeAtStation(sortedEntry, pairCommonStation);
+      const sortedTimePenalized = applyOvernightPenalty(sortedTime, sortedIsOvernight);
+
+      if (compareTime(entryTimePenalized, sortedTimePenalized) <= 0) {
+        return j;
+      }
+    } else {
+      // No common station - compare first route times
+      const sortedFirstTime = getFirstRouteTime(sortedEntry, stationOrder);
+      const sortedFirstTimePenalized = applyOvernightPenalty(sortedFirstTime, sortedIsOvernight);
+      if (compareTime(entryFirstTimePenalized, sortedFirstTimePenalized) <= 0) {
+        return j;
+      }
+    }
+  }
+
+  return sorted.length;
+}
+
+/**
+ * Sort route timetable entries using a multi-pass holistic approach.
+ * 1. Find station with most trains among unsorted, sort those by time at that station
+ * 2. Merge sorted group into the result list at correct positions
+ * 3. Repeat for remaining unsorted entries until no station has 2+ trains
+ * 4. For remaining single entries, sort by first route appearance time
  */
 function sortRouteEntriesHolistically(
   entries: RouteTimetableEntry[],
@@ -218,79 +308,49 @@ function sortRouteEntriesHolistically(
   };
 
   const sorted: RouteTimetableEntry[] = [];
-  const unsorted = [...entries];
+  let unsorted = [...entries];
 
+  // PHASE 1: Multi-pass sorting by common stations
+  // Keep finding "best station" among unsorted trains until none has 2+ trains
   while (unsorted.length > 0) {
-    if (sorted.length === 0) {
-      const { stationId, count } = findBestStation(unsorted, stationOrder);
+    const { stationId, count } = findBestStation(unsorted, stationOrder);
 
-      if (stationId && count > 1) {
-        const atStation = unsorted.filter((e) => e.times.has(stationId));
-        const notAtStation = unsorted.filter((e) => !e.times.has(stationId));
+    if (stationId && count > 1) {
+      // Sort trains at this station
+      const atStation = unsorted.filter((e) => e.times.has(stationId));
+      const notAtStation = unsorted.filter((e) => !e.times.has(stationId));
 
-        atStation.forEach((e) => {
-          e.sortTime = getSortTimeWithPenalty(e, stationId);
-        });
-        atStation.sort((a, b) => compareTime(a.sortTime, b.sortTime));
+      atStation.forEach((e) => {
+        e.sortTime = getSortTimeWithPenalty(e, stationId);
+      });
+      atStation.sort((a, b) => compareTime(a.sortTime, b.sortTime));
 
-        sorted.push(...atStation);
-        unsorted.length = 0;
-        unsorted.push(...notAtStation);
-      } else {
-        unsorted.forEach((e) => {
-          const tt = timetableMap.get(e.trainNumber);
-          e.sortTime = tt ? getFirstDepartureTime(tt) : '99:99';
-        });
-        unsorted.sort((a, b) => compareTime(a.sortTime, b.sortTime));
-        sorted.push(...unsorted);
-        unsorted.length = 0;
-      }
-    } else {
-      let inserted = false;
-
-      for (let i = 0; i < unsorted.length; i++) {
-        const entry = unsorted[i];
-        const { stationId, sortTime } = findCommonStationWithSorted(entry, sorted, stationOrder);
-
-        if (stationId) {
-          const isOvernight = overnightMap.get(entry.trainNumber) || false;
-          const penalizedSortTime = applyOvernightPenalty(sortTime, isOvernight);
-          entry.sortTime = penalizedSortTime;
-
-          let insertIdx = sorted.length;
-          for (let j = 0; j < sorted.length; j++) {
-            const sortedTime = getSortTimeWithPenalty(sorted[j], stationId);
-            if (sortedTime !== '99:99' && compareTime(penalizedSortTime, sortedTime) <= 0) {
-              insertIdx = j;
-              break;
-            }
-          }
-
-          sorted.splice(insertIdx, 0, entry);
-          unsorted.splice(i, 1);
-          inserted = true;
-          break;
-        }
-      }
-
-      if (!inserted) {
-        const entry = unsorted[0];
-        const tt = timetableMap.get(entry.trainNumber);
-        const isOvernight = overnightMap.get(entry.trainNumber) || false;
-        const firstDep = tt ? getFirstDepartureTime(tt) : '99:99';
-        entry.sortTime = applyOvernightPenalty(firstDep, isOvernight);
-
-        let insertIdx = sorted.length;
-        for (let j = 0; j < sorted.length; j++) {
-          if (compareTime(entry.sortTime, sorted[j].sortTime) <= 0) {
-            insertIdx = j;
-            break;
-          }
-        }
-
+      // Merge into sorted list at correct positions
+      for (const entry of atStation) {
+        const insertIdx = findRouteInsertPosition(entry, sorted, stationOrder, overnightMap);
         sorted.splice(insertIdx, 0, entry);
-        unsorted.shift();
       }
+
+      unsorted = notAtStation;
+    } else {
+      // No station has 2+ trains - break to fallback phase
+      break;
+    }
+  }
+
+  // PHASE 2: Fallback - sort remaining by first route appearance time
+  if (unsorted.length > 0) {
+    unsorted.forEach((e) => {
+      const isOvernight = overnightMap.get(e.trainNumber) || false;
+      const firstTime = getFirstRouteTime(e, stationOrder);
+      e.sortTime = applyOvernightPenalty(firstTime, isOvernight);
+    });
+    unsorted.sort((a, b) => compareTime(a.sortTime, b.sortTime));
+
+    // Insert each into sorted list
+    for (const entry of unsorted) {
+      const insertIdx = findRouteInsertPosition(entry, sorted, stationOrder, overnightMap);
+      sorted.splice(insertIdx, 0, entry);
     }
   }
 

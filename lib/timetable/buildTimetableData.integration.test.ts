@@ -2,7 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { buildTimetableData } from './buildTimetableData';
-import { Variant, Timetable, Line } from '@/types';
+import { buildRouteTimetableData } from './buildRouteTimetableData';
+import { Variant, Timetable, Line, RouteCorridor, Station } from '@/types';
 
 // Load real data
 function loadData() {
@@ -147,5 +148,48 @@ describe('Integration: buildTimetableData with real data', () => {
 
       console.log(`Ex237 is at position ${ex237Index + 1} of ${trainNumbers.length}`);
     }
+  });
+
+  it('DEBUG: Ex1501 vs Ex255 ordering on route', () => {
+    const { lines, variants, timetables } = loadData();
+    const { routes } = JSON.parse(readFileSync(join(process.cwd(), 'data', 'routes.json'), 'utf-8'));
+    const { stations } = JSON.parse(readFileSync(join(process.cwd(), 'data', 'stations.json'), 'utf-8'));
+
+    const routeId = '9a019f1b-3f94-46e3-8bfe-7b1874bcbb56';
+    const route = routes.find((r: any) => r.id === routeId);
+
+    const result = buildRouteTimetableData(route, variants, timetables, stations, lines);
+
+    const outboundTrains = result.outboundEntries.map((e: any) => e.trainNumber);
+    const ex1501Idx = outboundTrains.indexOf('Ex1501');
+    const ex255Idx = outboundTrains.indexOf('Ex255');
+
+    console.log('Ex1501 position:', ex1501Idx);
+    console.log('Ex255 position:', ex255Idx);
+
+    // Get the entries
+    const ex1501Entry = result.outboundEntries.find((e: any) => e.trainNumber === 'Ex1501');
+    const ex255Entry = result.outboundEntries.find((e: any) => e.trainNumber === 'Ex255');
+
+    // Find Olomouc station ID
+    const olomouc = stations.find((s: any) => s.name === 'Olomouc hlavní nádraží');
+    console.log('Olomouc ID:', olomouc?.id);
+
+    console.log('Ex1501 times:', Object.fromEntries(ex1501Entry?.times || []));
+    console.log('Ex255 times:', Object.fromEntries(ex255Entry?.times || []));
+
+    // Show 10 trains around these positions
+    console.log('\nTrains around Ex1501/Ex255:');
+    const start = Math.max(0, Math.min(ex1501Idx, ex255Idx) - 5);
+    const end = Math.min(outboundTrains.length, Math.max(ex1501Idx, ex255Idx) + 6);
+    for (let i = start; i < end; i++) {
+      const entry = result.outboundEntries[i];
+      const olomoucTime = entry.times.get(olomouc?.id);
+      const marker = (entry.trainNumber === 'Ex1501' || entry.trainNumber === 'Ex255') ? ' <--' : '';
+      console.log(`  ${i}: ${entry.trainNumber} - sortTime: ${entry.sortTime}, Olomouc: ${JSON.stringify(olomoucTime)}${marker}`);
+    }
+
+    // Ex255 (06:02 at Olomouc) should come BEFORE Ex1501 (06:25 at Olomouc)
+    expect(ex255Idx).toBeLessThan(ex1501Idx);
   });
 });

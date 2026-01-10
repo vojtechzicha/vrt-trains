@@ -620,6 +620,235 @@ describe('buildRouteTimetableData', () => {
     const trainOrder = result.outboundEntries.map((e) => e.trainNumber);
     expect(trainOrder).toEqual(['Ex1501', 'Ex1503', 'Ex161', 'Ex1505', 'Ex1507']);
   });
+
+  it('sorts train correctly when common station is only shared with some sorted trains', () => {
+    // Scenario: Ex1101 shares Vítkovice with Sp6055 but NOT with RJ123 or R2705
+    // Order should be by first appearance time on route:
+    // - Ex1101: 10:10 (Vítkovice)
+    // - RJ123: 10:39 (Svinov)
+    // - R2705: 11:41 (Svinov)
+    // - Sp6055: 11:56 (Svinov)
+
+    const routeStations = [
+      createStation('Svinov', 'Ostrava-Svinov'),
+      createStation('Vitkovice', 'Ostrava-Vítkovice'),
+      createStation('Hlavni', 'Ostrava hlavní nádraží'),
+      createStation('Havirov', 'Havířov'),
+    ];
+
+    const routeLines = [
+      createLine('l1', 'Spr1'),
+      createLine('l2', 'R27'),
+      createLine('l3', 'Ex11'),
+      createLine('l4', 'R60'),
+    ];
+
+    const route: RouteCorridor = {
+      id: 'r1',
+      name: 'Test Route',
+      paths: [
+        createPath('p1', 'Main', [
+          { stationId: 'Svinov', sequence: 1 },
+          { stationId: 'Vitkovice', sequence: 2 },
+          { stationId: 'Hlavni', sequence: 3 },
+          { stationId: 'Havirov', sequence: 4 },
+        ]),
+      ],
+      createdAt: '',
+      updatedAt: '',
+    };
+
+    // Spr1 variant: Svinov -> Hlavní (no Vítkovice)
+    const variantSpr1 = createVariant('v-spr1', 'l1', ['Svinov', 'Hlavni']);
+    // R27 variant: Svinov -> Hlavní (no Vítkovice)
+    const variantR27 = createVariant('v-r27', 'l2', ['Svinov', 'Hlavni']);
+    // Ex11 variant: Vítkovice -> Havířov (no Svinov, no Hlavní)
+    const variantEx11 = createVariant('v-ex11', 'l3', ['Vitkovice', 'Havirov']);
+    // R60 variant: Svinov -> Vítkovice -> Hlavní (has both)
+    const variantR60 = createVariant('v-r60', 'l4', ['Svinov', 'Vitkovice', 'Hlavni']);
+
+    const timetables = [
+      // RJ123: Svinov 10:39, Hlavní 10:48
+      createTimetable('RJ123', 'v-spr1', [
+        { stationId: 'Svinov', departure: '10:39' },
+        { stationId: 'Hlavni', arrival: '10:48' },
+      ]),
+      // R2705: Svinov 11:41, Hlavní 11:50
+      createTimetable('R2705', 'v-r27', [
+        { stationId: 'Svinov', departure: '11:41' },
+        { stationId: 'Hlavni', arrival: '11:50' },
+      ]),
+      // Ex1101: Vítkovice 10:10, Havířov 10:22
+      createTimetable('Ex1101', 'v-ex11', [
+        { stationId: 'Vitkovice', departure: '10:10' },
+        { stationId: 'Havirov', arrival: '10:22' },
+      ]),
+      // Sp6055: Svinov 11:56, Vítkovice 12:01, Hlavní 12:05
+      createTimetable('Sp6055', 'v-r60', [
+        { stationId: 'Svinov', departure: '11:56' },
+        { stationId: 'Vitkovice', departure: '12:01' },
+        { stationId: 'Hlavni', arrival: '12:05' },
+      ]),
+    ];
+
+    const result = buildRouteTimetableData(
+      route,
+      [variantSpr1, variantR27, variantEx11, variantR60],
+      timetables,
+      routeStations,
+      routeLines
+    );
+
+    // Order by first appearance time on route:
+    // Ex1101 (10:10) < RJ123 (10:39) < R2705 (11:41) < Sp6055 (11:56)
+    const trainOrder = result.outboundEntries.map((e) => e.trainNumber);
+    expect(trainOrder).toEqual(['Ex1101', 'RJ123', 'R2705', 'Sp6055']);
+  });
+
+  it('sorts trains by secondary common station when they dont share the primary', () => {
+    // Scenario: Praha is best station (4 trains), but Ex1501 and Ex255 don't have Praha
+    // They share Olomouc (2 trains) - should be sorted by Olomouc time as secondary
+    // Ex101-Ex104 have Praha AND Olomouc, so they get sorted first by Praha
+
+    const routeStations = [
+      createStation('Praha', 'Praha hlavní nádraží'),
+      createStation('Olomouc', 'Olomouc hlavní nádraží'),
+    ];
+
+    const routeLines = [createLine('l1', 'Ex1'), createLine('l2', 'Ex2')];
+
+    const route: RouteCorridor = {
+      id: 'r1',
+      name: 'Test Route',
+      paths: [
+        createPath('p1', 'Main', [
+          { stationId: 'Praha', sequence: 1 },
+          { stationId: 'Olomouc', sequence: 2 },
+        ]),
+      ],
+      createdAt: '',
+      updatedAt: '',
+    };
+
+    // Variant 1: Praha -> Olomouc (full route)
+    const variantFull = createVariant('v-full', 'l1', ['Praha', 'Olomouc']);
+    // Variant 2: Olomouc only (no Praha)
+    const variantShort = createVariant('v-short', 'l2', ['Olomouc']);
+
+    const timetables = [
+      // Ex101: Praha 04:30, Olomouc 06:00 (has BOTH primary and secondary)
+      createTimetable('Ex101', 'v-full', [
+        { stationId: 'Praha', departure: '04:30' },
+        { stationId: 'Olomouc', arrival: '06:00' },
+      ]),
+      // Ex102: Praha 04:45, Olomouc 06:15 (has BOTH)
+      createTimetable('Ex102', 'v-full', [
+        { stationId: 'Praha', departure: '04:45' },
+        { stationId: 'Olomouc', arrival: '06:15' },
+      ]),
+      // Ex103: Praha 05:00, Olomouc 06:30 (has BOTH)
+      createTimetable('Ex103', 'v-full', [
+        { stationId: 'Praha', departure: '05:00' },
+        { stationId: 'Olomouc', arrival: '06:30' },
+      ]),
+      // Ex104: Praha 05:15, Olomouc 06:45 (has BOTH)
+      createTimetable('Ex104', 'v-full', [
+        { stationId: 'Praha', departure: '05:15' },
+        { stationId: 'Olomouc', arrival: '06:45' },
+      ]),
+      // Ex255: Olomouc 06:02 (no Praha - secondary only)
+      createTimetable('Ex255', 'v-short', [{ stationId: 'Olomouc', departure: '06:02' }]),
+      // Ex1501: Olomouc 06:25 (no Praha - secondary only)
+      createTimetable('Ex1501', 'v-short', [{ stationId: 'Olomouc', arrival: '06:25' }]),
+    ];
+
+    const result = buildRouteTimetableData(
+      route,
+      [variantFull, variantShort],
+      timetables,
+      routeStations,
+      routeLines
+    );
+
+    const trainOrder = result.outboundEntries.map((e) => e.trainNumber);
+
+    // Primary sorting by Praha (4 trains): Ex101, Ex102, Ex103, Ex104
+    // Secondary sorting by Olomouc (2 trains): Ex255, Ex1501
+    //
+    // When merging secondary trains, they compare at common station (Olomouc):
+    // - Ex255 (06:02) vs Ex101 (06:00): 06:02 > 06:00 -> after Ex101
+    // - Ex255 (06:02) vs Ex102 (06:15): 06:02 < 06:15 -> before Ex102
+    // So Ex255 goes between Ex101 and Ex102
+    //
+    // - Ex1501 (06:25) vs Ex255 (06:02): 06:25 > 06:02 -> after Ex255
+    // - Ex1501 (06:25) vs Ex102 (06:15): 06:25 > 06:15 -> after Ex102
+    // - Ex1501 (06:25) vs Ex103 (06:30): 06:25 < 06:30 -> before Ex103
+    // So Ex1501 goes between Ex102 and Ex103
+    expect(trainOrder).toEqual(['Ex101', 'Ex255', 'Ex102', 'Ex1501', 'Ex103', 'Ex104']);
+  });
+
+  it('correctly orders trains that pass through both primary and secondary stations', () => {
+    // Simpler test: All 4 trains share Olomouc, so they all get sorted by Olomouc time
+    // This tests that secondary-only trains interleave correctly with primary trains
+
+    const routeStations = [
+      createStation('Praha', 'Praha hlavní nádraží'),
+      createStation('Olomouc', 'Olomouc hlavní nádraží'),
+    ];
+
+    const routeLines = [createLine('l1', 'Ex1'), createLine('l2', 'Ex2')];
+
+    const route: RouteCorridor = {
+      id: 'r1',
+      name: 'Test Route',
+      paths: [
+        createPath('p1', 'Main', [
+          { stationId: 'Praha', sequence: 1 },
+          { stationId: 'Olomouc', sequence: 2 },
+        ]),
+      ],
+      createdAt: '',
+      updatedAt: '',
+    };
+
+    const variantFull = createVariant('v-full', 'l1', ['Praha', 'Olomouc']);
+    const variantOlomouc = createVariant('v-olomouc', 'l2', ['Olomouc']);
+
+    const timetables = [
+      // Ex101: Praha 04:30, Olomouc 06:10 (has BOTH)
+      createTimetable('Ex101', 'v-full', [
+        { stationId: 'Praha', departure: '04:30' },
+        { stationId: 'Olomouc', arrival: '06:10' },
+      ]),
+      // Ex102: Praha 05:00, Olomouc 07:00 (has BOTH)
+      createTimetable('Ex102', 'v-full', [
+        { stationId: 'Praha', departure: '05:00' },
+        { stationId: 'Olomouc', arrival: '07:00' },
+      ]),
+      // Ex255: Olomouc 06:02 (only Olomouc)
+      createTimetable('Ex255', 'v-olomouc', [{ stationId: 'Olomouc', departure: '06:02' }]),
+      // Ex1501: Olomouc 06:25 (only Olomouc)
+      createTimetable('Ex1501', 'v-olomouc', [{ stationId: 'Olomouc', departure: '06:25' }]),
+    ];
+
+    const result = buildRouteTimetableData(
+      route,
+      [variantFull, variantOlomouc],
+      timetables,
+      routeStations,
+      routeLines
+    );
+
+    const trainOrder = result.outboundEntries.map((e) => e.trainNumber);
+
+    // All 4 trains share Olomouc (count=4), so Olomouc is the best station
+    // Sorting by Olomouc time:
+    // - Ex255: 06:02
+    // - Ex101: 06:10
+    // - Ex1501: 06:25
+    // - Ex102: 07:00
+    expect(trainOrder).toEqual(['Ex255', 'Ex101', 'Ex1501', 'Ex102']);
+  });
 });
 
 describe('buildRouteTimetableData direction splitting', () => {
