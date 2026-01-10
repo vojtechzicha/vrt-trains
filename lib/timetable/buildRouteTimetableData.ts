@@ -9,6 +9,7 @@ import {
   getTimeAtStation,
   findBestStation,
   findBestCommonStationWithSorted,
+  collectVariantPathStationIds,
 } from './buildTimetableData';
 
 /**
@@ -373,7 +374,8 @@ export function buildRouteTimetableData(
   variants: Variant[],
   timetables: Timetable[],
   stations: Station[],
-  lines: Line[]
+  lines: Line[],
+  allRoutes?: RouteCorridor[]
 ): BuildRouteTimetableResult {
   // Step 1: Build merged station order from all paths
   const stationOrder = buildRoutePathStationOrder(route.paths);
@@ -383,6 +385,9 @@ export function buildRouteTimetableData(
   const variantMap = new Map(variants.map((v) => [v.id, v]));
   const lineMap = new Map(lines.map((l) => [l.id, l]));
   const stationMap = new Map(stations.map((s) => [s.id, s]));
+  const routeMap = allRoutes
+    ? new Map(allRoutes.map((r) => [r.id, r]))
+    : new Map([[route.id, route]]);
 
   // Step 2: Build entries with continuation info
   const entries: RouteTimetableEntry[] = timetables.map((tt) => {
@@ -407,6 +412,11 @@ export function buildRouteTimetableData(
     const routeRef = variant?.routeRefs?.find((ref) => ref.routeId === route.id);
     const routeDirection: Direction = routeRef?.direction || 'outbound';
 
+    // Collect path station IDs from variant's route refs
+    const pathStationIds = variant
+      ? collectVariantPathStationIds(variant, routeMap)
+      : new Set<string>();
+
     return {
       trainNumber: tt.trainNumber,
       variantCode: variant?.code || '',
@@ -419,6 +429,7 @@ export function buildRouteTimetableData(
       firstStationIdx: -1,
       lastStationIdx: -1,
       operatingDays: tt.operatingDays,
+      pathStationIds,
       originStationId: origin?.id,
       originStationName: origin?.name,
       destinationStationId: destination?.id,

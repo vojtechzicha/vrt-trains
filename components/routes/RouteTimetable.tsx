@@ -111,7 +111,8 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
                 {entries.map((entry) => {
                   const timeData = entry.times.get(stationId);
                   if (!timeData) {
-                    // Check if this station is between the train's first and last stop
+                    // Check if station is on this train's physical route path
+                    const isOnRoute = entry.pathStationIds.has(stationId);
                     // For reversed order, we need to map indices: reversedIdx = (n-1) - originalIdx
                     const displayFirstIdx = reversed
                       ? (n - 1) - entry.lastStationIdx
@@ -119,11 +120,16 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
                     const displayLastIdx = reversed
                       ? (n - 1) - entry.firstStationIdx
                       : entry.lastStationIdx;
-                    const isPassingThrough =
-                      idx >= displayFirstIdx && idx <= displayLastIdx;
+                    const isInRange = idx >= displayFirstIdx && idx <= displayLastIdx;
                     return (
-                      <TableCell key={entry.trainNumber} className="text-center text-gray-300">
-                        {isPassingThrough ? '|' : '-'}
+                      <TableCell key={entry.trainNumber} className="text-center">
+                        {isOnRoute ? (
+                          <span className="text-gray-400">|</span>
+                        ) : isInRange ? (
+                          <span className="inline-block rotate-90 text-gray-200">~</span>
+                        ) : (
+                          <span className="text-gray-300">-</span>
+                        )}
                       </TableCell>
                     );
                   }

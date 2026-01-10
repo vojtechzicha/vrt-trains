@@ -1,4 +1,4 @@
-import { Timetable, Variant, Station } from '@/types';
+import { Timetable, Variant, Station, RouteCorridor } from '@/types';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell, OperatingDaysBadge } from '@/components/ui';
 import { formatTime } from '@/lib/utils';
 import { buildTimetableData } from '@/lib/timetable';
@@ -20,11 +20,12 @@ interface LineTimetableProps {
   variants: Variant[];
   timetables: Timetable[];
   stations: Station[];
+  routes?: RouteCorridor[];
 }
 
-export function LineTimetable({ variants, timetables, stations }: LineTimetableProps) {
+export function LineTimetable({ variants, timetables, stations, routes }: LineTimetableProps) {
   // Build timetable data using extracted logic
-  const { stationOrder, entries } = buildTimetableData(variants, timetables);
+  const { stationOrder, entries } = buildTimetableData(variants, timetables, routes);
 
   // Create station lookup
   const stationMap = new Map(stations.map((s) => [s.id, s]));
@@ -78,11 +79,19 @@ export function LineTimetable({ variants, timetables, stations }: LineTimetableP
               {entries.map((entry) => {
                 const timeData = entry.times.get(stationId);
                 if (!timeData) {
-                  // Check if this station is between the train's first and last stop
-                  const isPassingThrough = idx >= entry.firstStationIdx && idx <= entry.lastStationIdx;
+                  // Check if station is on this train's physical route path
+                  const isOnRoute = entry.pathStationIds.has(stationId);
+                  // Check if within first/last stop range (for stations not on route)
+                  const isInRange = idx >= entry.firstStationIdx && idx <= entry.lastStationIdx;
                   return (
-                    <TableCell key={entry.trainNumber} className="text-center text-gray-300">
-                      {isPassingThrough ? '|' : '-'}
+                    <TableCell key={entry.trainNumber} className="text-center">
+                      {isOnRoute ? (
+                        <span className="text-gray-400">|</span>
+                      ) : isInRange ? (
+                        <span className="inline-block rotate-90 text-gray-200">~</span>
+                      ) : (
+                        <span className="text-gray-300">-</span>
+                      )}
                     </TableCell>
                   );
                 }

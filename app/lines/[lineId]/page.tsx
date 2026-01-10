@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getLine, getVariantsByLine, getTimetablesByVariants, getStations } from '@/lib/data';
+import { getLine, getVariantsByLine, getTimetablesByVariants, getStations, getRoutes } from '@/lib/data';
 import { LineBadge, LineTimetable } from '@/components/lines';
 import { Card, CardHeader, CardBody, ScrollableContainer } from '@/components/ui';
 
@@ -20,6 +20,7 @@ export default async function LineDetailPage({ params }: LineDetailPageProps) {
   const variantIds = variants.map((v) => v.id);
   const timetables = await getTimetablesByVariants(variantIds);
   const stations = await getStations();
+  const routes = await getRoutes();
 
   // Group variants by direction
   const outboundVariants = variants.filter((v) => v.direction === 'outbound');
@@ -83,6 +84,7 @@ export default async function LineDetailPage({ params }: LineDetailPageProps) {
                   variants={outboundVariants}
                   timetables={outboundTimetables}
                   stations={stations}
+                  routes={routes}
                 />
               </ScrollableContainer>
             </CardBody>
@@ -105,6 +107,7 @@ export default async function LineDetailPage({ params }: LineDetailPageProps) {
                   variants={inboundVariants}
                   timetables={inboundTimetables}
                   stations={stations}
+                  routes={routes}
                 />
               </ScrollableContainer>
             </CardBody>

@@ -1,5 +1,51 @@
-import { Timetable, Variant } from '@/types';
+import { Timetable, Variant, RouteCorridor } from '@/types';
 import { compareTime } from '@/lib/utils';
+
+/**
+ * Collect all station IDs from a variant's route paths.
+ * Uses routeRefs to look up paths from routes, then collects all stationIds.
+ */
+export function collectVariantPathStationIds(
+  variant: Variant,
+  routeMap: Map<string, RouteCorridor>
+): Set<string> {
+  const stationIds = new Set<string>();
+
+  if (!variant.routeRefs) return stationIds;
+
+  for (const ref of variant.routeRefs) {
+    const route = routeMap.get(ref.routeId);
+    if (!route) continue;
+
+    const path = route.paths.find((p) => p.id === ref.pathId);
+    if (!path) continue;
+
+    const sortedStops = [...path.stops].sort((a, b) => a.sequence - b.sequence);
+
+    // Find start/end indices if subset boundaries specified
+    let startIdx = 0;
+    let endIdx = sortedStops.length - 1;
+
+    if (ref.startStationId) {
+      const idx = sortedStops.findIndex((s) => s.stationId === ref.startStationId);
+      if (idx !== -1) startIdx = idx;
+    }
+    if (ref.endStationId) {
+      const idx = sortedStops.findIndex((s) => s.stationId === ref.endStationId);
+      if (idx !== -1) endIdx = idx;
+    }
+
+    // Handle both directions
+    const minIdx = Math.min(startIdx, endIdx);
+    const maxIdx = Math.max(startIdx, endIdx);
+
+    for (let i = minIdx; i <= maxIdx; i++) {
+      stationIds.add(sortedStops[i].stationId);
+    }
+  }
+
+  return stationIds;
+}
 
 export interface TimetableEntry {
   trainNumber: string;
@@ -9,6 +55,7 @@ export interface TimetableEntry {
   firstStationIdx: number;
   lastStationIdx: number;
   operatingDays: string[];
+  pathStationIds: Set<string>; // All stations on variant's route path(s)
 }
 
 export interface BuildTimetableResult {
@@ -463,9 +510,11 @@ export function sortEntriesHolistically(
 export function buildTimetableEntries(
   timetables: Timetable[],
   variants: Variant[],
-  stationOrder: string[]
+  stationOrder: string[],
+  routes?: RouteCorridor[]
 ): TimetableEntry[] {
   const variantMap = new Map(variants.map((v) => [v.id, v]));
+  const routeMap = routes ? new Map(routes.map((r) => [r.id, r])) : new Map<string, RouteCorridor>();
 
   // Build entries with times (first pass)
   const entries: TimetableEntry[] = timetables.map((tt) => {
@@ -476,6 +525,11 @@ export function buildTimetableEntries(
       times.set(dep.stationId, { arrival: dep.arrival, departure: dep.departure });
     });
 
+    // Collect path station IDs from variant's route refs
+    const pathStationIds = variant
+      ? collectVariantPathStationIds(variant, routeMap)
+      : new Set<string>();
+
     return {
       trainNumber: tt.trainNumber,
       variantCode: variant?.code || '',
@@ -484,6 +538,7 @@ export function buildTimetableEntries(
       firstStationIdx: -1,
       lastStationIdx: -1,
       operatingDays: tt.operatingDays,
+      pathStationIds,
     };
   });
 
@@ -510,10 +565,11 @@ export function buildTimetableEntries(
  */
 export function buildTimetableData(
   variants: Variant[],
-  timetables: Timetable[]
+  timetables: Timetable[],
+  routes?: RouteCorridor[]
 ): BuildTimetableResult {
   const stationOrder = buildStationOrder(variants);
-  const entries = buildTimetableEntries(timetables, variants, stationOrder);
+  const entries = buildTimetableEntries(timetables, variants, stationOrder, routes);
 
   return {
     stationOrder,
