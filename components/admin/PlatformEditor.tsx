@@ -61,13 +61,13 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           Platforms ({platforms.length})
         </label>
         <button
           type="button"
           onClick={handleAddPlatform}
-          className="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
+          className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md transition-colors"
         >
           + Add Platform
         </button>
@@ -79,7 +79,7 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
         {platforms.map((platform, index) => (
           <div
             key={index}
-            className="group flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+            className="group flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-950 rounded-lg"
           >
             {/* Code input */}
             <div className="w-16">
@@ -90,9 +90,9 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
                   handleUpdatePlatform(index, { code: e.target.value })
                 }
                 placeholder="1"
-                className="w-full px-2 py-1.5 text-sm text-center border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-2 py-1.5 text-sm text-center border border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
-              <span className="block text-xs text-gray-400 text-center mt-0.5">
+              <span className="block text-xs text-gray-400 dark:text-gray-500 text-center mt-0.5">
                 Code
               </span>
             </div>
@@ -106,9 +106,9 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
                   handleUpdatePlatform(index, { name: e.target.value })
                 }
                 placeholder="e.g., to Ostrava"
-                className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
-              <span className="block text-xs text-gray-400 mt-0.5">
+              <span className="block text-xs text-gray-400 dark:text-gray-500 mt-0.5">
                 Name (optional)
               </span>
             </div>
@@ -121,9 +121,9 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
                 onChange={(e) =>
                   handleUpdatePlatform(index, { isBay: e.target.checked })
                 }
-                className="w-4 h-4 rounded border-gray-300"
+                className="w-4 h-4 rounded border-gray-300 dark:border-gray-600"
               />
-              <span className="text-sm text-gray-600">Bay</span>
+              <span className="text-sm text-gray-600 dark:text-gray-400">Bay</span>
             </label>
 
             {/* Reorder buttons */}
@@ -132,7 +132,7 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
                 type="button"
                 onClick={() => handleMoveUp(index)}
                 disabled={index === 0}
-                className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed"
+                className="p-1 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 disabled:opacity-30 disabled:cursor-not-allowed"
                 title="Move up"
               >
                 ↑
@@ -141,7 +141,7 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
                 type="button"
                 onClick={() => handleMoveDown(index)}
                 disabled={index === platforms.length - 1}
-                className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed"
+                className="p-1 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 disabled:opacity-30 disabled:cursor-not-allowed"
                 title="Move down"
               >
                 ↓
@@ -152,7 +152,7 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
             <button
               type="button"
               onClick={() => handleRemovePlatform(index)}
-              className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors"
+              className="p-1.5 text-gray-400 dark:text-gray-500 hover:text-red-500 hover:bg-red-50 rounded transition-colors"
               title="Remove platform"
             >
               <svg
@@ -173,7 +173,7 @@ export function PlatformEditor({ platforms, onChange }: PlatformEditorProps) {
         ))}
 
         {platforms.length === 0 && (
-          <p className="text-sm text-gray-500 italic py-4 text-center bg-gray-50 rounded-lg">
+          <p className="text-sm text-gray-500 dark:text-gray-400 italic py-4 text-center bg-gray-50 dark:bg-gray-950 rounded-lg">
             No platforms defined. Click &quot;Add Platform&quot; to add one.
           </p>
         )}

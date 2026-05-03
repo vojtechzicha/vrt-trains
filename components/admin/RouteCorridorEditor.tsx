@@ -112,7 +112,7 @@ export function RouteCorridorEditor({
       {/* Route info */}
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Route Corridor Name *
           </label>
           <input
@@ -120,12 +120,12 @@ export function RouteCorridorEditor({
             value={value.name}
             onChange={(e) => handleNameChange(e.target.value)}
             placeholder="e.g., Praha - Brno Corridor"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Description (optional)
           </label>
           <textarea
@@ -133,7 +133,7 @@ export function RouteCorridorEditor({
             onChange={(e) => handleDescriptionChange(e.target.value)}
             placeholder="Additional notes about this route corridor..."
             rows={2}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
       </div>
@@ -141,7 +141,7 @@ export function RouteCorridorEditor({
       {/* Paths section */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-medium text-gray-900">
+          <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
             Paths ({value.paths.length})
           </h3>
           <Button onClick={handleAddPath} variant="secondary" size="sm">
@@ -150,7 +150,7 @@ export function RouteCorridorEditor({
         </div>
 
         {value.paths.length === 0 ? (
-          <div className="p-6 border-2 border-dashed border-gray-300 rounded-lg text-center text-gray-500">
+          <div className="p-6 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg text-center text-gray-500 dark:text-gray-400">
             <p>No paths defined yet.</p>
             <p className="text-sm mt-1">
               Add at least one path to define the route.
@@ -170,21 +170,21 @@ export function RouteCorridorEditor({
               return (
                 <div
                   key={path.id || `path-${index}`}
-                  className="border border-gray-200 rounded-lg overflow-hidden"
+                  className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
                 >
                   {/* Path header */}
                   <div
                     className={`flex items-center justify-between px-4 py-3 cursor-pointer transition-colors ${
-                      isExpanded ? 'bg-blue-50' : 'bg-gray-50 hover:bg-gray-100'
+                      isExpanded ? 'bg-blue-50' : 'bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800'
                     }`}
                     onClick={() =>
                       setExpandedPathIndex(isExpanded ? null : index)
                     }
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-gray-400">{isExpanded ? '▼' : '▶'}</span>
+                      <span className="text-gray-400 dark:text-gray-500">{isExpanded ? '▼' : '▶'}</span>
                       <div>
-                        <div className="font-medium text-gray-900 flex items-center gap-2">
+                        <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center gap-2">
                           {path.name || 'Unnamed Path'}
                           {isLocked && (
                             <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">
@@ -192,7 +192,7 @@ export function RouteCorridorEditor({
                             </span>
                           )}
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           {path.stops.length} stops
                           {firstStation && lastStation && (
                             <>
@@ -211,7 +211,7 @@ export function RouteCorridorEditor({
                       <button
                         type="button"
                         onClick={() => handleDuplicatePath(index)}
-                        className="px-2 py-1 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-200 rounded"
+                        className="px-2 py-1 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
                         title="Duplicate path"
                       >
                         Duplicate
@@ -231,7 +231,7 @@ export function RouteCorridorEditor({
 
                   {/* Path editor (expanded) */}
                   {isExpanded && (
-                    <div className="p-4 border-t border-gray-200 bg-white">
+                    <div className="p-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
                       <RoutePathEditor
                         stations={stations}
                         value={path}
@@ -251,7 +251,7 @@ export function RouteCorridorEditor({
       </div>
 
       {/* Actions */}
-      <div className="flex justify-end gap-3 pt-4 border-t border-gray-200">
+      <div className="flex justify-end gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
         <Button onClick={onCancel} variant="secondary" disabled={saving}>
           Cancel
         </Button>

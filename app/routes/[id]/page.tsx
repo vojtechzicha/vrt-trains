@@ -67,12 +67,12 @@ export default async function RouteDetailPage({ params }: RouteDetailPageProps) 
       </div>
 
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">{route.name}</h1>
-        <p className="text-gray-500 mt-1">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{route.name}</h1>
+        <p className="text-gray-500 dark:text-gray-400 mt-1">
           {endpoints.from?.name || 'Unknown'} - {endpoints.to?.name || 'Unknown'}
         </p>
         {route.description && (
-          <p className="text-sm text-gray-400 mt-2 whitespace-pre-line">{route.description}</p>
+          <p className="text-sm text-gray-400 dark:text-gray-500 mt-2 whitespace-pre-line">{route.description}</p>
         )}
       </div>
 
@@ -80,25 +80,25 @@ export default async function RouteDetailPage({ params }: RouteDetailPageProps) 
       <div className="flex flex-wrap gap-6 mb-8 text-sm">
         {totalDistance > 0 && (
           <div>
-            <span className="text-gray-500">Distance:</span>{' '}
+            <span className="text-gray-500 dark:text-gray-400">Distance:</span>{' '}
             <span className="font-medium">{totalDistance} km</span>
           </div>
         )}
         {totalTime > 0 && (
           <div>
-            <span className="text-gray-500">Travel time:</span>{' '}
+            <span className="text-gray-500 dark:text-gray-400">Travel time:</span>{' '}
             <span className="font-medium">{formatTime(totalTime)}</span>
           </div>
         )}
         {commercialSpeed > 0 && (
           <div>
-            <span className="text-gray-500">Commercial speed:</span>{' '}
+            <span className="text-gray-500 dark:text-gray-400">Commercial speed:</span>{' '}
             <span className="font-medium">{commercialSpeed} km/h</span>
           </div>
         )}
         {route.paths.length > 1 && (
           <div>
-            <span className="text-gray-500">Path variants:</span>{' '}
+            <span className="text-gray-500 dark:text-gray-400">Path variants:</span>{' '}
             <span className="font-medium">{route.paths.length}</span>
           </div>
         )}

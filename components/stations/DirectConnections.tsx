@@ -89,7 +89,7 @@ function groupByLine(connections: DirectConnection[]): LineGroup[] {
 
 export function DirectConnections({ connections }: DirectConnectionsProps) {
   if (connections.length === 0) {
-    return <p className="text-gray-500">No direct connections from this station</p>;
+    return <p className="text-gray-500 dark:text-gray-400">No direct connections from this station</p>;
   }
 
   // Separate featured stations from minor single-line stations
@@ -108,15 +108,15 @@ export function DirectConnections({ connections }: DirectConnectionsProps) {
             return (
               <div
                 key={connection.destinationStationId}
-                className="border border-gray-200 rounded-lg p-3 hover:border-gray-300 transition-colors"
+                className="border border-gray-200 dark:border-gray-700 rounded-lg p-3 hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
               >
                 <Link
                   href={`/stations/${connection.destinationStationId}`}
-                  className="font-medium text-gray-900 hover:text-blue-600 transition-colors text-sm"
+                  className="font-medium text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors text-sm"
                 >
                   {connection.destinationStationName}
                   {connection.isVirtual && (
-                    <span className="ml-1 text-xs text-gray-400">(city)</span>
+                    <span className="ml-1 text-xs text-gray-400 dark:text-gray-500">(city)</span>
                   )}
                 </Link>
                 <div className="mt-2 space-y-1">
@@ -137,7 +137,7 @@ export function DirectConnections({ connections }: DirectConnectionsProps) {
                             </Link>
                           ))}
                         </div>
-                        <span className="text-gray-500">{formatTravelTime(travelTime)}</span>
+                        <span className="text-gray-500 dark:text-gray-400">{formatTravelTime(travelTime)}</span>
                       </div>
                     );
                   })}
@@ -151,7 +151,7 @@ export function DirectConnections({ connections }: DirectConnectionsProps) {
       {/* All stops by line - full width table format */}
       {lineGroups.length > 0 && (
         <div className="space-y-4">
-          <h3 className="text-sm font-medium text-gray-700">All Stops</h3>
+          <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">All Stops</h3>
           {lineGroups.map((lineGroup) => (
             <div key={lineGroup.lineId}>
               <div className="flex items-center gap-2 mb-2">
@@ -166,14 +166,14 @@ export function DirectConnections({ connections }: DirectConnectionsProps) {
               </div>
               <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                 {lineGroup.stations.map((station, idx) => (
-                  <span key={station.stationId} className="flex items-center gap-1 text-gray-600">
+                  <span key={station.stationId} className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
                     <Link
                       href={`/stations/${station.stationId}`}
                       className="hover:text-blue-600 transition-colors"
                     >
                       {station.stationName}
                     </Link>
-                    <span className="text-gray-400 text-xs">{formatTravelTime(station.travelTimeMinutes)}</span>
+                    <span className="text-gray-400 dark:text-gray-500 text-xs">{formatTravelTime(station.travelTimeMinutes)}</span>
                     {idx < lineGroup.stations.length - 1 && (
                       <span className="text-gray-300 ml-2">·</span>
                     )}

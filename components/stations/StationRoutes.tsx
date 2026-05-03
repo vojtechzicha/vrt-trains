@@ -20,7 +20,7 @@ function formatTime(minutes: number): string {
 export function StationRoutes({ routes, stationId, stationMap }: StationRoutesProps) {
   if (routes.length === 0) {
     return (
-      <p className="text-gray-500 text-sm">No route corridors pass through this station.</p>
+      <p className="text-gray-500 dark:text-gray-400 text-sm">No route corridors pass through this station.</p>
     );
   }
 
@@ -47,17 +47,17 @@ export function StationRoutes({ routes, stationId, stationMap }: StationRoutesPr
           <Link
             key={route.id}
             href={`/routes/${route.id}`}
-            className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+            className="block p-4 bg-gray-50 dark:bg-gray-950 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group"
           >
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="font-medium text-gray-900 group-hover:text-blue-600">
+                <h3 className="font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600">
                   {route.name}
                 </h3>
-                <p className="text-sm text-gray-500 mt-1">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                   {fromStation?.name || 'Unknown'} — {toStation?.name || 'Unknown'}
                 </p>
-                <div className="flex items-center gap-3 mt-2 text-xs text-gray-400">
+                <div className="flex items-center gap-3 mt-2 text-xs text-gray-400 dark:text-gray-500">
                   {pathsWithStation.length > 1 && (
                     <span>{pathsWithStation.length} paths</span>
                   )}
@@ -68,7 +68,7 @@ export function StationRoutes({ routes, stationId, stationMap }: StationRoutesPr
                   <span>{formatTime(time)}</span>
                 </div>
               </div>
-              <span className="text-gray-400 group-hover:text-blue-600 text-lg">
+              <span className="text-gray-400 dark:text-gray-500 group-hover:text-blue-600 text-lg">
                 →
               </span>
             </div>

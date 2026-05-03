@@ -43,7 +43,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             {label}
           </label>
         )}
@@ -52,7 +52,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             type="button"
             onClick={decrement}
             disabled={disabled || (min !== undefined && value <= min)}
-            className="px-3 py-2 border border-r-0 border-gray-300 rounded-l-lg bg-gray-50 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-3 py-2 border border-r-0 border-gray-300 dark:border-gray-600 rounded-l-lg bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             −
           </button>
@@ -70,14 +70,14 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
               className={`
                 w-full px-3 py-2 text-sm text-center border-y
                 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                disabled:bg-gray-50 disabled:text-gray-500
+                disabled:bg-gray-50 dark:disabled:bg-gray-950 disabled:text-gray-500 dark:disabled:text-gray-400
                 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
-                ${error ? 'border-red-500' : 'border-gray-300'}
+                ${error ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}
                 ${suffix ? 'pr-10' : ''}
               `}
             />
             {suffix && (
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500">
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 dark:text-gray-400">
                 {suffix}
               </span>
             )}
@@ -86,7 +86,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             type="button"
             onClick={increment}
             disabled={disabled || (max !== undefined && value >= max)}
-            className="px-3 py-2 border border-l-0 border-gray-300 rounded-r-lg bg-gray-50 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-3 py-2 border border-l-0 border-gray-300 dark:border-gray-600 rounded-r-lg bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             +
           </button>

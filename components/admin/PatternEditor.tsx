@@ -165,7 +165,7 @@ export function PatternEditor({
 
       <div>
         <div className="flex items-center justify-between mb-3">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Time Periods
           </label>
           <Button variant="secondary" onClick={addPeriod}>
@@ -177,34 +177,34 @@ export function PatternEditor({
           {periods.map((period, index) => (
             <div
               key={index}
-              className="p-4 border border-gray-200 rounded-lg bg-gray-50"
+              className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-950"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-1 grid gap-3 md:grid-cols-4">
                   <div>
-                    <label className="block text-xs text-gray-500 mb-1">Start</label>
+                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">Start</label>
                     <input
                       type="time"
                       value={period.startTime}
                       onChange={(e) =>
                         updatePeriod(index, { startTime: e.target.value })
                       }
-                      className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-gray-500 mb-1">End</label>
+                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">End</label>
                     <input
                       type="time"
                       value={period.endTime}
                       onChange={(e) =>
                         updatePeriod(index, { endTime: e.target.value })
                       }
-                      className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-gray-500 mb-1">
+                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
                       Interval
                     </label>
                     <select
@@ -214,7 +214,7 @@ export function PatternEditor({
                           intervalMinutes: parseInt(e.target.value),
                         })
                       }
-                      className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       {INTERVAL_OPTIONS.map((opt) => (
                         <option key={opt.value} value={opt.value}>
@@ -229,9 +229,9 @@ export function PatternEditor({
                         type="checkbox"
                         checked={!!period.offPeakReduction}
                         onChange={() => toggleOffPeakReduction(index)}
-                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                        className="w-4 h-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500"
                       />
-                      <span className="text-sm text-gray-700">Off-peak</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">Off-peak</span>
                     </label>
                   </div>
                 </div>
@@ -239,7 +239,7 @@ export function PatternEditor({
                 {periods.length > 1 && (
                   <button
                     onClick={() => removePeriod(index)}
-                    className="p-1 text-gray-400 hover:text-red-500"
+                    className="p-1 text-gray-400 dark:text-gray-500 hover:text-red-500"
                     title="Remove period"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -251,7 +251,7 @@ export function PatternEditor({
 
               {period.offPeakReduction && (
                 <div className="mt-3 pl-4 border-l-2 border-blue-200">
-                  <div className="text-xs text-gray-500 mb-1">
+                  <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">
                     Off-peak window (skip alternate trains)
                   </div>
                   <div className="flex items-center gap-2">
@@ -266,9 +266,9 @@ export function PatternEditor({
                           },
                         })
                       }
-                      className="px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    <span className="text-gray-400">-</span>
+                    <span className="text-gray-400 dark:text-gray-500">-</span>
                     <input
                       type="time"
                       value={period.offPeakReduction.endTime}
@@ -280,7 +280,7 @@ export function PatternEditor({
                           },
                         })
                       }
-                      className="px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                 </div>
@@ -292,17 +292,17 @@ export function PatternEditor({
 
       <OperatingDaysSelector value={operatingDays} onChange={setOperatingDays} />
 
-      <div className="p-4 bg-gray-100 rounded-lg">
-        <div className="text-sm text-gray-600 mb-2">
+      <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+        <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
           Preview: <strong>{departureCount}</strong> departures/day (per direction)
         </div>
-        <div className="text-sm font-mono text-gray-500">
+        <div className="text-sm font-mono text-gray-500 dark:text-gray-400">
           {departurePreview.join(', ')}
           {departureCount > departurePreview.length && '...'}
         </div>
       </div>
 
-      <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200">
+      <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
         {onCancel && (
           <Button variant="secondary" onClick={onCancel}>
             Cancel

@@ -82,18 +82,18 @@ export function TimetableGenerator({
     <div className="space-y-4">
       <div className="grid gap-4 md:grid-cols-3">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             First Departure
           </label>
           <input
             type="time"
             value={firstDeparture}
             onChange={(e) => setFirstDeparture(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Interval (minutes)
           </label>
           <input
@@ -102,18 +102,18 @@ export function TimetableGenerator({
             onChange={(e) => setInterval(parseInt(e.target.value) || 60)}
             min={5}
             max={240}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             End Time
           </label>
           <input
             type="time"
             value={endTime}
             onChange={(e) => setEndTime(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
       </div>
@@ -126,7 +126,7 @@ export function TimetableGenerator({
           placeholder="Ex"
         />
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Start Base Number
           </label>
           <input
@@ -135,13 +135,13 @@ export function TimetableGenerator({
             onChange={(e) => setStartBaseNumber(parseInt(e.target.value) || 100)}
             min={1}
             max={9999}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
       </div>
 
       {trainCount > 0 && trainNumberPrefix && (
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-gray-500 dark:text-gray-400">
           <span>Numbers: </span>
           <span className="font-mono">
             {previewNumbers.join(', ')}
@@ -161,15 +161,15 @@ export function TimetableGenerator({
           id="clearExisting"
           checked={clearExisting}
           onChange={(e) => setClearExisting(e.target.checked)}
-          className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+          className="w-4 h-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500"
         />
-        <label htmlFor="clearExisting" className="text-sm text-gray-700">
+        <label htmlFor="clearExisting" className="text-sm text-gray-700 dark:text-gray-300">
           Clear existing timetables before generating
         </label>
       </div>
 
-      <div className="flex items-center justify-between pt-2 border-t border-gray-200">
-        <div className="text-sm text-gray-500">
+      <div className="flex items-center justify-between pt-2 border-t border-gray-200 dark:border-gray-700">
+        <div className="text-sm text-gray-500 dark:text-gray-400">
           Will generate <strong>{trainCount}</strong> train{trainCount !== 1 ? 's' : ''}
         </div>
         <Button onClick={handleGenerate} disabled={generating || trainCount === 0 || !trainNumberPrefix}>

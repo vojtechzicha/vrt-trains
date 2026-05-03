@@ -301,14 +301,14 @@ export function PlatformAssignmentEditor({
       <div className="space-y-6">
         {/* Mode toggle */}
         <div className="flex items-center gap-4">
-          <span className="text-sm font-medium text-gray-700">Assignment mode:</span>
-          <div className="flex rounded-lg border border-gray-200 overflow-hidden">
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Assignment mode:</span>
+          <div className="flex rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
             <button
               onClick={() => setVariantMode(false)}
               className={`px-4 py-2 text-sm font-medium transition-colors ${
                 !variantMode
                   ? 'bg-blue-500 text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-50'
+                  : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950'
               }`}
             >
               Line Mode
@@ -318,13 +318,13 @@ export function PlatformAssignmentEditor({
               className={`px-4 py-2 text-sm font-medium transition-colors ${
                 variantMode
                   ? 'bg-blue-500 text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-50'
+                  : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-950'
               }`}
             >
               Variant Mode
             </button>
           </div>
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-gray-500 dark:text-gray-400">
             {variantMode
               ? 'Assign individual variants to platforms'
               : 'Assign line directions (inbound/outbound) to platforms'}
@@ -347,11 +347,11 @@ export function PlatformAssignmentEditor({
         </div>
 
         {/* Unassigned area */}
-        <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
-          <h3 className="text-sm font-semibold text-gray-700 mb-3">Unassigned</h3>
+        <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4">
+          <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Unassigned</h3>
           <div className="flex flex-wrap gap-2">
             {unassignedItems.length === 0 ? (
-              <span className="text-sm text-gray-400 italic">
+              <span className="text-sm text-gray-400 dark:text-gray-500 italic">
                 All {variantMode ? 'variants' : 'line directions'} are assigned
               </span>
             ) : (

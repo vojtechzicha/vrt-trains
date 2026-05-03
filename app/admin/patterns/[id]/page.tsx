@@ -74,8 +74,8 @@ export default function EditPatternPage({ params }: { params: Promise<{ id: stri
       </div>
 
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-gray-900">Edit Pattern: {pattern.name}</h1>
-        <p className="text-sm text-gray-500">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">Edit Pattern: {pattern.name}</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           Modify the service pattern settings
         </p>
       </div>

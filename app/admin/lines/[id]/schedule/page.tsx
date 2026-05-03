@@ -147,14 +147,14 @@ export default function LineSchedulePage({ params }: { params: Promise<{ id: str
             className="text-lg px-3 py-1"
           />
           <div>
-            <h1 className="text-xl font-bold text-gray-900">{line.name}</h1>
-            <p className="text-sm text-gray-500">Schedule Configuration</p>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">{line.name}</h1>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Schedule Configuration</p>
           </div>
         </div>
         <div className="flex gap-2">
           <Link
             href={`/admin/lines/${id}/variants`}
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+            className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950"
           >
             Variants
           </Link>
@@ -162,8 +162,8 @@ export default function LineSchedulePage({ params }: { params: Promise<{ id: str
       </div>
 
       {variants.length === 0 ? (
-        <div className="text-center py-12 bg-gray-50 rounded-lg">
-          <p className="text-gray-500 mb-4">
+        <div className="text-center py-12 bg-gray-50 dark:bg-gray-950 rounded-lg">
+          <p className="text-gray-500 dark:text-gray-400 mb-4">
             You need at least one outbound and one inbound variant to configure a schedule.
           </p>
           <Link

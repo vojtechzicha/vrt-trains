@@ -133,7 +133,7 @@ export default function EditLinePage({ params }: { params: Promise<{ id: string 
               />
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-500">Preview:</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">Preview:</span>
               <LineBadge
                 identifier={identifier || 'XX'}
                 color={color}

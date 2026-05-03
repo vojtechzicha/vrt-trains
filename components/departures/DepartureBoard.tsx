@@ -88,18 +88,18 @@ export function DepartureBoard({ stationName, departures }: DepartureBoardProps)
       <div className="bg-gray-800 px-6 py-4 border-b border-gray-700">
         <div className="flex justify-between items-center">
           <div>
-            <div className="text-sm text-gray-400">Departures from</div>
+            <div className="text-sm text-gray-400 dark:text-gray-500">Departures from</div>
             <h2 className="text-2xl font-bold text-white">{stationName}</h2>
           </div>
           <div className="text-right">
-            <div className="text-sm text-gray-400">Current time</div>
+            <div className="text-sm text-gray-400 dark:text-gray-500">Current time</div>
             <LiveClock className="text-2xl text-amber-400" />
           </div>
         </div>
       </div>
 
       {/* Column headers */}
-      <div className="bg-gray-800 px-6 py-2 border-b border-gray-700 flex gap-4 text-xs text-gray-400 uppercase tracking-wider">
+      <div className="bg-gray-800 px-6 py-2 border-b border-gray-700 flex gap-4 text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider">
         <div className="w-20">Time</div>
         <div className="w-24 text-center">{headerLabels[headerMode]}</div>
         <div className="flex-1">Destination</div>
@@ -112,7 +112,7 @@ export function DepartureBoard({ stationName, departures }: DepartureBoardProps)
       {pastDepartures.length > 0 && (
         <button
           onClick={() => setShowPast(!showPast)}
-          className="w-full px-6 py-2 text-sm text-gray-400 hover:text-gray-300 bg-gray-800/50 hover:bg-gray-800 border-b border-gray-700 transition-colors flex items-center justify-center gap-2"
+          className="w-full px-6 py-2 text-sm text-gray-400 dark:text-gray-500 hover:text-gray-300 bg-gray-800/50 hover:bg-gray-800 border-b border-gray-700 transition-colors flex items-center justify-center gap-2"
         >
           <span className={`transform transition-transform ${showPast ? 'rotate-180' : ''}`}>
             ^
@@ -152,11 +152,11 @@ export function DepartureBoard({ stationName, departures }: DepartureBoardProps)
       {/* Upcoming departures */}
       <div>
         {upcomingDepartures.length === 0 && pastDepartures.length === 0 ? (
-          <div className="px-6 py-12 text-center text-gray-500">
+          <div className="px-6 py-12 text-center text-gray-500 dark:text-gray-400">
             No scheduled departures
           </div>
         ) : upcomingDepartures.length === 0 ? (
-          <div className="px-6 py-8 text-center text-gray-500">
+          <div className="px-6 py-8 text-center text-gray-500 dark:text-gray-400">
             No more departures today
           </div>
         ) : (

@@ -86,8 +86,8 @@ export function OperatingDaysBadge({ days, className = '', variant = 'light' }: 
   const isWeekends = hasExactDays(sortedDays, ['Sat', 'Sun']);
 
   const badgeClasses = variant === 'dark'
-    ? 'text-xs text-gray-400'
-    : 'text-xs px-1.5 py-0.5 bg-gray-100 text-gray-600 rounded';
+    ? 'text-xs text-gray-400 dark:text-gray-500'
+    : 'text-xs px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded';
 
   if (isWeekdays) {
     // Crossed hammers - traditional Czech symbol for working days
@@ -115,7 +115,7 @@ export function OperatingDaysBadge({ days, className = '', variant = 'light' }: 
 
   return (
     <span
-      className={`${variant === 'dark' ? 'text-xs text-gray-400' : 'text-xs text-gray-500'} ${className}`}
+      className={`${variant === 'dark' ? 'text-xs text-gray-400 dark:text-gray-500' : 'text-xs text-gray-500 dark:text-gray-400'} ${className}`}
       title={dayNames}
     >
       {circles}

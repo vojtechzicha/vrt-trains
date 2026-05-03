@@ -15,7 +15,7 @@ export function StationMarquee({ stations, className = '' }: StationMarqueeProps
   // For short lists, no animation needed
   if (stations.length <= 2) {
     return (
-      <div className={`text-gray-500 text-sm truncate ${className}`}>
+      <div className={`text-gray-500 dark:text-gray-400 text-sm truncate ${className}`}>
         {stationText}
       </div>
     );
@@ -29,10 +29,10 @@ export function StationMarquee({ stations, className = '' }: StationMarqueeProps
           animationDuration: `${Math.max(stations.length * 1.5, 6)}s`,
         }}
       >
-        <span className="whitespace-nowrap text-gray-500 text-sm">
+        <span className="whitespace-nowrap text-gray-500 dark:text-gray-400 text-sm">
           {stationText}
         </span>
-        <span className="whitespace-nowrap text-gray-500 text-sm pl-12">
+        <span className="whitespace-nowrap text-gray-500 dark:text-gray-400 text-sm pl-12">
           {stationText}
         </span>
       </div>

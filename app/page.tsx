@@ -26,8 +26,8 @@ export default async function Home() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">VRT Train Network</h1>
-        <p className="text-gray-500 mt-2">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">VRT Train Network</h1>
+        <p className="text-gray-500 dark:text-gray-400 mt-2">
           Fictional train line management system
         </p>
       </div>
@@ -36,19 +36,19 @@ export default async function Home() {
         <Card>
           <CardBody className="text-center">
             <div className="text-3xl font-bold text-blue-600">{lines.length}</div>
-            <div className="text-gray-500">Train Lines</div>
+            <div className="text-gray-500 dark:text-gray-400">Train Lines</div>
           </CardBody>
         </Card>
         <Card>
           <CardBody className="text-center">
             <div className="text-3xl font-bold text-orange-600">{routes.length}</div>
-            <div className="text-gray-500">Route Corridors</div>
+            <div className="text-gray-500 dark:text-gray-400">Route Corridors</div>
           </CardBody>
         </Card>
         <Card>
           <CardBody className="text-center">
             <div className="text-3xl font-bold text-green-600">{stations.length}</div>
-            <div className="text-gray-500">Stations</div>
+            <div className="text-gray-500 dark:text-gray-400">Stations</div>
           </CardBody>
         </Card>
         <Card>
@@ -56,7 +56,7 @@ export default async function Home() {
             <div className="text-3xl font-bold text-purple-600">
               {variants.length}
             </div>
-            <div className="text-gray-500">Route Variants</div>
+            <div className="text-gray-500 dark:text-gray-400">Route Variants</div>
           </CardBody>
         </Card>
       </div>
@@ -64,7 +64,7 @@ export default async function Home() {
       <div className="grid gap-8 lg:grid-cols-2">
         <div>
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold text-gray-900">Lines</h2>
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Lines</h2>
             <Link href="/lines" className="text-sm text-blue-600 hover:underline">
               View all →
             </Link>
@@ -78,7 +78,7 @@ export default async function Home() {
 
         <div>
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold text-gray-900">Stations</h2>
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Stations</h2>
             <Link href="/stations" className="text-sm text-blue-600 hover:underline">
               View all →
             </Link>
@@ -94,7 +94,7 @@ export default async function Home() {
       {routes.length > 0 && (
         <div className="mt-8">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold text-gray-900">Route Corridors</h2>
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Route Corridors</h2>
             <Link href="/routes" className="text-sm text-blue-600 hover:underline">
               View all →
             </Link>
@@ -126,7 +126,7 @@ export default async function Home() {
       )}
 
       <div className="mt-8">
-        <Card className="bg-gray-900">
+        <Card className="!bg-gray-900 !border-gray-700">
           <CardBody className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-semibold text-white">Departure Boards</h3>

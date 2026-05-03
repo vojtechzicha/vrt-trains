@@ -171,7 +171,7 @@ export function BulkTimeAdjustModal({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] flex flex-col">
+      <div className="bg-white dark:bg-gray-900 rounded-xl shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] flex flex-col">
         <div className="p-6 border-b">
           <h2 className="text-lg font-semibold">Bulk Time Adjustment</h2>
         </div>
@@ -179,13 +179,13 @@ export function BulkTimeAdjustModal({
         <div className="p-6 space-y-4 overflow-y-auto flex-1">
           {/* Station selector */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Station
             </label>
             <select
               value={selectedStationId}
               onChange={(e) => setSelectedStationId(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="">Select a station...</option>
               {availableStations.map((s) => (
@@ -198,7 +198,7 @@ export function BulkTimeAdjustModal({
 
           {/* Direction selector */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Direction
             </label>
             <div className="flex gap-4">
@@ -228,7 +228,7 @@ export function BulkTimeAdjustModal({
           {/* Offset amount and direction */}
           <div className="flex gap-4 items-end">
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Offset (minutes)
               </label>
               <input
@@ -237,7 +237,7 @@ export function BulkTimeAdjustModal({
                 max={120}
                 value={offsetAmount}
                 onChange={(e) => setOffsetAmount(Math.max(1, parseInt(e.target.value) || 1))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div className="flex gap-4 pb-2">
@@ -266,14 +266,14 @@ export function BulkTimeAdjustModal({
 
           {/* Preview section */}
           <div className="border-t pt-4 mt-4">
-            <h3 className="text-sm font-medium text-gray-700 mb-2">
+            <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Affected Trains ({previews.length})
             </h3>
 
             {loading ? (
-              <p className="text-sm text-gray-500 py-4">Loading...</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 py-4">Loading...</p>
             ) : previews.length === 0 ? (
-              <p className="text-sm text-gray-500 py-4">
+              <p className="text-sm text-gray-500 dark:text-gray-400 py-4">
                 {selectedStationId
                   ? 'No trains found for this station and direction'
                   : 'Select a station to see affected trains'}
@@ -281,19 +281,19 @@ export function BulkTimeAdjustModal({
             ) : (
               <div className="max-h-64 overflow-y-auto border rounded-lg">
                 <table className="w-full text-sm">
-                  <thead className="bg-gray-50 sticky top-0">
+                  <thead className="bg-gray-50 dark:bg-gray-950 sticky top-0">
                     <tr>
-                      <th className="text-left px-3 py-2 font-medium text-gray-700">Train</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-700">At Station</th>
-                      <th className="text-left px-3 py-2 font-medium text-gray-700">All Times</th>
+                      <th className="text-left px-3 py-2 font-medium text-gray-700 dark:text-gray-300">Train</th>
+                      <th className="text-left px-3 py-2 font-medium text-gray-700 dark:text-gray-300">At Station</th>
+                      <th className="text-left px-3 py-2 font-medium text-gray-700 dark:text-gray-300">All Times</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y">
                     {previews.map((p) => (
-                      <tr key={p.trainNumber} className="hover:bg-gray-50">
+                      <tr key={p.trainNumber} className="hover:bg-gray-50 dark:hover:bg-gray-950">
                         <td className="px-3 py-2 font-mono">{p.trainNumber}</td>
                         <td className="px-3 py-2">
-                          <span className="text-gray-500">{p.currentTime}</span>
+                          <span className="text-gray-500 dark:text-gray-400">{p.currentTime}</span>
                           <span className="mx-2">→</span>
                           <span className="font-medium">{p.newTime}</span>
                         </td>

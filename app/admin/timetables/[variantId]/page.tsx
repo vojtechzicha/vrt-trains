@@ -275,10 +275,10 @@ export default function TimetableEditorPage({
           />
         )}
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Timetables</h1>
-          <p className="text-sm text-gray-500">
+          <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">Timetables</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             {variant.code} - {variant.name}{' '}
-            <span className="text-xs text-gray-400">
+            <span className="text-xs text-gray-400 dark:text-gray-500">
               ({variant.direction === 'outbound' ? 'odd numbers' : 'even numbers'})
             </span>
           </p>
@@ -312,14 +312,14 @@ export default function TimetableEditorPage({
                       error={addError || undefined}
                     />
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         First Departure
                       </label>
                       <input
                         type="time"
                         value={newFirstDeparture}
                         onChange={(e) => setNewFirstDeparture(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
                     <OperatingDaysSelector
@@ -342,7 +342,7 @@ export default function TimetableEditorPage({
               )}
 
               {sortedTimetables.length === 0 ? (
-                <div className="text-center py-8 text-gray-500">
+                <div className="text-center py-8 text-gray-500 dark:text-gray-400">
                   No timetables yet. Generate or add manually.
                 </div>
               ) : (
@@ -350,17 +350,17 @@ export default function TimetableEditorPage({
                   {sortedTimetables.map((timetable) => (
                     <div
                       key={timetable.id}
-                      className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100"
+                      className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-950 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
                     >
                       <div className="flex items-center gap-4">
-                        <span className="font-mono font-medium text-gray-900">
+                        <span className="font-mono font-medium text-gray-900 dark:text-gray-100">
                           {timetable.trainNumber}
                         </span>
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">
                           {timetable.departures[0]?.departure || '--:--'}
                         </span>
-                        <span className="text-sm text-gray-400">→</span>
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-gray-400 dark:text-gray-500">→</span>
+                        <span className="text-sm text-gray-600 dark:text-gray-400">
                           {timetable.departures[timetable.departures.length - 1]?.arrival ||
                             '--:--'}
                         </span>
@@ -408,13 +408,13 @@ export default function TimetableEditorPage({
               <h2 className="text-lg font-semibold">Route Info</h2>
             </CardHeader>
             <CardBody>
-              <div className="text-sm text-gray-600 space-y-1">
+              <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                 {calculatedStops.map((stop, index) => (
                   <div key={stop.stationId} className="flex items-center gap-2">
-                    <span className="text-gray-400 w-4">{index + 1}.</span>
+                    <span className="text-gray-400 dark:text-gray-500 w-4">{index + 1}.</span>
                     <span>{getStationName(stop.stationId)}</span>
                     {stop.arrivalOffset !== null && (
-                      <span className="text-xs text-gray-400">+{stop.arrivalOffset}min</span>
+                      <span className="text-xs text-gray-400 dark:text-gray-500">+{stop.arrivalOffset}min</span>
                     )}
                   </div>
                 ))}

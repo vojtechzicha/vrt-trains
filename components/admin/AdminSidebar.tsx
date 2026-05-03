@@ -26,7 +26,7 @@ export function AdminSidebar() {
       <div className="p-4 border-b border-gray-800">
         <Link href="/admin" className="flex items-center gap-2">
           <span className="text-xl font-bold">VRT</span>
-          <span className="text-xs text-gray-400">Admin</span>
+          <span className="text-xs text-gray-400 dark:text-gray-500">Admin</span>
         </Link>
       </div>
       <nav className="p-2">
@@ -48,7 +48,7 @@ export function AdminSidebar() {
       <div className="absolute bottom-0 left-0 w-56 p-4 border-t border-gray-800">
         <Link
           href="/"
-          className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+          className="flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 hover:text-white transition-colors"
         >
           ← Back to site
         </Link>

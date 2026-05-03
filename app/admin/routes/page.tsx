@@ -88,8 +88,8 @@ export default function RoutesPage() {
 
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Route Corridors</h1>
-          <p className="text-sm text-gray-500">
+          <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">Route Corridors</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             Define station sequences with base times and distances
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function RoutesPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search routes..."
-          className="w-full max-w-md px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full max-w-md px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
@@ -116,8 +116,8 @@ export default function RoutesPage() {
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-1">
-                    <span className="font-semibold text-gray-900">{route.name}</span>
-                    <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600">
+                    <span className="font-semibold text-gray-900 dark:text-gray-100">{route.name}</span>
+                    <span className="text-xs px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
                       {route.paths.length} path{route.paths.length !== 1 ? 's' : ''}
                     </span>
                     <span className="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-700">
@@ -125,9 +125,9 @@ export default function RoutesPage() {
                     </span>
                   </div>
                   {route.description && (
-                    <p className="text-sm text-gray-500 mb-1">{route.description}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">{route.description}</p>
                   )}
-                  <div className="text-sm text-gray-400">
+                  <div className="text-sm text-gray-400 dark:text-gray-500">
                     {route.paths.map((p) => p.name).join(' | ')}
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export default function RoutesPage() {
         ))}
         {sortedRoutes.length === 0 && (
           <Card>
-            <CardBody className="text-center py-8 text-gray-500">
+            <CardBody className="text-center py-8 text-gray-500 dark:text-gray-400">
               {search
                 ? 'No routes match your search.'
                 : 'No route corridors yet. Create your first route to get started.'}

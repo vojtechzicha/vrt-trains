@@ -208,7 +208,7 @@ export function RouteBuilder({
   return (
     <div className="space-y-1">
       {/* Header row */}
-      <div className="flex items-center gap-2 px-2 py-1 text-xs text-gray-500 font-medium">
+      <div className="flex items-center gap-2 px-2 py-1 text-xs text-gray-500 dark:text-gray-400 font-medium">
         <span className="w-6"></span>
         <span className="flex-1">Station</span>
         <span className="w-16 text-center">Travel</span>
@@ -228,10 +228,10 @@ export function RouteBuilder({
         return (
           <div
             key={`${stop.stationId}-${index}`}
-            className="flex items-center gap-2 p-2 rounded-lg group bg-gray-50"
+            className="flex items-center gap-2 p-2 rounded-lg group bg-gray-50 dark:bg-gray-950"
           >
             {/* Sequence number */}
-            <span className="w-6 text-center text-sm text-gray-400 font-mono">
+            <span className="w-6 text-center text-sm text-gray-400 dark:text-gray-500 font-mono">
               {index + 1}.
             </span>
 
@@ -243,7 +243,7 @@ export function RouteBuilder({
                 )}
                 {station?.name || 'Unknown'}
               </div>
-              <div className="text-xs text-gray-400 font-mono">
+              <div className="text-xs text-gray-400 dark:text-gray-500 font-mono">
                 {station?.code}
               </div>
             </div>
@@ -252,7 +252,7 @@ export function RouteBuilder({
             <div className="w-16">
               <div className="flex items-center justify-center gap-0.5">
                 {readOnlyTravelTime ? (
-                  <span className="w-10 px-1 py-1 text-sm text-center text-gray-500">
+                  <span className="w-10 px-1 py-1 text-sm text-center text-gray-500 dark:text-gray-400">
                     {isFirst ? '-' : stop.minutesFromPrevious}
                   </span>
                 ) : (
@@ -266,10 +266,10 @@ export function RouteBuilder({
                     onKeyDown={(e) => handleKeyDown(e, index, 'minutes')}
                     disabled={isFirst}
                     min={0}
-                    className="w-10 px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-10 px-1 py-1 text-sm text-center border border-gray-300 dark:border-gray-600 rounded disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 dark:disabled:text-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                 )}
-                <span className="text-xs text-gray-400">m</span>
+                <span className="text-xs text-gray-400 dark:text-gray-500">m</span>
               </div>
             </div>
 
@@ -286,14 +286,14 @@ export function RouteBuilder({
                   onKeyDown={(e) => handleKeyDown(e, index, 'dwell')}
                   disabled={isLast}
                   min={0}
-                  className="w-10 px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-10 px-1 py-1 text-sm text-center border border-gray-300 dark:border-gray-600 rounded disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 dark:disabled:text-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
-                <span className="text-xs text-gray-400">m</span>
+                <span className="text-xs text-gray-400 dark:text-gray-500">m</span>
               </div>
             </div>
 
             {/* Arrival time */}
-            <div className="w-12 text-center text-sm text-gray-500">
+            <div className="w-12 text-center text-sm text-gray-500 dark:text-gray-400">
               {isFirst ? '--' : formatTime(arrival)}
             </div>
 
@@ -313,7 +313,7 @@ export function RouteBuilder({
                       handleKeyDown(e as unknown as KeyboardEvent<HTMLInputElement>, index, 'platform');
                     }
                   }}
-                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 >
                   <option value="">-</option>
                   {station.platforms.map((p: Platform) => (
@@ -330,7 +330,7 @@ export function RouteBuilder({
                   onChange={(e) => handleUpdateStop(index, { platform: e.target.value })}
                   onKeyDown={(e) => handleKeyDown(e, index, 'platform')}
                   placeholder="Plt"
-                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               )}
             </div>
@@ -365,7 +365,7 @@ export function RouteBuilder({
             <button
               type="button"
               onClick={() => setIsAddingNew(false)}
-              className="mt-2 text-xs text-gray-500 hover:text-gray-700"
+              className="mt-2 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
             >
               Cancel
             </button>
@@ -374,7 +374,7 @@ export function RouteBuilder({
           <button
             type="button"
             onClick={() => setIsAddingNew(true)}
-            className="w-full p-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:border-blue-400 hover:text-blue-600 transition-colors text-sm"
+            className="w-full p-3 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg text-gray-500 dark:text-gray-400 hover:border-blue-400 hover:text-blue-600 transition-colors text-sm"
           >
             + Add Station
           </button>

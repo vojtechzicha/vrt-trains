@@ -22,10 +22,10 @@ export function LineCard({ line, variantCount }: LineCardProps) {
             className="text-lg px-3 py-1"
           />
           <div className="flex-1">
-            <h3 className="font-semibold text-gray-900">{line.name}</h3>
-            <p className="text-sm text-gray-500 capitalize">{line.type}</p>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">{line.name}</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 capitalize">{line.type}</p>
           </div>
-          <div className="text-sm text-gray-400">
+          <div className="text-sm text-gray-400 dark:text-gray-500">
             {count} variant{count !== 1 ? 's' : ''}
           </div>
         </CardBody>

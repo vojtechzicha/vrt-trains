@@ -26,7 +26,7 @@ export function Navigation() {
             key={item.href}
             href={item.href}
             className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-              isActive ? 'text-blue-600' : 'text-gray-600'
+              isActive ? 'text-blue-600' : 'text-gray-600 dark:text-gray-400'
             }`}
           >
             {item.label}

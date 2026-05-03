@@ -59,7 +59,7 @@ export function DepartureRow({
 
   const timeClasses = [
     'w-20 text-3xl font-mono font-bold',
-    isPast ? 'text-gray-500' : 'text-amber-400',
+    isPast ? 'text-gray-500 dark:text-gray-400' : 'text-amber-400',
     isDepartingSoon && !isPast ? 'animate-pulse' : '',
   ].join(' ');
 
@@ -71,7 +71,7 @@ export function DepartureRow({
       <div className="w-24 flex justify-center">
         <div className="transition-opacity duration-300">
           {displayMode === 2 ? (
-            <div className={`text-lg font-mono ${isPast ? 'text-gray-500' : 'text-gray-300'}`}>
+            <div className={`text-lg font-mono ${isPast ? 'text-gray-500 dark:text-gray-400' : 'text-gray-300'}`}>
               {trainNumber}
             </div>
           ) : (
@@ -85,7 +85,7 @@ export function DepartureRow({
         </div>
       </div>
       <div className="flex-1">
-        <div className={`text-xl font-semibold ${isPast ? 'text-gray-400' : 'text-white'}`}>
+        <div className={`text-xl font-semibold ${isPast ? 'text-gray-400 dark:text-gray-500' : 'text-white'}`}>
           {destination}
         </div>
       </div>
@@ -105,17 +105,17 @@ export function DepartureRow({
       <div className="w-28 text-right">
         {fromStationName ? (
           <>
-            <div className="text-xs text-gray-500 truncate" title={fromStationName}>
+            <div className="text-xs text-gray-500 dark:text-gray-400 truncate" title={fromStationName}>
               {fromStationName}
             </div>
-            <div className={`text-2xl font-bold ${isPast ? 'text-gray-400' : 'text-white'}`}>
+            <div className={`text-2xl font-bold ${isPast ? 'text-gray-400 dark:text-gray-500' : 'text-white'}`}>
               Plt {platform}
             </div>
           </>
         ) : (
           <>
-            <div className="text-sm text-gray-400">Platform</div>
-            <div className={`text-2xl font-bold ${isPast ? 'text-gray-400' : 'text-white'}`}>
+            <div className="text-sm text-gray-400 dark:text-gray-500">Platform</div>
+            <div className={`text-2xl font-bold ${isPast ? 'text-gray-400 dark:text-gray-500' : 'text-white'}`}>
               {platform}
             </div>
           </>

@@ -111,14 +111,14 @@ export default function PlatformAssignmentPage({ params }: { params: Promise<{ i
         <CardHeader>
           <div>
             <h1 className="text-xl font-bold">Platform Assignment</h1>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
               {data.station.name} ({data.station.code}) - {data.station.platforms.length} platforms
             </p>
           </div>
         </CardHeader>
         <CardBody>
           {data.variants.length === 0 ? (
-            <p className="text-gray-500">No lines serve this station yet.</p>
+            <p className="text-gray-500 dark:text-gray-400">No lines serve this station yet.</p>
           ) : (
             <PlatformAssignmentEditor
               stationId={id}

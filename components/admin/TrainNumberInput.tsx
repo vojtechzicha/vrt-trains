@@ -29,7 +29,7 @@ export function TrainNumberInput({
 
   return (
     <div className="w-full">
-      <label className="block text-sm font-medium text-gray-700 mb-1">
+      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
         {label}
       </label>
       <div className="flex gap-2 items-center">
@@ -42,8 +42,8 @@ export function TrainNumberInput({
           className={`
             w-20 px-3 py-2 text-sm rounded-lg border
             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-            disabled:bg-gray-50 disabled:text-gray-500
-            ${error ? 'border-red-500' : 'border-gray-300'}
+            disabled:bg-gray-50 dark:disabled:bg-gray-950 disabled:text-gray-500 dark:disabled:text-gray-400
+            ${error ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}
           `}
         />
         <input
@@ -56,15 +56,15 @@ export function TrainNumberInput({
           className={`
             w-24 px-3 py-2 text-sm rounded-lg border
             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-            disabled:bg-gray-50 disabled:text-gray-500
-            ${error ? 'border-red-500' : 'border-gray-300'}
+            disabled:bg-gray-50 dark:disabled:bg-gray-950 disabled:text-gray-500 dark:disabled:text-gray-400
+            ${error ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}
           `}
         />
-        <span className="text-gray-400">→</span>
-        <div className="px-3 py-2 bg-gray-100 rounded-lg text-sm font-mono min-w-[80px]">
+        <span className="text-gray-400 dark:text-gray-500">→</span>
+        <div className="px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-mono min-w-[80px]">
           {displayNumber || '—'}
         </div>
-        <span className="text-xs text-gray-500">
+        <span className="text-xs text-gray-500 dark:text-gray-400">
           ({direction === 'outbound' ? 'odd' : 'even'})
         </span>
       </div>

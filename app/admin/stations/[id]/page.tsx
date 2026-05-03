@@ -154,9 +154,9 @@ export default function EditStationPage({ params }: { params: Promise<{ id: stri
                     type="checkbox"
                     checked={isTerminal}
                     onChange={(e) => setIsTerminal(e.target.checked)}
-                    className="w-4 h-4 rounded border-gray-300"
+                    className="w-4 h-4 rounded border-gray-300 dark:border-gray-600"
                   />
-                  <span className="text-sm text-gray-700">Terminal station</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">Terminal station</span>
                 </label>
               </div>
             </div>

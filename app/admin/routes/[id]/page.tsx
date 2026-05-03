@@ -135,8 +135,8 @@ export default function EditRoutePage({ params }: { params: Promise<{ id: string
       </div>
 
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-gray-900">Edit Route: {route.name}</h1>
-        <p className="text-sm text-gray-500">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">Edit Route: {route.name}</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           Modify the route corridor settings
         </p>
       </div>

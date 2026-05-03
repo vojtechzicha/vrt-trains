@@ -111,7 +111,7 @@ export function TimetableEditModal({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6">
+      <div className="bg-white dark:bg-gray-900 rounded-xl shadow-xl max-w-md w-full mx-4 p-6">
         <h2 className="text-lg font-semibold mb-4">Edit Train</h2>
 
         <div className="space-y-4">
@@ -125,14 +125,14 @@ export function TimetableEditModal({
           />
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               First Departure
             </label>
             <input
               type="time"
               value={firstDeparture}
               onChange={(e) => setFirstDeparture(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 

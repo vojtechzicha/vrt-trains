@@ -97,14 +97,14 @@ export default function VariantsPage({ params }: { params: Promise<{ id: string 
             className="text-lg px-3 py-1"
           />
           <div>
-            <h1 className="text-xl font-bold text-gray-900">{line.name}</h1>
-            <p className="text-sm text-gray-500">Variants</p>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">{line.name}</h1>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Variants</p>
           </div>
         </div>
         <div className="flex gap-2">
           <Link
             href={`/admin/lines/${id}/schedule`}
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+            className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950"
           >
             Schedule
           </Link>
@@ -124,10 +124,10 @@ export default function VariantsPage({ params }: { params: Promise<{ id: string 
               <div className="flex items-center justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-1">
-                    <span className="font-mono font-semibold text-gray-900">
+                    <span className="font-mono font-semibold text-gray-900 dark:text-gray-100">
                       {variant.code}
                     </span>
-                    <span className="text-sm text-gray-500">{variant.name}</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">{variant.name}</span>
                     <span
                       className={`text-xs px-2 py-0.5 rounded ${
                         variant.direction === 'outbound'
@@ -138,7 +138,7 @@ export default function VariantsPage({ params }: { params: Promise<{ id: string 
                       {variant.direction}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     {getRouteDescription(variant)} ({variant.stations.length} stops)
                   </p>
                 </div>
@@ -177,7 +177,7 @@ export default function VariantsPage({ params }: { params: Promise<{ id: string 
         ))}
         {variants.length === 0 && (
           <Card>
-            <CardBody className="text-center py-8 text-gray-500">
+            <CardBody className="text-center py-8 text-gray-500 dark:text-gray-400">
               No variants yet. Create your first variant.
             </CardBody>
           </Card>

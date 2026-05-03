@@ -32,7 +32,7 @@ export function LineTimetable({ variants, timetables, stations, routes }: LineTi
 
   if (entries.length === 0) {
     return (
-      <div className="text-center py-8 text-gray-500">
+      <div className="text-center py-8 text-gray-500 dark:text-gray-400">
         No timetable data available
       </div>
     );
@@ -42,10 +42,10 @@ export function LineTimetable({ variants, timetables, stations, routes }: LineTi
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="sticky left-0 bg-gray-50 z-10">Station</TableHead>
+          <TableHead className="sticky left-0 bg-gray-50 dark:bg-gray-950 z-10">Station</TableHead>
           {entries.map((entry) => (
             <TableHead key={entry.trainNumber} className="text-center min-w-[80px] !normal-case">
-              <div className="flex items-center justify-center gap-1 text-xs text-gray-400">
+              <div className="flex items-center justify-center gap-1 text-xs text-gray-400 dark:text-gray-500">
                 <span>{entry.variantCode}</span>
                 <OperatingDaysBadge days={entry.operatingDays} />
               </div>
@@ -68,7 +68,7 @@ export function LineTimetable({ variants, timetables, stations, routes }: LineTi
 
           return (
             <TableRow key={stationId} className={isCountryCrossing ? 'border-t-2 border-t-amber-400' : ''}>
-              <TableCell className="sticky left-0 bg-white z-10 font-medium">
+              <TableCell className="sticky left-0 bg-white dark:bg-gray-900 z-10 font-medium">
                 <span className="flex items-center gap-1.5">
                   {(isCountryCrossing || currentCountry !== 'Czech') && (
                     <span title={currentCountry}>{getCountryFlag(currentCountry)}</span>
@@ -86,7 +86,7 @@ export function LineTimetable({ variants, timetables, stations, routes }: LineTi
                   return (
                     <TableCell key={entry.trainNumber} className="text-center">
                       {isOnRoute ? (
-                        <span className="text-gray-400">|</span>
+                        <span className="text-gray-400 dark:text-gray-500">|</span>
                       ) : isInRange ? (
                         <span className="inline-block rotate-90 text-gray-200">~</span>
                       ) : (
@@ -100,7 +100,7 @@ export function LineTimetable({ variants, timetables, stations, routes }: LineTi
                   <TableCell key={entry.trainNumber} className="text-center">
                     {timeData.arrival && timeData.departure ? (
                       <div>
-                        <div className="text-xs text-gray-400">{formatTime(timeData.arrival)}</div>
+                        <div className="text-xs text-gray-400 dark:text-gray-500">{formatTime(timeData.arrival)}</div>
                         <div className="font-medium">{formatTime(timeData.departure)}</div>
                       </div>
                     ) : (

@@ -6,7 +6,7 @@ export default async function StationsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Stations</h1>
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Stations</h1>
 
       <StationSearchList stations={stations} variant="station" />
     </div>

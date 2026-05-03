@@ -455,8 +455,8 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
           className="text-lg px-3 py-1"
         />
         <div>
-          <h1 className="text-xl font-bold text-gray-900">New Variant</h1>
-          <p className="text-sm text-gray-500">{line.name}</p>
+          <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">New Variant</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{line.name}</p>
         </div>
       </div>
 
@@ -464,7 +464,7 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
       <div className="flex items-center gap-4 mb-6">
         <div
           className={`flex items-center gap-2 ${
-            step === 1 ? 'text-blue-600' : 'text-gray-400'
+            step === 1 ? 'text-blue-600' : 'text-gray-400 dark:text-gray-500'
           }`}
         >
           <span
@@ -473,17 +473,17 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
                 ? 'bg-blue-600 text-white'
                 : step > 1
                 ? 'bg-green-500 text-white'
-                : 'bg-gray-200'
+                : 'bg-gray-200 dark:bg-gray-700'
             }`}
           >
             {step > 1 ? '✓' : '1'}
           </span>
           <span className="text-sm font-medium">Select Route</span>
         </div>
-        <div className="w-8 h-px bg-gray-300" />
+        <div className="w-8 h-px bg-gray-300 dark:bg-gray-600" />
         <div
           className={`flex items-center gap-2 ${
-            step === 2 ? 'text-blue-600' : 'text-gray-400'
+            step === 2 ? 'text-blue-600' : 'text-gray-400 dark:text-gray-500'
           }`}
         >
           <span
@@ -492,22 +492,22 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
                 ? 'bg-blue-600 text-white'
                 : step > 2
                 ? 'bg-green-500 text-white'
-                : 'bg-gray-200'
+                : 'bg-gray-200 dark:bg-gray-700'
             }`}
           >
             {step > 2 ? '✓' : '2'}
           </span>
           <span className="text-sm font-medium">Forward Variant</span>
         </div>
-        <div className="w-8 h-px bg-gray-300" />
+        <div className="w-8 h-px bg-gray-300 dark:bg-gray-600" />
         <div
           className={`flex items-center gap-2 ${
-            step === 3 ? 'text-blue-600' : 'text-gray-400'
+            step === 3 ? 'text-blue-600' : 'text-gray-400 dark:text-gray-500'
           }`}
         >
           <span
             className={`w-6 h-6 rounded-full flex items-center justify-center text-sm font-medium ${
-              step === 3 ? 'bg-blue-600 text-white' : 'bg-gray-200'
+              step === 3 ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700'
             }`}
           >
             3
@@ -623,7 +623,7 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
                     placeholder="Sprinter 1 Express"
                   />
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-gray-500 dark:text-gray-400">
                   Direction: {direction === 'outbound' ? 'Outbound' : 'Inbound'}
                 </div>
               </CardBody>
@@ -703,7 +703,7 @@ export default function NewVariantPage({ params }: { params: Promise<{ id: strin
                     placeholder="Return journey"
                   />
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-gray-500 dark:text-gray-400">
                   Direction: {direction === 'outbound' ? 'Inbound' : 'Outbound'}
                 </div>
               </CardBody>

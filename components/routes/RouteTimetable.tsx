@@ -38,7 +38,7 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
     <Card>
       <CardHeader>
         <h2 className="text-lg font-semibold">{directionLabel}</h2>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           Variants: {variantCodes.join(', ')}
         </p>
       </CardHeader>
@@ -47,7 +47,7 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
           <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="sticky left-0 bg-gray-50 z-10">Station</TableHead>
+            <TableHead className="sticky left-0 bg-gray-50 dark:bg-gray-950 z-10">Station</TableHead>
             {entries.map((entry) => (
               <TableHead key={entry.trainNumber} className="text-center min-w-[80px] !normal-case">
                 <div className="flex flex-col items-center gap-0.5">
@@ -57,7 +57,7 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
                     textColor={entry.lineTextColor}
                     className="text-xs px-1.5 py-0.5"
                   />
-                  <div className="flex items-center gap-1 text-xs text-gray-500">
+                  <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
                     <span>{entry.variantCode}</span>
                     <OperatingDaysBadge days={entry.operatingDays} />
                   </div>
@@ -70,12 +70,12 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
         <TableBody>
           {/* Origin row - shows where trains come from if they enter this route from outside */}
           {hasOrigins && (
-            <TableRow className="bg-gray-50">
-              <TableCell className="sticky left-0 bg-gray-50 z-10 text-gray-500 italic text-sm">
+            <TableRow className="bg-gray-50 dark:bg-gray-950">
+              <TableCell className="sticky left-0 bg-gray-50 dark:bg-gray-950 z-10 text-gray-500 dark:text-gray-400 italic text-sm">
                 From
               </TableCell>
               {entries.map((entry) => (
-                <TableCell key={entry.trainNumber} className="text-center text-xs text-gray-400">
+                <TableCell key={entry.trainNumber} className="text-center text-xs text-gray-400 dark:text-gray-500">
                   {entry.entersFromOutside ? entry.originStationName : '-'}
                 </TableCell>
               ))}
@@ -99,7 +99,7 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
                 key={stationId}
                 className={isCountryCrossing ? 'border-t-2 border-t-amber-400' : ''}
               >
-                <TableCell className="sticky left-0 bg-white z-10 font-medium">
+                <TableCell className="sticky left-0 bg-white dark:bg-gray-900 z-10 font-medium">
                   <span className="flex items-center gap-1.5">
                     {(isCountryCrossing || currentCountry !== 'Czech') &&
                       getCountryFlag(currentCountry) && (
@@ -124,7 +124,7 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
                     return (
                       <TableCell key={entry.trainNumber} className="text-center">
                         {isOnRoute ? (
-                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-400 dark:text-gray-500">|</span>
                         ) : isInRange ? (
                           <span className="inline-block rotate-90 text-gray-200">~</span>
                         ) : (
@@ -138,7 +138,7 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
                     <TableCell key={entry.trainNumber} className="text-center">
                       {timeData.arrival && timeData.departure ? (
                         <div>
-                          <div className="text-xs text-gray-400">{formatTime(timeData.arrival)}</div>
+                          <div className="text-xs text-gray-400 dark:text-gray-500">{formatTime(timeData.arrival)}</div>
                           <div className="font-medium">{formatTime(timeData.departure)}</div>
                         </div>
                       ) : (
@@ -155,12 +155,12 @@ function DirectionTable({ entries, stationOrder, stationMap, directionLabel, var
 
           {/* Destination row - shows where trains continue to if they leave this route */}
           {hasDestinations && (
-            <TableRow className="bg-gray-50">
-              <TableCell className="sticky left-0 bg-gray-50 z-10 text-gray-500 italic text-sm">
+            <TableRow className="bg-gray-50 dark:bg-gray-950">
+              <TableCell className="sticky left-0 bg-gray-50 dark:bg-gray-950 z-10 text-gray-500 dark:text-gray-400 italic text-sm">
                 To
               </TableCell>
               {entries.map((entry) => (
-                <TableCell key={entry.trainNumber} className="text-center text-xs text-gray-400">
+                <TableCell key={entry.trainNumber} className="text-center text-xs text-gray-400 dark:text-gray-500">
                   {entry.continuesBeyond ? entry.destinationStationName : '-'}
                 </TableCell>
               ))}
@@ -221,7 +221,7 @@ export function RouteTimetable({
 
   if (!hasOutbound && !hasInbound) {
     return (
-      <div className="text-center py-8 text-gray-500">No scheduled trains on this route</div>
+      <div className="text-center py-8 text-gray-500 dark:text-gray-400">No scheduled trains on this route</div>
     );
   }
 

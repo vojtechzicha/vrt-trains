@@ -214,9 +214,9 @@ export function RouteSequenceBuilder({
         const junctionError = validateJunction(index);
 
         return (
-          <div key={index} className="border border-gray-200 rounded-lg p-4 space-y-3">
+          <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 Segment {index + 1}
               </span>
               <button
@@ -239,7 +239,7 @@ export function RouteSequenceBuilder({
               <div className="grid grid-cols-2 gap-3">
                 {/* Route selection */}
                 <div>
-                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
                     Route
                   </label>
                   <select
@@ -257,7 +257,7 @@ export function RouteSequenceBuilder({
                         endStationId: undefined,
                       });
                     }}
-                    className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                   >
                     <option value="">Select route...</option>
                     {routes.map((r) => (
@@ -270,7 +270,7 @@ export function RouteSequenceBuilder({
 
                 {/* Path selection with speed buttons */}
                 <div>
-                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
                     Path
                   </label>
                   <div className="flex gap-1">
@@ -286,7 +286,7 @@ export function RouteSequenceBuilder({
                         });
                       }}
                       disabled={!segment.routeId}
-                      className="flex-1 min-w-0 px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
+                      className="flex-1 min-w-0 px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-800"
                     >
                       <option value="">Select path...</option>
                       {route?.paths.map((p) => (
@@ -301,7 +301,7 @@ export function RouteSequenceBuilder({
                       ))}
                     </select>
                     {/* Speed category buttons */}
-                    <div className="flex border border-gray-300 rounded overflow-hidden">
+                    <div className="flex border border-gray-300 dark:border-gray-600 rounded overflow-hidden">
                       {(['vrt', 'fast', 'slow'] as SpeedCategory[]).map((speed) => (
                         <button
                           key={speed}
@@ -311,7 +311,7 @@ export function RouteSequenceBuilder({
                           className={`px-2 py-1.5 text-xs font-medium transition-colors ${
                             segment.speedCategory === speed
                               ? 'bg-blue-600 text-white'
-                              : 'bg-white text-gray-600 hover:bg-gray-100'
+                              : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                           } disabled:opacity-50 disabled:cursor-not-allowed`}
                           title={speed === 'vrt' ? 'VRT (High-speed)' : speed === 'fast' ? 'Fast' : 'Slow (Regional)'}
                         >
@@ -327,7 +327,7 @@ export function RouteSequenceBuilder({
               <div className="grid grid-cols-2 gap-3">
                 {/* Start station (optional subset) */}
                 <div>
-                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
                     Start Station (optional)
                   </label>
                   <select
@@ -337,7 +337,7 @@ export function RouteSequenceBuilder({
                       : { startStationId: e.target.value || undefined }
                     )}
                     disabled={!segment.pathId}
-                    className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
+                    className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-800"
                   >
                     <option value="">(From beginning)</option>
                     {pathStops.map((stop) => {
@@ -353,7 +353,7 @@ export function RouteSequenceBuilder({
 
                 {/* End station (optional subset) */}
                 <div>
-                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
                     End Station (optional)
                   </label>
                   <select
@@ -363,7 +363,7 @@ export function RouteSequenceBuilder({
                       : { endStationId: e.target.value || undefined }
                     )}
                     disabled={!segment.pathId}
-                    className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
+                    className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-800"
                   >
                     <option value="">(To end)</option>
                     {pathStops.map((stop) => {
@@ -381,7 +381,7 @@ export function RouteSequenceBuilder({
 
             {/* Segment summary */}
             {path && (
-              <div className="text-xs text-gray-500">
+              <div className="text-xs text-gray-500 dark:text-gray-400">
                 {route?.name} / {path.name}
                 {segment.reversed && <span className="text-orange-600 ml-1">(reverse)</span>}
                 <span className="text-blue-600 ml-1">
@@ -401,7 +401,7 @@ export function RouteSequenceBuilder({
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1">
+              <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
                 Route
               </label>
               <select
@@ -418,7 +418,7 @@ export function RouteSequenceBuilder({
                     speedCategory: 'vrt',
                   });
                 }}
-                className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
               >
                 <option value="">Select route...</option>
                 {routes.map((r) => (
@@ -430,7 +430,7 @@ export function RouteSequenceBuilder({
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1">
+              <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
                 Path
               </label>
               <div className="flex gap-1">
@@ -445,7 +445,7 @@ export function RouteSequenceBuilder({
                     });
                   }}
                   disabled={!addingSegment.routeId}
-                  className="flex-1 min-w-0 px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100"
+                  className="flex-1 min-w-0 px-2 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-800"
                 >
                   <option value="">Select path...</option>
                   {addingSegment.routeId &&
@@ -464,7 +464,7 @@ export function RouteSequenceBuilder({
                     })}
                 </select>
                 {/* Speed category buttons */}
-                <div className="flex border border-gray-300 rounded overflow-hidden">
+                <div className="flex border border-gray-300 dark:border-gray-600 rounded overflow-hidden">
                   {(['vrt', 'fast', 'slow'] as SpeedCategory[]).map((speed) => (
                     <button
                       key={speed}
@@ -474,7 +474,7 @@ export function RouteSequenceBuilder({
                       className={`px-2 py-1.5 text-xs font-medium transition-colors ${
                         (addingSegment.speedCategory || 'vrt') === speed
                           ? 'bg-blue-600 text-white'
-                          : 'bg-white text-gray-600 hover:bg-gray-100'
+                          : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                       } disabled:opacity-50 disabled:cursor-not-allowed`}
                       title={speed === 'vrt' ? 'VRT (High-speed)' : speed === 'fast' ? 'Fast' : 'Slow (Regional)'}
                     >
@@ -510,7 +510,7 @@ export function RouteSequenceBuilder({
         <button
           type="button"
           onClick={handleAddSegment}
-          className="w-full p-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:border-blue-400 hover:text-blue-600 transition-colors text-sm"
+          className="w-full p-3 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg text-gray-500 dark:text-gray-400 hover:border-blue-400 hover:text-blue-600 transition-colors text-sm"
         >
           + Add Route Segment
         </button>
@@ -518,8 +518,8 @@ export function RouteSequenceBuilder({
 
       {/* Preview */}
       {previewStops.length > 0 && (
-        <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-          <div className="text-xs font-medium text-gray-500 mb-2">
+        <div className="mt-4 p-3 bg-gray-50 dark:bg-gray-950 rounded-lg">
+          <div className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
             Station Preview ({previewStops.length} stops)
           </div>
           <div className="flex flex-wrap gap-1">
@@ -533,7 +533,7 @@ export function RouteSequenceBuilder({
                   className={`text-xs px-2 py-1 rounded ${
                     isFirst || isLast
                       ? 'bg-blue-100 text-blue-700 font-medium'
-                      : 'bg-gray-200 text-gray-700'
+                      : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
                   }`}
                 >
                   {station?.name || stop.stationId}
@@ -545,7 +545,7 @@ export function RouteSequenceBuilder({
       )}
 
       {value.length === 0 && (
-        <div className="text-center py-4 text-sm text-gray-500">
+        <div className="text-center py-4 text-sm text-gray-500 dark:text-gray-400">
           Add at least one route segment to define the variant&apos;s path.
         </div>
       )}

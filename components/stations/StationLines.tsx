@@ -9,7 +9,7 @@ interface StationLinesProps {
 export function StationLines({ lines }: StationLinesProps) {
   if (lines.length === 0) {
     return (
-      <p className="text-gray-500">No lines serve this station</p>
+      <p className="text-gray-500 dark:text-gray-400">No lines serve this station</p>
     );
   }
 

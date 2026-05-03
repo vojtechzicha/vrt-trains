@@ -62,8 +62,8 @@ export default async function LineDetailPage({ params }: LineDetailPageProps) {
           className="text-2xl px-4 py-2"
         />
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">{line.name}</h1>
-          <p className="text-gray-500 capitalize">{line.type}</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{line.name}</h1>
+          <p className="text-gray-500 dark:text-gray-400 capitalize">{line.type}</p>
         </div>
       </div>
 
@@ -74,7 +74,7 @@ export default async function LineDetailPage({ params }: LineDetailPageProps) {
               <h2 className="text-lg font-semibold">
                 {outboundTerminals.from} → {outboundTerminals.to}
               </h2>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 Variants: {outboundVariants.map((v) => v.code).join(', ')}
               </p>
             </CardHeader>
@@ -97,7 +97,7 @@ export default async function LineDetailPage({ params }: LineDetailPageProps) {
               <h2 className="text-lg font-semibold">
                 {inboundTerminals.from} → {inboundTerminals.to}
               </h2>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 Variants: {inboundVariants.map((v) => v.code).join(', ')}
               </p>
             </CardHeader>

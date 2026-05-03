@@ -57,7 +57,7 @@ export function ViaStationsCycler({ stations, variantName, className = '' }: Via
         fading ? 'opacity-0' : 'opacity-100'
       } ${
         isVia
-          ? 'text-sm text-gray-400 italic'
+          ? 'text-sm text-gray-400 dark:text-gray-500 italic'
           : 'text-xs text-amber-400 font-semibold tracking-wide uppercase'
       }`}
     >

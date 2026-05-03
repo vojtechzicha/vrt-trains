@@ -290,7 +290,7 @@ export function RoutePathEditor({
     <div className="space-y-4">
       {/* Path name */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Path Name
         </label>
         <input
@@ -298,7 +298,7 @@ export function RoutePathEditor({
           value={value.name}
           onChange={(e) => handleNameChange(e.target.value)}
           placeholder="e.g., via VRT, via Jihlava"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
@@ -310,7 +310,7 @@ export function RoutePathEditor({
       )}
 
       {/* Stops header */}
-      <div className="flex items-center gap-2 px-2 text-xs text-gray-500 font-medium">
+      <div className="flex items-center gap-2 px-2 text-xs text-gray-500 dark:text-gray-400 font-medium">
         <span className="w-6"></span>
         <span className="flex-1">Station</span>
         <span className="w-16 text-center">Dist</span>
@@ -341,10 +341,10 @@ export function RoutePathEditor({
           return (
             <div
               key={`${stop.stationId}-${index}`}
-              className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg group"
+              className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-950 rounded-lg group"
             >
               {/* Sequence number */}
-              <span className="w-6 text-center text-sm text-gray-400 font-mono">
+              <span className="w-6 text-center text-sm text-gray-400 dark:text-gray-500 font-mono">
                 {index + 1}.
               </span>
 
@@ -356,7 +356,7 @@ export function RoutePathEditor({
                   )}
                   {station?.name || 'Unknown'}
                 </div>
-                <div className="text-xs text-gray-400 font-mono">
+                <div className="text-xs text-gray-400 dark:text-gray-500 font-mono">
                   {station?.code}
                 </div>
               </div>
@@ -376,7 +376,7 @@ export function RoutePathEditor({
                   disabled={isFirst}
                   min={0}
                   step={0.1}
-                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 dark:border-gray-600 rounded disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 dark:disabled:text-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   placeholder="-"
                 />
               </div>
@@ -395,7 +395,7 @@ export function RoutePathEditor({
                   onKeyDown={(e) => handleKeyDown(e, index, 'vrt')}
                   disabled={isFirst}
                   min={0}
-                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 dark:border-gray-600 rounded disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 dark:disabled:text-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   placeholder="-"
                 />
               </div>
@@ -414,7 +414,7 @@ export function RoutePathEditor({
                   onKeyDown={(e) => handleKeyDown(e, index, 'fast')}
                   disabled={isFirst}
                   min={0}
-                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 dark:border-gray-600 rounded disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 dark:disabled:text-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   placeholder="-"
                 />
               </div>
@@ -433,7 +433,7 @@ export function RoutePathEditor({
                   onKeyDown={(e) => handleKeyDown(e, index, 'slow')}
                   disabled={isFirst}
                   min={0}
-                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded disabled:bg-gray-100 disabled:text-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 dark:border-gray-600 rounded disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 dark:disabled:text-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   placeholder="-"
                 />
               </div>
@@ -451,17 +451,17 @@ export function RoutePathEditor({
                   }
                   onKeyDown={(e) => handleKeyDown(e, index, 'dwell')}
                   min={0}
-                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-1 py-1 text-sm text-center border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               </div>
 
               {/* Cumulative km */}
-              <div className="w-14 text-center text-sm text-gray-500">
+              <div className="w-14 text-center text-sm text-gray-500 dark:text-gray-400">
                 {cumulativeDistances[index].toFixed(1)}
               </div>
 
               {/* Cumulative minutes (VRT) */}
-              <div className="w-12 text-center text-sm text-gray-500">
+              <div className="w-12 text-center text-sm text-gray-500 dark:text-gray-400">
                 {cumulativeTimes[index]}
               </div>
 
@@ -536,7 +536,7 @@ export function RoutePathEditor({
                       type="button"
                       onClick={() => handleMoveUp(index)}
                       disabled={isFirst}
-                      className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30"
+                      className="p-1 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 disabled:opacity-30"
                       title="Move up"
                     >
                       ↑
@@ -545,7 +545,7 @@ export function RoutePathEditor({
                       type="button"
                       onClick={() => handleMoveDown(index)}
                       disabled={isLast}
-                      className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30"
+                      className="p-1 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 disabled:opacity-30"
                       title="Move down"
                     >
                       ↓
@@ -581,7 +581,7 @@ export function RoutePathEditor({
                 <button
                   type="button"
                   onClick={() => setIsAddingNew(false)}
-                  className="mt-2 text-xs text-gray-500 hover:text-gray-700"
+                  className="mt-2 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                 >
                   Cancel
                 </button>
@@ -590,7 +590,7 @@ export function RoutePathEditor({
               <button
                 type="button"
                 onClick={() => setIsAddingNew(true)}
-                className="w-full p-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:border-blue-400 hover:text-blue-600 transition-colors text-sm"
+                className="w-full p-3 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg text-gray-500 dark:text-gray-400 hover:border-blue-400 hover:text-blue-600 transition-colors text-sm"
               >
                 + Add Station
               </button>
@@ -600,23 +600,23 @@ export function RoutePathEditor({
       </div>
 
       {/* Reverse timing toggle */}
-      <div className="pt-2 border-t border-gray-200">
+      <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
         <label className="flex items-center gap-2 text-sm">
           <input
             type="checkbox"
             checked={showReverseAdjustments}
             onChange={(e) => setShowReverseAdjustments(e.target.checked)}
-            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500"
           />
-          <span className="text-gray-700">Show reverse direction timing adjustments</span>
+          <span className="text-gray-700 dark:text-gray-300">Show reverse direction timing adjustments</span>
         </label>
-        <p className="text-xs text-gray-500 mt-1 ml-6">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 ml-6">
           Enable if travel times differ between directions (e.g., uphill vs downhill)
         </p>
       </div>
 
       {/* Summary */}
-      <div className="pt-2 border-t border-gray-200 text-sm text-gray-600">
+      <div className="pt-2 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
         <span className="font-medium">{value.stops.length}</span> stops |{' '}
         <span className="font-medium">
           {cumulativeDistances[cumulativeDistances.length - 1]?.toFixed(1) || 0}

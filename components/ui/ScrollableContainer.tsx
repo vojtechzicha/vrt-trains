@@ -90,7 +90,7 @@ export function ScrollableContainer({ children, className = '' }: ScrollableCont
     <div className={className}>
       {/* Top scroll bar with buttons - always render but hide when not needed */}
       <div
-        className={`flex items-center gap-2 px-4 py-2 bg-gray-50 border-b border-gray-200 transition-all ${
+        className={`flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-700 transition-all ${
           hasOverflow ? 'opacity-100' : 'opacity-0 h-0 py-0 overflow-hidden'
         }`}
       >
@@ -99,15 +99,15 @@ export function ScrollableContainer({ children, className = '' }: ScrollableCont
           disabled={!canScrollLeft}
           className={`px-3 py-1.5 text-sm font-medium rounded border transition-colors ${
             canScrollLeft
-              ? 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100'
-              : 'bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed'
+              ? 'bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+              : 'bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
           }`}
         >
           ← Left
         </button>
 
         {/* Progress bar */}
-        <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+        <div className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
           <div
             className="h-full bg-blue-500 rounded-full transition-all duration-150"
             style={{
@@ -122,8 +122,8 @@ export function ScrollableContainer({ children, className = '' }: ScrollableCont
           disabled={!canScrollRight}
           className={`px-3 py-1.5 text-sm font-medium rounded border transition-colors ${
             canScrollRight
-              ? 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100'
-              : 'bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed'
+              ? 'bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+              : 'bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
           }`}
         >
           Right →

@@ -198,14 +198,14 @@ export default function StationsAdminPage() {
   return (
     <div>
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Stations</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Stations</h1>
         <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search stations..."
-            className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent sm:w-64"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent sm:w-64"
           />
           <div className="flex gap-2">
             <Button
@@ -279,9 +279,9 @@ export default function StationsAdminPage() {
                       type="checkbox"
                       checked={isTerminal}
                       onChange={(e) => setIsTerminal(e.target.checked)}
-                      className="w-4 h-4 rounded border-gray-300"
+                      className="w-4 h-4 rounded border-gray-300 dark:border-gray-600"
                     />
-                    <span className="text-sm text-gray-700">Terminal station</span>
+                    <span className="text-sm text-gray-700 dark:text-gray-300">Terminal station</span>
                   </label>
                 </div>
               </div>
@@ -333,7 +333,7 @@ export default function StationsAdminPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Member Stations (select at least 2)
                 </label>
                 <input
@@ -341,9 +341,9 @@ export default function StationsAdminPage() {
                   value={memberFilter}
                   onChange={(e) => setMemberFilter(e.target.value)}
                   placeholder="Filter stations..."
-                  className="w-full px-3 py-2 mb-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+                  className="w-full px-3 py-2 mb-2 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent"
                 />
-                <div className="border rounded-lg p-4 max-h-64 overflow-y-auto bg-gray-50">
+                <div className="border rounded-lg p-4 max-h-64 overflow-y-auto bg-gray-50 dark:bg-gray-950">
                   <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
                     {physicalStations
                       .filter((station) => smartMatchStation(memberFilter, station))
@@ -353,17 +353,17 @@ export default function StationsAdminPage() {
                         className={`flex items-center gap-2 p-2 rounded cursor-pointer transition-colors ${
                           selectedMemberIds.includes(station.id)
                             ? 'bg-amber-100 ring-1 ring-amber-400'
-                            : 'bg-white hover:bg-gray-100'
+                            : 'bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800'
                         }`}
                       >
                         <input
                           type="checkbox"
                           checked={selectedMemberIds.includes(station.id)}
                           onChange={() => toggleMemberStation(station.id)}
-                          className="w-4 h-4 rounded border-gray-300 text-amber-600"
+                          className="w-4 h-4 rounded border-gray-300 dark:border-gray-600 text-amber-600"
                         />
                         <span className="text-sm">
-                          <span className="font-mono text-gray-500 mr-1">{station.code}</span>
+                          <span className="font-mono text-gray-500 dark:text-gray-400 mr-1">{station.code}</span>
                           {station.name}
                         </span>
                       </label>
@@ -400,21 +400,21 @@ export default function StationsAdminPage() {
             </h2>
           </CardHeader>
           <CardBody className="p-0">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead className="bg-gray-50 dark:bg-gray-950">
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Code</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Member Stations</th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase">Actions</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Code</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Name</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Member Stations</th>
+                  <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Actions</th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
                 {filteredVirtualStations.map((station) => (
                   <tr key={station.id} className="hover:bg-amber-50">
                     <td className="px-4 py-3 text-sm font-mono font-medium">{station.code}</td>
                     <td className="px-4 py-3 text-sm">{station.name}</td>
-                    <td className="px-4 py-3 text-sm text-gray-500">
+                    <td className="px-4 py-3 text-sm text-gray-500 dark:text-gray-400">
                       {station.memberStationIds?.map((id) => {
                         const member = physicalStations.find((s) => s.id === id);
                         return member?.name;
@@ -448,19 +448,19 @@ export default function StationsAdminPage() {
           <h2 className="text-lg font-semibold">Physical Stations</h2>
         </CardHeader>
         <CardBody className="p-0">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead className="bg-gray-50 dark:bg-gray-950">
               <tr>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Code</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Type</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Platforms</th>
-                <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase">Actions</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Code</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Name</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Type</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Platforms</th>
+                <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Actions</th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
               {filteredPhysicalStations.map((station) => (
-                <tr key={station.id} className="hover:bg-gray-50">
+                <tr key={station.id} className="hover:bg-gray-50 dark:hover:bg-gray-950">
                   <td className="px-4 py-3 text-sm font-mono font-medium">{station.code}</td>
                   <td className="px-4 py-3 text-sm">{station.name}</td>
                   <td className="px-4 py-3 text-sm capitalize">{station.type}</td>
@@ -483,7 +483,7 @@ export default function StationsAdminPage() {
               ))}
               {filteredPhysicalStations.length === 0 && (
                 <tr>
-                  <td colSpan={5} className="px-4 py-8 text-center text-gray-500">
+                  <td colSpan={5} className="px-4 py-8 text-center text-gray-500 dark:text-gray-400">
                     {search ? 'No stations match your search.' : 'No stations yet. Add your first station above.'}
                   </td>
                 </tr>

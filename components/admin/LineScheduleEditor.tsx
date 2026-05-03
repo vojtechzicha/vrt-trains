@@ -312,7 +312,7 @@ export function LineScheduleEditor({
           <h3 className="font-medium">Anchor Station</h3>
         </CardHeader>
         <CardBody>
-          <p className="text-sm text-gray-500 mb-4">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
             Select a station that appears on both variants. Departure times will be anchored to this station.
           </p>
           <Select
@@ -331,11 +331,11 @@ export function LineScheduleEditor({
           {anchorStationId && (
             <div className="grid gap-4 md:grid-cols-2 mt-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Outbound departs at minute
                 </label>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-500">:</span>
+                  <span className="text-gray-500 dark:text-gray-400">:</span>
                   <input
                     type="number"
                     value={outboundAnchorMinute}
@@ -346,19 +346,19 @@ export function LineScheduleEditor({
                     }
                     min={0}
                     max={59}
-                    className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-20 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
                     (e.g., trains depart at XX:{String(outboundAnchorMinute).padStart(2, '0')})
                   </span>
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Inbound departs at minute
                 </label>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-500">:</span>
+                  <span className="text-gray-500 dark:text-gray-400">:</span>
                   <input
                     type="number"
                     value={inboundAnchorMinute}
@@ -369,9 +369,9 @@ export function LineScheduleEditor({
                     }
                     min={0}
                     max={59}
-                    className="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-20 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
                     (e.g., trains depart at XX:{String(inboundAnchorMinute).padStart(2, '0')})
                   </span>
                 </div>
@@ -388,13 +388,13 @@ export function LineScheduleEditor({
             <h3 className="font-medium">Short-Turn Stations</h3>
           </CardHeader>
           <CardBody>
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
               Select stations where trains can start (morning) or end (evening) for partial routes.
             </p>
 
             <div className="grid gap-6 md:grid-cols-2">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Starting stations (morning)
                 </label>
                 <div className="space-y-2 max-h-40 overflow-y-auto">
@@ -407,7 +407,7 @@ export function LineScheduleEditor({
                         type="checkbox"
                         checked={startingStations.includes(station.id)}
                         onChange={() => toggleStartingStation(station.id)}
-                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                        className="w-4 h-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500"
                       />
                       <span className="text-sm">{station.name}</span>
                     </label>
@@ -416,7 +416,7 @@ export function LineScheduleEditor({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Ending stations (evening)
                 </label>
                 <div className="space-y-2 max-h-40 overflow-y-auto">
@@ -429,7 +429,7 @@ export function LineScheduleEditor({
                         type="checkbox"
                         checked={endingStations.includes(station.id)}
                         onChange={() => toggleEndingStation(station.id)}
-                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                        className="w-4 h-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500"
                       />
                       <span className="text-sm">{station.name}</span>
                     </label>
@@ -455,7 +455,7 @@ export function LineScheduleEditor({
               placeholder="Ex"
             />
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Start Base Number
               </label>
               <input
@@ -464,13 +464,13 @@ export function LineScheduleEditor({
                 onChange={(e) => setStartBaseNumber(parseInt(e.target.value) || 101)}
                 min={1}
                 max={9999}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
 
           {trainNumberPrefix && (
-            <div className="mt-3 text-sm text-gray-500">
+            <div className="mt-3 text-sm text-gray-500 dark:text-gray-400">
               <div>
                 Outbound: <span className="font-mono">{previewNumbers.outbound.join(', ')}...</span>{' '}
                 <span className="text-xs">(odd)</span>
@@ -553,9 +553,9 @@ export function LineScheduleEditor({
               </div>
 
               {/* Generation summary */}
-              <div className="p-4 bg-gray-100 rounded-lg">
+              <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <div className="font-medium mb-2">Generation Summary</div>
-                <div className="text-sm text-gray-600 space-y-1">
+                <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                   <div>Full outbound: {analysisResult.trainCounts.fullOutbound} trains</div>
                   <div>Full inbound: {analysisResult.trainCounts.fullInbound} trains</div>
                   {analysisResult.trainCounts.shortTurnOutbound > 0 && (
@@ -564,7 +564,7 @@ export function LineScheduleEditor({
                   {analysisResult.trainCounts.shortTurnInbound > 0 && (
                     <div>Short-turn inbound: {analysisResult.trainCounts.shortTurnInbound} trains</div>
                   )}
-                  <div className="font-medium pt-1 border-t border-gray-300">
+                  <div className="font-medium pt-1 border-t border-gray-300 dark:border-gray-600">
                     Total: {analysisResult.trainCounts.total} trains
                   </div>
                 </div>
@@ -577,9 +577,9 @@ export function LineScheduleEditor({
                   id="clearExisting"
                   checked={clearExisting}
                   onChange={(e) => setClearExisting(e.target.checked)}
-                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500"
                 />
-                <label htmlFor="clearExisting" className="text-sm text-gray-700">
+                <label htmlFor="clearExisting" className="text-sm text-gray-700 dark:text-gray-300">
                   Clear existing timetables for this line
                 </label>
               </div>

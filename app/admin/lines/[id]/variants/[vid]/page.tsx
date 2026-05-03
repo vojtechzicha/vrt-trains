@@ -283,8 +283,8 @@ export default function EditVariantPage({
           className="text-lg px-3 py-1"
         />
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Edit Variant</h1>
-          <p className="text-sm text-gray-500">{line.name}</p>
+          <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">Edit Variant</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{line.name}</p>
         </div>
       </div>
 

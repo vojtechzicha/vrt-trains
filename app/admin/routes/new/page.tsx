@@ -83,8 +83,8 @@ export default function NewRoutePage() {
       </div>
 
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-gray-900">New Route Corridor</h1>
-        <p className="text-sm text-gray-500">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">New Route Corridor</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           Define a station sequence with base times and distances
         </p>
       </div>

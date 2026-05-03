@@ -43,15 +43,15 @@ export function PlatformDropZone({
       ref={setNodeRef}
       className={`
         border-2 rounded-lg p-4 min-h-[80px] transition-colors
-        ${isOver ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white'}
+        ${isOver ? 'border-blue-500 bg-blue-50' : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900'}
         ${isBay ? 'border-l-4 border-l-amber-400' : ''}
       `}
     >
       <div className="flex items-center gap-2 mb-3">
-        <span className="text-sm font-semibold text-gray-700">
+        <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
           Platform {platformNumber}
           {platformName && (
-            <span className="font-normal text-gray-500 ml-1">
+            <span className="font-normal text-gray-500 dark:text-gray-400 ml-1">
               ({platformName})
             </span>
           )}
@@ -61,7 +61,7 @@ export function PlatformDropZone({
             Bay
           </span>
         )}
-        <div className={`flex-1 h-1 rounded ${isBay ? 'bg-amber-300' : 'bg-gray-300'}`} />
+        <div className={`flex-1 h-1 rounded ${isBay ? 'bg-amber-300' : 'bg-gray-300 dark:bg-gray-600'}`} />
         {isBay && (
           <div className="w-2 h-2 bg-amber-400 rounded-full" title="Bay platform (terminus)" />
         )}
@@ -69,7 +69,7 @@ export function PlatformDropZone({
 
       <div className="flex flex-wrap gap-2 min-h-[32px]">
         {items.length === 0 ? (
-          <span className="text-sm text-gray-400 italic">
+          <span className="text-sm text-gray-400 dark:text-gray-500 italic">
             Drop lines here
           </span>
         ) : (

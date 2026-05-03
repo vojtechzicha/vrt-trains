@@ -11,7 +11,7 @@ interface PlatformDiagramProps {
 export function PlatformDiagram({ platforms, stationPlatforms }: PlatformDiagramProps) {
   if (stationPlatforms.length === 0) {
     return (
-      <p className="text-gray-500">This station has no platforms</p>
+      <p className="text-gray-500 dark:text-gray-400">This station has no platforms</p>
     );
   }
 
@@ -29,17 +29,17 @@ export function PlatformDiagram({ platforms, stationPlatforms }: PlatformDiagram
             {/* Platform label and track */}
             <div className="flex items-center gap-3 mb-2">
               <div className="w-28">
-                <span className="text-sm font-medium text-gray-600">
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
                   Platform {platform.code}
                 </span>
                 {platform.name && (
-                  <span className="block text-xs text-gray-400">
+                  <span className="block text-xs text-gray-400 dark:text-gray-500">
                     {platform.name}
                   </span>
                 )}
               </div>
               {/* Platform track line */}
-              <div className={`flex-1 h-1 rounded ${platform.isBay ? 'bg-amber-300' : 'bg-gray-300'}`} />
+              <div className={`flex-1 h-1 rounded ${platform.isBay ? 'bg-amber-300' : 'bg-gray-300 dark:bg-gray-600'}`} />
               {/* Bay platform terminus indicator */}
               {platform.isBay && (
                 <div className="w-3 h-3 bg-amber-400 rounded-full" title="Bay platform (terminus)" />
@@ -88,7 +88,7 @@ export function PlatformDiagram({ platforms, stationPlatforms }: PlatformDiagram
                   })}
                 </div>
               ) : (
-                <span className="text-sm text-gray-400 italic">
+                <span className="text-sm text-gray-400 dark:text-gray-500 italic">
                   No scheduled services
                 </span>
               )}

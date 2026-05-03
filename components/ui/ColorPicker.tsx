@@ -44,7 +44,7 @@ export function ColorPicker({
   return (
     <div className="w-full" ref={containerRef}>
       {label && (
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           {label}
         </label>
       )}
@@ -52,17 +52,17 @@ export function ColorPicker({
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full px-3 py-2 text-sm text-left rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center gap-2"
+          className="w-full px-3 py-2 text-sm text-left rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center gap-2"
         >
           <span
-            className="w-6 h-6 rounded border border-gray-300"
+            className="w-6 h-6 rounded border border-gray-300 dark:border-gray-600"
             style={{ backgroundColor: value }}
           />
-          <span className="font-mono text-gray-600">{value.toUpperCase()}</span>
+          <span className="font-mono text-gray-600 dark:text-gray-400">{value.toUpperCase()}</span>
         </button>
 
         {isOpen && (
-          <div className="absolute z-50 w-full mt-1 p-3 bg-white border border-gray-200 rounded-lg shadow-lg">
+          <div className="absolute z-50 w-full mt-1 p-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg">
             <div className="grid grid-cols-5 gap-2 mb-3">
               {presets.map((color) => (
                 <button
@@ -73,7 +73,7 @@ export function ColorPicker({
                     setIsOpen(false);
                   }}
                   className={`w-8 h-8 rounded border-2 transition-transform hover:scale-110 ${
-                    value === color ? 'border-blue-500 ring-2 ring-blue-200' : 'border-gray-300'
+                    value === color ? 'border-blue-500 ring-2 ring-blue-200' : 'border-gray-300 dark:border-gray-600'
                   }`}
                   style={{ backgroundColor: color }}
                 />
@@ -96,7 +96,7 @@ export function ColorPicker({
                   }
                 }}
                 placeholder="#000000"
-                className="flex-1 px-2 py-1 text-sm font-mono border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="flex-1 px-2 py-1 text-sm font-mono border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
           </div>

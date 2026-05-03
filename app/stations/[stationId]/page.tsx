@@ -208,12 +208,12 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
       {/* Enhanced Header */}
       <div className="mb-8">
         <div className="flex items-start gap-4 mb-4">
-          <div className="w-16 h-16 rounded-lg bg-gray-100 flex items-center justify-center font-bold text-xl text-gray-600 shrink-0">
+          <div className="w-16 h-16 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center font-bold text-xl text-gray-600 dark:text-gray-400 shrink-0">
             {station.code}
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">{station.name}</h1>
-            <p className="text-gray-500">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{station.name}</h1>
+            <p className="text-gray-500 dark:text-gray-400">
               {station.isVirtual ? 'City Station' : typeLabels[station.type]}
               {station.country && ` · ${countryNames[station.country] || station.country}`}
               {!station.isVirtual && ` · ${station.platforms.length} platform${station.platforms.length !== 1 ? 's' : ''}`}
@@ -251,7 +251,7 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
         </CardHeader>
         <CardBody className="p-0">
           {futureDepartures.length === 0 ? (
-            <p className="text-gray-500 p-4">No upcoming departures from this station</p>
+            <p className="text-gray-500 dark:text-gray-400 p-4">No upcoming departures from this station</p>
           ) : (
             <Table>
               <TableHeader>
@@ -288,11 +288,11 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
                         <span className="font-medium">{dep.destination}</span>
                         <OperatingDaysBadge days={dep.operatingDays} className="ml-2" />
                       </TableCell>
-                      <TableCell className="hidden md:table-cell text-gray-500 text-sm">
+                      <TableCell className="hidden md:table-cell text-gray-500 dark:text-gray-400 text-sm">
                         {dep.viaStations.length > 0 ? dep.viaStations.join(', ') : '—'}
                       </TableCell>
                       {station.isVirtual ? (
-                        <TableCell className="text-sm text-gray-600">
+                        <TableCell className="text-sm text-gray-600 dark:text-gray-400">
                           {dep.fromStationName || '—'}
                         </TableCell>
                       ) : (
@@ -323,27 +323,27 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
                     <Link
                       key={memberStation.id}
                       href={`/stations/${memberStation.id}`}
-                      className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                      className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-950 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center font-medium text-sm text-gray-600">
+                        <span className="w-10 h-10 rounded bg-gray-200 dark:bg-gray-700 flex items-center justify-center font-medium text-sm text-gray-600 dark:text-gray-400">
                           {memberStation.code}
                         </span>
                         <div>
-                          <span className="font-medium text-gray-900 group-hover:text-blue-600">
+                          <span className="font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600">
                             {memberStation.name}
                           </span>
-                          <p className="text-xs text-gray-500">
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
                             {typeLabels[memberStation.type]} · {memberStation.platforms.length} platform{memberStation.platforms.length !== 1 ? 's' : ''}
                           </p>
                         </div>
                       </div>
-                      <span className="text-gray-400 group-hover:text-blue-600">→</span>
+                      <span className="text-gray-400 dark:text-gray-500 group-hover:text-blue-600">→</span>
                     </Link>
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 text-sm">No member stations configured.</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">No member stations configured.</p>
               )}
             </CardBody>
           </Card>
@@ -370,7 +370,7 @@ export default async function StationDetailPage({ params }: StationDetailPagePro
                 stationMap={stationMap}
               />
             ) : (
-              <p className="text-gray-500 text-sm">No route corridors pass through this station.</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">No route corridors pass through this station.</p>
             )}
           </CardBody>
         </Card>

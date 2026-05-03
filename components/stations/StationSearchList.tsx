@@ -68,23 +68,23 @@ export function StationSearchList({
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search stations... (try 'p h n' for Praha hl.n.)"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         {search && (
-          <p className="mt-2 text-sm text-gray-500">
+          <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
             {filteredStations.length} station{filteredStations.length !== 1 ? 's' : ''} found
           </p>
         )}
       </div>
 
       {filteredStations.length === 0 ? (
-        <div className="text-center py-12 text-gray-500">{emptyMessage}</div>
+        <div className="text-center py-12 text-gray-500 dark:text-gray-400">{emptyMessage}</div>
       ) : (
         <>
           {/* Virtual/City Stations Section */}
           {virtualStations.length > 0 && (
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4 flex items-center gap-2">
                 <span className="text-xl">🏙</span>
                 City Stations
               </h2>
@@ -99,7 +99,7 @@ export function StationSearchList({
           {/* Czech Stations Section */}
           {czechStations.length > 0 && (
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">Czech Stations</h2>
+              <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Czech Stations</h2>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {czechStations.map((station) => (
                   <div key={station.id}>{renderCard(station)}</div>
@@ -111,7 +111,7 @@ export function StationSearchList({
           {/* Other Countries Sections */}
           {otherCountries.map((country) => (
             <div key={country} className="mb-8">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">{country}</h2>
+              <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">{country}</h2>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {stationsByCountry[country].map((station) => (
                   <div key={station.id}>{renderCard(station)}</div>
@@ -145,8 +145,8 @@ function DepartureCard({ station }: { station: Station }) {
             )}
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900">{station.name}</h3>
-            <p className="text-sm text-gray-500">
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">{station.name}</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               {isVirtual
                 ? `Combined departures (${station.memberStationIds?.length || 0} stations)`
                 : station.country && station.country !== 'Czech'

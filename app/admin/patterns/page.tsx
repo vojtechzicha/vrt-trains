@@ -73,8 +73,8 @@ export default function PatternsPage() {
 
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Operating Patterns</h1>
-          <p className="text-sm text-gray-500">
+          <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">Operating Patterns</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             Reusable service patterns for timetable generation
           </p>
         </div>
@@ -90,13 +90,13 @@ export default function PatternsPage() {
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-1">
-                    <span className="font-semibold text-gray-900">{pattern.name}</span>
-                    <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600">
+                    <span className="font-semibold text-gray-900 dark:text-gray-100">{pattern.name}</span>
+                    <span className="text-xs px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
                       {pattern.periods.length} period{pattern.periods.length > 1 ? 's' : ''}
                     </span>
                     <OperatingDaysBadge days={pattern.operatingDays} />
                   </div>
-                  <p className="text-sm text-gray-500">{formatPeriodSummary(pattern)}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{formatPeriodSummary(pattern)}</p>
                 </div>
                 <div className="flex gap-2">
                   <Link
@@ -119,7 +119,7 @@ export default function PatternsPage() {
         ))}
         {patterns.length === 0 && (
           <Card>
-            <CardBody className="text-center py-8 text-gray-500">
+            <CardBody className="text-center py-8 text-gray-500 dark:text-gray-400">
               No patterns yet. Create your first operating pattern.
             </CardBody>
           </Card>

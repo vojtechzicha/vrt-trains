@@ -110,7 +110,7 @@ export default function LinesAdminPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Lines</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Lines</h1>
         <Button onClick={() => setShowForm(!showForm)}>
           {showForm ? 'Cancel' : '+ Add Line'}
         </Button>
@@ -154,7 +154,7 @@ export default function LinesAdminPage() {
                 />
               </div>
               <div className="flex items-center gap-4">
-                <span className="text-sm text-gray-500">Preview:</span>
+                <span className="text-sm text-gray-500 dark:text-gray-400">Preview:</span>
                 <LineBadge
                   identifier={identifier || 'XX'}
                   color={color}
@@ -185,10 +185,10 @@ export default function LinesAdminPage() {
                   textColor={line.textColor}
                   className="text-lg px-3 py-1"
                 />
-                <span className="text-xs text-gray-400 capitalize">{line.type}</span>
+                <span className="text-xs text-gray-400 dark:text-gray-500 capitalize">{line.type}</span>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{line.name}</h3>
-              <p className="text-sm text-gray-500 mb-4">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{line.name}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                 {line.variantCount} variant{line.variantCount !== 1 ? 's' : ''}
               </p>
               <div className="flex gap-2">
@@ -218,7 +218,7 @@ export default function LinesAdminPage() {
         ))}
         {lines.length === 0 && (
           <Card className="col-span-full">
-            <CardBody className="text-center py-8 text-gray-500">
+            <CardBody className="text-center py-8 text-gray-500 dark:text-gray-400">
               No lines yet. Add your first line above.
             </CardBody>
           </Card>

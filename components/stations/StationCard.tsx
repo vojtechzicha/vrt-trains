@@ -11,7 +11,7 @@ interface StationCardProps {
 const typeColors: Record<string, { bg: string; text: string }> = {
   hub: { bg: 'bg-purple-100', text: 'text-purple-800' },
   terminal: { bg: 'bg-blue-100', text: 'text-blue-800' },
-  regular: { bg: 'bg-gray-100', text: 'text-gray-800' },
+  regular: { bg: 'bg-gray-100 dark:bg-gray-800', text: 'text-gray-800 dark:text-gray-200' },
   airport: { bg: 'bg-green-100', text: 'text-green-800' },
   request: { bg: 'bg-yellow-100', text: 'text-yellow-800' },
 };
@@ -28,7 +28,7 @@ export function StationCard({ station, memberCount, showCountry }: StationCardPr
           <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold ${
             isVirtual
               ? 'bg-amber-100 text-amber-700'
-              : 'bg-gray-100 text-gray-600'
+              : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400'
           }`}>
             {isVirtual ? (
               <span className="text-lg">🏙</span>
@@ -37,7 +37,7 @@ export function StationCard({ station, memberCount, showCountry }: StationCardPr
             )}
           </div>
           <div className="flex-1">
-            <h3 className="font-semibold text-gray-900">{station.name}</h3>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">{station.name}</h3>
             <div className="flex items-center gap-2 mt-1">
               {isVirtual ? (
                 <span className="text-xs px-2 py-0.5 rounded bg-amber-100 text-amber-800">
@@ -55,7 +55,7 @@ export function StationCard({ station, memberCount, showCountry }: StationCardPr
                   )}
                 </>
               )}
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-gray-500 dark:text-gray-400">
                 {isVirtual && memberCount !== undefined
                   ? `${memberCount} station${memberCount !== 1 ? 's' : ''}`
                   : `${station.platforms.length} platform${station.platforms.length !== 1 ? 's' : ''}`}
